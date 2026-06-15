@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insights &amp; Perspectives — Sachin Mahendra &amp; Co</title>
+<meta name="description" content="Educational insights on audit, taxation, technology, compliance and forensic accounting from Sachin Mahendra & Co, Chartered Accountants." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ============ FIXED NAV ============ -->
+<header class="nav is-solid" id="top">
+  <div class="container nav__row">
+    <a href="index.html" class="nav__brand" aria-label="SMK & Co — home">
+      <span class="ca-badge ca-badge--nav"><img src="assets/ca-india-mark.png" alt="CA India — ICAI professional mark" /></span>
+      <span class="wordmark"><span class="wordmark__smk">SMK</span><span class="wordmark__co">&amp; Co<span class="wordmark__dot">.</span></span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="index.html#top">Home</a>
+      <a class="nav__link" href="index.html#about">About</a>
+      <a class="nav__link" href="index.html#services">Services</a>
+      <a class="nav__link" href="index.html#team">Team</a>
+      <a class="nav__link" href="index.html#contact">Contact</a>
+      <a class="nav__link is-active" href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main class="blog-top">
+  <!-- ===== LISTING VIEW ===== -->
+  <div class="view" id="listView">
+    <section class="blog-hero bg-ivory grain" data-screen-label="Blog">
+      <div class="container">
+        <p class="eyebrow" data-reveal style="font-size: 31px">Insights</p>
+        <h1 data-reveal data-d="1">Insights &amp; Perspectives</h1>
+        <p class="lede" data-reveal data-d="2">Factual, educational notes on the questions our clients ask most — across audit, taxation, technology, compliance and forensic accounting.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight bg-ivory grain" style="padding-top:0">
+      <div class="container">
+        <article class="featured" id="featured" data-reveal aria-label="Featured insight"></article>
+        <div class="filter" id="filter" role="tablist" aria-label="Filter by category"></div>
+        <div class="post-grid" id="postGrid"></div>
+        <div class="loadmore" id="loadMore" style="display:none"><button class="btn btn--outline-gold" type="button">Load more <span class="arr">&darr;</span></button></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== ARTICLE VIEW (route switch) ===== -->
+  <div class="view article-view" id="articleView" aria-hidden="true">
+    <section class="section bg-ivory grain">
+      <div class="container">
+        <div class="article"></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer is-dark">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__brandrow">
+          <span class="ca-badge ca-badge--nav"><img src="assets/ca-india-mark.png" alt="CA India — ICAI professional mark" /></span>
+          <span class="wordmark"><span class="wordmark__smk">SMK</span><span class="wordmark__co">&amp; Co<span class="wordmark__dot">.</span></span></span>
+        </a>
+        <p>A technology-integrated Chartered Accountancy practice — where traditional expertise meets modern technology.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a class="ulink" href="index.html#about">About</a></li>
+          <li><a class="ulink" href="index.html#services">Services</a></li>
+          <li><a class="ulink" href="index.html#team">Team</a></li>
+          <li><a class="ulink" href="index.html#contact">Contact</a></li>
+          <li><a class="ulink" href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Bengaluru</h5>
+        <address>Registered Office<br/>63/B, 3rd Floor, Chirag Plaza,<br/>10th Main, 4th Block, Rajaji Nagar,<br/>Bengaluru — 560 010</address>
+      </div>
+      <div class="footer__col">
+        <h5>Shivamogga</h5>
+        <address>Branch Office<br/>Sri Manjunatha Complex, 1st Floor,<br/>Opp. Cauvery Ford Motors,<br/>Shankaramutt Road,<br/>Shivamogga — 577 201</address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>Confidentiality assured · Information handled to ICAI professional standards.</p>
+      <p>© Sachin Mahendra &amp; Co <span data-cfg="year">[YEAR]</span> · All Rights Reserved · <span class="footer__frn">ICAI FRN 021859S</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="image-slot.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
