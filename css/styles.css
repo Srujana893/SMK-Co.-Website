@@ -104,6 +104,10 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:400;margi
 .bg-navy .lede,.bg-deep .lede{color:var(--on-navy-soft)}
 .muted{color:var(--slate)}
 .section-head{max-width:62ch;margin-bottom:clamp(40px,5vw,68px)}
+.cta-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:clamp(24px,4vw,56px)}
+.cta-band .eyebrow{margin-bottom:.6rem}
+.cta-band .h-sec{margin:0}
+@media (max-width:560px){.cta-band .btn{width:100%;justify-content:center}}
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -150,7 +154,7 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:400;margi
 .ca-badge--nav{padding:4px 7px;order:-1}
 .ca-badge--nav img{height:30px}
 .nav.is-solid{box-shadow:0 8px 30px -24px rgba(11,34,56,.5)}
-.nav__links{display:flex;align-items:center;gap:clamp(14px,2.2vw,34px);flex-wrap:nowrap}
+.nav__links{display:flex;align-items:center;gap:clamp(14px,2.2vw,34px);flex-wrap:nowrap;margin-left:auto}
 .nav__link{
   font-size:.92rem;font-weight:500;color:var(--charcoal);position:relative;
   transition:color .3s var(--ease);letter-spacing:.005em;
@@ -498,11 +502,52 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:400;margi
 .team-row .partner__meta{margin:0}
 .team-row .partner__exp{padding-top:0;border-top:0;margin:0}
 
+/* engagement flowchart — zigzag spine, alternating navy / ivory */
+.flow{list-style:none;margin:clamp(36px,5vw,60px) 0 0;padding:0;position:relative}
+.flow::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;
+  background:linear-gradient(var(--hairline-gold),var(--gold) 12%,var(--gold) 88%,var(--hairline-gold));
+  transform:translateX(-50%);border-radius:2px}
+.flow-step{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;
+  min-height:clamp(120px,13vw,160px)}
+.flow-step:not(:last-child){margin-bottom:clamp(20px,2.4vw,34px)}
+.flow-step__node{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;
+  width:clamp(54px,5vw,66px);height:clamp(54px,5vw,66px);border-radius:50%;
+  display:grid;place-items:center;font-family:var(--serif);font-size:clamp(1.1rem,1.7vw,1.45rem);
+  letter-spacing:.01em;box-shadow:0 4px 18px rgba(11,34,56,.16)}
+.flow-step__card{position:relative;padding:clamp(22px,2.4vw,32px) clamp(24px,2.6vw,36px);
+  border-radius:var(--radius)}
+.flow-step__t{font-family:var(--serif);font-weight:500;line-height:1.1;
+  font-size:clamp(1.35rem,2vw,1.8rem);margin-bottom:.55rem}
+.flow-step__d{margin:0;font-size:1rem;line-height:1.6;max-width:42ch}
+.flow-step__card::after{content:"";position:absolute;top:50%;width:clamp(20px,3vw,46px);height:2px}
+.flow-step--navy .flow-step__card{grid-column:1;margin-right:clamp(40px,5vw,64px);
+  background:var(--ink-navy);color:var(--on-navy)}
+.flow-step--navy .flow-step__t{color:#F4EEE0}
+.flow-step--navy .flow-step__d{color:var(--on-navy-soft)}
+.flow-step--navy .flow-step__card::after{right:calc(-1 * clamp(20px,3vw,46px));
+  background:linear-gradient(90deg,var(--ink-navy),var(--gold))}
+.flow-step--navy .flow-step__node{background:var(--ivory);border:2px solid var(--gold);color:var(--ink-navy)}
+.flow-step--ivory .flow-step__card{grid-column:2;margin-left:clamp(40px,5vw,64px);
+  background:var(--ivory);color:var(--slate);border:1px solid var(--hairline-gold)}
+.flow-step--ivory .flow-step__t{color:var(--ink-navy)}
+.flow-step--ivory .flow-step__d{color:var(--slate)}
+.flow-step--ivory .flow-step__card::after{left:calc(-1 * clamp(20px,3vw,46px));
+  background:linear-gradient(90deg,var(--gold),var(--ivory))}
+.flow-step--ivory .flow-step__node{background:var(--ink-navy);border:2px solid var(--gold);color:var(--gold-soft)}
+
 @media (max-width:760px){
   .row,.proc-row,.team-row{flex-direction:column;gap:14px}
   .row__lead,.proc-row__t,.team-row__id,.row__desc{flex-basis:auto}
   .row__bul{columns:1}
   .proc-row__n{min-width:0}
+  .flow::before{left:clamp(27px,7vw,33px)}
+  .flow-step{grid-template-columns:1fr;min-height:0}
+  .flow-step__node{left:clamp(27px,7vw,33px)}
+  .flow-step--navy .flow-step__card,
+  .flow-step--ivory .flow-step__card{grid-column:1;margin:0 0 0 clamp(64px,18vw,86px)}
+  .flow-step--navy .flow-step__card::after,
+  .flow-step--ivory .flow-step__card::after{left:calc(-1 * clamp(20px,7vw,30px));right:auto;
+    background:var(--gold)}
 }
 
 /* ============================================================
