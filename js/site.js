@@ -122,6 +122,25 @@
   function closeMenu() { if (mnav) { mnav.classList.remove("is-open"); document.body.style.overflow = ""; } }
   if (burger) burger.addEventListener("click", openMenu);
   document.querySelectorAll("[data-close-menu]").forEach(function (b) { b.addEventListener("click", closeMenu); });
+
+  /* ---- team accordion ---- */
+  document.querySelectorAll(".team-acc .acc-head").forEach(function (head) {
+    head.addEventListener("click", function () {
+      var item = head.closest(".acc-item");
+      if (!item) return;
+      var open = item.classList.contains("is-open");
+      var group = head.closest(".team-acc");
+      group.querySelectorAll(".acc-item.is-open").forEach(function (o) {
+        o.classList.remove("is-open");
+        var b = o.querySelector(".acc-head");
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+      if (!open) {
+        item.classList.add("is-open");
+        head.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
   if (mnav) mnav.querySelector(".mnav__scrim").addEventListener("click", closeMenu);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
 

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Sachin Mahendra &amp; Co</title>
+<meta name="description" content="Sachin Mahendra & Co — a technology-integrated Chartered Accountancy practice in Bengaluru & Shivamogga. Audit, tax and compliance with IS audit, AI automation and forensic accounting. ICAI FRN 021859S." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+  /* hero geometry motion (decorative — disabled for reduced-motion) */
+  @keyframes drift{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-14px,0)}100%{transform:translate3d(0,0,0)}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes dash{to{stroke-dashoffset:-220}}
+  .hero__rings{transform-box:fill-box;transform-origin:center;animation:spin 80s linear infinite}
+  .hero__mesh{animation:drift 14s ease-in-out infinite}
+  .hero__trace{stroke-dasharray:6 14;animation:dash 9s linear infinite}
+  @media (prefers-reduced-motion:reduce){.hero__rings,.hero__mesh,.hero__trace{animation:none}}
+  /* spotlight viz */
+  @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+  .spot__ring{animation:spin 60s linear infinite;transform-box:fill-box;transform-origin:center}
+  .spot__ring--rev{animation-duration:42s;animation-direction:reverse}
+  .spot__node{animation:pulse 4s ease-in-out infinite}
+  .spot__node:nth-child(odd){animation-delay:1.5s}
+  @media (prefers-reduced-motion:reduce){.spot__ring,.spot__node{animation:none}}
+</style>
+</head>
+<body>
+
+
+<!-- ============ FIXED NAV ============ -->
+<header class="nav is-solid" id="top">
+  <div class="container nav__row">
+    <a href="index.html" class="nav__brand" aria-label="SMK & Co — home">
+      <span class="ca-badge ca-badge--nav"><img src="assets/ca-india-mark.png" alt="CA India — ICAI professional mark" /></span>
+      <span class="wordmark"><span class="wordmark__smk">SMK</span><span class="wordmark__co">&amp; Co<span class="wordmark__dot">.</span></span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link is-active" href="about.html">About</a>
+      <a class="nav__link" href="services.html">Services</a>
+      <a class="nav__link" href="team.html">Team</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+      <a class="nav__link" href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main class="blog-top">
+<!-- ============ ABOUT ============ -->
+<section class="section bg-ivory grain" id="about" data-screen-label="About">
+  <div class="container">
+    <div class="about__grid">
+      <div>
+        <p class="eyebrow" data-reveal style="font-size: 37px">The Firm</p>
+        <h2 class="h-sec" data-reveal data-d="1">Tradition, kept precise.<br/>Technology, put to work.</h2>
+        <p class="lede" data-reveal data-d="2" style="margin-top:1.4rem">Sachin Mahendra and Kiran &amp; Co is a partner-led Chartered Accountancy practice serving clients across Karnataka and beyond. We pair the discipline of established audit, tax and compliance work with the tools of a modern firm — information-systems audit, intelligent automation and forensic accounting.</p>
+        <div class="about__facts" data-reveal data-d="3">
+          <div class="fact"><span class="n">7+</span><span class="l">Years Established</span></div>
+          <div class="fact"><span class="n">3</span><span class="l">Partner Leadership</span></div>
+          <div class="fact"><span class="n">Tech + CA</span><span class="l">Our Edge</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="statement" data-reveal data-d="2">
+          <h3>Vision</h3>
+          <p>To be a trusted technology-integrated CA practice in India.</p>
+        </div>
+        <div class="statement" data-reveal data-d="3">
+          <h3>Mission</h3>
+          <p>To deliver precise, compliant, technology-driven financial solutions that help businesses grow confidently.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUE PROPOSITION ============ -->
+<section class="section section--tight bg-ivory grain" id="value" data-screen-label="Value">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow" style="font-size: 37px">What You Can Expect</p>
+      <h2 class="h-sec">The way we work with you.</h2>
+    </div>
+    <div class="rows" data-reveal>
+      <article class="row"><div class="row__lead"><span class="row__num">01</span><h3 class="row__title">Single-Window Access</h3></div><p class="row__desc">One point of contact across audit, tax, compliance and advisory.</p></article>
+      <article class="row"><div class="row__lead"><span class="row__num">02</span><h3 class="row__title">Partner-Led Engagements</h3></div><p class="row__desc">Your work is owned by a partner — not handed down and forgotten.</p></article>
+      <article class="row"><div class="row__lead"><span class="row__num">03</span><h3 class="row__title">Turnaround Commitment</h3></div><p class="row__desc">Realistic timelines, agreed up front and kept.</p></article>
+      <article class="row"><div class="row__lead"><span class="row__num">04</span><h3 class="row__title">Proactive Communication</h3></div><p class="row__desc">You hear from us before deadlines, not after them.</p></article>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer is-dark" data-screen-label="Footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__brandrow">
+          <span class="ca-badge ca-badge--nav"><img src="assets/ca-india-mark.png" alt="CA India — ICAI professional mark" /></span>
+          <span class="wordmark"><span class="wordmark__smk">SMK</span><span class="wordmark__co">&amp; Co<span class="wordmark__dot">.</span></span></span>
+        </a>
+        <p>A technology-integrated Chartered Accountancy practice — where traditional expertise meets modern technology.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a class="ulink" href="about.html">About</a></li>
+          <li><a class="ulink" href="services.html">Services</a></li>
+          <li><a class="ulink" href="team.html">Team</a></li>
+          <li><a class="ulink" href="contact.html">Contact</a></li>
+          <li><a class="ulink" href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Bengaluru</h5>
+        <address>Head Office<br/>63/B, 3rd Floor, Chirag Plaza,<br/>10th Main, 4th Block, Rajaji Nagar,<br/>Bengaluru — 560 010</address>
+      </div>
+      <div class="footer__col">
+        <h5>Shivamogga</h5>
+        <address>Branch Office<br/>Sri Manjunatha Complex, 1st Floor,<br/>Opp. Cauvery Ford Motors,<br/>Shankaramutt Road,<br/>Shivamogga — 577 201</address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>Confidentiality assured · Information handled to ICAI professional standards.</p>
+      <p>© Sachin Mahendra &amp; Co <span data-cfg="year">[YEAR]</span> · All Rights Reserved · <span class="footer__frn">ICAI FRN 021859S</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+<script src="js/config.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

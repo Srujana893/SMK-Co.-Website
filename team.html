@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Team — Sachin Mahendra &amp; Co</title>
+<meta name="description" content="Sachin Mahendra & Co — a technology-integrated Chartered Accountancy practice in Bengaluru & Shivamogga. Audit, tax and compliance with IS audit, AI automation and forensic accounting. ICAI FRN 021859S." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+  /* hero geometry motion (decorative — disabled for reduced-motion) */
+  @keyframes drift{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-14px,0)}100%{transform:translate3d(0,0,0)}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes dash{to{stroke-dashoffset:-220}}
+  .hero__rings{transform-box:fill-box;transform-origin:center;animation:spin 80s linear infinite}
+  .hero__mesh{animation:drift 14s ease-in-out infinite}
+  .hero__trace{stroke-dasharray:6 14;animation:dash 9s linear infinite}
+  @media (prefers-reduced-motion:reduce){.hero__rings,.hero__mesh,.hero__trace{animation:none}}
+  /* spotlight viz */
+  @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+  .spot__ring{animation:spin 60s linear infinite;transform-box:fill-box;transform-origin:center}
+  .spot__ring--rev{animation-duration:42s;animation-direction:reverse}
+  .spot__node{animation:pulse 4s ease-in-out infinite}
+  .spot__node:nth-child(odd){animation-delay:1.5s}
+  @media (prefers-reduced-motion:reduce){.spot__ring,.spot__node{animation:none}}
+</style>
+</head>
+<body>
+
+
+<!-- ============ FIXED NAV ============ -->
+<header class="nav is-solid" id="top">
+  <div class="container nav__row">
+    <a href="index.html" class="nav__brand" aria-label="SMK & Co — home">
+      <span class="ca-badge ca-badge--nav"><img src="assets/ca-india-mark.png" alt="CA India — ICAI professional mark" /></span>
+      <span class="wordmark"><span class="wordmark__smk">SMK</span><span class="wordmark__co">&amp; Co<span class="wordmark__dot">.</span></span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="about.html">About</a>
+      <a class="nav__link" href="services.html">Services</a>
+      <a class="nav__link is-active" href="team.html">Team</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+      <a class="nav__link" href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main class="blog-top">
+<!-- ============ LEADERSHIP ============ -->
+<section class="section bg-ivory grain" id="team" data-screen-label="Leadership">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow" style="font-size: 37px">Leadership</p>
+      <h2 class="h-sec">Three partners. One standard.</h2>
+    </div>
+    <div class="team-acc" data-reveal>
+      <article class="acc-item is-open">
+        <button class="acc-head" type="button" aria-expanded="true">
+          <span class="acc-av">SU</span>
+          <span class="acc-id">
+            <span class="acc-name">FCA Sachin U</span>
+            <span class="acc-memb">Memb. 247584 · 8 Years</span>
+          </span>
+          <span class="acc-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel__in">
+            <div class="partner__meta"><span class="chip">CA</span><span class="chip">ISA 3.0</span><span class="chip">AICA L2</span></div>
+            <p class="partner__exp"><b>Focus.</b> Compliance, accounting, audits &amp; taxation.</p>
+          </div>
+        </div>
+      </article>
+      <article class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-av">M</span>
+          <span class="acc-id">
+            <span class="acc-name">FCA Mahendra</span>
+            <span class="acc-memb">Memb. 253510 · 7 Years</span>
+          </span>
+          <span class="acc-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel__in">
+            <div class="partner__meta"><span class="chip">CA</span><span class="chip">ISA 3.0</span></div>
+            <p class="partner__exp"><b>Focus.</b> Bank audits, PSU audits &amp; accounting.</p>
+          </div>
+        </div>
+      </article>
+      <article class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false">
+          <span class="acc-av">KK</span>
+          <span class="acc-id">
+            <span class="acc-name">ACA Kiran K</span>
+            <span class="acc-memb">Memb. 280660 · 2 Years</span>
+          </span>
+          <span class="acc-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel__in">
+            <div class="partner__meta"><span class="chip">CA</span><span class="chip">CS</span><span class="chip">CC</span><span class="chip">ISA 3.0</span><span class="chip">FAFD</span><span class="chip">DPCAC</span><span class="chip">AICA L2</span></div>
+            <p class="partner__exp"><b>Focus.</b> IS audit, forensic accounting &amp; AI.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer is-dark" data-screen-label="Footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__brandrow">
+          <span class="ca-badge ca-badge--nav"><img src="assets/ca-india-mark.png" alt="CA India — ICAI professional mark" /></span>
+          <span class="wordmark"><span class="wordmark__smk">SMK</span><span class="wordmark__co">&amp; Co<span class="wordmark__dot">.</span></span></span>
+        </a>
+        <p>A technology-integrated Chartered Accountancy practice — where traditional expertise meets modern technology.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a class="ulink" href="about.html">About</a></li>
+          <li><a class="ulink" href="services.html">Services</a></li>
+          <li><a class="ulink" href="team.html">Team</a></li>
+          <li><a class="ulink" href="contact.html">Contact</a></li>
+          <li><a class="ulink" href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Bengaluru</h5>
+        <address>Head Office<br/>63/B, 3rd Floor, Chirag Plaza,<br/>10th Main, 4th Block, Rajaji Nagar,<br/>Bengaluru — 560 010</address>
+      </div>
+      <div class="footer__col">
+        <h5>Shivamogga</h5>
+        <address>Branch Office<br/>Sri Manjunatha Complex, 1st Floor,<br/>Opp. Cauvery Ford Motors,<br/>Shankaramutt Road,<br/>Shivamogga — 577 201</address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>Confidentiality assured · Information handled to ICAI professional standards.</p>
+      <p>© Sachin Mahendra &amp; Co <span data-cfg="year">[YEAR]</span> · All Rights Reserved · <span class="footer__frn">ICAI FRN 021859S</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+<script src="js/config.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
