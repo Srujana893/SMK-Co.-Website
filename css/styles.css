@@ -701,3 +701,55 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:400;margi
 @media (max-width:600px){
   .post-grid{grid-template-columns:1fr}
 }
+
+/* ============================================================
+   LEADERSHIP — partner cards + profile view
+   ============================================================ */
+.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.4vw,30px);margin-top:clamp(28px,4vw,52px);align-items:stretch}
+@media (max-width:920px){.partner-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.partner-grid{grid-template-columns:1fr}}
+
+.partner-card{position:relative;background:var(--soft-white);border:1px solid var(--hairline);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
+.partner-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);border-color:var(--hairline-gold)}
+.partner-card__photo{position:relative;width:100%;aspect-ratio:4/5;background:var(--ink-navy);overflow:hidden}
+.partner-card__initials{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:clamp(3rem,5vw,4.5rem);color:var(--gold-soft);letter-spacing:.04em;background:radial-gradient(120% 100% at 50% 30%,rgba(184,145,80,.16),transparent 60%),var(--ink-navy)}
+.partner-card__photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+.partner-card__body{padding:clamp(22px,2vw,28px);display:flex;flex-direction:column;gap:11px;flex:1;position:relative}
+.partner-card__body::before{content:"";position:absolute;top:0;left:clamp(22px,2vw,28px);width:30px;height:2px;background:var(--gold)}
+.partner-card__role{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;padding-top:8px}
+.partner-card__name{font-family:var(--serif);font-size:1.35rem;line-height:1.15;color:var(--charcoal);font-weight:500;margin:0}
+.partner-card__meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:var(--slate-soft);text-transform:uppercase}
+.partner-card__meta .dot{width:3px;height:3px;border-radius:50%;background:var(--gold)}
+.partner-card__focus{margin:2px 0 0;font-size:.92rem;color:var(--slate);line-height:1.55}
+.partner-card__cta{margin-top:auto;padding-top:16px;border-top:1px solid var(--hairline);display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.82rem;font-weight:600;color:var(--slate);transition:color .3s var(--ease)}
+.partner-card__cta .arr{transition:transform .3s var(--ease);display:inline-block}
+.partner-card:hover .partner-card__cta{color:var(--gold)}
+.partner-card:hover .partner-card__cta .arr{transform:translateX(4px)}
+.partner-plus{width:30px;height:30px;border:1px solid var(--hairline-gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:1.05rem;line-height:1;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
+.partner-card:hover .partner-plus{background:var(--ink-navy);color:var(--gold-soft);border-color:var(--ink-navy)}
+
+/* profile route */
+.team-profile-view{display:none}
+.partner-profile{max-width:960px;margin-inline:auto}
+.partner-profile__back{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);display:flex;width:fit-content;align-items:center;gap:.6em;background:none;border:0;padding:0;margin-bottom:36px;cursor:pointer;transition:color .3s var(--ease)}
+.partner-profile__back .arr{transition:transform .3s var(--ease);display:inline-block}
+.partner-profile__back:hover{color:var(--gold)}
+.partner-profile__back:hover .arr{transform:translateX(-4px)}
+.partner-profile__head{display:grid;grid-template-columns:300px 1fr;gap:clamp(28px,4vw,52px);align-items:start}
+@media (max-width:720px){.partner-profile__head{grid-template-columns:1fr;max-width:420px}}
+.partner-profile__photo{position:relative;aspect-ratio:4/5;background:var(--ink-navy);border-radius:var(--radius);overflow:hidden;border:1px solid var(--hairline)}
+.partner-profile__initials{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:clamp(3.4rem,7vw,5.2rem);color:var(--gold-soft);letter-spacing:.04em;background:radial-gradient(120% 100% at 50% 30%,rgba(184,145,80,.16),transparent 60%),var(--ink-navy)}
+.partner-profile__photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+.partner-profile__role{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.partner-profile__name{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);line-height:1.08;margin:8px 0 4px;font-weight:500;color:var(--charcoal)}
+.partner-profile__chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.partner-profile__chips .chip{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--hairline-gold);border-radius:40px;padding:5px 12px}
+.partner-profile__meta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--slate);text-transform:uppercase;margin-top:22px;padding-top:16px;border-top:1px solid var(--hairline)}
+.partner-profile__meta .dot{width:3px;height:3px;border-radius:50%;background:var(--gold)}
+.partner-profile__body{margin-top:clamp(36px,5vw,56px);font-size:1.02rem;line-height:1.75;color:var(--charcoal)}
+.partner-profile__body h3{font-family:var(--serif);font-size:1.45rem;margin:1.6em 0 .55em;color:var(--charcoal);font-weight:500}
+.partner-profile__body h3:first-child{margin-top:0}
+.partner-profile__body p{margin:0 0 1.3em;color:var(--slate);font-size:1rem}
+.partner-profile__body ul{list-style:none;padding:0;margin:0 0 1.4em;display:grid;gap:12px}
+.partner-profile__body li{position:relative;padding-left:26px;color:var(--slate);line-height:1.55;font-size:.98rem}
+.partner-profile__body li::before{content:"";position:absolute;left:0;top:.7em;width:14px;height:1px;background:var(--gold)}

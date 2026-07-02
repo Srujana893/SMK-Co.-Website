@@ -48,65 +48,28 @@
 </header>
 
 <main class="blog-top">
-<!-- ============ LEADERSHIP ============ -->
-<section class="section bg-ivory grain" id="team" data-screen-label="Leadership">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow" style="font-size: 37px">Leadership</p>
-      <h2 class="h-sec">Three partners. One standard.</h2>
+<!-- ============ LEADERSHIP — LIST VIEW ============ -->
+<div class="view" id="teamListView">
+  <section class="section bg-ivory grain" id="team" data-screen-label="Leadership">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow" style="font-size: 37px">Leadership</p>
+        <h2 class="h-sec">Three partners. One standard.</h2>
+        <p class="lede" style="margin-top:1.2rem">Meet the partners who lead every engagement — combining traditional CA rigour with a technology-integrated practice.</p>
+      </div>
+      <div class="partner-grid" id="partnerGrid" data-reveal></div>
     </div>
-    <div class="team-acc" data-reveal>
-      <article class="acc-item is-open">
-        <button class="acc-head" type="button" aria-expanded="true">
-          <span class="acc-av">SU</span>
-          <span class="acc-id">
-            <span class="acc-name">FCA Sachin U</span>
-            <span class="acc-memb">Memb. 247584 · 8 Years</span>
-          </span>
-          <span class="acc-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="acc-panel">
-          <div class="acc-panel__in">
-            <div class="partner__meta"><span class="chip">CA</span><span class="chip">ISA 3.0</span><span class="chip">AICA L2</span></div>
-            <p class="partner__exp"><b>Focus.</b> Compliance, accounting, audits &amp; taxation.</p>
-          </div>
-        </div>
-      </article>
-      <article class="acc-item">
-        <button class="acc-head" type="button" aria-expanded="false">
-          <span class="acc-av">M</span>
-          <span class="acc-id">
-            <span class="acc-name">FCA Mahendra</span>
-            <span class="acc-memb">Memb. 253510 · 7 Years</span>
-          </span>
-          <span class="acc-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="acc-panel">
-          <div class="acc-panel__in">
-            <div class="partner__meta"><span class="chip">CA</span><span class="chip">ISA 3.0</span></div>
-            <p class="partner__exp"><b>Focus.</b> Bank audits, PSU audits &amp; accounting.</p>
-          </div>
-        </div>
-      </article>
-      <article class="acc-item">
-        <button class="acc-head" type="button" aria-expanded="false">
-          <span class="acc-av">KK</span>
-          <span class="acc-id">
-            <span class="acc-name">ACA Kiran K</span>
-            <span class="acc-memb">Memb. 280660 · 2 Years</span>
-          </span>
-          <span class="acc-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="acc-panel">
-          <div class="acc-panel__in">
-            <div class="partner__meta"><span class="chip">CA</span><span class="chip">CS</span><span class="chip">CC</span><span class="chip">ISA 3.0</span><span class="chip">FAFD</span><span class="chip">DPCAC</span><span class="chip">AICA L2</span></div>
-            <p class="partner__exp"><b>Focus.</b> IS audit, forensic accounting &amp; AI.</p>
-          </div>
-        </div>
-      </article>
+  </section>
+</div>
+
+<!-- ============ LEADERSHIP — PROFILE VIEW (route switch) ============ -->
+<div class="view team-profile-view" id="teamProfileView" aria-hidden="true">
+  <section class="section bg-ivory grain">
+    <div class="container">
+      <div class="partner-profile"></div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 </main>
 
 <!-- ============ FOOTER ============ -->
@@ -148,6 +111,7 @@
 
 <script src="image-slot.js"></script>
 <script src="js/config.js"></script>
+<script src="js/team.js"></script>
 <script src="js/site.js"></script>
 </body>
 </html>
