@@ -48,28 +48,86 @@
 </header>
 
 <main class="blog-top">
-<!-- ============ LEADERSHIP — LIST VIEW ============ -->
-<div class="view" id="teamListView">
-  <section class="section bg-ivory grain" id="team" data-screen-label="Leadership">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow" style="font-size: 37px">Leadership</p>
-        <h2 class="h-sec">Three partners. One standard.</h2>
-        <p class="lede" style="margin-top:1.2rem">Meet the partners who lead every engagement — combining traditional CA rigour with a technology-integrated practice.</p>
-      </div>
-      <div class="partner-grid" id="partnerGrid" data-reveal></div>
-    </div>
-  </section>
-</div>
+  <!-- ===== LISTING VIEW ===== -->
+  <div class="view" id="teamListView">
+    <!-- ============ LEADERSHIP ============ -->
+    <section class="section bg-ivory grain" id="team" data-screen-label="Leadership">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" style="font-size: 37px">Leadership</p>
+          <h2 class="h-sec">Three partners. One standard.</h2>
+        </div>
 
-<!-- ============ LEADERSHIP — PROFILE VIEW (route switch) ============ -->
-<div class="view team-profile-view" id="teamProfileView" aria-hidden="true">
-  <section class="section bg-ivory grain">
-    <div class="container">
-      <div class="partner-profile"></div>
-    </div>
-  </section>
-</div>
+        <div class="pcard-grid">
+          <!-- Sachin U -->
+          <article class="pcard" data-partner="sachin" data-reveal data-d="1" tabindex="0" role="button" aria-label="View profile — FCA Sachin U">
+            <div class="pcard__media">
+              <image-slot class="ph-slot pcard__ph" id="partner-sachin" shape="rect" fit="cover" placeholder="Drop FCA Sachin U's portrait"></image-slot>
+              <span class="pcard__badge">FCA · Partner</span>
+            </div>
+            <div class="pcard__body">
+              <h3 class="pcard__name">FCA Sachin U</h3>
+              <dl class="pcard__facts">
+                <div class="pcard__fact"><dt>Membership</dt><dd>247584</dd></div>
+                <div class="pcard__fact"><dt>Experience</dt><dd>8 Years</dd></div>
+              </dl>
+              <p class="pcard__exp">Compliance, accounting, audits &amp; taxation.</p>
+              <div class="pcard__foot">
+                <span class="pcard__more">View Profile <span class="arr">&rarr;</span></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Mahendra -->
+          <article class="pcard" data-partner="mahendra" data-reveal data-d="2" tabindex="0" role="button" aria-label="View profile — FCA Mahendra">
+            <div class="pcard__media">
+              <image-slot class="ph-slot pcard__ph" id="partner-mahendra" shape="rect" fit="cover" placeholder="Drop FCA Mahendra's portrait"></image-slot>
+              <span class="pcard__badge">FCA · Partner</span>
+            </div>
+            <div class="pcard__body">
+              <h3 class="pcard__name">FCA Mahendra</h3>
+              <dl class="pcard__facts">
+                <div class="pcard__fact"><dt>Membership</dt><dd>253510</dd></div>
+                <div class="pcard__fact"><dt>Experience</dt><dd>7 Years</dd></div>
+              </dl>
+              <p class="pcard__exp">Bank audits, PSU audits &amp; accounting.</p>
+              <div class="pcard__foot">
+                <span class="pcard__more">View Profile <span class="arr">&rarr;</span></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kiran K -->
+          <article class="pcard" data-partner="kiran" data-reveal data-d="3" tabindex="0" role="button" aria-label="View profile — ACA Kiran K">
+            <div class="pcard__media">
+              <image-slot class="ph-slot pcard__ph" id="partner-kiran" shape="rect" fit="cover" placeholder="Drop ACA Kiran K's portrait"></image-slot>
+              <span class="pcard__badge">ACA · Partner</span>
+            </div>
+            <div class="pcard__body">
+              <h3 class="pcard__name">ACA Kiran K</h3>
+              <dl class="pcard__facts">
+                <div class="pcard__fact"><dt>Membership</dt><dd>280660</dd></div>
+                <div class="pcard__fact"><dt>Experience</dt><dd>2 Years</dd></div>
+              </dl>
+              <p class="pcard__exp">IS audit, forensic accounting &amp; AI.</p>
+              <div class="pcard__foot">
+                <span class="pcard__more">View Profile <span class="arr">&rarr;</span></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== PROFILE DETAIL VIEW (route switch) ===== -->
+  <div class="view profile-view" id="profileView" aria-hidden="true">
+    <section class="section bg-ivory grain">
+      <div class="container">
+        <div class="pprofile" id="pprofile"></div>
+      </div>
+    </section>
+  </div>
 </main>
 
 <!-- ============ FOOTER ============ -->
