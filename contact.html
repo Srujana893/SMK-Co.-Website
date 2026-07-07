@@ -97,17 +97,17 @@
             <label for="cf-service">Service of Interest</label>
             <select id="cf-service" name="service">
               <option value="">Select a service…</option>
-              <option>IS &amp; Cybersecurity Audit</option>
-              <option>AI Automation &amp; Technology</option>
-              <option>Forensic Accounting</option>
-              <option>Audit &amp; Assurance</option>
-              <option>Taxation</option>
-              <option>Accounting &amp; Reporting</option>
-              <option>Corporate &amp; Regulatory Compliance</option>
-              <option>Business Advisory</option>
-              <option>Internal Controls</option>
-              <option>Specialised / Sector-Specific</option>
-              <option>Something else</option>
+              <option value="is-cybersecurity-audit">IS &amp; Cybersecurity Audit</option>
+              <option value="ai-automation-technology">AI Automation &amp; Technology</option>
+              <option value="forensic-accounting">Forensic Accounting</option>
+              <option value="audit-assurance">Audit &amp; Assurance</option>
+              <option value="taxation">Taxation</option>
+              <option value="accounting-reporting">Accounting &amp; Reporting</option>
+              <option value="corporate-regulatory-compliance">Corporate &amp; Regulatory Compliance</option>
+              <option value="business-advisory">Business Advisory</option>
+              <option value="internal-controls">Internal Controls</option>
+              <option value="specialised-sector">Specialised / Sector-Specific</option>
+              <option value="something-else">Something else</option>
             </select>
           </div>
           <div class="field">
@@ -115,8 +115,13 @@
             <textarea id="cf-msg" name="message" data-required></textarea>
             <span class="err">Please add a short message.</span>
           </div>
+          <div class="field field--hp" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+            <label for="cf-company">Company (leave blank)</label>
+            <input id="cf-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+          </div>
           <button class="btn btn--gold" type="submit">Request a Consultation <span class="arr">&rarr;</span></button>
           <p class="form__ok">Thank you — your request has been noted. We'll be in touch shortly.</p>
+          <p class="form__err" role="alert">Sorry — we couldn't send your request. Please try again, or email us directly.</p>
           <p class="form__note">By submitting, you consent to be contacted regarding your enquiry. We treat all information confidentially.</p>
         </form>
       </div>

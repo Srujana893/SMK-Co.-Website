@@ -144,11 +144,16 @@
   if (mnav) mnav.querySelector(".mnav__scrim").addEventListener("click", closeMenu);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
 
-  /* ---- contact form (compliant pull-model, client-side only) ---- */
+  /* ---- contact form (POST to backend, with graceful error state) ---- */
   var form = document.querySelector("#contactForm");
   if (form) {
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var okNote = form.querySelector(".form__ok");
+    var errNote = form.querySelector(".form__err");
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
       var ok = true;
       form.querySelectorAll("[data-required]").forEach(function (input) {
         var field = input.closest(".field");
@@ -157,12 +162,46 @@
         field.classList.toggle("invalid", !valid);
         if (!valid) ok = false;
       });
-      if (ok) {
-        form.reset();
-        var note = form.querySelector(".form__ok");
-        if (note) { note.classList.add("show"); setTimeout(function () { note.classList.remove("show"); }, 6000); }
-      }
+      if (!ok) return;
+
+      if (errNote) errNote.classList.remove("show");
+      if (okNote) okNote.classList.remove("show");
+      if (submitBtn) submitBtn.disabled = true;
+
+      var payload = {
+        name: (form.querySelector('[name="name"]') || {}).value || "",
+        phone: (form.querySelector('[name="phone"]') || {}).value || "",
+        email: (form.querySelector('[name="email"]') || {}).value || "",
+        service_interest: (form.querySelector('[name="service"]') || {}).value || "",
+        message: (form.querySelector('[name="message"]') || {}).value || "",
+        company: (form.querySelector('[name="company"]') || {}).value || ""
+      };
+
+      var base = (window.API_BASE || "").replace(/\/+$/, "");
+      var url = base + "/api/enquiry";
+
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { return r.json().then(function (j) { return { status: r.status, body: j }; }).catch(function () { return { status: r.status, body: {} }; }); })
+        .then(function (res) {
+          if (res.status >= 200 && res.status < 300 && res.body && res.body.ok) {
+            form.reset();
+            if (okNote) { okNote.classList.add("show"); setTimeout(function () { okNote.classList.remove("show"); }, 8000); }
+          } else {
+            if (errNote) { errNote.classList.add("show"); setTimeout(function () { errNote.classList.remove("show"); }, 10000); }
+          }
+        })
+        .catch(function () {
+          if (errNote) { errNote.classList.add("show"); setTimeout(function () { errNote.classList.remove("show"); }, 10000); }
+        })
+        .then(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
     });
+
     form.querySelectorAll("[data-required]").forEach(function (input) {
       input.addEventListener("input", function () {
         var field = input.closest(".field");

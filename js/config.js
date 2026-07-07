@@ -1,4 +1,11 @@
 /* ============================================================
+   BACKEND API BASE URL
+   Fill in the Railway service URL (no trailing slash), e.g.
+   "https://smk-api-production.up.railway.app"
+   ============================================================ */
+window.API_BASE = "REPLACE_WITH_RAILWAY_URL";
+
+/* ============================================================
    EDIT YOUR CONTACT DETAILS HERE
    Everything you'll routinely change lives in this one object.
    Replace the [BRACKETED] placeholders before publishing.

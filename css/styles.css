@@ -361,6 +361,8 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:400;margi
 .form__note{font-size:.8rem;color:var(--slate-soft);margin:2px 0 0}
 .form__ok{background:rgba(63,138,102,.1);border:1px solid rgba(63,138,102,.3);color:var(--sage);border-radius:var(--radius-sm);padding:14px 16px;font-size:.9rem;display:none}
 .form__ok.show{display:block}
+.form__err{background:rgba(217,138,78,.1);border:1px solid rgba(217,138,78,.3);color:var(--saffron);border-radius:var(--radius-sm);padding:14px 16px;font-size:.9rem;display:none}
+.form__err.show{display:block}
 
 .offices{display:grid;gap:18px}
 .office{background:var(--soft-white);border:1px solid var(--hairline);border-radius:var(--radius);padding:26px}
