@@ -753,7 +753,7 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:400;margi
 }
 .pcard__body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
 .pcard__name{font-family:var(--serif);font-size:1.42rem;line-height:1.15;color:var(--charcoal);font-weight:500;margin:0 0 16px}
-.pcard__facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 18px;padding:0}
+.pcard__facts{display:grid;grid-template-columns:1fr;gap:14px;margin:0 0 18px;padding:0}
 .pcard__fact dt{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-soft);margin:0 0 3px}
 .pcard__fact dd{font-family:var(--sans);font-size:.98rem;font-weight:600;color:var(--ink-navy);margin:0}
 .pcard__exp{font-size:.92rem;color:var(--slate);margin:0 0 22px;padding-top:18px;border-top:1px solid var(--hairline)}
@@ -785,6 +785,10 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:400;margi
 .pprofile__resp{list-style:none;margin:0 0 2.4em;padding:0;display:grid;gap:14px}
 .pprofile__resp li{position:relative;padding-left:26px;font-size:1rem;line-height:1.6;color:var(--slate)}
 .pprofile__resp li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--gold);border-radius:1px;transform:rotate(45deg)}
+.pprofile__ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pprofile__cta{display:inline-flex;align-items:center;gap:.55em;padding:10px 18px;font-family:var(--sans);font-size:.86rem;font-weight:500;letter-spacing:.01em;color:var(--ink-navy);background:var(--soft-white);border:1px solid var(--hairline-gold);border-radius:var(--radius-sm);text-decoration:none;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
+.pprofile__cta:hover{background:var(--ink-navy);color:var(--gold-soft);border-color:var(--ink-navy)}
+.pprofile__cta-icon{flex-shrink:0;color:currentColor}
 @media (max-width:920px){
   .pcard-grid{grid-template-columns:repeat(2,1fr)}
   .pprofile__head{grid-template-columns:1fr;gap:28px}
@@ -856,7 +860,6 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:400;margi
             <div class="pcard__body">
               <h3 class="pcard__name">FCA Sachin U</h3>
               <dl class="pcard__facts">
-                <div class="pcard__fact"><dt>Membership</dt><dd>247584</dd></div>
                 <div class="pcard__fact"><dt>Experience</dt><dd>8 Years</dd></div>
               </dl>
               <p class="pcard__exp">Compliance, accounting, audits &amp; taxation.</p>
@@ -875,7 +878,6 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:400;margi
             <div class="pcard__body">
               <h3 class="pcard__name">FCA Mahendra</h3>
               <dl class="pcard__facts">
-                <div class="pcard__fact"><dt>Membership</dt><dd>253510</dd></div>
                 <div class="pcard__fact"><dt>Experience</dt><dd>7 Years</dd></div>
               </dl>
               <p class="pcard__exp">Bank audits, PSU audits &amp; accounting.</p>
@@ -894,7 +896,6 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:400;margi
             <div class="pcard__body">
               <h3 class="pcard__name">ACA Kiran K</h3>
               <dl class="pcard__facts">
-                <div class="pcard__fact"><dt>Membership</dt><dd>280660</dd></div>
                 <div class="pcard__fact"><dt>Experience</dt><dd>2 Years</dd></div>
               </dl>
               <p class="pcard__exp">IS audit, forensic accounting &amp; AI.</p>

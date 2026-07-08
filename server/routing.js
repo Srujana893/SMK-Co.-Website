@@ -5,9 +5,11 @@
  * To reassign a service to a different specialist, change its value here.
  *
  * Categories:
- *   'cyber'   -> TECH_EMAIL    (Person A: cybersecurity / tech / forensics)
- *   'finance' -> FINANCE_EMAIL (Person B: audit / tax / compliance / advisory)
- *   'both'    -> both recipients (fallback for unknown / blank / "something else")
+ *   'cyber'   -> TECH_EMAIL    (cybersecurity / tech / forensics)
+ *   'finance' -> FINANCE_EMAIL (audit / tax / compliance / advisory / everything else)
+ *
+ * Fallback: unknown, blank, unmapped, or "something else" resolve to 'finance'.
+ * FINANCE_EMAIL is the safe default so no enquiry silently reaches nobody.
  */
 const SERVICE_CATEGORY_MAP = {
   "is-cybersecurity-audit": "cyber",
@@ -22,22 +24,17 @@ const SERVICE_CATEGORY_MAP = {
   "internal-controls": "finance",
   "specialised-sector": "finance",
 
-  "something-else": "both",
+  "something-else": "finance",
 };
 
 function resolveRecipients(serviceSlug) {
   const key = (serviceSlug || "").trim();
-  const category = SERVICE_CATEGORY_MAP[key] || "both";
+  const category = SERVICE_CATEGORY_MAP[key] || "finance";
 
   const tech = (process.env.TECH_EMAIL || "").trim();
   const finance = (process.env.FINANCE_EMAIL || "").trim();
 
-  let recipients;
-  if (category === "cyber") recipients = [tech];
-  else if (category === "finance") recipients = [finance];
-  else recipients = [tech, finance];
-
-  recipients = recipients.filter(Boolean);
+  const recipients = (category === "cyber" ? [tech] : [finance]).filter(Boolean);
   return { category, recipients };
 }
 
