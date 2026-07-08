@@ -32,7 +32,6 @@
       exp: "2 Years", focus: "IS audit, forensic accounting & AI",
       photo: "partner-kiran",
       linkedin: "https://www.linkedin.com/in/kiran-krishna-46b22516a/",
-      email: "ca.kirankrishna@gmail.com",
       summary: "Kiran K is a qualified Chartered Accountant and Company Secretary with specialised credentials across information systems audit, cybersecurity, forensic accounting, digital compliance and financial investigations. As Managing Partner at Kiran K & Associates, he brings a technology-driven approach to audit, compliance and advisory engagements. His professional focus spans IS audit, forensic accounting, cybersecurity controls, digital process assurance and helping organisations strengthen governance, risk and technology-enabled compliance.",
       resp: [
         "Information systems (IS) audit and IT-controls review",
