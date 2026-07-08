@@ -3,7 +3,7 @@
    Fill in the Railway service URL (no trailing slash), e.g.
    "https://smk-api-production.up.railway.app"
    ============================================================ */
-window.API_BASE = "REPLACE_WITH_RAILWAY_URL";
+window.API_BASE = "https://smk-enquiry-api-production.up.railway.app";
 
 /* ============================================================
    EDIT YOUR CONTACT DETAILS HERE
