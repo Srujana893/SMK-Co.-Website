@@ -151,6 +151,8 @@
     var okNote = form.querySelector(".form__ok");
     var errNote = form.querySelector(".form__err");
 
+    console.log("contact form handler attached");
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -163,6 +165,17 @@
         if (!valid) ok = false;
       });
       if (!ok) return;
+
+      var apiBase = typeof window.API_BASE === "string" ? window.API_BASE.trim() : "";
+      if (!apiBase || apiBase.indexOf("REPLACE") !== -1 || !/^https?:\/\//i.test(apiBase)) {
+        console.error(
+          "Contact form misconfigured: window.API_BASE is missing or invalid. " +
+          "Got:", JSON.stringify(window.API_BASE) +
+          " — expected an absolute https:// URL (set in js/config.js). Submit aborted; no request sent."
+        );
+        if (errNote) { errNote.classList.add("show"); setTimeout(function () { errNote.classList.remove("show"); }, 10000); }
+        return;
+      }
 
       if (errNote) errNote.classList.remove("show");
       if (okNote) okNote.classList.remove("show");
@@ -177,16 +190,18 @@
         company: (form.querySelector('[name="company"]') || {}).value || ""
       };
 
-      var base = (window.API_BASE || "").replace(/\/+$/, "");
-      var url = base + "/api/enquiry";
+      var endpoint = apiBase.replace(/\/+$/, "") + "/api/enquiry";
 
-      fetch(url, {
+      console.log("Submitting enquiry to:", endpoint);
+
+      fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(payload)
       })
         .then(function (r) { return r.json().then(function (j) { return { status: r.status, body: j }; }).catch(function () { return { status: r.status, body: {} }; }); })
         .then(function (res) {
+          console.log("response status:", res.status);
           if (res.status >= 200 && res.status < 300 && res.body && res.body.ok) {
             form.reset();
             if (okNote) { okNote.classList.add("show"); setTimeout(function () { okNote.classList.remove("show"); }, 8000); }
@@ -194,7 +209,8 @@
             if (errNote) { errNote.classList.add("show"); setTimeout(function () { errNote.classList.remove("show"); }, 10000); }
           }
         })
-        .catch(function () {
+        .catch(function (err) {
+          console.error("fetch failed:", err && err.message ? err.message : err);
           if (errNote) { errNote.classList.add("show"); setTimeout(function () { errNote.classList.remove("show"); }, 10000); }
         })
         .then(function () {
