@@ -1,5 +1,16 @@
 :{$PORT:80} {
 	root * .
-	file_server
 	encode gzip
+
+	# Redirect /index.html to /
+	redir /index.html / 301
+
+	# Redirect /foo.html to /foo (301, preserves SEO)
+	@htmlExt path_regexp htmlExt ^(.+)\.html$
+	redir @htmlExt {re.htmlExt.1} 301
+
+	# Serve /foo by falling back to /foo.html
+	try_files {path} {path}.html
+
+	file_server
 }
