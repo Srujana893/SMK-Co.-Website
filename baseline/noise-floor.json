@@ -1,0 +1,27 @@
+{
+  "_runs": 4,
+  "_note": "max % of pixels differing between any two of N consecutive captures of the unchanged site",
+  "measured_pct": {
+    "about-1440.png": 0.0,
+    "about-390.png": 0.0,
+    "about-900.png": 0.0,
+    "blog-1440.png": 0.0,
+    "blog-390.png": 0.0,
+    "blog-900.png": 0.0,
+    "careers-1440.png": 0.0,
+    "careers-390.png": 0.0,
+    "careers-900.png": 0.0,
+    "contact-1440.png": 0.0,
+    "contact-390.png": 0.0,
+    "contact-900.png": 0.0,
+    "index-1440.png": 0.3348345196203881,
+    "index-390.png": 0.0,
+    "index-900.png": 0.0,
+    "services-1440.png": 0.0,
+    "services-390.png": 0.0,
+    "services-900.png": 0.0,
+    "team-1440.png": 0.0,
+    "team-390.png": 0.0,
+    "team-900.png": 0.0
+  }
+}

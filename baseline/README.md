@@ -10,13 +10,15 @@ measured it.
 | --- | --- |
 | `<page>-<width>.png` | 21 full-page screenshots: 7 pages × 390 / 900 / 1440px |
 | `manifest.json` | Rendered page height and file size for each capture |
-| `metrics.json` | Every number below, machine-readable |
+| `noise-floor.json` | Per-capture run-to-run variance, measured over 4 runs |
+| `metrics.json` | Every number in `METRICS.md`, machine-readable |
 | `dead-selectors.json` | The 136 unreferenced class selectors, per stylesheet — the Stage 5 worklist |
 | `shoot.mjs` | The screenshot harness |
+| `compare.py` | The stage gate |
 | `metrics.py` | The metrics harness |
 | `METRICS.md` | The numbers, with the audit reconciliation |
 
-## Re-running it
+## Running a stage gate
 
 No dependency, no build step. Chrome over CDP through Node's native `WebSocket`.
 
@@ -27,13 +29,34 @@ python3 -m http.server 8765 --bind 127.0.0.1 &
   --remote-debugging-port=9222 --user-data-dir=/tmp/smk-shoot about:blank &
 
 OUT_DIR=./after node baseline/shoot.mjs      # writes ./after/*.png
-python3 baseline/metrics.py > after-metrics.json
+python3 baseline/compare.py ./after          # exit 0 = gate passes
+python3 baseline/metrics.py > after.json     # then diff against metrics.json
 ```
 
-Then diff `after/` against this directory. Captures are deterministic: the
-viewport is resized to the full content height before the shot, so every
-`IntersectionObserver` reveal has fired and settled.
+`compare.py` fails on any size change and on any capture that differs by more
+than its noise floor, and writes a diff PNG to `./after/_diff/` for each
+failure. Validated both ways: it passes four consecutive captures of the
+unchanged site, and catches a 3px page-wide shift (5.03% of pixels).
+
+`shoot.mjs` honours `PAGES`, `WIDTHS`, `BASE_URL`, `OUT_DIR`, `CDP_URL`, and
+`REDUCED=1` to emulate `prefers-reduced-motion: reduce`.
+
+## Why captures are deterministic
+
+The viewport is resized to the full content height before the shot, so every
+`IntersectionObserver` reveal has fired; the page is then held until all finite
+animations report `finished`, and infinite ones — the services page's rotating
+rings — are pinned to `currentTime = 0` so they render at a fixed phase.
+
+20 of the 21 captures are byte-identical run to run. The exception is
+`index-1440`, which moves by up to **0.3348%** of pixels: `.hx-ind__d` in the
+industries accordion transitions to a fractional `max-height: 9em` under
+`overflow: hidden`, so the open panel lands on a sub-pixel height and the text
+inside it — plus the section hairlines below it — rasterise one pixel apart
+between runs. It is a real defect, not harness noise, and Stage 10 removes it.
+Recalibrate the floor to zero once it is gone.
 
 ## Environment
 
 Chrome 154.0.8037.57 · Node 25.8.1 · macOS 27.0.0 (arm64) · deviceScaleFactor 1.
+Captures at a different scale factor, Chrome version or platform will not match.
