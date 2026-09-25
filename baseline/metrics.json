@@ -141,14 +141,15 @@
     "uploads_bytes": 0,
     "uploads_files": 0,
     "uploads_unreferenced": [],
-    "assets_bytes": 925696,
-    "assets_files": 13,
+    "assets_bytes": 1425408,
+    "assets_files": 15,
     "assets_unreferenced": [
       "ca-india-mark.png",
       "favicon-96x96.png",
       "favicon.ico",
       "favicon.svg",
-      "smk-favicon-source.png"
+      "smk-favicon-source.png",
+      "smk-logo-source.png"
     ],
     "referenced_but_missing": [],
     "image_slots_state_bytes": 892527
@@ -254,21 +255,21 @@
   },
   "sizes": {
     "html_bytes": {
-      "index.html": 27333,
-      "about.html": 13618,
-      "team.html": 15590,
-      "services.html": 21179,
-      "blog.html": 10844,
-      "contact.html": 15132,
-      "careers.html": 24133
+      "index.html": 27342,
+      "about.html": 13627,
+      "team.html": 15599,
+      "services.html": 21188,
+      "blog.html": 10853,
+      "contact.html": 15141,
+      "careers.html": 24142
     },
     "css_bytes": {
-      "css/styles.css": 47963,
+      "css/styles.css": 48067,
       "css/home.css": 17533,
       "css/system.css": 15659,
       "css/careers.css": 9644
     },
-    "css_total": 90799,
+    "css_total": 90903,
     "js_bytes": {
       "js/site.js": 9644,
       "js/config.js": 5441,

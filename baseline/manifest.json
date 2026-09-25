@@ -3,126 +3,126 @@
     "page": "index",
     "width": 390,
     "height": 10260,
-    "bytes": 682770
+    "bytes": 685213
   },
   {
     "page": "index",
     "width": 900,
     "height": 8055,
-    "bytes": 726265
+    "bytes": 725742
   },
   {
     "page": "index",
     "width": 1440,
     "height": 8336,
-    "bytes": 872733
+    "bytes": 872314
   },
   {
     "page": "about",
     "width": 390,
     "height": 3084,
-    "bytes": 204620
+    "bytes": 206947
   },
   {
     "page": "about",
     "width": 900,
     "height": 2156,
-    "bytes": 220715
+    "bytes": 220457
   },
   {
     "page": "about",
     "width": 1440,
     "height": 2139,
-    "bytes": 257831
+    "bytes": 257426
   },
   {
     "page": "team",
     "width": 390,
     "height": 3544,
-    "bytes": 178436
+    "bytes": 180739
   },
   {
     "page": "team",
     "width": 900,
     "height": 2534,
-    "bytes": 197811
+    "bytes": 197301
   },
   {
     "page": "team",
     "width": 1440,
     "height": 1843,
-    "bytes": 199091
+    "bytes": 198505
   },
   {
     "page": "services",
     "width": 390,
     "height": 7481,
-    "bytes": 449293
+    "bytes": 451480
   },
   {
     "page": "services",
     "width": 900,
     "height": 4344,
-    "bytes": 434478
+    "bytes": 434255
   },
   {
     "page": "services",
     "width": 1440,
     "height": 3872,
-    "bytes": 463123
+    "bytes": 462660
   },
   {
     "page": "blog",
     "width": 390,
     "height": 5696,
-    "bytes": 1146105
+    "bytes": 1148171
   },
   {
     "page": "blog",
     "width": 900,
     "height": 3456,
-    "bytes": 1463448
+    "bytes": 1463437
   },
   {
     "page": "blog",
     "width": 1440,
     "height": 2751,
-    "bytes": 1366217
+    "bytes": 1365785
   },
   {
     "page": "contact",
     "width": 390,
     "height": 2903,
-    "bytes": 156361
+    "bytes": 158651
   },
   {
     "page": "contact",
     "width": 900,
     "height": 2279,
-    "bytes": 173359
+    "bytes": 172898
   },
   {
     "page": "contact",
     "width": 1440,
     "height": 1617,
-    "bytes": 185782
+    "bytes": 185444
   },
   {
     "page": "careers",
     "width": 390,
     "height": 8578,
-    "bytes": 637216
+    "bytes": 639630
   },
   {
     "page": "careers",
     "width": 900,
     "height": 6970,
-    "bytes": 666216
+    "bytes": 666011
   },
   {
     "page": "careers",
     "width": 1440,
     "height": 6501,
-    "bytes": 788716
+    "bytes": 787874
   }
 ]

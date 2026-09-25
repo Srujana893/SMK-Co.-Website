@@ -1,5 +1,5 @@
 {
-  "_runs": 4,
+  "_runs": 3,
   "_note": "max % of pixels differing between any two of N consecutive captures of the unchanged site",
   "measured_pct": {
     "about-1440.png": 0.0,
@@ -14,7 +14,7 @@
     "contact-1440.png": 0.0,
     "contact-390.png": 0.0,
     "contact-900.png": 0.0,
-    "index-1440.png": 0.3348345196203881,
+    "index-1440.png": 0.3347595436127106,
     "index-390.png": 0.0,
     "index-900.png": 0.0,
     "services-1440.png": 0.0,
