@@ -18,12 +18,23 @@ measured it.
 | `metrics.py` | The metrics harness |
 | `METRICS.md` | The numbers, with the audit reconciliation |
 
+## Previewing the site locally
+
+Use `serve.py`, not `python3 -m http.server`. Every internal link is a clean URL
+(`/about`, `/services`), which only resolves if the server applies the
+Caddyfile's `try_files {path} {path}.html`. A plain static server — including
+VS Code Live Server and `file://` — returns 404 for all six pages.
+
+```sh
+python3 baseline/serve.py          # http://127.0.0.1:8765
+```
+
 ## Running a stage gate
 
 No dependency, no build step. Chrome over CDP through Node's native `WebSocket`.
 
 ```sh
-python3 -m http.server 8765 --bind 127.0.0.1 &
+python3 baseline/serve.py 8765 --quiet &
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
   --headless=new --disable-gpu --hide-scrollbars --force-color-profile=srgb \
   --remote-debugging-port=9222 --user-data-dir=/tmp/smk-shoot about:blank &
