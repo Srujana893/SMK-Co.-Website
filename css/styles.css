@@ -6,51 +6,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 /* ---------- Tokens ---------- */
+/* Legacy token names, aliased onto css/tokens.css.
+   Every one of these resolves to exactly the value it held before, so the site
+   renders identically. They are deleted as each stylesheet migrates; when the
+   block is empty, Stage 2 is done. Do not add to it. */
 :root{
-  /* palette — warm editorial: parchment · deep forest · brass
-     (legacy var names retained so every page inherits the remap) */
-  --ink-navy:#172033;      /* charcoal — primary dark surface */
-  --deep-navy:#101827;     /* deepest charcoal */
-  --white:#FFFFFF;         /* the one pure white. Primary ground everywhere. */
-  --ivory:var(--white);    /* was #FAFBFC. Alias until Stage 2 migrates the name away. */
-  --soft-white:var(--white);/* was #FFFFFF. Alias, same reason. */
-  --gold:#5B86A8;          /* warm ochre — restrained accent */
-  --gold-ink:#4C7597;      /* ochre for small text on light grounds */
-  --gold-soft:#8FB8D8;     /* ochre on dark */
-  --saffron:#C0563C;  --danger:#B4483A;   /* error text/border. Audit §3. Moves to tokens.css at Stage 2, replacing --saffron. */
-  --olive:#5B86A8;         /* deep muted olive — accent only */
-  --neutral:#DCE3EA;       /* soft neutral grey */
-  --neutral-soft:#F8FAFC;  /* neutral tint for grounds */
-  --olive-wash:#F2F6FA;    /* faint olive-neutral ground */
-  --charcoal:#172235;      /* charcoal — text */
-  --slate:#657386;         /* warm mid grey — body */
-  --slate-soft:#687586;
+  /* grounds */
+  --white:var(--surface);
+  --ivory:var(--surface);
+  --soft-white:var(--surface);
+  --neutral-soft:var(--surface-warm);
+  --olive-wash:var(--surface-tint);
 
-  /* derived */
-  --hairline:rgba(23,32,51,.14);
-  --hairline-gold:rgba(47,111,163,.40);
-  --on-navy:#EAF2F8;
-  --on-navy-soft:#A8B6C4;
-  --navy-hairline:rgba(255,255,255,.15);
+  /* dark surfaces */
+  --charcoal:var(--ink);
+  --ink-navy:var(--ink-surface);
+  --deep-navy:var(--ink-2);
+
+  /* text */
+  --slate:var(--text);
+  --slate-soft:var(--text-muted);
+
+  /* on dark */
+  --on-navy:var(--on-ink);
+  --on-navy-soft:var(--on-ink-muted);
+  --navy-hairline:var(--line-on-ink);
+
+  /* accent */
+  --gold:var(--accent);
+  --olive:var(--accent);
+  --gold-ink:var(--accent-ink);
+  --gold-soft:var(--accent-on-ink);
+  --hairline-gold:var(--accent-line);
+
+  /* status */
+  --saffron:var(--danger-legacy);
+
+  /* lines */
+  --hairline:var(--line);
 
   /* type */
-  --serif:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --display2:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --display:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --brand:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --display-serif:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --mono:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --serif:var(--font);
+  --display:var(--font);
+  --brand:var(--font);
+  --display-serif:var(--font);
+  --sans:var(--font-ui);
+  --mono:var(--font-ui);
 
   /* metrics */
-  --maxw:1240px;
-  --gutter:clamp(20px,5vw,64px);
-  --radius:3px;
-  --radius-sm:2px;
-  --shadow-soft:0 1px 2px rgba(23,32,51,.05),0 18px 40px -24px rgba(23,32,51,.20);
-  --shadow-lift:0 2px 4px rgba(23,32,51,.06),0 34px 60px -30px rgba(23,32,51,.26);
-  --ease:cubic-bezier(.22,.61,.36,1);
+  --maxw:var(--container);
 }
+
 
 /* ---------- Reset / base ---------- */
 *,*::before,*::after{box-sizing:border-box}

@@ -1,0 +1,61 @@
+/* ============================================================================
+   SMK & Co. — design tokens
+   Loaded first. Contains custom properties and nothing else.
+   A colour literal outside this file is a bug, not a style choice.
+
+   STAGE 2a: the names are final, the values are still today's. Every old name
+   is aliased to one of these in styles.css, so the site renders byte-identically
+   while the codebase migrates. Stage 2b swaps the values in one commit.
+   Comments marked >> record what each value becomes then.
+   ============================================================================ */
+
+:root{
+  /* --- grounds ------------------------------------------------------------ */
+  --surface:#FFFFFF;                  /* primary ground, everywhere */
+  --surface-warm:#F8FAFC;             /* >> #FAF9F7  alternating band */
+  --surface-tint:#F2F6FA;             /* >> #F4F2EE  second ground */
+
+  /* --- dark surfaces ------------------------------------------------------ */
+  --ink:#172235;                      /* >> #1C1B19  headings, primary dark surface */
+  --ink-surface:#172033;              /* >> merges into --ink at 2b */
+  --ink-2:#101827;                    /* >> #292724  secondary dark surface */
+
+  /* --- text --------------------------------------------------------------- */
+  --text:#657386;                     /* >> #57534E  body */
+  --text-muted:#687586;               /* >> #6B655F  meta, captions, eyebrows */
+
+  /* --- on dark ------------------------------------------------------------ */
+  --on-ink:#EAF2F8;                   /* >> var(--surface-warm) */
+  --on-ink-muted:#A8B6C4;             /* >> #A8A29B */
+  --line-on-ink:rgba(255,255,255,.15);
+
+  /* --- accent. Means interactive: links, hover, focus, active. Nothing else. */
+  --accent:#5B86A8;                   /* >> #2F6FA3 */
+  --accent-ink:#4C7597;               /* >> #255A86  accent as text on light */
+  --accent-on-ink:#8FB8D8;            /* accent on dark grounds. unchanged */
+  --accent-line:rgba(47,111,163,.40);
+
+  /* --- status ------------------------------------------------------------- */
+  --danger:#B4483A;
+  --danger-legacy:#C0563C;            /* >> merges into --danger at 2b */
+
+  /* --- lines -------------------------------------------------------------- */
+  --line:rgba(23,32,51,.14);          /* >> #E7E4DF */
+
+  /* --- type --------------------------------------------------------------- */
+  --font:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-ui:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+
+  /* --- metrics ------------------------------------------------------------ */
+  --container:1240px;
+  --gutter:clamp(20px,5vw,64px);
+  --radius:3px;
+  --radius-sm:2px;
+
+  /* --- elevation ---------------------------------------------------------- */
+  --shadow-soft:0 1px 2px rgba(23,32,51,.05),0 18px 40px -24px rgba(23,32,51,.20);
+  --shadow-lift:0 2px 4px rgba(23,32,51,.06),0 34px 60px -30px rgba(23,32,51,.26);
+
+  /* --- motion ------------------------------------------------------------- */
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
