@@ -1,6 +1,6 @@
 {
-  "_runs": "cumulative across stages",
-  "_note": "max % of pixels differing between consecutive captures of the unchanged site",
+  "_runs": "cumulative",
+  "_note": "max % differing between consecutive captures of the unchanged site",
   "measured_pct": {
     "about-1440.png": 0.0,
     "about-390.png": 0.0,

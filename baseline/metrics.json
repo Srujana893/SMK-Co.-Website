@@ -88,7 +88,6 @@
     ],
     "keyframes_inline_occurrences": 12,
     "easings": [
-      "cubic-bezier(.22,.61,.36,1)",
       "ease",
       "ease-in-out",
       "linear"
@@ -255,21 +254,21 @@
   },
   "sizes": {
     "html_bytes": {
-      "index.html": 27164,
-      "about.html": 13627,
-      "team.html": 15518,
-      "services.html": 21188,
-      "blog.html": 10853,
-      "contact.html": 15141,
-      "careers.html": 24061
+      "index.html": 27212,
+      "about.html": 13675,
+      "team.html": 15542,
+      "services.html": 21236,
+      "blog.html": 10901,
+      "contact.html": 15189,
+      "careers.html": 24109
     },
     "css_bytes": {
-      "css/styles.css": 48197,
-      "css/home.css": 17099,
-      "css/system.css": 15691,
-      "css/careers.css": 9644
+      "css/styles.css": 46616,
+      "css/home.css": 17066,
+      "css/system.css": 15952,
+      "css/careers.css": 9532
     },
-    "css_total": 90631,
+    "css_total": 89166,
     "js_bytes": {
       "js/site.js": 9644,
       "js/config.js": 5441,
@@ -279,9 +278,9 @@
     }
   },
   "colour": {
-    "hex_literals": 59,
-    "distinct_hex": 25,
-    "rgb_functions": 46,
-    "rgba_2F6FA3_untokenised": 16
+    "hex_literals": 4,
+    "distinct_hex": 4,
+    "rgb_functions": 1,
+    "rgba_2F6FA3_untokenised": 0
   }
 }
