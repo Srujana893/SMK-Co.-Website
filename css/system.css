@@ -39,9 +39,9 @@
 .hx .ulink::after{background:var(--accent)}
 .hx .cat-tag,.hx .office__tag,.hx .partner__memb{color:var(--accent);border-color:rgba(47,111,163,.28)}
 .hx .office__tag::before{background:var(--accent)}
-.hx .filter__btn.is-active{background:var(--accent);border-color:var(--accent);color:#fff}
+.hx .filter__btn.is-active{background:var(--accent);border-color:var(--accent);color:var(--surface)}
 .hx .filter__btn:hover{border-color:var(--accent)}
-.hx .btn--gold{--bg:var(--accent);--fg:#fff;--bd:var(--accent)}
+.hx .btn--gold{--bg:var(--accent);--fg:var(--surface);--bd:var(--accent)}
 .hx .btn--gold:hover{--bg:#265883;--bd:#265883}
 .hx .field input:focus,.hx .field select:focus,.hx .field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(47,111,163,.12)}
 .hx .row__num{color:var(--accent)}
@@ -57,7 +57,7 @@
 .ca-badge img{height:26px}
 .ca-badge--nav{padding:6px 9px}
 .ca-badge--nav img{height:26px}
-.is-dark .ca-badge,.footer .ca-badge{background:var(--surface);border-color:rgba(255,255,255,.16)}
+.is-dark .ca-badge,.footer .ca-badge{background:var(--surface);border-color:color-mix(in srgb,var(--surface) 16%,transparent)}
 .mark-panel{display:flex;align-items:center;gap:clamp(20px,3vw,40px);flex-wrap:wrap;
   background:var(--surface);border:1px solid var(--line);border-radius:3px;
   padding:clamp(18px,2vw,26px) clamp(20px,2.4vw,30px)}
@@ -84,21 +84,21 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
 }
 
 /* ---------- olive CTA band (shared closing section) ---------- */
-.cta-olive{background:var(--accent);color:#EAF2F8}
-.hx .cta-olive h2{color:#fff}
-.cta-olive p{color:rgba(234,242,248,.78)}
-.cta-olive h5{color:rgba(234,242,248,.62)}
-.cta-olive address{color:rgba(234,242,248,.82)}
+.cta-olive{background:var(--accent);color:var(--on-ink)}
+.hx .cta-olive h2{color:var(--surface)}
+.cta-olive p{color:color-mix(in srgb,var(--on-ink) 78%,transparent)}
+.cta-olive h5{color:color-mix(in srgb,var(--on-ink) 62%,transparent)}
+.cta-olive address{color:color-mix(in srgb,var(--on-ink) 82%,transparent)}
 .hx .cta-olive .hx-btn{background:var(--surface);color:var(--ink);border-color:var(--surface)}
 .hx .cta-olive .hx-btn:hover{background:var(--surface);border-color:var(--surface);color:var(--ink)}
 
 /* ---------- full-width photographic band ---------- */
-.hx-band-photo{position:relative;background:#101827;overflow:hidden}
+.hx-band-photo{position:relative;background:var(--ink-2);overflow:hidden}
 .hx-band-photo .hx-fig{height:min(46vh,420px);min-height:280px}
-.hx-band-photo .hx-fig image-slot{--is-bg:#DCE3EA;--is-fg:#101827}
+.hx-band-photo .hx-fig image-slot{--is-bg:#DCE3EA;--is-fg:var(--ink-2)}
 .hx-band-photo__cap{position:absolute;inset:auto 0 0 0;padding:clamp(24px,3vw,40px) 0;
   background:linear-gradient(to top,rgba(18,18,17,.78),rgba(18,18,17,0))}
-.hx-band-photo__cap p{margin:0;max-width:34ch;color:#fff;font-family:var(--font);font-weight:600;
+.hx-band-photo__cap p{margin:0;max-width:34ch;color:var(--surface);font-family:var(--font);font-weight:600;
   font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.3;letter-spacing:-.014em}
 @media (max-width:680px){.hx-band-photo .hx-fig{height:34vh;min-height:220px}}
 
@@ -140,7 +140,7 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
 
 /* links inside dark surfaces keep their inherited colour */
 .hx .is-dark a,.hx .bg-navy a,.hx .bg-deep a,.hx .footer a,.hx .mnav a{color:inherit}
-.hx .footer a:hover,.hx .mnav a:hover{color:#fff}
+.hx .footer a:hover,.hx .mnav a:hover{color:var(--surface)}
 
 /* ---------- primary headings in the brand serif (h1 / h2 only) ---------- */
 .hx h1,.hx h2,.hx .display,.hx .h-sec,.hx .hx-h2,.hx .blog-hero h1,.hx .article h1,.hx .featured__title{

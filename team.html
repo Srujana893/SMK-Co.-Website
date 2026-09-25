@@ -16,47 +16,47 @@
 <link rel="stylesheet" href="css/home.css" />
 <link rel="stylesheet" href="css/system.css" />
 <style>
-.tm-hero{background:var(--soft-white);padding-block:clamp(120px,12vw,170px) clamp(40px,4.6vw,64px)}
-.tm-list{background:var(--olive-wash);border-top:1px solid var(--hairline)}
+.tm-hero{background:var(--surface);padding-block:clamp(120px,12vw,170px) clamp(40px,4.6vw,64px)}
+.tm-list{background:var(--surface-tint);border-top:1px solid var(--line)}
 .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px)}
 .tm-card{display:flex;flex-direction:column;text-align:left;background:none;border:0;padding:0;color:inherit;cursor:pointer}
 .tm-card .hx-fig{aspect-ratio:4/5;overflow:hidden;background:#E5EBF1}
 .tm-card image-slot{display:block;width:100%;height:100%;transition:transform .6s var(--ease)}
 .tm-card:hover image-slot{transform:scale(1.025)}
 .hx .tm-card h3{font-size:1.24rem;font-weight:600;letter-spacing:-.018em;margin:20px 0 0}
-.tm-card__d{font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-ink);margin:8px 0 0}
-.tm-card__e{margin:12px 0 0;font-size:.95rem;line-height:1.64;color:var(--slate)}
-.tm-card__l{display:inline-flex;align-items:center;gap:.5em;align-self:flex-start;margin:auto 0 0;padding-top:16px;font-size:.86rem;font-weight:600;color:var(--charcoal)}
+.tm-card__d{font-family:var(--font-ui);font-size:.74rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-ink);margin:8px 0 0}
+.tm-card__e{margin:12px 0 0;font-size:.95rem;line-height:1.64;color:var(--text)}
+.tm-card__l{display:inline-flex;align-items:center;gap:.5em;align-self:flex-start;margin:auto 0 0;padding-top:16px;font-size:.86rem;font-weight:600;color:var(--ink)}
 .tm-card__l::after{content:"→";transition:transform .25s var(--ease)}
-.tm-card:hover .tm-card__l{color:var(--gold-ink)}
+.tm-card:hover .tm-card__l{color:var(--accent-ink)}
 .tm-card:hover .tm-card__l::after{transform:translateX(4px)}
-.tm-note{margin:clamp(34px,4vw,54px) 0 0;font-size:1rem;line-height:1.7;color:var(--slate);max-width:56ch}
+.tm-note{margin:clamp(34px,4vw,54px) 0 0;font-size:1rem;line-height:1.7;color:var(--text);max-width:56ch}
 /* profile view */
 .view.is-leaving{opacity:0;transition:opacity .26s var(--ease)}
 #profileView{display:none}
-.pf{background:var(--soft-white);padding-block:clamp(112px,11vw,150px) clamp(70px,8vw,110px)}
-.pf__back{display:inline-flex;align-items:center;gap:.6em;background:none;border:0;padding:0;margin:0 0 clamp(34px,4vw,52px);font-family:var(--sans);font-size:.88rem;font-weight:600;color:var(--charcoal);cursor:pointer}
-.pf__back:hover{color:var(--gold-ink)}
+.pf{background:var(--surface);padding-block:clamp(112px,11vw,150px) clamp(70px,8vw,110px)}
+.pf__back{display:inline-flex;align-items:center;gap:.6em;background:none;border:0;padding:0;margin:0 0 clamp(34px,4vw,52px);font-family:var(--font-ui);font-size:.88rem;font-weight:600;color:var(--ink);cursor:pointer}
+.pf__back:hover{color:var(--accent-ink)}
 .pf__head{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,4vw,64px);align-items:start}
 .pf__fig{aspect-ratio:4/5;overflow:hidden;background:#E5EBF1}
 .pf__fig image-slot{display:block;width:100%;height:100%}
-.pf__badge{font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-ink)}
+.pf__badge{font-family:var(--font-ui);font-size:.74rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-ink)}
 .hx .pf__name{margin:16px 0 0;font-weight:600;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.04;letter-spacing:-.03em}
-.pf__desig{margin:12px 0 0;font-size:1.02rem;color:var(--slate)}
-.pf__meta{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,3vw,44px);margin:clamp(28px,3.2vw,42px) 0 0;border-top:1px solid var(--hairline)}
+.pf__desig{margin:12px 0 0;font-size:1.02rem;color:var(--text)}
+.pf__meta{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,3vw,44px);margin:clamp(28px,3.2vw,42px) 0 0;border-top:1px solid var(--line)}
 .pf__meta>div{padding:20px 0 0}
-.pf__meta dt{font-family:var(--sans);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-soft);margin:0 0 10px}
-.pf__meta dd{margin:0;font-family:var(--display);font-size:1.06rem;font-weight:600;letter-spacing:-.018em;color:var(--charcoal);line-height:1.3}
+.pf__meta dt{font-family:var(--font-ui);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin:0 0 10px}
+.pf__meta dd{margin:0;font-family:var(--font);font-size:1.06rem;font-weight:600;letter-spacing:-.018em;color:var(--ink);line-height:1.3}
 .pf__body{margin-top:clamp(44px,5vw,72px);max-width:74ch}
-.pf__lead{margin:0;font-size:1.08rem;line-height:1.74;color:var(--slate)}
-.hx .pf__sub{margin:clamp(38px,4vw,56px) 0 20px;font-family:var(--sans);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-soft);display:flex;align-items:center;gap:.9em}
-.pf__sub::after{content:"";flex:1;height:1px;background:var(--hairline)}
+.pf__lead{margin:0;font-size:1.08rem;line-height:1.74;color:var(--text)}
+.hx .pf__sub{margin:clamp(38px,4vw,56px) 0 20px;font-family:var(--font-ui);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:.9em}
+.pf__sub::after{content:"";flex:1;height:1px;background:var(--line)}
 .pf__resp{list-style:none;margin:0;padding:0}
-.pf__resp li{font-size:1rem;line-height:1.6;color:var(--slate);padding:15px 0;border-top:1px solid var(--hairline)}
+.pf__resp li{font-size:1rem;line-height:1.6;color:var(--text);padding:15px 0;border-top:1px solid var(--line)}
 .pf__resp li:first-child{border-top:0}
 .pf__go{margin-top:clamp(38px,4vw,54px)}
 @media (max-width:900px){.tm-grid{grid-template-columns:1fr 1fr}.pf__head{grid-template-columns:1fr}.pf__fig{max-width:380px;aspect-ratio:4/3}}
-@media (max-width:680px){.tm-grid{grid-template-columns:1fr;gap:38px}.pf__meta{grid-template-columns:1fr}.pf__meta>div+div{border-top:1px solid var(--hairline)}}
+@media (max-width:680px){.tm-grid{grid-template-columns:1fr;gap:38px}.pf__meta{grid-template-columns:1fr}.pf__meta>div+div{border-top:1px solid var(--line)}}
 </style>
 </head>
 <body class="hx">

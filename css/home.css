@@ -14,8 +14,8 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-cta .arr{transition:transform .25s var(--ease)}
 .hx-cta:hover{color:var(--accent-ink);border-color:var(--accent-ink)}
 .hx-cta:hover .arr{transform:translateX(3px)}
-.hx .hx-btn{display:inline-flex;align-items:center;gap:.6em;background:var(--ink);color:#fff;font-family:var(--font-ui);font-size:.92rem;font-weight:600;padding:.9em 1.6em;border:1px solid var(--ink);border-radius:999px;transition:background .25s var(--ease),border-color .25s var(--ease)}
-.hx .hx-btn:hover{background:#0F1926;border-color:#0F1926;color:#fff}
+.hx .hx-btn{display:inline-flex;align-items:center;gap:.6em;background:var(--ink);color:var(--surface);font-family:var(--font-ui);font-size:.92rem;font-weight:600;padding:.9em 1.6em;border:1px solid var(--ink);border-radius:999px;transition:background .25s var(--ease),border-color .25s var(--ease)}
+.hx .hx-btn:hover{background:#0F1926;border-color:#0F1926;color:var(--surface)}
 .hx-btn .arr{transition:transform .25s var(--ease)}
 .hx-btn:hover .arr{transform:translateX(3px)}
 
@@ -32,14 +32,14 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 /* ---------- nav ---------- */
 .nav__link{font-family:var(--font-ui);font-size:.9rem;font-weight:500}
 .nav .btn--outline-gold{border-radius:999px;--bd:var(--ink);--fg:var(--ink)}
-.nav .btn--outline-gold:hover{--bg:var(--ink);--bd:var(--ink);--fg:#fff}
+.nav .btn--outline-gold:hover{--bg:var(--ink);--bd:var(--ink);--fg:var(--surface)}
 
 /* ============ HERO ============ */
 .hx-hero{position:relative;padding:0;background:var(--surface);min-height:min(86vh,740px);display:flex;align-items:flex-end;overflow:hidden}
 .hx-hero .hx-hero__pic{position:absolute;inset:0;height:100%;overflow:hidden}
-.hx-hero__pic image-slot{position:absolute;inset:0;width:100%;height:100%;--is-bg:#DCE4EB;--is-fg:#172235}
-.hx-hero__veil{position:absolute;inset:0;background:rgba(255,255,255,.64);pointer-events:none;z-index:1}
-.hx-hero__pic:not(:has(image-slot[src])) .hx-hero__veil,.hx-hero__pic:has(image-slot:not([src])) .hx-hero__veil{background:rgba(255,255,255,.14)}
+.hx-hero__pic image-slot{position:absolute;inset:0;width:100%;height:100%;--is-bg:#DCE4EB;--is-fg:var(--ink)}
+.hx-hero__veil{position:absolute;inset:0;background:color-mix(in srgb,var(--surface) 64%,transparent);pointer-events:none;z-index:1}
+.hx-hero__pic:not(:has(image-slot[src])) .hx-hero__veil,.hx-hero__pic:has(image-slot:not([src])) .hx-hero__veil{background:color-mix(in srgb,var(--surface) 14%,transparent)}
 .hx-hero__pic image-slot::part(empty){align-items:flex-end;justify-content:flex-end;text-align:right;padding:28px 28px 32px;gap:4px}
 .hx-hero__inner{position:relative;z-index:2;width:100%;padding-block:clamp(90px,11vw,140px)}
 .hx-hero__box{max-width:44rem}
