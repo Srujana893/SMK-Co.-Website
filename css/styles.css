@@ -11,8 +11,9 @@
      (legacy var names retained so every page inherits the remap) */
   --ink-navy:#172033;      /* charcoal — primary dark surface */
   --deep-navy:#101827;     /* deepest charcoal */
-  --ivory:#FAFBFC;         /* warm white — dominant ground */
-  --soft-white:#FFFFFF;    /* lifted warm white */
+  --white:#FFFFFF;         /* the one pure white. Primary ground everywhere. */
+  --ivory:var(--white);    /* was #FAFBFC. Alias until Stage 2 migrates the name away. */
+  --soft-white:var(--white);/* was #FFFFFF. Alias, same reason. */
   --gold:#5B86A8;          /* warm ochre — restrained accent */
   --gold-ink:#4C7597;      /* ochre for small text on light grounds */
   --gold-soft:#8FB8D8;     /* ochre on dark */
@@ -192,7 +193,7 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:600;margi
 .is-dark .wordmark__amp,.footer .wordmark__amp,.mnav__head .wordmark__amp{color:var(--gold-soft)}
 
 /* CA India trust badge */
-.ca-badge{background:#fff;border-radius:8px;padding:5px 8px;display:inline-flex;box-shadow:0 1px 0 rgba(34,34,34,.06),0 10px 24px -18px rgba(34,34,34,.4)}
+.ca-badge{background:var(--white);border-radius:8px;padding:5px 8px;display:inline-flex;box-shadow:0 1px 0 rgba(34,34,34,.06),0 10px 24px -18px rgba(34,34,34,.4)}
 .ca-badge img{height:30px;width:auto}
 
 /* mobile slide-in */

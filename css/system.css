@@ -52,12 +52,12 @@
 .hx .statement h3{font-family:var(--mono);color:var(--olive);font-size:.68rem}
 
 /* ---------- CA / professional marks: neutral panel, consistent sizing ---------- */
-.ca-badge{background:#fff;border:1px solid var(--hairline);border-radius:3px;box-shadow:none;
+.ca-badge{background:var(--white);border:1px solid var(--hairline);border-radius:3px;box-shadow:none;
   padding:6px 9px;align-items:center}
 .ca-badge img{height:26px}
 .ca-badge--nav{padding:6px 9px}
 .ca-badge--nav img{height:26px}
-.is-dark .ca-badge,.footer .ca-badge{background:#fff;border-color:rgba(255,255,255,.16)}
+.is-dark .ca-badge,.footer .ca-badge{background:var(--white);border-color:rgba(255,255,255,.16)}
 .mark-panel{display:flex;align-items:center;gap:clamp(20px,3vw,40px);flex-wrap:wrap;
   background:var(--soft-white);border:1px solid var(--hairline);border-radius:3px;
   padding:clamp(18px,2vw,26px) clamp(20px,2.4vw,30px)}
@@ -89,7 +89,7 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
 .cta-olive p{color:rgba(234,242,248,.78)}
 .cta-olive h5{color:rgba(234,242,248,.62)}
 .cta-olive address{color:rgba(234,242,248,.82)}
-.hx .cta-olive .hx-btn{background:#fff;color:var(--charcoal);border-color:#fff}
+.hx .cta-olive .hx-btn{background:var(--white);color:var(--charcoal);border-color:var(--white)}
 .hx .cta-olive .hx-btn:hover{background:var(--ivory);border-color:var(--ivory);color:var(--charcoal)}
 
 /* ---------- full-width photographic band ---------- */
