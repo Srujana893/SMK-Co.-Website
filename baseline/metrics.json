@@ -256,19 +256,19 @@
     "html_bytes": {
       "index.html": 27212,
       "about.html": 13675,
-      "team.html": 15542,
+      "team.html": 15564,
       "services.html": 21236,
       "blog.html": 10901,
       "contact.html": 15189,
       "careers.html": 24109
     },
     "css_bytes": {
-      "css/styles.css": 46616,
-      "css/home.css": 17066,
-      "css/system.css": 15952,
+      "css/styles.css": 46750,
+      "css/home.css": 17088,
+      "css/system.css": 15963,
       "css/careers.css": 9532
     },
-    "css_total": 89166,
+    "css_total": 89333,
     "js_bytes": {
       "js/site.js": 9644,
       "js/config.js": 5441,
@@ -278,9 +278,9 @@
     }
   },
   "colour": {
-    "hex_literals": 4,
-    "distinct_hex": 4,
-    "rgb_functions": 1,
+    "hex_literals": 1,
+    "distinct_hex": 1,
+    "rgb_functions": 0,
     "rgba_2F6FA3_untokenised": 0
   }
 }
