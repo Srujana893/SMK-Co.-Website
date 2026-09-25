@@ -1,6 +1,6 @@
 {
-  "_runs": 3,
-  "_note": "max % of pixels differing between any two of N consecutive captures of the unchanged site",
+  "_runs": "2 here, merged with the prior 3-run measurement",
+  "_note": "max % of pixels differing between consecutive captures of the unchanged site",
   "measured_pct": {
     "about-1440.png": 0.0,
     "about-390.png": 0.0,

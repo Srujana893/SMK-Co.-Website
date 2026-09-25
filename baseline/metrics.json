@@ -264,12 +264,12 @@
       "careers.html": 24142
     },
     "css_bytes": {
-      "css/styles.css": 48067,
-      "css/home.css": 17533,
-      "css/system.css": 15659,
+      "css/styles.css": 48197,
+      "css/home.css": 17538,
+      "css/system.css": 15691,
       "css/careers.css": 9644
     },
-    "css_total": 90903,
+    "css_total": 91070,
     "js_bytes": {
       "js/site.js": 9644,
       "js/config.js": 5441,
@@ -279,8 +279,8 @@
     }
   },
   "colour": {
-    "hex_literals": 64,
-    "distinct_hex": 26,
+    "hex_literals": 59,
+    "distinct_hex": 25,
     "rgb_functions": 46,
     "rgba_2F6FA3_untokenised": 16
   }

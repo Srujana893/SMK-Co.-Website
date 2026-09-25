@@ -3,37 +3,37 @@
     "page": "index",
     "width": 390,
     "height": 10260,
-    "bytes": 685213
+    "bytes": 682753
   },
   {
     "page": "index",
     "width": 900,
     "height": 8055,
-    "bytes": 725742
+    "bytes": 723399
   },
   {
     "page": "index",
     "width": 1440,
     "height": 8336,
-    "bytes": 872314
+    "bytes": 869974
   },
   {
     "page": "about",
     "width": 390,
     "height": 3084,
-    "bytes": 206947
+    "bytes": 203644
   },
   {
     "page": "about",
     "width": 900,
     "height": 2156,
-    "bytes": 220457
+    "bytes": 217579
   },
   {
     "page": "about",
     "width": 1440,
     "height": 2139,
-    "bytes": 257426
+    "bytes": 254586
   },
   {
     "page": "team",
@@ -57,37 +57,37 @@
     "page": "services",
     "width": 390,
     "height": 7481,
-    "bytes": 451480
+    "bytes": 449556
   },
   {
     "page": "services",
     "width": 900,
     "height": 4344,
-    "bytes": 434255
+    "bytes": 432410
   },
   {
     "page": "services",
     "width": 1440,
     "height": 3872,
-    "bytes": 462660
+    "bytes": 460744
   },
   {
     "page": "blog",
     "width": 390,
     "height": 5696,
-    "bytes": 1148171
+    "bytes": 1147263
   },
   {
     "page": "blog",
     "width": 900,
     "height": 3456,
-    "bytes": 1463437
+    "bytes": 1462295
   },
   {
     "page": "blog",
     "width": 1440,
     "height": 2751,
-    "bytes": 1365785
+    "bytes": 1364759
   },
   {
     "page": "contact",
