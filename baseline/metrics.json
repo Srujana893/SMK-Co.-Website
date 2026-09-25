@@ -1,0 +1,304 @@
+{
+  "css_selectors": {
+    "per_file": [
+      [
+        "css/styles.css",
+        216,
+        94
+      ],
+      [
+        "css/home.css",
+        81,
+        7
+      ],
+      [
+        "css/system.css",
+        92,
+        35
+      ],
+      [
+        "css/careers.css",
+        46,
+        0
+      ]
+    ],
+    "sum_of_files": 435,
+    "dead_sum": 136,
+    "unique": 371,
+    "dead_unique": 122
+  },
+  "ordinals": {
+    "per_page": {
+      "index.html": 26,
+      "about.html": 13,
+      "team.html": 0,
+      "services.html": 12,
+      "blog.html": 9,
+      "contact.html": 9,
+      "careers.html": 22
+    },
+    "total": 91
+  },
+  "arrows": {
+    "per_page": {
+      "index.html": 29,
+      "about.html": 11,
+      "team.html": 1,
+      "services.html": 11,
+      "blog.html": 11,
+      "contact.html": 12,
+      "careers.html": 14
+    },
+    "total": 89,
+    "css_pseudo_element_arrows": 2
+  },
+  "motion": {
+    "transition_declarations": 85,
+    "distinct_durations": 16,
+    "durations_ms": [
+      100.0,
+      160.0,
+      200.0,
+      220.0,
+      250.0,
+      260.0,
+      280.0,
+      300.0,
+      340.0,
+      350.0,
+      400.0,
+      420.0,
+      450.0,
+      500.0,
+      600.0,
+      700.0
+    ],
+    "animation_declarations": 30,
+    "keyframes_css": [
+      "crfade",
+      "hxfade",
+      "smkFade",
+      "smkIn"
+    ],
+    "keyframes_inline": [
+      "dash",
+      "drift",
+      "pulse",
+      "spin"
+    ],
+    "keyframes_inline_occurrences": 12,
+    "easings": [
+      "cubic-bezier(.22,.61,.36,1)",
+      "ease",
+      "ease-in-out",
+      "linear"
+    ],
+    "data_reveal": 66,
+    "reduced_motion_guards": 10
+  },
+  "inline_style_attrs": {
+    "per_page": {
+      "index.html": 0,
+      "about.html": 3,
+      "team.html": 1,
+      "services.html": 8,
+      "blog.html": 4,
+      "contact.html": 2,
+      "careers.html": 0
+    },
+    "total": 18,
+    "values": [
+      "display:none",
+      "font-family: &quot;Cormorant Garamond&quot;; font-size: 37px",
+      "font-size: 37px",
+      "font-size: 37px; font-family: Georgia",
+      "grid-column:1/-1",
+      "margin-top:1.1rem;margin-bottom:2rem",
+      "margin-top:1.2rem",
+      "margin-top:1.4rem",
+      "padding-top:0",
+      "text-align: left",
+      "transform-origin:180px 180px"
+    ]
+  },
+  "firm_names": {
+    "counts": {
+      "SMK & Co": 41,
+      "Sachin Mahendra Kiran & Co": 8,
+      "Sachin Mahendra & Co": 8
+    },
+    "titles": {
+      "index.html": "SMK &amp; Co \u2014 Chartered Accountants, Bengaluru",
+      "about.html": "About \u2014 Sachin Mahendra &amp; Co",
+      "team.html": "Our people \u2014 SMK &amp; Co, Chartered Accountants",
+      "services.html": "Services \u2014 Sachin Mahendra &amp; Co",
+      "blog.html": "Insights &amp; Perspectives \u2014 Sachin Mahendra &amp; Co",
+      "contact.html": "Contact \u2014 Sachin Mahendra &amp; Co",
+      "careers.html": "Careers \u2014 SMK &amp; Co, Chartered Accountants"
+    }
+  },
+  "assets": {
+    "uploads_bytes": 18481152,
+    "uploads_files": 11,
+    "uploads_unreferenced": [
+      ".gitkeep",
+      "accounting-reporting.png",
+      "ai-automation-technology.png",
+      "audit-assurance.png",
+      "business-advisory.png",
+      "corporate-compliance.png",
+      "forensic-accounting.png",
+      "internal-controls.png",
+      "is-cybersecurity-audit.png",
+      "specialised-services.png",
+      "taxation.png"
+    ],
+    "assets_bytes": 925696,
+    "assets_files": 13,
+    "assets_unreferenced": [
+      "apple-touch-icon.png",
+      "ca-india-mark.png",
+      "favicon-96x96.png",
+      "favicon.ico",
+      "favicon.svg",
+      "site.webmanifest",
+      "smk-favicon-source.png",
+      "web-app-manifest-192x192.png",
+      "web-app-manifest-512x512.png"
+    ],
+    "referenced_but_missing": [
+      "assets/favicon.png"
+    ],
+    "image_slots_state_bytes": 892527
+  },
+  "headings": {
+    "index.html": {
+      "counts": {
+        "h1": 1,
+        "h2": 6,
+        "h3": 9,
+        "h4": 2,
+        "h5": 3
+      },
+      "skips": [
+        "h2->h4",
+        "h2->h5"
+      ]
+    },
+    "about.html": {
+      "counts": {
+        "h2": 2,
+        "h3": 6,
+        "h5": 3
+      },
+      "skips": [
+        "h3->h5"
+      ]
+    },
+    "team.html": {
+      "counts": {
+        "h1": 1,
+        "h3": 3,
+        "h5": 3
+      },
+      "skips": [
+        "h1->h3",
+        "h3->h5"
+      ]
+    },
+    "services.html": {
+      "counts": {
+        "h2": 3,
+        "h3": 10,
+        "h4": 3,
+        "h5": 3
+      },
+      "skips": [
+        "h2->h4",
+        "h2->h5"
+      ]
+    },
+    "blog.html": {
+      "counts": {
+        "h1": 1,
+        "h5": 3
+      },
+      "skips": [
+        "h1->h5"
+      ]
+    },
+    "contact.html": {
+      "counts": {
+        "h2": 1,
+        "h4": 2,
+        "h5": 3
+      },
+      "skips": [
+        "h2->h4"
+      ]
+    },
+    "careers.html": {
+      "counts": {
+        "h1": 1,
+        "h2": 6,
+        "h3": 11,
+        "h4": 5,
+        "h5": 3
+      },
+      "skips": [
+        "h2->h4",
+        "h2->h4"
+      ]
+    }
+  },
+  "fingerprints": {
+    "data_screen_label": 32,
+    "border_radius_declarations": 36,
+    "distinct_radius_values": [
+      "2px",
+      "3px",
+      "40px",
+      "50%",
+      "50px",
+      "8px",
+      "999px",
+      "var(--radius)",
+      "var(--radius-sm)"
+    ],
+    "border_declarations": 198,
+    "image_slot_elements": 18,
+    "internal_links_with_dot_html": 188,
+    "chrome_lines_header_footer": 557
+  },
+  "sizes": {
+    "html_bytes": {
+      "index.html": 27439,
+      "about.html": 13487,
+      "team.html": 15636,
+      "services.html": 21048,
+      "blog.html": 10695,
+      "contact.html": 14776,
+      "careers.html": 24202
+    },
+    "css_bytes": {
+      "css/styles.css": 47587,
+      "css/home.css": 17533,
+      "css/system.css": 15659,
+      "css/careers.css": 9644
+    },
+    "css_total": 90423,
+    "js_bytes": {
+      "js/site.js": 9644,
+      "js/config.js": 5201,
+      "js/blog.js": 7832,
+      "js/team.js": 7735,
+      "image-slot.js": 31363
+    }
+  },
+  "colour": {
+    "hex_literals": 63,
+    "distinct_hex": 25,
+    "rgb_functions": 46,
+    "rgba_2F6FA3_untokenised": 16
+  }
+}
