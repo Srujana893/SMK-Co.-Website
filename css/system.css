@@ -95,7 +95,7 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
 /* ---------- full-width photographic band ---------- */
 .hx-band-photo{position:relative;background:var(--ink-2);overflow:hidden}
 .hx-band-photo .hx-fig{height:min(46vh,420px);min-height:280px}
-.hx-band-photo .hx-fig image-slot{--is-bg:#DCE3EA;--is-fg:var(--ink-2)}
+.hx-band-photo .hx-fig image-slot{--is-bg:var(--placeholder);--is-fg:var(--ink-2)}
 .hx-band-photo__cap{position:absolute;inset:auto 0 0 0;padding:clamp(24px,3vw,40px) 0;
   background:linear-gradient(to top,color-mix(in srgb,var(--ink) 78%,transparent),color-mix(in srgb,var(--ink) 0%,transparent))}
 .hx-band-photo__cap p{margin:0;max-width:34ch;color:var(--surface);font-family:var(--font);font-weight:600;

@@ -161,11 +161,12 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
   background:var(--ink);color:var(--on-ink);
   transform:translateX(100%);transition:transform .42s var(--ease);
   padding:28px var(--gutter);display:flex;flex-direction:column;gap:6px;
-  box-shadow:-30px 0 60px -30px rgba(0,0,0,.6);
 }
 .mnav.is-open{pointer-events:auto}
 .mnav.is-open .mnav__scrim{opacity:1}
-.mnav.is-open .mnav__panel{transform:translateX(0)}
+/* the shadow belongs to the open panel. On the closed one it reached 30px
+   back past the viewport edge and smudged the right 48px of every page. */
+.mnav.is-open .mnav__panel{transform:translateX(0);box-shadow:var(--shadow-panel)}
 .mnav__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
 .mnav__close{width:42px;height:42px;border:1px solid var(--line-on-ink);background:transparent;color:var(--on-ink);border-radius:8px;font-size:1.2rem}
 .mnav__link{font-family:var(--font);font-size:1.5rem;color:var(--on-ink);padding:13px 0;border-bottom:1px solid var(--line-on-ink)}
