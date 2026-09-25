@@ -5,56 +5,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Insights &amp; Perspectives — Sachin Mahendra &amp; Co</title>
 <meta name="description" content="Educational insights on audit, taxation, technology, compliance and forensic accounting from Sachin Mahendra & Co, Chartered Accountants." />
-
-<!-- Open Graph / social preview -->
-<meta property="og:title" content="Insights &amp; Perspectives — Sachin Mahendra &amp; Co" />
-<meta property="og:description" content="Educational insights on audit, taxation, technology, compliance and forensic accounting from Sachin Mahendra & Co, Chartered Accountants." />
-<meta property="og:image" content="https://smkindia.com/assets/smk-og-preview.png" />
-<meta property="og:url" content="https://smkindia.com/blog" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Insights &amp; Perspectives — Sachin Mahendra &amp; Co" />
-<meta name="twitter:description" content="Educational insights on audit, taxation, technology, compliance and forensic accounting from Sachin Mahendra & Co, Chartered Accountants." />
-<meta name="twitter:image" content="https://smkindia.com/assets/smk-og-preview.png" />
-
-<!-- Favicon -->
-<link rel="icon" href="/assets/favicon.ico?v=3" sizes="any" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=3" />
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png?v=3" />
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=3" />
-<link rel="manifest" href="/assets/site.webmanifest" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="css/styles.css?v=2" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/home.css" />
+<link rel="stylesheet" href="css/system.css" />
 </head>
-<body>
+<body class="hx">
 
 <!-- ============ FIXED NAV ============ -->
 <header class="nav is-solid" id="top">
   <div class="container nav__row">
-    <a href="/" class="nav__brand" aria-label="SMK & Co — home">
-      <span class="ca-badge ca-badge--nav"><img src="assets/ca-india-mark.png" alt="CA India — ICAI professional mark" /></span>
-      <span class="wordmark"><span class="wordmark__smk">SMK</span><span class="wordmark__co">&amp; Co<span class="wordmark__dot">.</span></span></span>
+    <a href="index.html" class="nav__brand" aria-label="SMK &amp; Co — home">
+      <img class="brand__logo" src="assets/smk-logo-lockup.png" alt="SMK &amp; Co. — Chartered Accountants" />
     </a>
     <nav class="nav__links" aria-label="Primary">
-      <a class="nav__link" href="/#top">Home</a>
-      <a class="nav__link" href="/#about">About</a>
-      <a class="nav__link" href="/#services">Services</a>
-      <a class="nav__link" href="/#team">Team</a>
-      <a class="nav__link" href="/#contact">Contact</a>
-      <a class="nav__link is-active" href="/blog">Blog</a>
+      <a class="nav__link" href="blog.html">Insights</a>
+      <div class="nav__item" data-menu="about"><button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-about">About <span class="nav__chev"></span></button></div>
+      <a class="nav__link" href="careers.html">Careers</a>
+      <a class="btn btn--outline-gold nav__cta" href="contact.html">Contact us</a>
     </nav>
+    <button class="nav__burger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mega" id="mega-services" data-mega="services">
+    <div class="mega__inner">
+      <p class="mega__label">What we do</p>
+      <div class="mega__grid mega__grid--row">
+        <a class="mega__link" href="services.html"><span class="mega__n">01</span><span class="mega__t">Audit &amp; Assurance</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Statutory, internal, bank branch and PSU audits, carried out to ICAI standards.</p></a>
+        <a class="mega__link" href="services.html"><span class="mega__n">02</span><span class="mega__t">Tax &amp; Compliance</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Income tax and GST — returns, assessments, notices and representation.</p></a>
+        <a class="mega__link" href="services.html"><span class="mega__n">03</span><span class="mega__t">Advisory</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Business structuring, financial due diligence and planning support.</p></a>
+        <a class="mega__link" href="services.html"><span class="mega__n">04</span><span class="mega__t">Forensic</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Investigation, fund tracing and fraud examination.</p></a>
+        <a class="mega__link" href="services.html"><span class="mega__n">05</span><span class="mega__t">Technology &amp; Cyber</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Information systems audit, IT general controls and data-protection review.</p></a>
+        <a class="mega__link" href="services.html"><span class="mega__n">06</span><span class="mega__t">Business, LLP &amp; Regulatory</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Incorporation, ROC and annual filings, and secretarial compliance.</p></a>
+      </div>
+      <div class="mega__foot">
+        <p>Most clients begin with one practice area and take on others as the business grows.</p>
+        <a class="hx-cta" href="services.html">View all services <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="mega" id="mega-about" data-mega="about">
+    <div class="mega__inner">
+      <p class="mega__label">About</p>
+      <div class="mega__grid mega__grid--two">
+        <a class="mega__link" href="about.html"><span class="mega__n">01</span><span class="mega__t">About the firm</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Who we are, where we work and what the practice stands for.</p></a>
+        <a class="mega__link" href="index.html#how-we-work"><span class="mega__n">02</span><span class="mega__t">Our approach</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">The five stages every engagement runs through.</p></a>
+        <a class="mega__link" href="team.html"><span class="mega__n">03</span><span class="mega__t">Our people</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">The partners who lead the work, and how to reach them.</p></a>
+      </div>
+    </div>
   </div>
 </header>
+
+<div class="mnav" aria-hidden="true">
+  <div class="mnav__scrim"></div>
+  <div class="mnav__panel">
+    <div class="mnav__head">
+      <img class="brand__logo brand__logo--mnav" src="assets/smk-logo-lockup.png" alt="SMK &amp; Co. — Chartered Accountants" />
+      <button class="mnav__close" type="button" data-close-menu aria-label="Close menu">&times;</button>
+    </div>
+    <a class="mnav__link" href="services.html" data-close-menu>What We Do</a>
+    <a class="mnav__link" href="blog.html" data-close-menu>Insights</a>
+    <a class="mnav__link" href="about.html" data-close-menu>About</a>
+    <a class="mnav__link" href="careers.html" data-close-menu>Careers</a>
+    <a class="mnav__link" href="contact.html" data-close-menu>Contact</a>
+    <a class="btn btn--gold" href="contact.html" data-close-menu>Contact us <span class="arr">&rarr;</span></a>
+  </div>
+</div>
 
 <main class="blog-top">
   <!-- ===== LISTING VIEW ===== -->
   <div class="view" id="listView">
     <section class="blog-hero bg-ivory grain" data-screen-label="Blog">
       <div class="container">
-        <p class="eyebrow" data-reveal style="font-size: 31px">Insights</p>
-        <h1 data-reveal data-d="1">Insights &amp; Perspectives</h1>
+        <p class="eyebrow" data-reveal style="font-size: 37px; font-family: Georgia">Insights</p>
+        <h1 data-reveal data-d="1" style="text-align: left">Insights &amp; Perspectives</h1>
         <p class="lede" data-reveal data-d="2">Factual, educational notes on the questions our clients ask most — across audit, taxation, technology, compliance and forensic accounting.</p>
       </div>
     </section>
@@ -80,38 +104,38 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="footer is-dark">
+<footer class="footer is-dark" data-screen-label="Footer">
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <a href="/" class="footer__brandrow">
-          <span class="ca-badge ca-badge--nav"><img src="assets/ca-india-mark.png" alt="CA India — ICAI professional mark" /></span>
-          <span class="wordmark"><span class="wordmark__smk">SMK</span><span class="wordmark__co">&amp; Co<span class="wordmark__dot">.</span></span></span>
+        <a href="index.html" class="footer__brandrow">
+          <span class="footer__plate"><img src="assets/smk-logo-lockup.png" alt="SMK &amp; Co. — Chartered Accountants" /></span>
         </a>
-        <p>A technology-integrated Chartered Accountancy practice — where traditional expertise meets modern technology.</p>
+        <p class="footer__desc">Chartered Accountants</p>
+        <p>A Chartered Accountancy practice in Bengaluru and Shivamogga, advising owner-managed businesses on audit, tax, compliance and the systems behind them.</p>
       </div>
       <div class="footer__col">
         <h5>Navigate</h5>
         <ul>
-          <li><a class="ulink" href="/#about">About</a></li>
-          <li><a class="ulink" href="/#services">Services</a></li>
-          <li><a class="ulink" href="/#team">Team</a></li>
-          <li><a class="ulink" href="/#contact">Contact</a></li>
-          <li><a class="ulink" href="/blog">Blog</a></li>
+          <li><a class="ulink" href="services.html">What We Do</a></li>
+          <li><a class="ulink" href="blog.html">Insights</a></li>
+          <li><a class="ulink" href="about.html">About</a></li>
+          <li><a class="ulink" href="careers.html">Careers</a></li>
+          <li><a class="ulink" href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h5>Bengaluru</h5>
-        <address>Registered Office<br/>63/B, 3rd Floor, Chirag Plaza,<br/>10th Main, 4th Block, Rajaji Nagar,<br/>Bengaluru — 560 010</address>
+        <address>Head Office<br />63/B, 3rd Floor, Chirag Plaza,<br />10th Main, 4th Block, Rajaji Nagar,<br />Bengaluru — 560 010</address>
       </div>
       <div class="footer__col">
         <h5>Shivamogga</h5>
-        <address>Branch Office<br/>Sri Manjunatha Complex, 1st Floor,<br/>Opp. Cauvery Ford Motors,<br/>Shankaramutt Road,<br/>Shivamogga — 577 201</address>
+        <address>Branch Office<br />Sri Manjunatha Complex, 1st Floor,<br />Opp. Cauvery Ford Motors,<br />Shankaramutt Road,<br />Shivamogga — 577 201</address>
       </div>
     </div>
     <div class="footer__bottom">
       <p>Confidentiality assured · Information handled to ICAI professional standards.</p>
-      <p>© Sachin Mahendra Kiran &amp; Co <span data-cfg="year">[YEAR]</span> · All Rights Reserved · <span class="footer__frn">ICAI FRN 021859S</span></p>
+      <p>© Sachin Mahendra Kiran &amp; Co <span data-cfg="year">[YEAR]</span> · All Rights Reserved</p>
     </div>
   </div>
 </footer>
@@ -120,5 +144,42 @@
 <script src="image-slot.js"></script>
 <script src="js/blog.js"></script>
 <script src="js/site.js"></script>
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll(".nav__item[data-menu]"));
+  if(!items.length)return;
+  var openItem=null,timer=null;
+  function panel(it){return document.getElementById("mega-"+it.getAttribute("data-menu"))}
+  function open(it){
+    clearTimeout(timer);
+    if(openItem&&openItem!==it)close(openItem);
+    openItem=it;it.classList.add("is-open");
+    var p=panel(it);if(p)p.classList.add("is-open");
+    var b=it.querySelector(".nav__trigger");if(b)b.setAttribute("aria-expanded","true");
+  }
+  function close(it){
+    it.classList.remove("is-open");
+    var p=panel(it);if(p)p.classList.remove("is-open");
+    var b=it.querySelector(".nav__trigger");if(b)b.setAttribute("aria-expanded","false");
+    if(openItem===it)openItem=null;
+  }
+  function closeSoon(it){clearTimeout(timer);timer=setTimeout(function(){close(it)},140)}
+  items.forEach(function(it){
+    var p=panel(it);
+    it.addEventListener("mouseenter",function(){open(it)});
+    it.addEventListener("mouseleave",function(){closeSoon(it)});
+    if(p){p.addEventListener("mouseenter",function(){open(it)});p.addEventListener("mouseleave",function(){closeSoon(it)})}
+    var b=it.querySelector(".nav__trigger");
+    if(b){
+      b.addEventListener("click",function(e){e.preventDefault();it.classList.contains("is-open")?close(it):open(it)});
+      b.addEventListener("focus",function(){open(it)});
+    }
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&openItem)close(openItem)});
+  document.addEventListener("click",function(e){
+    if(openItem&&!openItem.contains(e.target)&&!panel(openItem).contains(e.target))close(openItem);
+  });
+})();
+</script>
 </body>
 </html>

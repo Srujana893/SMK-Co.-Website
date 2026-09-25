@@ -19,7 +19,7 @@ window.siteConfig = {
   email: "contactsachinandco@gmail.com",            // e.g. connect@smkco.in
   phone: "99026 02692",            // e.g. +91 80 1234 5678
   domain: "[DOMAIN]",               // e.g. smkco.in
-  year: " ",                   // e.g. 2026  (used in © line)
+  year: "2026",                   // e.g. 2026  (used in © line)
 
   social: {
     linkedin: "#",
