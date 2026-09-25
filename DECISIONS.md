@@ -79,6 +79,47 @@ component" — the nav had three ways of saying the firm's name in one row.
 Still needed, unchanged by this: a vector master, the compact and monogram
 locks, and written clear-space and minimum sizes.
 
+## Palette — amended §3, shipped 25 Sep 2026 · owner: `smk-design-system`
+
+Warm graphite neutrals replace the blue-charcoals. One blue accent, and it means
+interactive.
+
+| Token | Value | Role |
+| --- | --- | --- |
+| `--surface` | `#FFFFFF` | primary ground |
+| `--surface-warm` | `#FAF9F7` | alternating band |
+| `--surface-tint` | `#F4F2EE` | second ground |
+| `--ink` | `#1C1B19` | headings, primary dark surface |
+| `--ink-2` | `#292724` | secondary dark surface |
+| `--text` | `#57534E` | body |
+| `--text-muted` | `#6B655F` | meta, captions, eyebrows |
+| `--accent` | `#2F6FA3` | interactive only |
+| `--accent-ink` | `#255A86` | accent as text on light |
+| `--accent-wash` | `#EAF1F7` | interaction surface |
+| `--danger` | `#B4483A` | errors |
+| `--line` | `#E7E4DF` | hairlines |
+
+Added beyond the §3 table, because 77 uses had nowhere to go: `--accent-on-ink`
+`#8FB8D8`, `--on-ink` (aliases `--surface-warm`), `--on-ink-muted` `#A8A29B`,
+`--line-on-ink`, `--accent-line`. All clear 4.5:1 on both dark surfaces.
+
+Contrast, measured against the shipped file: `--text` 6.82:1 worst case,
+`--text-muted` 5.14:1, `--accent-ink` 6.51:1, `--accent` as a focus ring 4.79:1.
+All on `--surface-tint`, the hardest ground. The old palette's 4.32:1 and 3.74:1
+failures have no equivalent.
+
+**Accent discipline.** Section eyebrows are `--text-muted` with `--line` rules —
+they are not interactive. Accent survives only on links, hover, focus and active
+states. The four interaction surfaces (`.hx-svc:hover`, `.hx-ind__row.is-active`,
+`.cr-row:hover`, `.mega__link:hover`) use `--accent-wash`; the nine section
+grounds use warm `--surface-tint`.
+
+**Reading of "keep the tinted band and active-row wash blue":** the token table
+sets `--surface-tint` to warm `#F4F2EE` explicitly, so blue was kept for the
+interaction surfaces only. A precise table beats an ambiguous sentence — but if
+you meant the alternating section band should stay blue too, that is one token
+value and one commit.
+
 ## Still open
 
 1. **Photography** — not commissioned. Until it is, empty image slots are

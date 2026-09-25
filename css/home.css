@@ -15,7 +15,7 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-cta:hover{color:var(--accent-ink);border-color:var(--accent-ink)}
 .hx-cta:hover .arr{transform:translateX(3px)}
 .hx .hx-btn{display:inline-flex;align-items:center;gap:.6em;background:var(--ink);color:var(--surface);font-family:var(--font-ui);font-size:.92rem;font-weight:600;padding:.9em 1.6em;border:1px solid var(--ink);border-radius:999px;transition:background .25s var(--ease),border-color .25s var(--ease)}
-.hx .hx-btn:hover{background:#0F1926;border-color:#0F1926;color:var(--surface)}
+.hx .hx-btn:hover{background:var(--ink);border-color:var(--ink);color:var(--surface)}
 .hx-btn .arr{transition:transform .25s var(--ease)}
 .hx-btn:hover .arr{transform:translateX(3px)}
 
@@ -44,7 +44,7 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-hero__inner{position:relative;z-index:2;width:100%;padding-block:clamp(90px,11vw,140px)}
 .hx-hero__box{max-width:44rem}
 .hx .hx-hero h1{color:var(--ink);font-size:clamp(2rem,3.5vw,3.15rem);line-height:1.14;letter-spacing:-.026em;margin:0;max-width:26ch;text-wrap:pretty}
-.hx-hero__sub{margin:22px 0 0;font-size:1.03rem;line-height:1.75;color:#3A4454;max-width:46ch}
+.hx-hero__sub{margin:22px 0 0;font-size:1.03rem;line-height:1.75;color:var(--text);max-width:46ch}
 .hx-hero__act{margin-top:32px}
 .hx .hx-hero .hx-btn--pill{padding-inline:30px}
 .hx .hx-hero .hx-btn--pill:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
@@ -85,7 +85,7 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-do__list{border-top:1px solid var(--line)}
 .hx-svc{display:grid;grid-template-columns:clamp(56px,6vw,96px) minmax(0,1.05fr) minmax(0,1.15fr) 40px;align-items:baseline;gap:0 clamp(16px,2.4vw,40px);border-bottom:1px solid var(--line);padding:clamp(22px,2.6vw,34px) clamp(6px,1.2vw,18px);position:relative;transition:background .3s var(--ease)}
 .hx-svc::before{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
-.hx-svc:hover{background:var(--surface-tint)}
+.hx-svc:hover{background:var(--accent-wash)}
 .hx-svc:hover::before{transform:scaleX(1)}
 .hx-svc__n{font-family:var(--font-ui);font-size:clamp(1.05rem,1.5vw,1.35rem);font-weight:500;letter-spacing:-.01em;color:var(--text-muted);transition:color .3s var(--ease)}
 .hx-svc:hover .hx-svc__n{color:var(--accent-ink)}
@@ -119,7 +119,7 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-ind{background:var(--surface);border-top:1px solid var(--line)}
 .hx-ind__rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .hx-ind__row{border-bottom:1px solid var(--line);transition:background .3s var(--ease)}
-.hx-ind__row.is-active{background:var(--surface-tint)}
+.hx-ind__row.is-active{background:var(--accent-wash)}
 .hx-ind__btn{display:flex;align-items:center;gap:clamp(16px,2vw,26px);width:100%;background:none;border:0;padding:clamp(16px,1.8vw,24px) clamp(6px,1.2vw,16px);text-align:left;color:inherit;cursor:pointer}
 .hx-ind__n{font-family:var(--font-ui);font-size:.7rem;font-weight:600;letter-spacing:.14em;color:var(--text-muted);transition:color .3s var(--ease)}
 .hx-ind__name{font-family:var(--font);font-size:clamp(1.15rem,2vw,1.62rem);font-weight:600;line-height:1.14;letter-spacing:-.022em;color:var(--text);transition:color .3s var(--ease)}

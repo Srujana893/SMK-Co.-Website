@@ -56,7 +56,7 @@
 .cr-work{background:var(--surface);border-top:1px solid var(--line)}
 .cr-rows{border-top:1px solid var(--line)}
 .cr-row{display:grid;grid-template-columns:clamp(52px,5.6vw,88px) minmax(0,1fr) minmax(0,1.1fr);align-items:baseline;gap:0 clamp(16px,2.4vw,40px);padding:clamp(22px,2.6vw,32px) clamp(6px,1.2vw,16px);border-bottom:1px solid var(--line);transition:background .3s var(--ease)}
-.cr-row:hover{background:var(--surface-tint)}
+.cr-row:hover{background:var(--accent-wash)}
 .cr-row__n{font-family:var(--font-ui);font-size:clamp(1rem,1.4vw,1.28rem);font-weight:500;color:var(--text-muted)}
 .hx .cr-row h3{margin:0;font-size:clamp(1.18rem,2vw,1.6rem);font-weight:600;line-height:1.16;letter-spacing:-.022em}
 .cr-row__lead{margin:8px 0 0;font-size:.95rem;font-weight:500;color:var(--accent-ink)}
