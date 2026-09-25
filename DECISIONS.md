@@ -47,6 +47,37 @@ Inter Display above 28px, Inter below it. One family, two optical grades. Three
 weights: 400 body, 500 labels and UI, 600 display. No serif. Manrope is retired.
 Applied at Stage 3.
 
+## Logo — replaced 25 Sep 2026 · owner: `smk-brand`
+
+A high-resolution lockup was supplied and now ships. It resolves the audit's §6
+complaint that the mark was a 285px raster where the nav needed 486px.
+
+| File | Role |
+| --- | --- |
+| `assets/smk-logo-source.png` | Master. 2172×724 as supplied. Unreferenced by design — the source every delivered file is exported from. |
+| `assets/smk-logo-lockup.png` | Positive, on light grounds. 800×163, trimmed to the ink. |
+| `assets/smk-logo-lockup-reversed.png` | Reversed, on dark grounds. Same geometry. |
+
+Delivered at 800px against a largest rendered width of 255px (nav, 52px tall) —
+3.1×, past 3× DPR. Not quantised: palette reduction saved 29 KB but shifted
+edge pixels by up to 12/255, and the point of the replacement was fidelity.
+
+The mark has two tones — navy `#0C1E37` for the monogram and wordmark, a lighter
+slate for the ampersand and the K's leg. The footer previously reversed the
+logo with `filter: brightness(0) invert(1)`, which flattens both tones to one
+white silhouette. It now uses a real reversed file that keeps the tonal
+relationship, and the filter is gone. This is the audit's "a real reversed file,
+not a filter".
+
+**Open:** `.nav__tag` reads "SMK & Co. · Chartered Accountants" immediately
+beside a lockup that already says exactly that, on viewports above 1180px. It
+was arguably earning its place next to a blurry 285px mark; next to a sharp one
+it is the redundancy §6 warns about. Recommend deleting it. Not done — it is a
+visible copy change, not part of swapping the file.
+
+Still needed, unchanged by this: a vector master, the compact and monogram
+locks, and written clear-space and minimum sizes.
+
 ## Still open
 
 1. **Photography** — not commissioned. Until it is, empty image slots are

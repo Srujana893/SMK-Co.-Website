@@ -717,7 +717,9 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:600;margi
 .nav__cta:hover{transform:translateY(-1px)}
 
 .footer__plate{display:inline-flex;align-items:center}
-.footer__plate img{height:42px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.94}
+/* reversed lockup is a real asset, not brightness(0) invert(1) -- that flattened
+   the mark's two tones into one white silhouette */
+.footer__plate img{height:42px;width:auto;display:block;opacity:.94}
 @media(max-width:720px){.footer__plate img{height:32px}}
 
 .footer__desc{margin:12px 0 10px;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
