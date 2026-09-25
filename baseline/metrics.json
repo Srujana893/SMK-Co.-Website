@@ -3,7 +3,7 @@
     "per_file": [
       [
         "css/styles.css",
-        216,
+        217,
         94
       ],
       [
@@ -22,9 +22,9 @@
         0
       ]
     ],
-    "sum_of_files": 435,
+    "sum_of_files": 436,
     "dead_sum": 136,
-    "unique": 371,
+    "unique": 372,
     "dead_unique": 122
   },
   "ordinals": {
@@ -123,52 +123,34 @@
   },
   "firm_names": {
     "counts": {
-      "SMK & Co": 41,
+      "SMK & Co": 49,
       "Sachin Mahendra Kiran & Co": 8,
-      "Sachin Mahendra & Co": 8
+      "Sachin Mahendra & Co": 0
     },
     "titles": {
-      "index.html": "SMK &amp; Co \u2014 Chartered Accountants, Bengaluru",
-      "about.html": "About \u2014 Sachin Mahendra &amp; Co",
-      "team.html": "Our people \u2014 SMK &amp; Co, Chartered Accountants",
-      "services.html": "Services \u2014 Sachin Mahendra &amp; Co",
-      "blog.html": "Insights &amp; Perspectives \u2014 Sachin Mahendra &amp; Co",
-      "contact.html": "Contact \u2014 Sachin Mahendra &amp; Co",
-      "careers.html": "Careers \u2014 SMK &amp; Co, Chartered Accountants"
+      "index.html": "SMK &amp; Co. \u2014 Chartered Accountants, Bengaluru",
+      "about.html": "About \u2014 SMK &amp; Co.",
+      "team.html": "Our people \u2014 SMK &amp; Co.",
+      "services.html": "Services \u2014 SMK &amp; Co.",
+      "blog.html": "Insights &amp; Perspectives \u2014 SMK &amp; Co.",
+      "contact.html": "Contact \u2014 SMK &amp; Co.",
+      "careers.html": "Careers \u2014 SMK &amp; Co."
     }
   },
   "assets": {
-    "uploads_bytes": 18481152,
-    "uploads_files": 11,
-    "uploads_unreferenced": [
-      ".gitkeep",
-      "accounting-reporting.png",
-      "ai-automation-technology.png",
-      "audit-assurance.png",
-      "business-advisory.png",
-      "corporate-compliance.png",
-      "forensic-accounting.png",
-      "internal-controls.png",
-      "is-cybersecurity-audit.png",
-      "specialised-services.png",
-      "taxation.png"
-    ],
+    "uploads_bytes": 0,
+    "uploads_files": 0,
+    "uploads_unreferenced": [],
     "assets_bytes": 925696,
     "assets_files": 13,
     "assets_unreferenced": [
-      "apple-touch-icon.png",
       "ca-india-mark.png",
       "favicon-96x96.png",
       "favicon.ico",
       "favicon.svg",
-      "site.webmanifest",
-      "smk-favicon-source.png",
-      "web-app-manifest-192x192.png",
-      "web-app-manifest-512x512.png"
+      "smk-favicon-source.png"
     ],
-    "referenced_but_missing": [
-      "assets/favicon.png"
-    ],
+    "referenced_but_missing": [],
     "image_slots_state_bytes": 892527
   },
   "headings": {
@@ -253,7 +235,7 @@
   },
   "fingerprints": {
     "data_screen_label": 32,
-    "border_radius_declarations": 36,
+    "border_radius_declarations": 37,
     "distinct_radius_values": [
       "2px",
       "3px",
@@ -265,39 +247,39 @@
       "var(--radius)",
       "var(--radius-sm)"
     ],
-    "border_declarations": 198,
+    "border_declarations": 200,
     "image_slot_elements": 18,
-    "internal_links_with_dot_html": 188,
+    "internal_links_with_dot_html": 0,
     "chrome_lines_header_footer": 557
   },
   "sizes": {
     "html_bytes": {
-      "index.html": 27439,
-      "about.html": 13487,
-      "team.html": 15636,
-      "services.html": 21048,
-      "blog.html": 10695,
-      "contact.html": 14776,
-      "careers.html": 24202
+      "index.html": 27333,
+      "about.html": 13618,
+      "team.html": 15590,
+      "services.html": 21179,
+      "blog.html": 10844,
+      "contact.html": 15132,
+      "careers.html": 24133
     },
     "css_bytes": {
-      "css/styles.css": 47587,
+      "css/styles.css": 47963,
       "css/home.css": 17533,
       "css/system.css": 15659,
       "css/careers.css": 9644
     },
-    "css_total": 90423,
+    "css_total": 90799,
     "js_bytes": {
       "js/site.js": 9644,
-      "js/config.js": 5201,
+      "js/config.js": 5441,
       "js/blog.js": 7832,
-      "js/team.js": 7735,
+      "js/team.js": 7724,
       "image-slot.js": 31363
     }
   },
   "colour": {
-    "hex_literals": 63,
-    "distinct_hex": 25,
+    "hex_literals": 64,
+    "distinct_hex": 26,
     "rgb_functions": 46,
     "rgba_2F6FA3_untokenised": 16
   }

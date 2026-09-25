@@ -8,10 +8,12 @@
  *     --remote-debugging-port=9222 --user-data-dir=/tmp/smk-shoot about:blank &
  *   OUT_DIR=./after node baseline/shoot.mjs
  *
- * Captures are byte-deterministic: the viewport is resized to the full content
- * height so every IntersectionObserver reveal fires, then the page is held until
- * all finite animations have finished. Infinite animations (the services page's
- * rotating rings) are pinned to t=0 so they render at a fixed phase.
+ * Captures are byte-deterministic. Each page is held until its height stops
+ * changing (blog.html renders every article at runtime), then resized to the
+ * full content height so every IntersectionObserver reveal fires, then held
+ * again until all finite animations report finished. Infinite animations --
+ * the services page's rotating rings -- are pinned to t=0 so they render at a
+ * fixed phase.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -26,6 +28,22 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // Pin infinite animations, then wait out every finite one. Run twice, because
 // resizing to full height starts a fresh wave of reveals.
+// Wait until the document stops growing. blog.html renders every article from
+// config.js at runtime, so its height is 1182px until the script has run and
+// 2751px afterwards -- measuring too early captures an empty page.
+const STABLE = `(async () => {
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  let last = -1, same = 0;
+  for (let i = 0; i < 80; i++) {
+    const h = document.documentElement.scrollHeight;
+    same = (h === last) ? same + 1 : 0;
+    last = h;
+    if (same >= 5) return h;
+    await sleep(120);
+  }
+  return last;
+})()`;
+
 const SETTLE = `(async () => {
   for (let pass = 0; pass < 2; pass++) {
     const all = document.getAnimations();
@@ -95,11 +113,13 @@ for (const page of PAGES) {
     await c.send('Page.navigate', { url: `${BASE}/${page}.html` });
     await Promise.race([loaded, sleep(20000)]);
     await c.send('Runtime.evaluate', { expression: 'document.fonts.ready', awaitPromise: true });
+    await c.send('Runtime.evaluate', { expression: STABLE, awaitPromise: true });
     await c.send('Runtime.evaluate', { expression: SETTLE, awaitPromise: true });
 
     const { cssContentSize } = await c.send('Page.getLayoutMetrics');
     const full = Math.min(Math.ceil(cssContentSize.height), 24000);
     await metrics(full);
+    await c.send('Runtime.evaluate', { expression: STABLE, awaitPromise: true });
     const { result } = await c.send('Runtime.evaluate', { expression: SETTLE, awaitPromise: true });
     await c.send('Runtime.evaluate', { expression: 'window.scrollTo(0, 0)' });
     await sleep(150);
