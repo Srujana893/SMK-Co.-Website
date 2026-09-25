@@ -1,5 +1,5 @@
 {
-  "_runs": "2 here, merged with the prior 3-run measurement",
+  "_runs": "cumulative across stages",
   "_note": "max % of pixels differing between consecutive captures of the unchanged site",
   "measured_pct": {
     "about-1440.png": 0.0,

@@ -2,20 +2,20 @@
   {
     "page": "index",
     "width": 390,
-    "height": 10260,
-    "bytes": 682753
+    "height": 10220,
+    "bytes": 681030
   },
   {
     "page": "index",
     "width": 900,
     "height": 8055,
-    "bytes": 723399
+    "bytes": 719978
   },
   {
     "page": "index",
     "width": 1440,
     "height": 8336,
-    "bytes": 869974
+    "bytes": 863797
   },
   {
     "page": "about",
@@ -51,7 +51,7 @@
     "page": "team",
     "width": 1440,
     "height": 1843,
-    "bytes": 198505
+    "bytes": 194517
   },
   {
     "page": "services",
@@ -123,6 +123,6 @@
     "page": "careers",
     "width": 1440,
     "height": 6501,
-    "bytes": 787874
+    "bytes": 784070
   }
 ]
