@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Our people — SMK &amp; Co, Chartered Accountants</title>
-<meta name="description" content="The partners of SMK &amp; Co, Chartered Accountants — audit and tax, bank and PSU audit, information systems audit and forensic accounting." />
+<title>Our people — SMK &amp; Co.</title>
+<meta name="description" content="The partners of SMK &amp; Co., Chartered Accountants — audit and tax, bank and PSU audit, information systems audit and forensic accounting." />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
-<link rel="apple-touch-icon" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="manifest" href="assets/site.webmanifest" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="css/styles.css" />
@@ -61,16 +62,16 @@
 
 <header class="nav is-solid" id="top">
   <div class="container nav__row">
-    <a href="index.html" class="nav__brand" aria-label="SMK &amp; Co — home">
+    <a href="/" class="nav__brand" aria-label="SMK &amp; Co. — home">
       <img class="brand__logo" src="assets/smk-logo-lockup.png" alt="SMK &amp; Co. — Chartered Accountants" />
       <span class="nav__tag">SMK &amp; Co. &middot; Chartered Accountants</span>
     </a>
     <nav class="nav__links" aria-label="Primary">
-      <a class="nav__link" href="services.html">What We Do</a>
-      <a class="nav__link" href="blog.html">Insights</a>
-      <a class="nav__link is-active" href="about.html">About</a>
-      <a class="nav__link" href="careers.html">Careers</a>
-      <a class="btn btn--outline-gold nav__cta" href="contact.html">Contact us</a>
+      <a class="nav__link" href="/services">What We Do</a>
+      <a class="nav__link" href="/blog">Insights</a>
+      <a class="nav__link is-active" href="/about">About</a>
+      <a class="nav__link" href="/careers">Careers</a>
+      <a class="btn btn--outline-gold nav__cta" href="/contact">Contact us</a>
     </nav>
     <button class="nav__burger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -83,11 +84,11 @@
       <img class="brand__logo brand__logo--mnav" src="assets/smk-logo-lockup.png" alt="SMK &amp; Co. — Chartered Accountants" />
       <button class="mnav__close" type="button" data-close-menu aria-label="Close menu">&times;</button>
     </div>
-    <a class="mnav__link" href="services.html" data-close-menu>What We Do</a>
-    <a class="mnav__link" href="blog.html" data-close-menu>Insights</a>
-    <a class="mnav__link" href="about.html" data-close-menu>About</a>
-    <a class="mnav__link" href="careers.html" data-close-menu>Careers</a>
-    <a class="btn btn--gold" href="contact.html" data-close-menu>Contact us <span class="arr">&rarr;</span></a>
+    <a class="mnav__link" href="/services" data-close-menu>What We Do</a>
+    <a class="mnav__link" href="/blog" data-close-menu>Insights</a>
+    <a class="mnav__link" href="/about" data-close-menu>About</a>
+    <a class="mnav__link" href="/careers" data-close-menu>Careers</a>
+    <a class="btn btn--gold" href="/contact" data-close-menu>Contact us <span class="arr">&rarr;</span></a>
   </div>
 </div>
 
@@ -143,7 +144,7 @@
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <a href="index.html" class="footer__brandrow">
+        <a href="/" class="footer__brandrow">
           <span class="footer__plate"><img src="assets/smk-logo-lockup.png" alt="SMK &amp; Co. — Chartered Accountants" /></span>
         </a>
         <p class="footer__desc">Chartered Accountants</p>
@@ -152,11 +153,11 @@
       <div class="footer__col">
         <h5>Navigate</h5>
         <ul>
-          <li><a class="ulink" href="services.html">What We Do</a></li>
-          <li><a class="ulink" href="blog.html">Insights</a></li>
-          <li><a class="ulink" href="about.html">About</a></li>
-          <li><a class="ulink" href="careers.html">Careers</a></li>
-          <li><a class="ulink" href="contact.html">Contact</a></li>
+          <li><a class="ulink" href="/services">What We Do</a></li>
+          <li><a class="ulink" href="/blog">Insights</a></li>
+          <li><a class="ulink" href="/about">About</a></li>
+          <li><a class="ulink" href="/careers">Careers</a></li>
+          <li><a class="ulink" href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -213,7 +214,7 @@
         '<p class="pf__lead">'+esc(p.summary)+'</p>'+
         '<h2 class="pf__sub">Key responsibilities</h2>'+
         '<ul class="pf__resp">'+p.resp.map(function(r){return '<li>'+esc(r)+'</li>'}).join("")+'</ul>'+
-        '<p class="pf__go"><a class="hx-cta" href="contact.html">Get in touch <span class="arr">&rarr;</span></a></p>'+
+        '<p class="pf__go"><a class="hx-cta" href="/contact">Get in touch <span class="arr">&rarr;</span></a></p>'+
       '</div>';
   }
   function openProfile(key){
@@ -221,12 +222,12 @@
     wrap.innerHTML=profileHTML(p);
     wrap.querySelector("#pfBack").addEventListener("click",closeProfile);
     listView.style.display="none";profileView.style.display="block";profileView.setAttribute("aria-hidden","false");
-    if(history.replaceState)history.replaceState(null,"","team.html#"+key);
+    if(history.replaceState)history.replaceState(null,"","/team#"+key);
     window.scrollTo(0,0);
   }
   function closeProfile(){
     profileView.style.display="none";profileView.setAttribute("aria-hidden","true");listView.style.display="block";
-    if(history.replaceState)history.replaceState(null,"","team.html");
+    if(history.replaceState)history.replaceState(null,"","/team");
     window.scrollTo(0,0);
   }
   [].slice.call(document.querySelectorAll(".tm-card")).forEach(function(card){

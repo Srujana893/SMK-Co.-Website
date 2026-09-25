@@ -11,10 +11,13 @@ window.API_BASE = "https://smk-enquiry-api-production.up.railway.app";
    Replace the [BRACKETED] placeholders before publishing.
    ============================================================ */
 window.siteConfig = {
-  firmName: "Sachin Mahendra & Co",
-  shortName: "SMK & Co",
+  /* Firm-name table. Trading name is used everywhere the firm is named:
+     <title>, OG/Twitter titles, nav, logo alt text. Legal name is used only
+     in the footer copyright and on the About page. */
+  legalName: "[Placeholder — confirm exact ICAI record]",
+  tradingName: "SMK & Co.",
+  shortName: "SMK & Co.",
   tagline: "Where Traditional Expertise Meets Modern Technology",
-  frn: "021859S",
 
   email: "contactsachinandco@gmail.com",            // e.g. connect@smkco.in
   phone: "99026 02692",            // e.g. +91 80 1234 5678

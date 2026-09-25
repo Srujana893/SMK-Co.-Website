@@ -101,9 +101,14 @@ out["firm_names"] = {"counts": {
     "titles": {p: re.search(r"<title>(.*?)</title>", s, re.S).group(1).strip()
                for p, s in html.items() if re.search(r"<title>", s)}}
 
-refs = all_html + all_css + all_js
-du = lambda p: int(subprocess.check_output(["du", "-sk", os.path.join(ROOT, p)]).split()[0]) * 1024
-lsd = lambda p: [f for f in sorted(os.listdir(os.path.join(ROOT, p))) if f != ".DS_Store"]
+refs = all_html + all_css + all_js + (open(os.path.join(ROOT, "assets/site.webmanifest"),
+        encoding="utf-8").read() if os.path.exists(os.path.join(ROOT, "assets/site.webmanifest")) else "")
+def du(p):
+    d = os.path.join(ROOT, p)
+    return int(subprocess.check_output(["du", "-sk", d]).split()[0]) * 1024 if os.path.isdir(d) else 0
+def lsd(p):
+    d = os.path.join(ROOT, p)
+    return [f for f in sorted(os.listdir(d)) if f != ".DS_Store"] if os.path.isdir(d) else []
 up, asr = lsd("uploads"), lsd("assets")
 out["assets"] = {
     "uploads_bytes": du("uploads"), "uploads_files": len(up),

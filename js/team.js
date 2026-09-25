@@ -7,7 +7,7 @@
       exp: "8 Years", focus: "Compliance, accounting, audits & taxation",
       photo: "partner-sachin",
       linkedin: "https://www.linkedin.com/in/sachinuday/",
-      summary: "Sachin is Partner at Sachin Mahendra & Co, Bengaluru, with eight years of experience serving startups, MSMEs and growing businesses. His core focus is Income Tax — strategic planning, return filing and defence in assessments and notices — alongside statutory and internal audit. He also acts as Virtual CFO to founders, covering MIS, cash-flow management, budgeting and fundraising support, and leads end-to-end compliance across GST, TDS, ROC and other statutory filings. DISA-qualified and AICA Level 2 certified, Sachin brings a tech-forward, proactive approach to every engagement.",
+      summary: "Sachin is Partner at SMK & Co., Bengaluru, with eight years of experience serving startups, MSMEs and growing businesses. His core focus is Income Tax — strategic planning, return filing and defence in assessments and notices — alongside statutory and internal audit. He also acts as Virtual CFO to founders, covering MIS, cash-flow management, budgeting and fundraising support, and leads end-to-end compliance across GST, TDS, ROC and other statutory filings. DISA-qualified and AICA Level 2 certified, Sachin brings a tech-forward, proactive approach to every engagement.",
       resp: [
         "Planning and delivery of statutory and tax audits",
         "Direct and indirect tax advisory and return filings",

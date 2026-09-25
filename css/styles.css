@@ -16,7 +16,7 @@
   --gold:#5B86A8;          /* warm ochre — restrained accent */
   --gold-ink:#4C7597;      /* ochre for small text on light grounds */
   --gold-soft:#8FB8D8;     /* ochre on dark */
-  --saffron:#C0563C;
+  --saffron:#C0563C;  --danger:#B4483A;   /* error text/border. Audit §3. Moves to tokens.css at Stage 2, replacing --saffron. */
   --olive:#5B86A8;         /* deep muted olive — accent only */
   --neutral:#DCE3EA;       /* soft neutral grey */
   --neutral-soft:#F8FAFC;  /* neutral tint for grounds */
@@ -367,6 +367,8 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:600;margi
 .form__note{font-size:.8rem;color:var(--slate-soft);margin:2px 0 0}
 .form__ok{background:rgba(47,111,163,.08);border:1px solid rgba(47,111,163,.28);color:var(--olive);border-radius:var(--radius-sm);padding:14px 16px;font-size:.9rem;display:none}
 .form__ok.show{display:block}
+.form__err{background:color-mix(in srgb,var(--danger) 8%,transparent);border:1px solid color-mix(in srgb,var(--danger) 30%,transparent);color:var(--danger);border-radius:var(--radius-sm);padding:14px 16px;font-size:.9rem;display:none}
+.form__err.show{display:block}
 
 .offices{display:grid;gap:18px}
 .office{background:var(--soft-white);border:1px solid var(--hairline);border-radius:var(--radius);padding:26px}
