@@ -43,7 +43,6 @@ a{color:var(--charcoal)}a:hover{color:var(--gold-ink)}
 .hx-hero__pic image-slot::part(empty){align-items:flex-end;justify-content:flex-end;text-align:right;padding:28px 28px 32px;gap:4px}
 .hx-hero__inner{position:relative;z-index:2;width:100%;padding-block:clamp(90px,11vw,140px)}
 .hx-hero__box{max-width:44rem}
-.hx-hero__eyebrow{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink);margin:0 0 22px}
 .hx .hx-hero h1{color:var(--charcoal);font-size:clamp(2rem,3.5vw,3.15rem);line-height:1.14;letter-spacing:-.026em;margin:0;max-width:26ch;text-wrap:pretty}
 .hx-hero__sub{margin:22px 0 0;font-size:1.03rem;line-height:1.75;color:#3A4454;max-width:46ch}
 .hx-hero__act{margin-top:32px}
@@ -210,5 +209,3 @@ a{color:var(--charcoal)}a:hover{color:var(--gold-ink)}
 
 /* ---------- nav brand tag ---------- */
 .nav__brand{display:flex;align-items:center;gap:clamp(10px,1.2vw,16px)}
-.nav__tag{font-family:var(--sans);font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);white-space:nowrap;padding-left:clamp(10px,1.2vw,16px);border-left:1px solid var(--hairline)}
-@media (max-width:1180px){.nav__tag{display:none}}

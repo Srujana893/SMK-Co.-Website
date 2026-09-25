@@ -69,11 +69,12 @@ white silhouette. It now uses a real reversed file that keeps the tonal
 relationship, and the filter is gone. This is the audit's "a real reversed file,
 not a filter".
 
-**Open:** `.nav__tag` reads "SMK & Co. · Chartered Accountants" immediately
-beside a lockup that already says exactly that, on viewports above 1180px. It
-was arguably earning its place next to a blurry 285px mark; next to a sharp one
-it is the redundancy §6 warns about. Recommend deleting it. Not done — it is a
-visible copy change, not part of swapping the file.
+**Resolved 25 Sep 2026.** `.nav__tag` read "SMK & Co. · Chartered Accountants"
+immediately beside a lockup that already said exactly that, and the homepage
+hero repeated the same line a third time as `.hx-hero__eyebrow`. Both removed,
+along with their now-orphaned CSS. The lockup carries the identity; nothing
+restates it. This is §6's "no redundancy" and §7's "one emphasis device per
+component" — the nav had three ways of saying the firm's name in one row.
 
 Still needed, unchanged by this: a vector master, the compact and monogram
 locks, and written clear-space and minimum sizes.
