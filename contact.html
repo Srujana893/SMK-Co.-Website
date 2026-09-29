@@ -109,18 +109,18 @@
           <div class="field--row">
             <div class="field">
               <label for="cf-name">Name</label>
-              <input id="cf-name" name="name" type="text" autocomplete="name" data-required />
+              <input id="cf-name" name="name" type="text" autocomplete="name" data-required / maxlength="120" >
               <span class="err">Please enter your name.</span>
             </div>
             <div class="field">
               <label for="cf-phone">Phone</label>
-              <input id="cf-phone" name="phone" type="tel" autocomplete="tel" data-required />
+              <input id="cf-phone" name="phone" type="tel" autocomplete="tel" data-required / maxlength="32" >
               <span class="err">Please enter a phone number.</span>
             </div>
           </div>
           <div class="field">
             <label for="cf-email">Email</label>
-            <input id="cf-email" name="email" type="email" autocomplete="email" data-required />
+            <input id="cf-email" name="email" type="email" autocomplete="email" data-required / maxlength="254" >
             <span class="err">Please enter a valid email address.</span>
           </div>
           <div class="field">
@@ -142,8 +142,16 @@
           </div>
           <div class="field">
             <label for="cf-msg">Message</label>
-            <textarea id="cf-msg" name="message" data-required></textarea>
+            <textarea id="cf-msg" name="message" data-required maxlength="5000"></textarea>
             <span class="err">Please add a short message.</span>
+          </div>
+          <!-- Honeypot. The API has always checked for this field; it was never in the
+               form, so it could never fire. Off-screen rather than display:none so an
+               automated client still sees and fills it. Absolutely positioned, so it
+               takes no space and cannot affect layout. -->
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+            <label for="cf-company">Company</label>
+            <input id="cf-company" name="company" type="text" tabindex="-1" autocomplete="off" />
           </div>
           <button class="btn btn--gold" type="submit">Request a Consultation <span class="arr">&rarr;</span></button>
           <p class="form__ok">Thank you — your request has been noted. We'll be in touch shortly.</p>

@@ -27,6 +27,14 @@ async function ensureSchema() {
       created_at       TIMESTAMPTZ NOT NULL DEFAULT now()
     )
   `);
+
+  // Additive only. CREATE TABLE IF NOT EXISTS does not reach an existing table,
+  // so the delivery columns are added separately. No drop, no type change.
+  await pool.query(`
+    ALTER TABLE enquiries
+      ADD COLUMN IF NOT EXISTS email_sent  BOOLEAN NOT NULL DEFAULT false,
+      ADD COLUMN IF NOT EXISTS email_error TEXT
+  `);
 }
 
 module.exports = { pool, ensureSchema };

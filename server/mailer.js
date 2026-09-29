@@ -30,7 +30,9 @@ async function sendEnquiryEmail({ to, enquiry }) {
   }
 
   const from = process.env.SMTP_FROM || process.env.SMTP_USER;
-  const svc = enquiry.service_interest_label || enquiry.service_interest || "(no service selected)";
+  // Label only. The route normalises the slug, so this always resolves from
+  // our own map — a visitor-supplied string can never reach the Subject header.
+  const svc = enquiry.service_interest_label || "(no service selected)";
   const subject = `[SMK enquiry — ${svc}] ${enquiry.name}`;
 
   const lines = [
