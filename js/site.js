@@ -176,6 +176,18 @@
 
     console.log("contact form handler attached");
 
+    /* ---- ?area=<practice-area slug> from a services row preselects the matching
+       option. Options carry data-area; a bare option value also matches. ---- */
+    var areaSel = form.querySelector('[name="service"]');
+    var area = "";
+    try { area = new URLSearchParams(window.location.search).get("area") || ""; } catch (e) {}
+    if (areaSel && area) {
+      var match = Array.prototype.slice.call(areaSel.options).filter(function (o) {
+        return o.getAttribute("data-area") === area || o.value === area;
+      })[0];
+      if (match) areaSel.value = match.value;
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 

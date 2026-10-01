@@ -6,7 +6,7 @@
 
 /* ---------- typography unification (Manrope headings / Inter text) ---------- */
 .hx h1,.hx h2,.hx h3,.hx h4,.hx h5,.hx .display,.hx .h-sec,.hx .h-card,
-.hx .row__title,.hx .proc-row__t,.hx .flow-step__t,.hx .svc-card__title,
+.hx .row__title,.hx .proc-row__t,.hx .flow-step__t,
 .hx .partner__name,.hx .acc-name,.hx .post__title,.hx .featured__title,
 .hx .blog-hero h1,.hx .article h1,.hx .article__body h2,.hx .statement p{
   font-family:var(--font);font-weight:600;letter-spacing:-.014em;font-style:normal}
@@ -19,7 +19,7 @@
 .hx .proc-row__t{font-size:clamp(1.15rem,1.7vw,1.4rem)}
 .hx .flow-step__t{font-size:clamp(1.15rem,1.7vw,1.4rem)}
 .hx .acc-name{font-size:clamp(1.25rem,2vw,1.6rem)}
-.hx .partner__name,.hx .svc-card__title,.hx .post__title{font-size:1.16rem}
+.hx .partner__name,.hx .post__title{font-size:1.16rem}
 .hx .featured__title{font-size:clamp(1.4rem,2.2vw,1.9rem)}
 .hx .blog-hero h1{font-size:clamp(2rem,3.8vw,3rem)}
 .hx .article h1{font-size:clamp(1.7rem,3vw,2.4rem)}

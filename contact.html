@@ -15,23 +15,6 @@
 <link rel="stylesheet" href="css/styles.css" />
 <link rel="stylesheet" href="css/home.css" />
 <link rel="stylesheet" href="css/system.css" />
-<style>
-  /* hero geometry motion (decorative — disabled for reduced-motion) */
-  @keyframes drift{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-14px,0)}100%{transform:translate3d(0,0,0)}}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  @keyframes dash{to{stroke-dashoffset:-220}}
-  .hero__rings{transform-box:fill-box;transform-origin:center;animation:spin 80s linear infinite}
-  .hero__mesh{animation:drift 14s ease-in-out infinite}
-  .hero__trace{stroke-dasharray:6 14;animation:dash 9s linear infinite}
-  @media (prefers-reduced-motion:reduce){.hero__rings,.hero__mesh,.hero__trace{animation:none}}
-  /* spotlight viz */
-  @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
-  .spot__ring{animation:spin 60s linear infinite;transform-box:fill-box;transform-origin:center}
-  .spot__ring--rev{animation-duration:42s;animation-direction:reverse}
-  .spot__node{animation:pulse 4s ease-in-out infinite}
-  .spot__node:nth-child(odd){animation-delay:1.5s}
-  @media (prefers-reduced-motion:reduce){.spot__ring,.spot__node{animation:none}}
-</style>
 </head>
 <body class="hx">
 
@@ -55,12 +38,12 @@
     <div class="mega__inner">
       <p class="mega__label">What we do</p>
       <div class="mega__grid mega__grid--row">
-        <a class="mega__link" href="/services"><span class="mega__n">01</span><span class="mega__t">Audit &amp; Assurance</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Statutory, internal, bank branch and PSU audits, carried out to ICAI standards.</p></a>
-        <a class="mega__link" href="/services"><span class="mega__n">02</span><span class="mega__t">Tax &amp; Compliance</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Income tax and GST — returns, assessments, notices and representation.</p></a>
-        <a class="mega__link" href="/services"><span class="mega__n">03</span><span class="mega__t">Advisory</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Business structuring, financial due diligence and planning support.</p></a>
-        <a class="mega__link" href="/services"><span class="mega__n">04</span><span class="mega__t">Forensic</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Investigation, fund tracing and fraud examination.</p></a>
-        <a class="mega__link" href="/services"><span class="mega__n">05</span><span class="mega__t">Technology &amp; Cyber</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Information systems audit, IT general controls and data-protection review.</p></a>
-        <a class="mega__link" href="/services"><span class="mega__n">06</span><span class="mega__t">Business, LLP &amp; Regulatory</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Incorporation, ROC and annual filings, and secretarial compliance.</p></a>
+        <a class="mega__link" href="/services#audit-assurance"><span class="mega__n">01</span><span class="mega__t">Audit &amp; Assurance</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Statutory, internal, bank branch and PSU audits, carried out to ICAI standards.</p></a>
+        <a class="mega__link" href="/services#tax-compliance"><span class="mega__n">02</span><span class="mega__t">Tax &amp; Compliance</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Income tax and GST — returns, assessments, notices and representation.</p></a>
+        <a class="mega__link" href="/services#advisory"><span class="mega__n">03</span><span class="mega__t">Advisory</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Business structuring, financial due diligence and planning support.</p></a>
+        <a class="mega__link" href="/services#forensic"><span class="mega__n">04</span><span class="mega__t">Forensic</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Investigation, fund tracing and fraud examination.</p></a>
+        <a class="mega__link" href="/services#technology-cyber"><span class="mega__n">05</span><span class="mega__t">Technology &amp; Cyber</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Information systems audit, IT general controls and data-protection review.</p></a>
+        <a class="mega__link" href="/services#business-regulatory"><span class="mega__n">06</span><span class="mega__t">Business, LLP &amp; Regulatory</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Incorporation, ROC and annual filings, and secretarial compliance.</p></a>
       </div>
       <div class="mega__foot">
         <p>Most clients begin with one practice area and take on others as the business grows.</p>
@@ -124,20 +107,18 @@
             <span class="err">Please enter a valid email address.</span>
           </div>
           <div class="field">
-            <label for="cf-service">Service of Interest</label>
+            <label for="cf-service">Practice area</label>
+            <!-- Option values are the slugs the enquiry API already routes on (server/routing.js).
+                 data-area is the practice-area slug a services row passes as ?area=, which js/site.js preselects. -->
             <select id="cf-service" name="service">
-              <option value="">Select a service…</option>
-              <option>IS &amp; Cybersecurity Audit</option>
-              <option>AI Automation &amp; Technology</option>
-              <option>Forensic Accounting</option>
-              <option>Audit &amp; Assurance</option>
-              <option>Taxation</option>
-              <option>Accounting &amp; Reporting</option>
-              <option>Corporate &amp; Regulatory Compliance</option>
-              <option>Business Advisory</option>
-              <option>Internal Controls</option>
-              <option>Specialised / Sector-Specific</option>
-              <option>Something else</option>
+              <option value="">Select a practice area…</option>
+              <option value="audit-assurance" data-area="audit-assurance">Audit &amp; Assurance</option>
+              <option value="taxation" data-area="tax-compliance">Tax &amp; Compliance</option>
+              <option value="business-advisory" data-area="advisory">Advisory</option>
+              <option value="forensic-accounting" data-area="forensic">Forensic</option>
+              <option value="is-cybersecurity-audit" data-area="technology-cyber">Technology &amp; Cyber</option>
+              <option value="corporate-regulatory-compliance" data-area="business-regulatory">Business, LLP &amp; Regulatory</option>
+              <option value="something-else">General enquiry</option>
             </select>
           </div>
           <div class="field">

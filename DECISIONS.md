@@ -120,9 +120,34 @@ interaction surfaces only. A precise table beats an ambiguous sentence — but i
 you meant the alternating section band should stay blue too, that is one token
 value and one commit.
 
+## Six practice areas — settled 1 Oct 2026 · owner: `smk-copy`
+
+The site claimed six practice areas on the homepage and in the mega menu and
+ten service lines on the services page. The six are the architecture; the ten
+are capabilities under them.
+
+| Practice area | Absorbs |
+| --- | --- |
+| Audit & Assurance | Audit & Assurance; Internal Controls & Process Efficiency |
+| Tax & Compliance | Taxation, as Direct and Indirect taxation; Accounting & Financial Reporting |
+| Advisory | Business Advisory & Consulting; Virtual CFO (with projections and forecasting); Due diligence |
+| Forensic | Forensic Accounting & Investigations |
+| Technology & Cyber | IS & Cybersecurity Audit; AI Automation & Technology Services |
+| Business, LLP & Regulatory | Corporate & Regulatory Compliance; Formation, registration and structuring |
+
+Specialised & Sector-Specific Services was a sector lens, not a service; its
+sectors live in the Sectors block. The contact form select offers the six
+areas plus "General enquiry", and keeps the enquiry API's existing slugs so
+routing is unchanged. "Ten service lines" no longer appears anywhere.
+
+Practice areas are not numbered. Order carries no meaning, so the audit's rule
+applies: emphasis comes from the name's weight, one device per row.
+
+Tax representation is labelled "Tax representation" pending confirmation of
+appellate work; it becomes "Tax litigation & representation" by changing the
+one `<li id="tax-representation">` in `services.html`.
+
 ## Still open
 
 1. **Photography** — not commissioned. Until it is, empty image slots are
    removed rather than filled with grey boxes. No stock.
-2. **Six practice areas or ten service lines** — the site claims both. Blocks
-   Stage 7.
