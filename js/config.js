@@ -41,11 +41,11 @@ window.siteConfig = {
       "10th Main, 4th Block, Rajaji Nagar,",
       "Bengaluru, Karnataka — 560 010"
     ],
-    /* Awaiting verified Google Maps embed for 63/B, 3rd Floor, Chirag Plaza,
-       10th Main, 4th Block, Rajaji Nagar, Bengaluru, Karnataka — 560 010.
-       Paste the iframe's src URL only (https://www.google.com/maps/embed?pb=…).
-       The map container on /contact renders only while this is non-empty. */
-    map: ""
+    /* Google Maps embed for 63/B, 3rd Floor, Chirag Plaza, 10th Main, 4th Block,
+       Rajaji Nagar, Bengaluru — 560 010. The iframe's src URL only; the map
+       container on /contact renders only while this is non-empty. The pin is
+       Google's listing "Sachin Mahendra & Co" at the Rajaji Nagar address. */
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.729629415279!2d77.55360947550595!3d12.989137014492709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d3bb4da6d57%3A0xd64052fc50178605!2sSachin%20Mahendra%20%26%20Co!5e0!3m2!1sen!2sus!4v1790844592072!5m2!1sen!2sus"
   },
   branchOffice: {
     label: "Branch Office",

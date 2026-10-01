@@ -49,7 +49,7 @@
       ifr.src = o.map.trim();
       ifr.loading = "lazy";
       ifr.title = "Map of the SMK & Co. " + o.city + " office: " + (o.lines || []).join(" ");
-      ifr.referrerPolicy = "no-referrer-when-downgrade";
+      ifr.referrerPolicy = "strict-origin-when-cross-origin";
       ifr.setAttribute("allowfullscreen", "");
       frame.appendChild(ifr); wrap.appendChild(cap); wrap.appendChild(frame);
       mapsWrap.appendChild(wrap);
