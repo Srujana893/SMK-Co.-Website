@@ -64,18 +64,36 @@ window.siteConfig = {
 };
 
 /* ============================================================
-   TESTIMONIALS — homepage, before the closing CTA.
+   CLIENT REVIEWS — homepage, after the closing CTA, directly above the footer.
    Enable only with client-approved testimonials, after confirming ICAI
    advertising/website guidelines permit them.
-   Empty by default: with no entries the section is not rendered at all,
-   heading included. Each entry:
+   THE THREE ENTRIES BELOW ARE PLACEHOLDERS FOR LAYOUT, NOT REAL CLIENTS.
+   Replace every quote and name with the client's approved words before
+   publishing, or empty the array: with no entries the section is not
+   rendered at all, heading included. Each entry:
      { quote: "…", name: "Client or company", role: "Role or industry" }
    `role` is optional. No star ratings, no photos, no results.
    ============================================================ */
-window.testimonials = [];
+window.testimonials = [
+  {
+    quote: "They explained what the accounts meant for the decision we were weighing up, not only what had to be filed.",
+    name: "Sample client 1 (placeholder)",
+    role: "Managing director · Manufacturing"
+  },
+  {
+    quote: "The same partner has handled our audit and our GST notices from the start. Nothing is handed down a chain.",
+    name: "Sample client 2 (placeholder)",
+    role: "Founder · Technology services"
+  },
+  {
+    quote: "Working papers that held up when the bank asked questions.",
+    name: "Sample client 3 (placeholder)",
+    role: "Partner · Professional services"
+  }
+];
 
 /* ============================================================
-   NETWORK / TIE-UPS RAIL — homepage, after Industries and before Insights.
+   NETWORK / TIE-UPS RAIL — homepage, after Industries and before the closing CTA.
    Confirm the relationship wording with each organisation, and confirm ICAI
    guidelines permit displaying it.
    Empty by default: with no items the rail is not rendered at all. Supply

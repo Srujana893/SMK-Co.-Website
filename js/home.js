@@ -1,7 +1,7 @@
 /* ============================================================
    SMK & Co — homepage data-driven blocks
-   Insights preview · testimonials · network rail
-   Reads window.blogPosts, window.testimonials and window.network from
+   client reviews · network rail
+   Reads window.testimonials and window.network from
    js/config.js. Loads before js/site.js so anything inserted here with
    data-reveal is picked up by the scroll-reveal handler.
    ============================================================ */
@@ -16,40 +16,18 @@
   }
   var closing = document.querySelector(".hx-close");
 
-  /* ---- insights: one lead post, then three titles with dates. Links go to
-     /blog: articles open by click on the listing, so there is no deep link. ---- */
-  var ins = document.getElementById("insights");
-  var posts = Array.isArray(window.blogPosts) ? window.blogPosts : [];
-  if (ins) {
-    var lead = ins.querySelector("[data-ins-lead]");
-    var list = ins.querySelector("[data-ins-list]");
-    var featured = posts.filter(function (p) { return p.featured; })[0] || posts[0];
-    var rest = posts.filter(function (p) { return p !== featured; }).slice(0, 3);
-    if (!featured || !lead || !list) {
-      ins.remove();
-    } else {
-      lead.innerHTML =
-        '<p class="hx-ins__meta"><span>' + esc(featured.category) + '</span><span>' + esc(featured.date) + '</span></p>' +
-        '<h3>' + esc(featured.title) + '</h3>' +
-        '<p class="hx-ins__x">' + esc(featured.excerpt) + '</p>';
-      list.innerHTML = rest.map(function (p) {
-        return '<a href="/blog"><span>' + esc(p.date) + ' · ' + esc(p.category) + '</span><h4>' + esc(p.title) + '</h4></a>';
-      }).join("");
-    }
-  }
-
-  /* ---- testimonials: before the closing CTA. Nothing renders, heading
-     included, while window.testimonials is empty.
+  /* ---- client reviews: after the closing CTA, directly above the footer.
+     Nothing renders, heading included, while window.testimonials is empty.
      Enable only with client-approved testimonials, after confirming ICAI
      advertising/website guidelines permit them. ---- */
   var quotes = (Array.isArray(window.testimonials) ? window.testimonials : [])
     .filter(function (t) { return t && t.quote && t.name; });
   if (quotes.length && closing) {
-    var sec = el("section", "hx-quotes hx-band");
+    var sec = el("section", "hx-quotes");
     sec.id = "testimonials";
     sec.setAttribute("data-screen-label", "Testimonials");
     var head = el("header", "hx-sec",
-      '<p class="hx-sec-label">Clients</p>' +
+      '<p class="hx-sec-label">What clients say</p>' +
       '<h2 class="hx-sec-title">Trusted by the businesses we work with.</h2>');
     head.setAttribute("data-reveal", "");
     var row = el("div", "hx-quotes__row" + (quotes.length > 3 ? " is-many" : ""));
@@ -65,16 +43,16 @@
     });
     var wrap = el("div", "hx-wrap");
     wrap.appendChild(head); wrap.appendChild(row); sec.appendChild(wrap);
-    closing.parentNode.insertBefore(sec, closing);
+    closing.parentNode.insertBefore(sec, closing.nextSibling);
   }
 
-  /* ---- network rail: after Industries, before Insights. Nothing renders
-     while window.network.items is empty.
+  /* ---- network rail: after Industries, before the closing CTA. Nothing
+     renders while window.network.items is empty.
      Confirm the relationship wording with each organisation, and confirm ICAI
      guidelines permit displaying it. ---- */
   var net = window.network || {};
   var items = (Array.isArray(net.items) ? net.items : []).filter(function (n) { return n && n.name; });
-  var before = ins || closing;
+  var before = closing;
   if (items.length && before) {
     var rail = el("section", "hx-net");
     rail.id = "network";
