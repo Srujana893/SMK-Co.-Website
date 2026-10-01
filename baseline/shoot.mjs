@@ -64,6 +64,22 @@ const SETTLE = `(async () => {
   return document.getAnimations().filter(a => a.playState === 'running').length;
 })()`;
 
+// Every <img> must have loaded before the shot. A fetch that fails leaves the
+// logo rendered as its alt text, which is a capture fault, not a site change,
+// so a failed image is re-requested once or twice before giving up.
+const IMAGES = `(async () => {
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const bad = () => [...document.images].filter(i => !i.complete || i.naturalWidth === 0);
+  for (let attempt = 0; attempt < 3; attempt++) {
+    for (let i = 0; i < 50 && bad().some(i => !i.complete); i++) await sleep(100);
+    const failed = bad();
+    if (!failed.length) return attempt;
+    for (const img of failed) { const src = img.currentSrc || img.src; img.removeAttribute('src'); img.src = src; }
+    await sleep(400);
+  }
+  return -bad().length;
+})()`;
+
 class CDP {
   constructor(ws) {
     this.ws = ws; this.id = 0; this.pend = new Map(); this.ev = new Map();
@@ -114,6 +130,7 @@ for (const page of PAGES) {
     await Promise.race([loaded, sleep(20000)]);
     await c.send('Runtime.evaluate', { expression: 'document.fonts.ready', awaitPromise: true });
     await c.send('Runtime.evaluate', { expression: STABLE, awaitPromise: true });
+    const imgs = await c.send('Runtime.evaluate', { expression: IMAGES, awaitPromise: true });
     await c.send('Runtime.evaluate', { expression: SETTLE, awaitPromise: true });
 
     const { cssContentSize } = await c.send('Page.getLayoutMetrics');
@@ -130,8 +147,10 @@ for (const page of PAGES) {
     fs.writeFileSync(file, Buffer.from(data, 'base64'));
     const bytes = fs.statSync(file).size;
     manifest.push({ page, width: w, height: full, bytes });
+    const iv = imgs.result.value;
     console.log(`${page}-${w}.png  ${w}x${full}  ${(bytes / 1024).toFixed(0)} KB` +
-                (result.value ? `  (${result.value} still running)` : ''));
+                (result.value ? `  (${result.value} still running)` : '') +
+                (iv > 0 ? `  (images retried x${iv})` : iv < 0 ? `  (${-iv} IMAGE(S) STILL BROKEN)` : ''));
   }
 }
 
