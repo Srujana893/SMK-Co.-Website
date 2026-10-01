@@ -3,17 +3,17 @@
     "per_file": [
       [
         "css/styles.css",
-        211,
-        93
+        229,
+        92
       ],
       [
         "css/home.css",
-        104,
+        94,
         3
       ],
       [
         "css/system.css",
-        114,
+        112,
         38
       ],
       [
@@ -22,10 +22,10 @@
         1
       ]
     ],
-    "sum_of_files": 476,
-    "dead_sum": 135,
-    "unique": 388,
-    "dead_unique": 117
+    "sum_of_files": 482,
+    "dead_sum": 134,
+    "unique": 395,
+    "dead_unique": 116
   },
   "_dead_by_file": {
     "css/styles.css": [
@@ -70,7 +70,6 @@
       "muted",
       "nav__menu",
       "nav__right",
-      "partner",
       "partner__avatar",
       "partner__exp",
       "partner__memb",
@@ -186,10 +185,10 @@
   },
   "arrows": {
     "per_page": {
-      "index.html": 24,
+      "index.html": 23,
       "about.html": 11,
       "team.html": 1,
-      "services.html": 11,
+      "services.html": 12,
       "blog.html": 11,
       "contact.html": 12,
       "careers.html": 14
@@ -198,10 +197,11 @@
     "css_pseudo_element_arrows": 2
   },
   "motion": {
-    "transition_declarations": 102,
-    "distinct_durations": 22,
+    "transition_declarations": 105,
+    "distinct_durations": 23,
     "durations_ms": [
       0.0,
+      35.0,
       100.0,
       120.0,
       160.0,
@@ -224,7 +224,7 @@
       750.0,
       1100.0
     ],
-    "animation_declarations": 21,
+    "animation_declarations": 24,
     "keyframes_css": [
       "crfade",
       "heroLine",
@@ -235,7 +235,9 @@
       "procLbl",
       "procPop",
       "smkFade",
-      "smkIn"
+      "smkIn",
+      "svIn",
+      "svItem"
     ],
     "keyframes_inline": [],
     "keyframes_inline_occurrences": 0,
@@ -243,8 +245,8 @@
       "ease",
       "linear"
     ],
-    "data_reveal": 78,
-    "reduced_motion_guards": 8
+    "data_reveal": 70,
+    "reduced_motion_guards": 10
   },
   "inline_style_attrs": {
     "per_page": {
@@ -299,9 +301,9 @@
     "index.html": {
       "counts": {
         "h1": 1,
-        "h2": 7,
+        "h2": 6,
         "h3": 9,
-        "h5": 3
+        "h5": 4
       },
       "skips": [
         "h2->h5"
@@ -312,7 +314,7 @@
         "h1": 1,
         "h2": 2,
         "h3": 8,
-        "h5": 3
+        "h5": 4
       },
       "skips": [
         "h1->h3",
@@ -323,7 +325,7 @@
       "counts": {
         "h1": 1,
         "h3": 3,
-        "h5": 3
+        "h5": 4
       },
       "skips": [
         "h1->h3",
@@ -335,7 +337,7 @@
         "h1": 1,
         "h2": 8,
         "h3": 3,
-        "h5": 3
+        "h5": 4
       },
       "skips": [
         "h2->h5"
@@ -344,7 +346,7 @@
     "blog.html": {
       "counts": {
         "h1": 1,
-        "h5": 3
+        "h5": 4
       },
       "skips": [
         "h1->h5"
@@ -354,7 +356,7 @@
       "counts": {
         "h1": 1,
         "h4": 2,
-        "h5": 3
+        "h5": 4
       },
       "skips": [
         "h1->h4"
@@ -366,7 +368,7 @@
         "h2": 6,
         "h3": 11,
         "h4": 5,
-        "h5": 3
+        "h5": 4
       },
       "skips": [
         "h2->h4",
@@ -375,8 +377,8 @@
     }
   },
   "fingerprints": {
-    "data_screen_label": 33,
-    "border_radius_declarations": 37,
+    "data_screen_label": 32,
+    "border_radius_declarations": 38,
     "distinct_radius_values": [
       "2px",
       "3px",
@@ -388,32 +390,32 @@
       "var(--radius)",
       "var(--radius-sm)"
     ],
-    "border_declarations": 198,
+    "border_declarations": 200,
     "image_slot_elements": 7,
     "internal_links_with_dot_html": 0,
-    "chrome_lines_header_footer": 604
+    "chrome_lines_header_footer": 618
   },
   "sizes": {
     "html_bytes": {
-      "index.html": 31181,
-      "about.html": 15461,
-      "team.html": 17105,
-      "services.html": 20478,
-      "blog.html": 12634,
-      "contact.html": 16173,
-      "careers.html": 25685
+      "index.html": 30559,
+      "about.html": 15555,
+      "team.html": 17199,
+      "services.html": 25416,
+      "blog.html": 12728,
+      "contact.html": 16267,
+      "careers.html": 25779
     },
     "css_bytes": {
-      "css/styles.css": 46537,
-      "css/home.css": 26410,
-      "css/system.css": 23629,
+      "css/styles.css": 51637,
+      "css/home.css": 24192,
+      "css/system.css": 23588,
       "css/careers.css": 10187
     },
-    "css_total": 106763,
+    "css_total": 109604,
     "js_bytes": {
-      "js/site.js": 12710,
-      "js/config.js": 7760,
-      "js/home.js": 5645,
+      "js/site.js": 12715,
+      "js/config.js": 8845,
+      "js/home.js": 4545,
       "js/blog.js": 7832,
       "js/team.js": 7724,
       "image-slot.js": 31363
