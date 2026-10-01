@@ -8,7 +8,7 @@
       ],
       [
         "css/home.css",
-        94,
+        98,
         3
       ],
       [
@@ -22,9 +22,9 @@
         1
       ]
     ],
-    "sum_of_files": 483,
+    "sum_of_files": 487,
     "dead_sum": 134,
-    "unique": 396,
+    "unique": 400,
     "dead_unique": 116
   },
   "_dead_by_file": {
@@ -197,7 +197,7 @@
     "css_pseudo_element_arrows": 2
   },
   "motion": {
-    "transition_declarations": 105,
+    "transition_declarations": 104,
     "distinct_durations": 23,
     "durations_ms": [
       0.0,
@@ -224,15 +224,13 @@
       750.0,
       1100.0
     ],
-    "animation_declarations": 24,
+    "animation_declarations": 22,
     "keyframes_css": [
       "crfade",
       "heroLine",
       "heroSettle",
       "netScroll",
-      "procDraw",
       "procFade",
-      "procLbl",
       "procPop",
       "smkFade",
       "smkIn",
@@ -245,7 +243,7 @@
       "ease",
       "linear"
     ],
-    "data_reveal": 70,
+    "data_reveal": 69,
     "reduced_motion_guards": 10
   },
   "inline_style_attrs": {
@@ -390,14 +388,14 @@
       "var(--radius)",
       "var(--radius-sm)"
     ],
-    "border_declarations": 200,
+    "border_declarations": 201,
     "image_slot_elements": 7,
     "internal_links_with_dot_html": 0,
     "chrome_lines_header_footer": 618
   },
   "sizes": {
     "html_bytes": {
-      "index.html": 30559,
+      "index.html": 33505,
       "about.html": 15555,
       "team.html": 17199,
       "services.html": 25416,
@@ -407,11 +405,11 @@
     },
     "css_bytes": {
       "css/styles.css": 52039,
-      "css/home.css": 24192,
+      "css/home.css": 23182,
       "css/system.css": 23588,
       "css/careers.css": 10187
     },
-    "css_total": 110006,
+    "css_total": 108996,
     "js_bytes": {
       "js/site.js": 12715,
       "js/config.js": 8845,
