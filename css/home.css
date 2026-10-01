@@ -54,11 +54,8 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-firm{background:var(--surface)}
 .hx .hx-firm__st{font-weight:600;margin:0;font-size:clamp(2.7rem,6vw,5rem);line-height:1.02;letter-spacing:-.032em;max-width:22ch;text-wrap:pretty}
 .hx-firm__body{margin-top:clamp(36px,4vw,56px);align-items:start}
-.hx-firm__txt{grid-column:1/span 12;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,64px)}
-.hx-firm__txt .hx-body+.hx-body{margin-top:0}
-.hx-firm__lists{grid-column:1/span 12;margin-top:clamp(30px,3.4vw,48px)}
-.hx-firm__lists .hx-two{margin-top:0;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,64px)}
-.hx-firm__lists .hx-cta{margin-top:clamp(28px,3vw,40px)}
+.hx-firm__txt{grid-column:1/span 7}
+.hx-firm__txt .hx-body{max-width:58ch}
 .hx-firm__txt .hx-cta{margin-top:26px}
 .hx-two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,2.6vw,36px);margin-top:34px}
 .hx-two h4{font-family:var(--font);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin:0 0 12px}
@@ -82,21 +79,24 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-person:hover .hx-person__l{color:var(--accent-ink)}
 .hx-person:hover .hx-person__l::after{transform:translateX(4px)}
 
-/* ============ 04 WHAT WE DO — full-width interactive rows ============ */
+/* ============ 04 WHAT WE DO — full-width rows ============
+   One component, two uses. On the homepage a row is a link: name, one line,
+   arrow. On the services page (.hx-svc--detail) the row is the detail itself:
+   name and description, the capability list beside them, the onward link
+   last. One emphasis device per row, the name's weight. No ordinals: the
+   order of practice areas carries no meaning. */
 .hx-do{background:var(--surface);border-top:1px solid var(--line)}
 .hx-do__list{border-top:1px solid var(--line)}
-.hx-svc{display:grid;grid-template-columns:clamp(56px,6vw,96px) minmax(0,1.05fr) minmax(0,1.15fr) 40px;align-items:baseline;gap:0 clamp(16px,2.4vw,40px);border-bottom:1px solid var(--line);padding:clamp(22px,2.6vw,34px) clamp(6px,1.2vw,18px);position:relative;transition:background .3s var(--ease)}
+.hx-svc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 40px;align-items:baseline;gap:0 clamp(16px,2.4vw,40px);border-bottom:1px solid var(--line);padding:clamp(22px,2.6vw,34px) clamp(6px,1.2vw,18px);position:relative;transition:background .3s var(--ease)}
 .hx-svc::before{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
 .hx-svc:hover{background:var(--accent-wash)}
 .hx-svc:hover::before{transform:scaleX(1)}
-.hx-svc__n{font-family:var(--font-ui);font-size:clamp(1.05rem,1.5vw,1.35rem);font-weight:500;letter-spacing:-.01em;color:var(--text-muted);transition:color .3s var(--ease)}
-.hx-svc:hover .hx-svc__n{color:var(--accent-ink)}
-.hx-svc h3{font-size:clamp(1.25rem,2.2vw,1.85rem);font-weight:600;line-height:1.14;letter-spacing:-.022em;margin:0;transition:transform .35s var(--ease)}
-.hx-svc:hover h3{transform:translateX(6px)}
-.hx-svc__lead{margin:8px 0 0;font-size:.95rem;color:var(--accent-ink);font-weight:500}
+.hx .hx-svc__t{margin:0;transition:transform .35s var(--ease)}
+.hx-svc:hover .hx-svc__t{transform:translateX(6px)}
 .hx-svc p.hx-svc__d{margin:0;font-size:.96rem;line-height:1.68;color:var(--text);max-width:46ch}
-.hx-svc__arr{justify-self:end;font-size:1.05rem;color:var(--accent-ink);opacity:0;transform:translateX(-8px);transition:opacity .3s var(--ease),transform .3s var(--ease)}
-.hx-svc:hover .hx-svc__arr{opacity:1;transform:translateX(0)}
+/* the arrow is generated, with empty alt text, so it is not read out and not counted as content */
+.hx-svc::after{content:"\2192" / "";justify-self:end;font-size:1.05rem;line-height:1;color:var(--accent-ink);opacity:0;transform:translateX(-8px);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.hx-svc:hover::after{opacity:1;transform:translateX(0)}
 .hx-do__foot{display:flex;flex-direction:column;align-items:flex-start;gap:20px;margin-top:clamp(26px,3vw,40px)}
 .hx-do__foot p{margin:0;color:var(--text);font-size:.98rem;max-width:46ch}
 
@@ -191,31 +191,21 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-ind__foot{display:flex;align-items:baseline;justify-content:space-between;gap:clamp(24px,4vw,64px);flex-wrap:wrap;margin-top:clamp(30px,3.4vw,46px)}
 .hx-ind__cap{margin:0;font-family:var(--font);font-weight:600;font-size:clamp(1.1rem,1.7vw,1.42rem);line-height:1.36;letter-spacing:-.018em;color:var(--ink);max-width:34ch}
 
-/* ============ 07 THE PRACTICE — full-width statement + stat row ============ */
-.hx-stats{background:var(--surface-tint);border-top:1px solid var(--line)}
-.hx .hx-stats__st{font-weight:600;color:var(--ink);margin:0;font-size:clamp(1.7rem,3.3vw,2.6rem);line-height:1.12;letter-spacing:-.028em;max-width:34ch;text-wrap:pretty}
-.hx-stats__row{display:grid;grid-template-columns:repeat(4,1fr);gap:0 clamp(20px,2.6vw,40px);margin-top:clamp(34px,3.8vw,52px);border-top:1px solid var(--line)}
-.hx-stats__row>div{padding:clamp(20px,2.2vw,28px) 0 0}
-.hx-stats__row dt{font-family:var(--font-ui);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin:0 0 12px}
-.hx-stats__row dd{margin:0;font-family:var(--font);font-size:clamp(1.15rem,1.9vw,1.5rem);font-weight:600;letter-spacing:-.022em;color:var(--ink);line-height:1.2}
-.hx-stats__row small{display:block;font-size:.87rem;color:var(--text);margin-top:9px;line-height:1.58}
-
-/* ============ 08 INSIGHTS ============ */
-.hx-ins{background:var(--surface);border-top:1px solid var(--line)}
-.hx-ins__lead{grid-column:1/span 6}
-.hx-ins__lead .hx-fig{aspect-ratio:16/10;overflow:hidden;background:var(--surface-warm)}
-.hx-ins__lead image-slot{display:block;width:100%;height:100%;transition:transform .6s var(--ease)}
-.hx-ins__lead:hover image-slot{transform:scale(1.02)}
-.hx-ins__lead p.hx-ins__meta{font-family:var(--font-ui);font-size:.72rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--text-muted);margin:18px 0 0;display:flex;gap:.7em;flex-wrap:wrap}
-.hx-ins__meta b{color:var(--accent-ink);font-weight:600}
-.hx-ins__lead h3{font-size:clamp(1.24rem,1.9vw,1.55rem);font-weight:600;line-height:1.24;letter-spacing:-.022em;margin:12px 0 0;max-width:26ch;transition:color .22s var(--ease)}
+/* ============ 07 INSIGHTS — one lead note and three titles, filled from window.blogPosts by js/home.js ============ */
+.hx-ins{background:var(--surface-tint);border-top:1px solid var(--line)}
+.hx-ins__lead{grid-column:1/span 6;display:block}
+.hx-ins__meta,.hx-ins__list span{font-family:var(--font);font-size:.72rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--text-muted)}
+.hx-ins__lead p.hx-ins__meta{margin:0;display:flex;gap:.7em;flex-wrap:wrap}
+.hx-ins__meta span+span::before{content:"·";margin-right:.7em}
+.hx-ins__lead h3{margin:14px 0 0;max-width:22ch;transition:color .22s var(--ease)}
 .hx-ins__lead:hover h3{color:var(--accent-ink)}
-.hx-ins__lead p{margin:12px 0 0;font-size:.96rem;line-height:1.66;color:var(--text);max-width:52ch}
+.hx-ins__lead p.hx-ins__x{margin:14px 0 0;font-size:.96rem;line-height:1.66;color:var(--text);max-width:52ch}
 .hx-ins__list{grid-column:8/span 5;border-top:1px solid var(--line)}
 .hx-ins__list a{display:block;padding:19px 0;border-bottom:1px solid var(--line)}
-.hx-ins__list h4{font-size:1.02rem;font-weight:600;line-height:1.38;margin:8px 0 0;transition:color .22s var(--ease)}
+.hx-ins__list span{display:block}
+.hx-ins__list h4{margin:8px 0 0;transition:color .22s var(--ease)}
 .hx-ins__list a:hover h4{color:var(--accent-ink)}
-.hx-ins__list span{font-family:var(--font-ui);font-size:.72rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--text-muted)}
+
 
 /* ============ 09 CONTACT ============ */
 .hx-close{background:var(--surface);border-top:1px solid var(--line)}
@@ -229,19 +219,17 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 /* ============ RESPONSIVE ============ */
 @media (max-width:1000px){
   .hx-hero{min-height:min(76vh,620px)}
-  .hx-firm__txt{grid-template-columns:1fr;gap:0}
-  .hx-firm__txt .hx-body+.hx-body{margin-top:1.05em}
+  .hx-firm__txt{grid-column:1/span 12}
   .hx-ins__lead,.hx-ins__list{grid-column:1/span 12}
   .hx-ins__list{margin-top:30px}
 
-  .hx-svc{grid-template-columns:clamp(44px,6vw,64px) minmax(0,1fr) 32px}
-  .hx-svc p.hx-svc__d{grid-column:2;max-width:60ch;margin-top:10px}
+  .hx-svc{grid-template-columns:minmax(0,1fr) 32px}
+  .hx-svc p.hx-svc__d{grid-column:1;max-width:60ch;margin-top:10px}
+  .hx-svc::after{grid-column:2;grid-row:1}
 }
 @media (max-width:900px){
   .nav__links{display:none}.nav__burger{display:block}
   .hx-ppl__grid{grid-template-columns:1fr 1fr}
-  .hx-stats__row{grid-template-columns:1fr 1fr;gap:0 24px}
-  .hx-stats__row>div:nth-child(n+3){border-top:1px solid var(--line);margin-top:22px}
 
   /* how we work: the line stands up into a rail; each detail opens under its name */
   .hx-proc__snake{padding-bottom:0}
@@ -266,12 +254,9 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
   .hx-hero__inner{padding-block:clamp(72px,20vw,104px)}
   .hx-hero__sub{color:var(--ink);font-size:.98rem}
   .hx-ppl__grid{grid-template-columns:1fr;gap:38px}
-  .hx-two,.hx-stats__row,.hx-proc__bar{grid-template-columns:1fr}
-  .hx-stats__row>div{border-top:1px solid var(--line);margin-top:0;padding-block:20px}
-  .hx-stats__row>div:first-child{border-top:0}
-  .hx-svc{grid-template-columns:38px minmax(0,1fr);padding-inline:0}
-  .hx-svc__arr{display:none}
-  .hx-svc p.hx-svc__d{grid-column:1/-1}
+  .hx-two{grid-template-columns:1fr}
+  .hx-svc{grid-template-columns:minmax(0,1fr);padding-inline:0}
+  .hx-svc::after{display:none}
   .hx-ind__panel .hx-fig{aspect-ratio:4/3}
   .hx-ind__d{padding-left:clamp(6px,1.2vw,16px)}
   .hx .hx-hero .hx-btn,.hx-close--pure .hx-btn{width:100%;justify-content:center}
@@ -280,3 +265,32 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 
 /* ---------- nav brand tag ---------- */
 .nav__brand{display:flex;align-items:center;gap:clamp(10px,1.2vw,16px)}
+
+/* ============================================================================
+   HOMEPAGE HERO ENTRANCE
+   Five beats, ~1.3s end to end: the photograph settles, then the headline
+   arrives one rendered line at a time, then the sub-line, then the action.
+   The image eases down from 4% larger rather than springing — a settle, not a
+   bounce. Homepage only; other heroes keep the quiet fade.
+   Line delays are set inline by the splitter in index.html, because the number
+   of lines depends on where the headline wraps at the current width.
+   ============================================================================ */
+@keyframes heroSettle{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+@keyframes heroLine{from{opacity:0;transform:translateY(.36em)}to{opacity:1;transform:none}}
+
+.hx .hx-hero__pic picture{
+  display:block;animation:heroSettle 900ms var(--ease) both;transform-origin:50% 55%}
+
+/* once split, the headline itself stops animating — its lines do */
+.hx .hx-hero h1.is-split{animation:none}
+.hx .hx-hero h1 .hx-line{display:block;animation:heroLine 560ms var(--ease) both}
+
+.hx .hx-hero [data-load="1"]{animation-delay:300ms;animation-duration:560ms}
+.hx .hx-hero [data-load="2"]{animation-delay:740ms;animation-duration:480ms}
+.hx .hx-hero [data-load="3"]{animation-delay:900ms;animation-duration:420ms}
+
+@media (prefers-reduced-motion:reduce){
+  /* a real state, not a frozen one: everything present, correct and legible */
+  .hx .hx-hero__pic picture{animation:none;opacity:1;transform:none}
+  .hx .hx-hero h1 .hx-line{animation:none;opacity:1;transform:none}
+}

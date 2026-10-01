@@ -8,7 +8,7 @@ from collections import OrderedDict
 ROOT  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = ["index.html","about.html","team.html","services.html","blog.html","contact.html","careers.html"]
 CSS   = ["css/styles.css","css/home.css","css/system.css","css/careers.css"]
-JS    = ["js/site.js","js/config.js","js/blog.js","js/team.js","image-slot.js"]
+JS    = ["js/site.js","js/config.js","js/home.js","js/blog.js","js/team.js","image-slot.js"]
 
 rd = lambda p: open(os.path.join(ROOT, p), encoding="utf-8", errors="replace").read()
 html = {p: rd(p) for p in PAGES}

@@ -249,19 +249,19 @@ html{font-optical-sizing:auto}
   letter-spacing:var(--ls-h1);font-weight:var(--w-display)}
 
 /* Heading 2 — the larger component titles. */
-.hx .hx-svc h3,.hx .row__title,.hx .featured__title,.hx h3{
+.hx .hx-svc__t,.hx .hx-ins__lead h3,.hx .row__title,.hx .featured__title,.hx h3{
   font-size:var(--text-h2);line-height:var(--lh-h2);
   letter-spacing:var(--ls-h2);font-weight:var(--w-display)}
 
 /* Heading 3 — row and card titles. */
-.hx .hx-person h3,.hx .partner__name,.hx .svc-card__title,.hx .post__title,
-.hx .hx-ins__lead h3,.hx .office h4,.hx .spot__item h4,.hx .step h4,
+.hx .hx-person h3,.hx .partner__name,.hx .post__title,.hx .hx-ins__list h4,
+.hx .office h4,.hx .step h4,
 .hx .value h4,.hx .svc__card h3,.hx h4{
   font-size:var(--text-h3);line-height:var(--lh-h3);
   letter-spacing:var(--ls-h3);font-weight:var(--w-display)}
 
 /* Label — headings used as labels. Still a step on the same ladder. */
-.hx .hx-two h4,.hx .hx-ins__list h4,.hx .statement h3,.hx .footer__col h5,
+.hx .hx-two h4,.hx .hx-two h3,.hx .hx-svc__gh,.hx .statement h3,.hx .footer__col h5,
 .hx .cr-why__lists h4,.hx .cr-apply__step h4,.hx h5{
   font-size:var(--text-label);line-height:var(--lh-label);
   letter-spacing:var(--ls-label);font-weight:var(--w-medium)}
@@ -323,19 +323,14 @@ html{font-optical-sizing:auto}
 .hx .hx-sec[data-reveal] > div > .hx-sec-label{transform:none;transition:opacity .5s var(--ease)}
 .hx .hx-sec[data-reveal].in > div > *{opacity:1;transform:none}
 
-/* 3 — the small thing pops last. In a row that arrives on its own beat, the
-   ordinal (01, 02 …) and a stat's value hold back ~.18s and then pop in from
-   half size, on the overshoot easing. Their delay is read off the row's --d,
-   so a staggered row's ordinal lands just after the row does. colour rides
-   along because .hx-svc__n and .hx-ind__n already transition it on hover. */
-.hx .hx-svc[data-reveal] .hx-svc__n,
+/* 3 — the small thing pops last. In an industry row that arrives on its own
+   beat, the ordinal (01, 02 …) holds back ~.18s and then pops in from half
+   size, on the overshoot easing. Its delay is read off the row's --d, so a
+   staggered row's ordinal lands just after the row does. colour rides along
+   because .hx-ind__n already transitions it on hover. */
 .hx .hx-ind__row[data-reveal] .hx-ind__n{
   transition:scale .6s var(--ease-pop) calc(var(--d,0s) + .18s),opacity .35s var(--ease) calc(var(--d,0s) + .18s),color .3s var(--ease)}
-.hx .hx-stats__row > [data-reveal] dd{transform-origin:left center;
-  transition:scale .6s var(--ease-pop) calc(var(--d,0s) + .18s),opacity .35s var(--ease) calc(var(--d,0s) + .18s)}
-.hx .hx-svc[data-reveal]:not(.in) .hx-svc__n,
 .hx .hx-ind__row[data-reveal]:not(.in) .hx-ind__n{scale:.5;opacity:0}
-.hx .hx-stats__row > [data-reveal]:not(.in) dd{scale:.9;opacity:0}
 
 /* 4 — the closing block arrives in beats like a section head: label, then
    the headline, then the line under it, then the button. */
@@ -357,6 +352,6 @@ html{font-optical-sizing:auto}
   .hx .hx-sec[data-reveal] > div > *,
   .hx .section-head[data-reveal] > *,
   .hx .hx-close__mid[data-reveal] > *{opacity:1!important;transform:none!important;transition:none!important}
-  .hx .hx-svc__n,.hx .hx-ind__n,.hx .hx-stats__row dd{scale:none!important;opacity:1!important;transition:none!important}
+  .hx .hx-ind__n{scale:none!important;opacity:1!important;transition:none!important}
   .hx .hx-person image-slot{scale:none!important}
 }
