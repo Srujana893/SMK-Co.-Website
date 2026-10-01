@@ -10,8 +10,9 @@
 :root{
   /* --- grounds ------------------------------------------------------------ */
   --surface:#FFFFFF;                  /* primary ground, everywhere */
-  --surface-warm:#FAF9F7;
-  --surface-tint:#F4F2EE;
+  --surface-warm:#FFFFFF;             /* 1 Oct 2026: pure white grounds. The warm greige bands
+  --surface-tint:#FFFFFF;                (#FAF9F7, #F4F2EE) read as off-white; hairlines carry
+                                         the band rhythm instead. Revisit with the palette round. */
 
   /* --- dark surfaces ------------------------------------------------------ */
   --ink:#1C1B19;

@@ -147,6 +147,14 @@ Tax representation is labelled "Tax representation" pending confirmation of
 appellate work; it becomes "Tax litigation & representation" by changing the
 one `<li id="tax-representation">` in `services.html`.
 
+## Pure white grounds — 1 Oct 2026 · owner: `smk-design-system`
+
+`--surface-warm` and `--surface-tint` are set to `#FFFFFF`. The warm greige
+bands (`#FAF9F7`, `#F4F2EE`) read as off-white rather than as a chosen second
+ground, so every band is now pure white and the 1px hairline between sections
+carries the rhythm. The token names stay so a second ground can return in the
+palette round, which waits on the final logo.
+
 ## Still open
 
 1. **Photography** — not commissioned. Until it is, empty image slots are
