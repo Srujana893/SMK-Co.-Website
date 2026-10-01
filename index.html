@@ -194,71 +194,84 @@
 </section>
 
 <!-- ============ 05 HOW WE WORK ============ -->
-<section class="hx-proc hx-band" id="how-we-work" data-screen-label="How we work">
-  <div class="hx-wrap">
-    <header class="hx-sec" data-reveal>
-      <p class="hx-sec-label">How we work</p>
-      <h2 class="hx-sec-title">A clear process, from understanding the business to supporting it.</h2>
-    </header>
-    <div class="hx-proc__snake" data-reveal data-d="1">
-      <svg class="hx-proc__path" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-        <path class="hx-proc__track" d="M100 60 C200 60 200 160 300 160 S400 60 500 60 S600 160 700 160 S800 60 900 60" pathLength="100"/>
-        <path class="hx-proc__fill" d="M100 60 C200 60 200 160 300 160 S400 60 500 60 S600 160 700 160 S800 60 900 60" pathLength="100"/>
-      </svg>
-      <ol class="hx-proc__steps" role="tablist" aria-label="Engagement stages">
-        <li class="hx-proc__step is-active" role="presentation">
-          <button class="hx-proc__node" type="button" role="tab" id="proc-tab-1" aria-controls="proc-1" aria-selected="true" tabindex="0">
-            <span class="hx-proc__dot" aria-hidden="true"></span>
-            <span class="hx-proc__lbl"><span class="hx-proc__n">01</span><span class="hx-proc__t">Understand</span></span>
-          </button>
-          <div class="hx-proc__detail" id="proc-1" role="tabpanel" aria-labelledby="proc-tab-1">
-            <p class="hx-proc__lead">We start with the business, not the file.</p>
-            <p class="hx-proc__d">Before any scope is proposed we learn how the business operates, what it is obliged to file, and where the pressure points sit — who keeps the records, how the numbers are produced, and what has caused trouble before.</p>
-          </div>
-        </li>
-        <li class="hx-proc__step" role="presentation">
-          <button class="hx-proc__node" type="button" role="tab" id="proc-tab-2" aria-controls="proc-2" aria-selected="false" tabindex="-1">
-            <span class="hx-proc__dot" aria-hidden="true"></span>
-            <span class="hx-proc__lbl"><span class="hx-proc__n">02</span><span class="hx-proc__t">Assess</span></span>
-          </button>
-          <div class="hx-proc__detail" id="proc-2" role="tabpanel" aria-labelledby="proc-tab-2">
-            <p class="hx-proc__lead">Scope set against real risk.</p>
-            <p class="hx-proc__d">Records, systems and prior filings are reviewed to establish what genuinely needs attention. The engagement is then scoped in writing — deliverables, timelines and the partner who owns the work.</p>
-          </div>
-        </li>
-        <li class="hx-proc__step" role="presentation">
-          <button class="hx-proc__node" type="button" role="tab" id="proc-tab-3" aria-controls="proc-3" aria-selected="false" tabindex="-1">
-            <span class="hx-proc__dot" aria-hidden="true"></span>
-            <span class="hx-proc__lbl"><span class="hx-proc__n">03</span><span class="hx-proc__t">Execute</span></span>
-          </button>
-          <div class="hx-proc__detail" id="proc-3" role="tabpanel" aria-labelledby="proc-tab-3">
-            <p class="hx-proc__lead">Partner-led work, properly documented.</p>
-            <p class="hx-proc__d">The work is carried out by a partner-led team to ICAI standards, with working papers and documentation prepared to stand up to later review by a bank, a buyer or the department.</p>
-          </div>
-        </li>
-        <li class="hx-proc__step" role="presentation">
-          <button class="hx-proc__node" type="button" role="tab" id="proc-tab-4" aria-controls="proc-4" aria-selected="false" tabindex="-1">
-            <span class="hx-proc__dot" aria-hidden="true"></span>
-            <span class="hx-proc__lbl"><span class="hx-proc__n">04</span><span class="hx-proc__t">Support</span></span>
-          </button>
-          <div class="hx-proc__detail" id="proc-4" role="tabpanel" aria-labelledby="proc-tab-4">
-            <p class="hx-proc__lead">We remain involved after the filing.</p>
-            <p class="hx-proc__d">Notices, queries and the filings that follow are handled as they arise. Clients reach the partner who did the work rather than starting again with someone new.</p>
-          </div>
-        </li>
-        <li class="hx-proc__step" role="presentation">
-          <button class="hx-proc__node" type="button" role="tab" id="proc-tab-5" aria-controls="proc-5" aria-selected="false" tabindex="-1">
-            <span class="hx-proc__dot" aria-hidden="true"></span>
-            <span class="hx-proc__lbl"><span class="hx-proc__n">05</span><span class="hx-proc__t">Review</span></span>
-          </button>
-          <div class="hx-proc__detail" id="proc-5" role="tabpanel" aria-labelledby="proc-tab-5">
-            <p class="hx-proc__lead">Each cycle informs the next.</p>
-            <p class="hx-proc__d">At the close of a cycle we go back over what came up — recurring adjustments, weak controls, late records — and agree what to tighten before the next year begins.</p>
-          </div>
-        </li>
-      </ol>
+<!-- The snake, drawn by scrolling. One winding line across the page with the
+     five stages on its bends, names above and below. On desktop the block pins
+     while the page scrolls: the line draws from left to right, each stage lights
+     as the line reaches it and its detail reads below, then the page releases.
+     On phones and short screens it draws as the block comes into view. After the
+     draw, hover, tap or the arrow keys read any stage. Without JavaScript the
+     line is drawn and the first stage reads. -->
+<section class="hx-proc" id="how-we-work" data-screen-label="How we work">
+  <div class="hx-proc__pin">
+    <div class="hx-wrap">
+      <header class="hx-sec" data-reveal>
+        <p class="hx-sec-label">How we work</p>
+        <h2 class="hx-sec-title">A clear process, from understanding the business to supporting it.</h2>
+      </header>
+      <div class="hx-proc__snake">
+        <div class="hx-proc__board">
+          <svg class="hx-proc__path" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+            <path class="hx-proc__track" d="M100 60 C200 60 200 160 300 160 S400 60 500 60 S600 160 700 160 S800 60 900 60" pathLength="100"/>
+            <path class="hx-proc__fill" d="M100 60 C200 60 200 160 300 160 S400 60 500 60 S600 160 700 160 S800 60 900 60" pathLength="100"/>
+          </svg>
+          <ol class="hx-proc__steps" role="tablist" aria-label="Engagement stages">
+          <li class="hx-proc__step is-on is-active" role="presentation">
+            <button class="hx-proc__node" type="button" role="tab" id="proc-tab-1" aria-controls="proc-1" aria-selected="true" tabindex="0">
+              <span class="hx-proc__dot" aria-hidden="true"></span>
+              <span class="hx-proc__lbl"><span class="hx-proc__n">01</span><span class="hx-proc__t">Understand</span></span>
+            </button>
+            <div class="hx-proc__detail" id="proc-1" role="tabpanel" aria-labelledby="proc-tab-1">
+              <p class="hx-proc__lead">We start with the business, not the file.</p>
+              <p class="hx-proc__d">Before any scope is proposed we learn how the business operates, what it is obliged to file, and where the pressure points sit — who keeps the records, how the numbers are produced, and what has caused trouble before.</p>
+            </div>
+          </li>
+          <li class="hx-proc__step" role="presentation">
+            <button class="hx-proc__node" type="button" role="tab" id="proc-tab-2" aria-controls="proc-2" aria-selected="false" tabindex="-1">
+              <span class="hx-proc__dot" aria-hidden="true"></span>
+              <span class="hx-proc__lbl"><span class="hx-proc__n">02</span><span class="hx-proc__t">Assess</span></span>
+            </button>
+            <div class="hx-proc__detail" id="proc-2" role="tabpanel" aria-labelledby="proc-tab-2">
+              <p class="hx-proc__lead">Scope set against real risk.</p>
+              <p class="hx-proc__d">Records, systems and prior filings are reviewed to establish what genuinely needs attention. The engagement is then scoped in writing — deliverables, timelines and the partner who owns the work.</p>
+            </div>
+          </li>
+          <li class="hx-proc__step" role="presentation">
+            <button class="hx-proc__node" type="button" role="tab" id="proc-tab-3" aria-controls="proc-3" aria-selected="false" tabindex="-1">
+              <span class="hx-proc__dot" aria-hidden="true"></span>
+              <span class="hx-proc__lbl"><span class="hx-proc__n">03</span><span class="hx-proc__t">Execute</span></span>
+            </button>
+            <div class="hx-proc__detail" id="proc-3" role="tabpanel" aria-labelledby="proc-tab-3">
+              <p class="hx-proc__lead">Partner-led work, properly documented.</p>
+              <p class="hx-proc__d">The work is carried out by a partner-led team to ICAI standards, with working papers and documentation prepared to stand up to later review by a bank, a buyer or the department.</p>
+            </div>
+          </li>
+          <li class="hx-proc__step" role="presentation">
+            <button class="hx-proc__node" type="button" role="tab" id="proc-tab-4" aria-controls="proc-4" aria-selected="false" tabindex="-1">
+              <span class="hx-proc__dot" aria-hidden="true"></span>
+              <span class="hx-proc__lbl"><span class="hx-proc__n">04</span><span class="hx-proc__t">Support</span></span>
+            </button>
+            <div class="hx-proc__detail" id="proc-4" role="tabpanel" aria-labelledby="proc-tab-4">
+              <p class="hx-proc__lead">We remain involved after the filing.</p>
+              <p class="hx-proc__d">Notices, queries and the filings that follow are handled as they arise. Clients reach the partner who did the work rather than starting again with someone new.</p>
+            </div>
+          </li>
+          <li class="hx-proc__step" role="presentation">
+            <button class="hx-proc__node" type="button" role="tab" id="proc-tab-5" aria-controls="proc-5" aria-selected="false" tabindex="-1">
+              <span class="hx-proc__dot" aria-hidden="true"></span>
+              <span class="hx-proc__lbl"><span class="hx-proc__n">05</span><span class="hx-proc__t">Review</span></span>
+            </button>
+            <div class="hx-proc__detail" id="proc-5" role="tabpanel" aria-labelledby="proc-tab-5">
+              <p class="hx-proc__lead">Each cycle informs the next.</p>
+              <p class="hx-proc__d">At the close of a cycle we go back over what came up — recurring adjustments, weak controls, late records — and agree what to tighten before the next year begins.</p>
+            </div>
+          </li>
+          </ol>
+        </div>
+      </div>
     </div>
   </div>
+  <!-- the scroll room for the drawing while the block above is pinned -->
+  <div class="hx-proc__space" aria-hidden="true"></div>
 </section>
 
 <!-- ============ 06 INDUSTRIES ============ -->
@@ -427,29 +440,65 @@
     r.querySelector(".hx-ind__btn").addEventListener("focus",function(){setInd(r)});
     r.addEventListener("click",function(){setInd(r)});
   });
-  var steps=[].slice.call(document.querySelectorAll(".hx-proc__step"));
-  function setStep(s){
-    steps.forEach(function(x){
-      var on=x===s,b=x.querySelector(".hx-proc__node");
-      x.classList.toggle("is-active",on);
-      b.setAttribute("aria-selected",on?"true":"false");
-      b.tabIndex=on?0:-1;
+  /* How we work: the line draws as the page scrolls. On desktop the block is
+     pinned (a spacer after it gives the section its scroll room) and progress
+     is the distance scrolled through the pin; otherwise progress is the block's
+     own passage into view. A stage comes on when the line reaches its bend; its
+     detail reads below. After the draw, hover, tap or the arrow keys pick a
+     stage. Reduced motion shows the finished line at once. */
+  var sec=document.querySelector(".hx-proc");
+  if(sec){
+    var pin=sec.querySelector(".hx-proc__pin"),board=sec.querySelector(".hx-proc__board"),fill=sec.querySelector(".hx-proc__fill");
+    var steps=[].slice.call(sec.querySelectorAll(".hx-proc__step"));
+    var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
+    var F=[0,25,50,75,100],NAV=74,pick=null,lastOn=-1;
+    var clamp=function(v){return Math.max(0,Math.min(1,v))};
+    function pinned(){return getComputedStyle(pin).position==="sticky"}
+    function progress(){
+      if(reduce)return 100;
+      if(pinned()){
+        var start=sec.getBoundingClientRect().top+window.scrollY-NAV,dist=sec.offsetHeight-pin.offsetHeight;
+        if(dist<=0)return 100;
+        return clamp(((window.scrollY-start)/dist)/0.85)*100;   /* finished with 15% of the pin still to go */
+      }
+      var r=board.getBoundingClientRect(),vh=window.innerHeight;
+      return clamp((vh*0.85-r.top)/(vh*0.45))*100;
+    }
+    function setActive(li){
+      steps.forEach(function(x){
+        var on=x===li,b=x.querySelector(".hx-proc__node");
+        x.classList.toggle("is-active",on);b.setAttribute("aria-selected",on?"true":"false");b.tabIndex=on?0:-1;
+      });
+    }
+    function update(){
+      var p=progress(),on=-1;
+      fill.style.setProperty("--prog",p.toFixed(2));
+      steps.forEach(function(s,i){var hit=p>=F[i]-0.01;s.classList.toggle("is-on",hit);if(hit)on=i;});
+      if(on!==lastOn){pick=null;lastOn=on;}
+      setActive(pick||steps[Math.max(0,on)]);
+    }
+    steps.forEach(function(s,i){
+      var b=s.querySelector(".hx-proc__node");
+      function choose(){pick=s;setActive(s);}
+      b.addEventListener("click",choose);
+      b.addEventListener("mouseenter",choose);
+      b.addEventListener("focus",choose);
+      b.addEventListener("keydown",function(e){
+        var n=null;
+        if(e.key==="ArrowRight"||e.key==="ArrowDown")n=steps[(i+1)%steps.length];
+        else if(e.key==="ArrowLeft"||e.key==="ArrowUp")n=steps[(i-1+steps.length)%steps.length];
+        else if(e.key==="Home")n=steps[0];
+        else if(e.key==="End")n=steps[steps.length-1];
+        if(n){e.preventDefault();pick=n;setActive(n);n.querySelector(".hx-proc__node").focus();}
+      });
     });
+    var tick=false;
+    function onScroll(){if(tick)return;tick=true;requestAnimationFrame(function(){update();tick=false;});}
+    window.addEventListener("scroll",onScroll,{passive:true});
+    window.addEventListener("resize",onScroll,{passive:true});
+    update();
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(update);
   }
-  steps.forEach(function(s,i){
-    var b=s.querySelector(".hx-proc__node");
-    b.addEventListener("click",function(){setStep(s)});
-    b.addEventListener("mouseenter",function(){setStep(s)});
-    b.addEventListener("focus",function(){setStep(s)});
-    b.addEventListener("keydown",function(e){
-      var n=null;
-      if(e.key==="ArrowRight"||e.key==="ArrowDown")n=steps[(i+1)%steps.length];
-      else if(e.key==="ArrowLeft"||e.key==="ArrowUp")n=steps[(i-1+steps.length)%steps.length];
-      else if(e.key==="Home")n=steps[0];
-      else if(e.key==="End")n=steps[steps.length-1];
-      if(n){e.preventDefault();n.querySelector(".hx-proc__node").focus();}
-    });
-  });
 })();
 </script>
 <script>
