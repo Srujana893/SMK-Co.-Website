@@ -3,7 +3,7 @@
     "per_file": [
       [
         "css/styles.css",
-        229,
+        230,
         92
       ],
       [
@@ -22,9 +22,9 @@
         1
       ]
     ],
-    "sum_of_files": 482,
+    "sum_of_files": 483,
     "dead_sum": 134,
-    "unique": 395,
+    "unique": 396,
     "dead_unique": 116
   },
   "_dead_by_file": {
@@ -406,12 +406,12 @@
       "careers.html": 25779
     },
     "css_bytes": {
-      "css/styles.css": 51637,
+      "css/styles.css": 52039,
       "css/home.css": 24192,
       "css/system.css": 23588,
       "css/careers.css": 10187
     },
-    "css_total": 109604,
+    "css_total": 110006,
     "js_bytes": {
       "js/site.js": 12715,
       "js/config.js": 8845,
