@@ -3,45 +3,190 @@
     "per_file": [
       [
         "css/styles.css",
-        217,
-        94
+        211,
+        93
       ],
       [
         "css/home.css",
-        79,
-        7
+        104,
+        3
       ],
       [
         "css/system.css",
-        92,
-        35
+        114,
+        38
       ],
       [
         "css/careers.css",
-        46,
-        0
+        47,
+        1
       ]
     ],
-    "sum_of_files": 434,
-    "dead_sum": 136,
-    "unique": 370,
-    "dead_unique": 122
+    "sum_of_files": 476,
+    "dead_sum": 135,
+    "unique": 388,
+    "dead_unique": 117
+  },
+  "_dead_by_file": {
+    "css/styles.css": [
+      "acc-av",
+      "acc-id",
+      "acc-memb",
+      "acc-name",
+      "acc-panel",
+      "acc-panel__in",
+      "acc-toggle",
+      "bg-deep",
+      "btn--ghost",
+      "ca-badge",
+      "ca-badge--nav",
+      "card",
+      "card__ico",
+      "card__num",
+      "cards",
+      "cards--3",
+      "chip",
+      "cta-band",
+      "flow",
+      "flow-step",
+      "flow-step--ivory",
+      "flow-step--navy",
+      "flow-step__card",
+      "flow-step__d",
+      "flow-step__node",
+      "flow-step__t",
+      "footer__badge",
+      "footer__frn",
+      "h-card",
+      "hairline",
+      "hairline--gold",
+      "hero__bg",
+      "hero__cta",
+      "hero__firm",
+      "hero__glow",
+      "hero__inner",
+      "hero__scroll",
+      "hero__sub",
+      "muted",
+      "nav__menu",
+      "nav__right",
+      "partner",
+      "partner__avatar",
+      "partner__exp",
+      "partner__memb",
+      "partner__meta",
+      "partner__name",
+      "ph",
+      "ph--audit",
+      "ph--cat",
+      "ph--compliance",
+      "ph--default",
+      "ph--forensic",
+      "ph--gold",
+      "ph--taxation",
+      "ph--technology",
+      "ph__cap",
+      "post-hidden",
+      "proc-row",
+      "proc-row__d",
+      "proc-row__n",
+      "proc-row__t",
+      "proc-rows",
+      "process",
+      "row__bul",
+      "row__ico",
+      "rows--svc",
+      "sector",
+      "sector__ico",
+      "sectors",
+      "step",
+      "step__n",
+      "svc",
+      "svc__bul",
+      "svc__card",
+      "svc__card--flag",
+      "svc__card--wide",
+      "svc__head-col",
+      "svc__ico",
+      "svc__tag",
+      "svc__top",
+      "trust__item",
+      "trust__row",
+      "trust__sep",
+      "trust__spacer",
+      "value",
+      "values",
+      "vn",
+      "wordmark",
+      "wordmark__amp",
+      "wordmark__co",
+      "wordmark__dot",
+      "wordmark__smk"
+    ],
+    "css/home.css": [
+      "hx-h2",
+      "hx-label",
+      "hx-sec-sub"
+    ],
+    "css/system.css": [
+      "acc-name",
+      "bg-deep",
+      "ca-badge",
+      "ca-badge--nav",
+      "cr-dev",
+      "cr-dev__body",
+      "cr-dev__fig",
+      "cr-intro",
+      "cr-intro__l",
+      "cr-intro__r",
+      "cr-note",
+      "cr-open__head",
+      "cr-open__list",
+      "cr-who",
+      "cr-who__head",
+      "cr-who__item",
+      "cr-who__list",
+      "cr-work__head",
+      "cr-work__list",
+      "cta-olive",
+      "flow-step__node",
+      "flow-step__t",
+      "h-card",
+      "hx-band-photo",
+      "hx-band-photo__cap",
+      "hx-h2",
+      "mark-panel",
+      "mega__grid--ins",
+      "mega__link--ins",
+      "partner__memb",
+      "partner__name",
+      "proc-row__n",
+      "proc-row__t",
+      "row__bul",
+      "step",
+      "svc__bul",
+      "svc__card",
+      "value"
+    ],
+    "css/careers.css": [
+      "cr-who__item"
+    ]
   },
   "ordinals": {
     "per_page": {
-      "index.html": 26,
+      "index.html": 20,
       "about.html": 13,
       "team.html": 0,
-      "services.html": 12,
+      "services.html": 9,
       "blog.html": 9,
       "contact.html": 9,
       "careers.html": 22
     },
-    "total": 91
+    "total": 82
   },
   "arrows": {
     "per_page": {
-      "index.html": 29,
+      "index.html": 24,
       "about.html": 11,
       "team.html": 1,
       "services.html": 11,
@@ -49,15 +194,18 @@
       "contact.html": 12,
       "careers.html": 14
     },
-    "total": 89,
+    "total": 84,
     "css_pseudo_element_arrows": 2
   },
   "motion": {
-    "transition_declarations": 85,
-    "distinct_durations": 16,
+    "transition_declarations": 102,
+    "distinct_durations": 22,
     "durations_ms": [
+      0.0,
       100.0,
+      120.0,
       160.0,
+      180.0,
       200.0,
       220.0,
       250.0,
@@ -70,59 +218,56 @@
       420.0,
       450.0,
       500.0,
+      550.0,
       600.0,
-      700.0
+      700.0,
+      750.0,
+      1100.0
     ],
-    "animation_declarations": 30,
+    "animation_declarations": 21,
     "keyframes_css": [
       "crfade",
-      "hxfade",
+      "heroLine",
+      "heroSettle",
+      "netScroll",
+      "procDraw",
+      "procFade",
+      "procLbl",
+      "procPop",
       "smkFade",
       "smkIn"
     ],
-    "keyframes_inline": [
-      "dash",
-      "drift",
-      "pulse",
-      "spin"
-    ],
-    "keyframes_inline_occurrences": 12,
+    "keyframes_inline": [],
+    "keyframes_inline_occurrences": 0,
     "easings": [
       "ease",
-      "ease-in-out",
       "linear"
     ],
-    "data_reveal": 66,
-    "reduced_motion_guards": 10
+    "data_reveal": 78,
+    "reduced_motion_guards": 8
   },
   "inline_style_attrs": {
     "per_page": {
       "index.html": 0,
-      "about.html": 3,
+      "about.html": 1,
       "team.html": 1,
-      "services.html": 8,
-      "blog.html": 4,
-      "contact.html": 2,
+      "services.html": 0,
+      "blog.html": 3,
+      "contact.html": 0,
       "careers.html": 0
     },
-    "total": 18,
+    "total": 5,
     "values": [
       "display:none",
-      "font-family: &quot;Cormorant Garamond&quot;; font-size: 37px",
-      "font-size: 37px",
-      "font-size: 37px; font-family: Georgia",
       "grid-column:1/-1",
-      "margin-top:1.1rem;margin-bottom:2rem",
-      "margin-top:1.2rem",
       "margin-top:1.4rem",
       "padding-top:0",
-      "text-align: left",
-      "transform-origin:180px 180px"
+      "text-align: left"
     ]
   },
   "firm_names": {
     "counts": {
-      "SMK & Co": 45,
+      "SMK & Co": 73,
       "Sachin Mahendra Kiran & Co": 8,
       "Sachin Mahendra & Co": 0
     },
@@ -140,13 +285,10 @@
     "uploads_bytes": 0,
     "uploads_files": 0,
     "uploads_unreferenced": [],
-    "assets_bytes": 1425408,
-    "assets_files": 15,
+    "assets_bytes": 3371008,
+    "assets_files": 13,
     "assets_unreferenced": [
-      "ca-india-mark.png",
-      "favicon-96x96.png",
-      "favicon.ico",
-      "favicon.svg",
+      "hero-ledger-source.png",
       "smk-favicon-source.png",
       "smk-logo-source.png"
     ],
@@ -157,23 +299,23 @@
     "index.html": {
       "counts": {
         "h1": 1,
-        "h2": 6,
+        "h2": 7,
         "h3": 9,
-        "h4": 2,
         "h5": 3
       },
       "skips": [
-        "h2->h4",
         "h2->h5"
       ]
     },
     "about.html": {
       "counts": {
+        "h1": 1,
         "h2": 2,
-        "h3": 6,
+        "h3": 8,
         "h5": 3
       },
       "skips": [
+        "h1->h3",
         "h3->h5"
       ]
     },
@@ -190,13 +332,12 @@
     },
     "services.html": {
       "counts": {
-        "h2": 3,
-        "h3": 10,
-        "h4": 3,
+        "h1": 1,
+        "h2": 8,
+        "h3": 3,
         "h5": 3
       },
       "skips": [
-        "h2->h4",
         "h2->h5"
       ]
     },
@@ -211,12 +352,12 @@
     },
     "contact.html": {
       "counts": {
-        "h2": 1,
+        "h1": 1,
         "h4": 2,
         "h5": 3
       },
       "skips": [
-        "h2->h4"
+        "h1->h4"
       ]
     },
     "careers.html": {
@@ -234,7 +375,7 @@
     }
   },
   "fingerprints": {
-    "data_screen_label": 32,
+    "data_screen_label": 33,
     "border_radius_declarations": 37,
     "distinct_radius_values": [
       "2px",
@@ -247,31 +388,32 @@
       "var(--radius)",
       "var(--radius-sm)"
     ],
-    "border_declarations": 199,
-    "image_slot_elements": 18,
+    "border_declarations": 198,
+    "image_slot_elements": 7,
     "internal_links_with_dot_html": 0,
-    "chrome_lines_header_footer": 554
+    "chrome_lines_header_footer": 604
   },
   "sizes": {
     "html_bytes": {
-      "index.html": 27212,
-      "about.html": 13675,
-      "team.html": 15564,
-      "services.html": 21236,
-      "blog.html": 10901,
-      "contact.html": 15189,
-      "careers.html": 24109
+      "index.html": 31181,
+      "about.html": 15461,
+      "team.html": 17105,
+      "services.html": 20478,
+      "blog.html": 12634,
+      "contact.html": 16173,
+      "careers.html": 25685
     },
     "css_bytes": {
-      "css/styles.css": 46750,
-      "css/home.css": 17088,
-      "css/system.css": 15963,
-      "css/careers.css": 9532
+      "css/styles.css": 46537,
+      "css/home.css": 26410,
+      "css/system.css": 23629,
+      "css/careers.css": 10187
     },
-    "css_total": 89333,
+    "css_total": 106763,
     "js_bytes": {
-      "js/site.js": 9644,
-      "js/config.js": 5441,
+      "js/site.js": 12710,
+      "js/config.js": 7760,
+      "js/home.js": 5645,
       "js/blog.js": 7832,
       "js/team.js": 7724,
       "image-slot.js": 31363
