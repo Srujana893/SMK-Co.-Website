@@ -39,7 +39,12 @@ window.siteConfig = {
       "63/B, 3rd Floor, Chirag Plaza,",
       "10th Main, 4th Block, Rajaji Nagar,",
       "Bengaluru, Karnataka — 560 010"
-    ]
+    ],
+    /* Awaiting verified Google Maps embed for 63/B, 3rd Floor, Chirag Plaza,
+       10th Main, 4th Block, Rajaji Nagar, Bengaluru, Karnataka — 560 010.
+       Paste the iframe's src URL only (https://www.google.com/maps/embed?pb=…).
+       The map container on /contact renders only while this is non-empty. */
+    map: ""
   },
   branchOffice: {
     label: "Branch Office",
@@ -48,7 +53,11 @@ window.siteConfig = {
       "Sri Manjunatha Complex, 1st Floor,",
       "Opp. Cauvery Ford Motors, Shankaramutt Road,",
       "Shivamogga, Karnataka — 577 201"
-    ]
+    ],
+    /* Awaiting verified Google Maps embed for Sri Manjunatha Complex, 1st Floor,
+       Opp. Cauvery Ford Motors, Shankaramutt Road, Shivamogga, Karnataka — 577 201.
+       Paste the iframe's src URL only. Renders only while non-empty. */
+    map: ""
   }
 };
 

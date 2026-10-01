@@ -314,6 +314,16 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
 .office__contact{display:grid;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
 .office__contact a,.office__contact span{font-size:.9rem;color:var(--text);display:flex;align-items:center;gap:10px;white-space:nowrap}
 .office__contact svg{width:15px;height:15px;stroke:var(--accent);stroke-width:1.5;fill:none;flex:none}
+.lede--form{margin:1.1rem 0 2rem}
+/* office maps: one responsive frame per office, rendered by js/site.js only when
+   config.js carries a verified embed src. Secondary to the details above it. */
+.maps{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,32px);margin-top:clamp(36px,4vw,56px)}
+.map{display:flex;flex-direction:column;gap:12px;min-width:0}
+.map__cap{margin:0;font-family:var(--font);font-size:var(--text-label);line-height:var(--lh-label);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-muted)}
+.map__frame{height:clamp(360px,28vw,420px);background:var(--surface-tint);border:1px solid var(--line);overflow:hidden}
+.map__frame iframe{display:block;width:100%;height:100%;border:0}
+@media (max-width:920px){.maps{grid-template-columns:1fr}}
+@media (max-width:680px){.map__frame{height:clamp(280px,70vw,320px)}}
 
 /* ---------- Footer ---------- */
 .footer{background:var(--ink);color:var(--on-ink-muted);padding-block:clamp(56px,6vw,84px) 30px}

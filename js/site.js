@@ -33,6 +33,29 @@
     el.setAttribute("href", url);
   });
 
+  /* ---- office maps (contact page): one frame per office that has a verified
+     embed src in config. While every src is empty nothing is rendered, and the
+     [data-maps] anchor stays hidden. ---- */
+  var mapsWrap = document.querySelector("[data-maps]");
+  if (mapsWrap) {
+    var withMaps = ["registeredOffice", "branchOffice"].map(function (k) { return cfg[k]; })
+      .filter(function (o) { return o && typeof o.map === "string" && /^https:\/\//i.test(o.map.trim()); });
+    withMaps.forEach(function (o) {
+      var wrap = document.createElement("div"); wrap.className = "map";
+      var cap = document.createElement("p"); cap.className = "map__cap";
+      cap.textContent = o.city + " · " + o.label;
+      var frame = document.createElement("div"); frame.className = "map__frame";
+      var ifr = document.createElement("iframe");
+      ifr.src = o.map.trim();
+      ifr.loading = "lazy";
+      ifr.title = "Map of the SMK & Co. " + o.city + " office: " + (o.lines || []).join(" ");
+      ifr.referrerPolicy = "no-referrer-when-downgrade";
+      ifr.setAttribute("allowfullscreen", "");
+      frame.appendChild(ifr); wrap.appendChild(cap); wrap.appendChild(frame);
+      mapsWrap.appendChild(wrap);
+    });
+    if (withMaps.length) mapsWrap.hidden = false;
+  }
 
   var nav = document.querySelector(".nav");
   var reveals = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
