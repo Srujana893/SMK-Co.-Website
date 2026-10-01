@@ -3,19 +3,19 @@
     "page": "index",
     "width": 390,
     "height": 8353,
-    "bytes": 603363
+    "bytes": 603497
   },
   {
     "page": "index",
     "width": 900,
     "height": 7268,
-    "bytes": 845232
+    "bytes": 841806
   },
   {
     "page": "index",
     "width": 1440,
     "height": 7816,
-    "bytes": 1020134
+    "bytes": 1020129
   },
   {
     "page": "about",
@@ -110,19 +110,19 @@
   {
     "page": "careers",
     "width": 390,
-    "height": 8329,
-    "bytes": 574929
+    "height": 7533,
+    "bytes": 529241
   },
   {
     "page": "careers",
     "width": 900,
-    "height": 7027,
-    "bytes": 614591
+    "height": 6320,
+    "bytes": 568660
   },
   {
     "page": "careers",
     "width": 1440,
-    "height": 6182,
-    "bytes": 679698
+    "height": 5498,
+    "bytes": 616135
   }
 ]

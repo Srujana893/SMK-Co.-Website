@@ -142,11 +142,15 @@ for (const page of PAGES) {
     const full = Math.min(Math.ceil(cssContentSize.height), 24000);
     await metrics(full);
     // Scroll-linked state (the How we work drawing) recomputes on scroll and
-    // resize through requestAnimationFrame. After the resize, fire both and
-    // wait two frames so that recompute has landed before anything settles.
+    // resize through requestAnimationFrame, reading window.innerHeight. The
+    // emulated height lands asynchronously, so wait until the page sees it,
+    // then fire both events and wait two frames so the recompute has run.
     await c.send('Runtime.evaluate', { awaitPromise: true, expression:
-      `new Promise(r => { window.dispatchEvent(new Event('resize')); window.dispatchEvent(new Event('scroll'));
-         requestAnimationFrame(() => requestAnimationFrame(r)); })` });
+      `new Promise(r => { const H = ${full}; let n = 0;
+         const go = () => { window.dispatchEvent(new Event('resize')); window.dispatchEvent(new Event('scroll'));
+           requestAnimationFrame(() => requestAnimationFrame(r)); };
+         const wait = () => (window.innerHeight >= H || ++n > 100) ? go() : setTimeout(wait, 50);
+         wait(); })` });
     await c.send('Runtime.evaluate', { expression: STABLE, awaitPromise: true });
     const { result } = await c.send('Runtime.evaluate', { expression: SETTLE, awaitPromise: true });
     await c.send('Runtime.evaluate', { expression: 'window.scrollTo(0, 0)' });
