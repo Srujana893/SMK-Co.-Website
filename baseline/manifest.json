@@ -15,7 +15,7 @@
     "page": "index",
     "width": 1440,
     "height": 7067,
-    "bytes": 1134808
+    "bytes": 1134977
   },
   {
     "page": "about",
@@ -93,19 +93,19 @@
     "page": "contact",
     "width": 390,
     "height": 3459,
-    "bytes": 233379
+    "bytes": 163589
   },
   {
     "page": "contact",
     "width": 900,
     "height": 2982,
-    "bytes": 241093
+    "bytes": 184465
   },
   {
     "page": "contact",
     "width": 1440,
     "height": 2162,
-    "bytes": 286321
+    "bytes": 197036
   },
   {
     "page": "careers",

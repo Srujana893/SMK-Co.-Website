@@ -129,6 +129,11 @@ for (const page of PAGES) {
     await c.send('Page.navigate', { url: `${BASE}/${page}.html` });
     await Promise.race([loaded, sleep(20000)]);
     await c.send('Runtime.evaluate', { expression: 'document.fonts.ready', awaitPromise: true });
+    // Third-party frames (the Google map on /contact) paint differently on every
+    // load, so they are hidden for the shot: the gate measures this site's
+    // rendering, and the frame's box still takes up its space.
+    await c.send('Runtime.evaluate', { expression:
+      `document.head.insertAdjacentHTML('beforeend', '<style data-shoot>iframe{visibility:hidden!important}</style>')` });
     await c.send('Runtime.evaluate', { expression: STABLE, awaitPromise: true });
     const imgs = await c.send('Runtime.evaluate', { expression: IMAGES, awaitPromise: true });
     await c.send('Runtime.evaluate', { expression: SETTLE, awaitPromise: true });
