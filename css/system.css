@@ -139,6 +139,9 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
 }
 @media (max-width:680px){.cr-who__list{grid-template-columns:1fr}}
 
+/* headings on dark surfaces: home.css sets every .hx heading to --ink, which
+   on a dark band is ink on ink. The band's own colour wins here. */
+.hx .bg-navy h1,.hx .bg-navy h2,.hx .bg-navy h3,.hx .bg-deep h1,.hx .bg-deep h2,.hx .bg-deep h3{color:var(--on-ink)}
 /* links inside dark surfaces keep their inherited colour */
 .hx .is-dark a,.hx .bg-navy a,.hx .bg-deep a,.hx .footer a,.hx .mnav a{color:inherit}
 .hx .footer a:hover,.hx .mnav a:hover{color:var(--surface)}

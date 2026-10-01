@@ -35,6 +35,7 @@ window.siteConfig = {
   registeredOffice: {
     label: "Registered Office",
     city: "Bengaluru",
+    phone: "+91 34578 76543",
     lines: [
       "63/B, 3rd Floor, Chirag Plaza,",
       "10th Main, 4th Block, Rajaji Nagar,",
@@ -49,6 +50,7 @@ window.siteConfig = {
   branchOffice: {
     label: "Branch Office",
     city: "Shivamogga",
+    phone: "+91 76890 65432",
     lines: [
       "Sri Manjunatha Complex, 1st Floor,",
       "Opp. Cauvery Ford Motors, Shankaramutt Road,",
