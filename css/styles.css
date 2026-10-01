@@ -375,7 +375,7 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
 
 /* ---------- Footer ---------- */
 .footer{background:var(--ink);color:var(--on-ink-muted);padding-block:clamp(56px,6vw,84px) 30px}
-.footer__top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:clamp(28px,4vw,56px);padding-bottom:48px;border-bottom:1px solid var(--line-on-ink)}
+.footer__top{display:grid;grid-template-columns:1.8fr .75fr .75fr 1.1fr 1.2fr;gap:clamp(28px,4vw,56px);padding-bottom:48px;border-bottom:1px solid var(--line-on-ink)}
 .footer__brandrow{display:flex;align-items:center;gap:13px;margin-bottom:18px}
 .footer__brandrow .wordmark{margin-bottom:0}
 .footer__brand p{font-size:.9rem;max-width:30ch;line-height:1.6}
@@ -412,6 +412,7 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
 /* ---------- Responsive ---------- */
 @media (max-width:1080px){
   .footer__top{grid-template-columns:1fr 1fr;row-gap:40px}
+  .footer__brand{grid-column:1/-1}
 }
 @media (max-width:920px){
   .about__grid,.contact__grid{grid-template-columns:1fr;gap:40px}
@@ -730,13 +731,13 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
 .footer__plate img{height:42px;width:auto;display:block;opacity:.94}
 @media(max-width:720px){.footer__plate img{height:32px}}
 
-.footer__desc{color:var(--on-ink-muted);margin:12px 0 10px;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;}
+.footer__desc{color:var(--on-ink-muted);margin:12px 0 10px;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
 .footer__col address{font-size:.84rem}
 .footer__col h5{margin-bottom:14px}
 
 /* footer social + direct-contact icons — stroked to match the site icon set.
    An anchor without href is one whose URL is not configured yet: hidden, not dead. */
-.footer__social{display:flex;align-items:center;gap:4px;margin:18px 0 0 -10px}
+.footer__social{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin:-8px 0 0 -10px}
 .footer__social a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;color:var(--on-ink-muted);transition:color .3s var(--ease)}
 .footer__social a:not([href]){display:none}
 .footer__social svg{width:19px;height:19px;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
