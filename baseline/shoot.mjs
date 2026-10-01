@@ -141,6 +141,12 @@ for (const page of PAGES) {
     const { cssContentSize } = await c.send('Page.getLayoutMetrics');
     const full = Math.min(Math.ceil(cssContentSize.height), 24000);
     await metrics(full);
+    // Scroll-linked state (the How we work drawing) recomputes on scroll and
+    // resize through requestAnimationFrame. After the resize, fire both and
+    // wait two frames so that recompute has landed before anything settles.
+    await c.send('Runtime.evaluate', { awaitPromise: true, expression:
+      `new Promise(r => { window.dispatchEvent(new Event('resize')); window.dispatchEvent(new Event('scroll'));
+         requestAnimationFrame(() => requestAnimationFrame(r)); })` });
     await c.send('Runtime.evaluate', { expression: STABLE, awaitPromise: true });
     const { result } = await c.send('Runtime.evaluate', { expression: SETTLE, awaitPromise: true });
     await c.send('Runtime.evaluate', { expression: 'window.scrollTo(0, 0)' });
