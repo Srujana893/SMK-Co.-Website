@@ -738,6 +738,11 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
 /* footer social + direct-contact icons — stroked to match the site icon set.
    An anchor without href is one whose URL is not configured yet: hidden, not dead. */
 .footer__social{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin:-8px 0 0 -10px}
+/* the Contact us column centres its heading and icons on desktop; in the stacked
+   layouts below 1080px it lines up with the other columns */
+.footer__col--contact{text-align:center}
+.footer__col--contact .footer__social{align-items:center;margin-left:0}
+@media (max-width:1080px){.footer__col--contact{text-align:left}.footer__col--contact .footer__social{align-items:flex-start;margin-left:-10px}}
 .footer__social a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;color:var(--on-ink-muted);transition:color .3s var(--ease)}
 .footer__social a:not([href]){display:none}
 .footer__social svg{width:19px;height:19px;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
