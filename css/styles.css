@@ -248,6 +248,55 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
 .edge{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px)}
 .edge p{margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--on-ink-muted);max-width:38ch}
 
+/* ---------- Services: practice-area rail and stage ----------
+   Six names on one rail; one area on the stage at a time. The accent line
+   slides to the chosen name with a small overshoot, the stage arrives with a
+   pop and its items cascade in. One onward link follows the active area. */
+.sv{margin-top:clamp(6px,1vw,14px)}
+.sv-rail{position:relative;display:flex;gap:clamp(22px,3.4vw,52px);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.sv-rail::-webkit-scrollbar{display:none}
+.sv-tab{flex:none;background:none;border:0;margin:0;padding:16px 0 18px;font-family:var(--font);font-size:var(--text-h3);line-height:var(--lh-h3);font-weight:var(--w-display);letter-spacing:var(--ls-h3);color:var(--text-muted);white-space:nowrap;cursor:pointer;scroll-margin-top:98px;transition:color .25s var(--ease),transform .45s var(--ease-pop)}
+.sv-tab:hover{color:var(--ink)}
+.sv-tab[aria-selected="true"]{color:var(--ink);transform:translateY(-2px)}
+.sv-tab:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:3px}
+.sv-rail__ind{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--accent);transition:left .55s var(--ease-pop),width .4s var(--ease)}
+.sv-stage{position:relative;padding-top:clamp(30px,3.8vw,52px)}
+.sv.is-ready .sv-panel[hidden]{display:none}
+.sv-panel+.sv-panel{margin-top:clamp(40px,5vw,72px)}
+.sv.is-ready .sv-panel+.sv-panel{margin-top:0}
+.sv-panel__head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,3vw,48px);align-items:start}
+.hx .sv-panel__t{margin:0;font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);font-weight:var(--w-display)}
+.sv-panel__d{margin:0;font-size:var(--text-lead);line-height:var(--lh-lead);color:var(--text);max-width:52ch}
+.sv-list{list-style:none;margin:clamp(26px,3.2vw,42px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,48px);border-top:1px solid var(--line)}
+.sv-list li{padding:12px 0;border-bottom:1px solid var(--line);font-size:var(--text-body);line-height:var(--lh-body);color:var(--text)}
+.sv-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,48px);margin-top:clamp(26px,3.2vw,42px);border-top:1px solid var(--line)}
+.sv-group{padding-top:18px}
+.hx .sv-group__h{margin:0 0 6px;color:var(--text-muted);text-transform:uppercase}
+.sv-group__i{margin:0 0 4px;font-size:var(--text-sm);line-height:var(--lh-sm);color:var(--text)}
+.sv-groups .sv-list{grid-template-columns:1fr;margin-top:8px;border-top:0}
+.sv .sv-go{margin-top:clamp(26px,3vw,40px)}
+/* motion: the stage pops, then the items follow in order */
+.sv-panel.is-in{animation:svIn .5s var(--ease-pop) both}
+.sv-panel.is-in .sv-list li,.sv-panel.is-in .sv-group{animation:svItem .45s var(--ease-pop) both;animation-delay:calc(var(--i,0) * 40ms + 120ms)}
+.sv-list li:nth-child(2),.sv-group:nth-child(2){--i:1}
+.sv-list li:nth-child(3),.sv-group:nth-child(3){--i:2}
+.sv-list li:nth-child(4){--i:3}
+.sv-list li:nth-child(5){--i:4}
+.sv-list li:nth-child(6){--i:5}
+.sv-list li:nth-child(7){--i:6}
+.sv-list li:nth-child(8){--i:7}
+.sv-groups .sv-list li{animation-delay:calc(var(--i,0) * 40ms + 200ms)}
+@keyframes svIn{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes svItem{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+@media (max-width:900px){.sv-panel__head{grid-template-columns:1fr;gap:14px}.sv-list,.sv-groups{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.sv-list,.sv-groups{grid-template-columns:1fr}.sv-group+.sv-group{border-top:1px solid var(--line);margin-top:10px}
+  /* tighter rail on phones so a third name peeks in and shows the rail scrolls */
+  .sv-rail{gap:22px}.sv-tab{font-size:var(--text-body);padding:14px 0 16px}}
+@media (prefers-reduced-motion:reduce){
+  .sv-tab,.sv-rail__ind{transition:none}
+  .sv-panel.is-in,.sv-panel.is-in .sv-list li,.sv-panel.is-in .sv-group{animation:none}
+}
+
 /* ---------- Leadership ---------- */
 .team{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.4vw,30px)}
 .partner{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(26px,2.6vw,34px);display:flex;flex-direction:column;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
@@ -445,6 +494,14 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
 .sector-chip{display:inline-flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:50px;padding:13px 22px;font-size:.96rem;color:var(--ink);transition:border-color .3s var(--ease),background .3s var(--ease)}
 .sector-chip:hover{border-color:var(--accent);background:color-mix(in srgb,var(--ink) 4%,transparent)}
 .sector-chip svg{width:18px;height:18px;stroke:var(--text-muted);stroke-width:1.5;fill:none;flex:none}
+/* the chips arrive one after another with a small pop, and lift a touch on hover */
+.sector-rows[data-reveal] .sector-chip{transition:opacity .4s var(--ease) calc(var(--i,0) * 35ms),transform .55s var(--ease-pop) calc(var(--i,0) * 35ms),border-color .3s var(--ease),background .3s var(--ease)}
+.sector-rows[data-reveal]:not(.in) .sector-chip{opacity:0;transform:translateY(8px) scale(.92)}
+.sector-rows[data-reveal].in .sector-chip{transition-delay:0s,0s,0s,0s}
+.sector-rows .sector-chip:hover{transform:translateY(-2px)}
+.sector-chip:nth-child(2){--i:1}.sector-chip:nth-child(3){--i:2}.sector-chip:nth-child(4){--i:3}.sector-chip:nth-child(5){--i:4}.sector-chip:nth-child(6){--i:5}
+.sector-chip:nth-child(7){--i:6}.sector-chip:nth-child(8){--i:7}.sector-chip:nth-child(9){--i:8}.sector-chip:nth-child(10){--i:9}.sector-chip:nth-child(11){--i:10}.sector-chip:nth-child(12){--i:11}
+@media (prefers-reduced-motion:reduce){.sector-rows[data-reveal] .sector-chip{transition:none;opacity:1;transform:none}}
 
 /* process vertical rows */
 .proc-rows{border-top:1px solid var(--line)}

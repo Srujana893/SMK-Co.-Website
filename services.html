@@ -87,116 +87,131 @@
     <div class="section-head" data-reveal>
       <p class="eyebrow">What we do</p>
       <h1 class="h-sec">A full practice, led by its technology edge.</h1>
-      <p class="lede">The practice areas, and what each one covers.</p>
+      <p class="lede">Choose a practice area to see what it covers.</p>
     </div>
 
-    <div class="hx-do__list">
-      <a class="hx-svc hx-svc--detail" href="/contact?area=audit-assurance" id="audit-assurance" data-reveal data-d="1">
-        <div>
-          <h2 class="hx-svc__t">Audit &amp; Assurance</h2>
-          <p class="hx-svc__d">Statutory, internal, bank branch and PSU audits, carried out to ICAI standards with documentation that holds up under review.</p>
-        </div>
-        <ul class="hx-svc__caps">
-          <li>Statutory, tax and internal audit</li>
-          <li>Bank branch, concurrent and statutory bank audit</li>
-          <li>PSU audit</li>
-          <li>Internal-control design and review</li>
-          <li>SOP development and process optimisation</li>
-          <li>Risk assessment</li>
-        </ul>
-      </a>
-      <a class="hx-svc hx-svc--detail" href="/contact?area=tax-compliance" id="tax-compliance" data-reveal data-d="2">
-        <div>
-          <h2 class="hx-svc__t">Tax &amp; Compliance</h2>
-          <p class="hx-svc__d">Income tax and GST — returns, assessments, notices and representation, together with the routine filings that keep a business current.</p>
-        </div>
-        <div class="hx-svc__grps">
-          <div class="hx-svc__grp">
-            <h3 class="hx-svc__gh">Direct taxation</h3>
-            <p class="hx-svc__gi">Income tax for companies, LLPs, firms and proprietors, from the return to the assessment.</p>
-            <ul class="hx-svc__caps">
-              <li>Income-tax return filing</li>
-              <li>Tax planning</li>
-              <li>TDS compliance</li>
-              <li>Assessments and notices</li>
-              <!-- One string, one place. Becomes "Tax litigation &amp; representation" once appellate work is confirmed. -->
-              <li id="tax-representation">Tax representation</li>
-            </ul>
+    <!-- One practice area on the stage at a time. The tab buttons carry the
+         area slugs, so /services#tax-compliance from the homepage or the mega
+         menu opens that tab. Without JavaScript every panel is shown in turn. -->
+    <div class="sv" data-reveal data-d="1">
+      <div class="sv-rail" role="tablist" aria-label="Practice areas">
+        <button class="sv-tab" type="button" role="tab" id="audit-assurance" aria-controls="panel-audit-assurance" aria-selected="true" tabindex="0">Audit &amp; Assurance</button>
+        <button class="sv-tab" type="button" role="tab" id="tax-compliance" aria-controls="panel-tax-compliance" aria-selected="false" tabindex="-1">Tax &amp; Compliance</button>
+        <button class="sv-tab" type="button" role="tab" id="advisory" aria-controls="panel-advisory" aria-selected="false" tabindex="-1">Advisory</button>
+        <button class="sv-tab" type="button" role="tab" id="forensic" aria-controls="panel-forensic" aria-selected="false" tabindex="-1">Forensic</button>
+        <button class="sv-tab" type="button" role="tab" id="technology-cyber" aria-controls="panel-technology-cyber" aria-selected="false" tabindex="-1">Technology &amp; Cyber</button>
+        <button class="sv-tab" type="button" role="tab" id="business-regulatory" aria-controls="panel-business-regulatory" aria-selected="false" tabindex="-1">Business, LLP &amp; Regulatory</button>
+        <span class="sv-rail__ind" aria-hidden="true"></span>
+      </div>
+      <div class="sv-stage">
+        <div class="sv-panel" id="panel-audit-assurance" role="tabpanel" aria-labelledby="audit-assurance" hidden>
+          <div class="sv-panel__head">
+            <h2 class="sv-panel__t">Audit &amp; Assurance</h2>
+            <p class="sv-panel__d">Statutory, internal, bank branch and PSU audits, carried out to ICAI standards with documentation that holds up under review.</p>
           </div>
-          <div class="hx-svc__grp">
-            <h3 class="hx-svc__gh">Indirect taxation</h3>
-            <p class="hx-svc__gi">GST compliance, with representation on assessments and notices.</p>
-            <ul class="hx-svc__caps">
-              <li>GST return filing</li>
-              <li>GST reconciliations</li>
-              <li>GST assessments and notices</li>
-              <li>GST on works contracts and the movement of goods</li>
-            </ul>
+          <ul class="sv-list">
+            <li>Statutory, tax and internal audit</li>
+            <li>Bank branch, concurrent and statutory bank audit</li>
+            <li>PSU audit</li>
+            <li>Internal-control design and review</li>
+            <li>SOP development and process optimisation</li>
+            <li>Risk assessment</li>
+          </ul>
+        </div>
+        <div class="sv-panel" id="panel-tax-compliance" role="tabpanel" aria-labelledby="tax-compliance" hidden>
+          <div class="sv-panel__head">
+            <h2 class="sv-panel__t">Tax &amp; Compliance</h2>
+            <p class="sv-panel__d">Income tax and GST — returns, assessments, notices and representation, together with the routine filings that keep a business current.</p>
           </div>
-          <div class="hx-svc__grp">
-            <h3 class="hx-svc__gh">Accounting &amp; reporting</h3>
-            <p class="hx-svc__gi">The books and statements the filings rest on.</p>
-            <ul class="hx-svc__caps">
-              <li>Bookkeeping and finalisation</li>
-              <li>Financial statements under Ind AS and AS</li>
-              <li>Management reporting</li>
-              <li>Routine statutory filings</li>
-            </ul>
+          <div class="sv-groups">
+            <div class="sv-group">
+              <h3 class="sv-group__h">Direct taxation</h3>
+              <p class="sv-group__i">Income tax for companies, LLPs, firms and proprietors, from the return to the assessment.</p>
+              <ul class="sv-list">
+                <li>Income-tax return filing</li>
+                <li>Tax planning</li>
+                <li>TDS compliance</li>
+                <li>Assessments and notices</li>
+                <!-- One string, one place. Becomes "Tax litigation &amp; representation" once appellate work is confirmed. -->
+                <li id="tax-representation">Tax representation</li>
+              </ul>
+            </div>
+            <div class="sv-group">
+              <h3 class="sv-group__h">Indirect taxation</h3>
+              <p class="sv-group__i">GST compliance, with representation on assessments and notices.</p>
+              <ul class="sv-list">
+                <li>GST return filing</li>
+                <li>GST reconciliations</li>
+                <li>GST assessments and notices</li>
+                <li>GST on works contracts and the movement of goods</li>
+              </ul>
+            </div>
+            <div class="sv-group">
+              <h3 class="sv-group__h">Accounting &amp; reporting</h3>
+              <p class="sv-group__i">The books and statements the filings rest on.</p>
+              <ul class="sv-list">
+                <li>Bookkeeping and finalisation</li>
+                <li>Financial statements under Ind AS and AS</li>
+                <li>Management reporting</li>
+                <li>Routine statutory filings</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </a>
-      <a class="hx-svc hx-svc--detail" href="/contact?area=advisory" id="advisory" data-reveal data-d="3">
-        <div>
-          <h2 class="hx-svc__t">Advisory</h2>
-          <p class="hx-svc__d">Business structuring, financial due diligence and planning support for owners deciding how to fund, restructure or expand.</p>
+        <div class="sv-panel" id="panel-advisory" role="tabpanel" aria-labelledby="advisory" hidden>
+          <div class="sv-panel__head">
+            <h2 class="sv-panel__t">Advisory</h2>
+            <p class="sv-panel__d">Business structuring, financial due diligence and planning support for owners deciding how to fund, restructure or expand.</p>
+          </div>
+          <ul class="sv-list">
+            <li>Financial and strategic advisory</li>
+            <li>Virtual CFO, including projections and forecasting</li>
+            <li>Financial due diligence</li>
+            <li>Valuation support</li>
+            <li>Budgeting and project reports</li>
+          </ul>
         </div>
-        <ul class="hx-svc__caps">
-          <li>Financial and strategic advisory</li>
-          <li>Virtual CFO, including projections and forecasting</li>
-          <li>Financial due diligence</li>
-          <li>Valuation support</li>
-          <li>Budgeting and project reports</li>
-        </ul>
-      </a>
-      <a class="hx-svc hx-svc--detail" href="/contact?area=forensic" id="forensic" data-reveal data-d="4">
-        <div>
-          <h2 class="hx-svc__t">Forensic</h2>
-          <p class="hx-svc__d">Investigation, fund tracing and fraud examination where the question is what happened, and what the records actually show.</p>
+        <div class="sv-panel" id="panel-forensic" role="tabpanel" aria-labelledby="forensic" hidden>
+          <div class="sv-panel__head">
+            <h2 class="sv-panel__t">Forensic</h2>
+            <p class="sv-panel__d">Investigation, fund tracing and fraud examination where the question is what happened, and what the records actually show.</p>
+          </div>
+          <ul class="sv-list">
+            <li>Fraud examination (FAFD)</li>
+            <li>Financial-statement and ledger analysis</li>
+            <li>Asset tracing</li>
+            <li>Litigation and dispute support</li>
+          </ul>
         </div>
-        <ul class="hx-svc__caps">
-          <li>Fraud examination (FAFD)</li>
-          <li>Financial-statement and ledger analysis</li>
-          <li>Asset tracing</li>
-          <li>Litigation and dispute support</li>
-        </ul>
-      </a>
-      <a class="hx-svc hx-svc--detail" href="/contact?area=technology-cyber" id="technology-cyber" data-reveal data-d="5">
-        <div>
-          <h2 class="hx-svc__t">Technology &amp; Cyber</h2>
-          <p class="hx-svc__d">Information systems audit, IT general controls and data-protection review for businesses whose records live in software.</p>
+        <div class="sv-panel" id="panel-technology-cyber" role="tabpanel" aria-labelledby="technology-cyber" hidden>
+          <div class="sv-panel__head">
+            <h2 class="sv-panel__t">Technology &amp; Cyber</h2>
+            <p class="sv-panel__d">Information systems audit, IT general controls and data-protection review for businesses whose records live in software.</p>
+          </div>
+          <ul class="sv-list">
+            <li>Information-systems and ITGC reviews under ISA 3.0</li>
+            <li>Cybersecurity assessments</li>
+            <li>RBI and SEBI systems-audit support</li>
+            <li>DPDP readiness</li>
+            <li>Workflow and reconciliation automation</li>
+            <li>Document and data-extraction pipelines</li>
+            <li>MIS dashboards</li>
+          </ul>
         </div>
-        <ul class="hx-svc__caps">
-          <li>Information-systems and ITGC reviews under ISA 3.0</li>
-          <li>Cybersecurity assessments</li>
-          <li>RBI and SEBI systems-audit support</li>
-          <li>DPDP readiness</li>
-          <li>Workflow and reconciliation automation</li>
-          <li>Document and data-extraction pipelines</li>
-          <li>MIS dashboards</li>
-        </ul>
-      </a>
-      <a class="hx-svc hx-svc--detail" href="/contact?area=business-regulatory" id="business-regulatory" data-reveal data-d="6">
-        <div>
-          <h2 class="hx-svc__t">Business, LLP &amp; Regulatory</h2>
-          <p class="hx-svc__d">Incorporation, ROC and annual filings, statutory registers and the secretarial compliance that follows a company year to year.</p>
+        <div class="sv-panel" id="panel-business-regulatory" role="tabpanel" aria-labelledby="business-regulatory" hidden>
+          <div class="sv-panel__head">
+            <h2 class="sv-panel__t">Business, LLP &amp; Regulatory</h2>
+            <p class="sv-panel__d">Incorporation, ROC and annual filings, statutory registers and the secretarial compliance that follows a company year to year.</p>
+          </div>
+          <ul class="sv-list">
+            <li>Company and LLP formation, registration and structuring</li>
+            <li>ROC and MCA filings</li>
+            <li>Secretarial compliance and statutory registers</li>
+            <li>FEMA and statutory compliance</li>
+          </ul>
         </div>
-        <ul class="hx-svc__caps">
-          <li>Company and LLP formation, registration and structuring</li>
-          <li>ROC and MCA filings</li>
-          <li>Secretarial compliance and statutory registers</li>
-          <li>FEMA and statutory compliance</li>
-        </ul>
-      </a>
+      </div>
+      <a class="hx-cta sv-go" href="/contact?area=audit-assurance" data-sv-go><span>Talk to us about <span data-sv-name>audit</span></span> <span class="arr">&rarr;</span></a>
     </div>
   </div>
 </section>
@@ -287,6 +302,58 @@
 <script src="image-slot.js"></script>
 <script src="js/config.js"></script>
 <script src="js/site.js"></script>
+<script>
+/* Practice-area rail and stage. Click, arrow keys, Home and End move along the
+   rail; the hash opens a tab on arrival and follows each change, so every
+   /services#<area> link lands on the right panel. */
+(function(){
+  var sv=document.querySelector(".sv");if(!sv)return;
+  var rail=sv.querySelector(".sv-rail"),ind=sv.querySelector(".sv-rail__ind");
+  var tabs=[].slice.call(sv.querySelectorAll(".sv-tab"));
+  var go=sv.querySelector("[data-sv-go]"),goName=sv.querySelector("[data-sv-name]");
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
+  var ABOUT={"audit-assurance":"audit","tax-compliance":"tax and compliance","advisory":"advisory","forensic":"forensic work","technology-cyber":"technology and cyber","business-regulatory":"business and regulatory work"};
+  function panelOf(t){return document.getElementById(t.getAttribute("aria-controls"))}
+  function current(){return tabs.filter(function(t){return t.getAttribute("aria-selected")==="true"})[0]||tabs[0]}
+  function moveInd(t){ind.style.left=t.offsetLeft+"px";ind.style.width=t.offsetWidth+"px"}
+  function centre(t){var left=t.offsetLeft-(rail.clientWidth-t.offsetWidth)/2;rail.scrollTo({left:Math.max(0,left),behavior:reduce?"auto":"smooth"})}
+  function activate(t,opts){
+    opts=opts||{};
+    tabs.forEach(function(x){
+      var on=x===t,p=panelOf(x);
+      x.setAttribute("aria-selected",on?"true":"false");x.tabIndex=on?0:-1;
+      p.hidden=!on;p.classList.remove("is-in");
+    });
+    var p=panelOf(t);
+    if(!reduce){void p.offsetWidth;p.classList.add("is-in");}
+    moveInd(t);
+    if(go){go.setAttribute("href","/contact?area="+t.id);if(goName)goName.textContent=ABOUT[t.id]||t.textContent.trim();}
+    if(opts.user)centre(t);
+    if(opts.focus)t.focus();
+  }
+  sv.classList.add("is-ready");
+  tabs.forEach(function(t,i){
+    t.addEventListener("click",function(){activate(t,{user:true});if(history.replaceState)history.replaceState(null,"","#"+t.id)});
+    t.addEventListener("keydown",function(e){
+      var n=null;
+      if(e.key==="ArrowRight")n=tabs[(i+1)%tabs.length];
+      else if(e.key==="ArrowLeft")n=tabs[(i-1+tabs.length)%tabs.length];
+      else if(e.key==="Home")n=tabs[0];
+      else if(e.key==="End")n=tabs[tabs.length-1];
+      if(n){e.preventDefault();activate(n,{user:true,focus:true});if(history.replaceState)history.replaceState(null,"","#"+n.id)}
+    });
+  });
+  function fromHash(){
+    var id=(location.hash||"").slice(1),t=id&&document.getElementById(id);
+    if(t&&tabs.indexOf(t)>-1){activate(t,{user:true});return true}
+    return false;
+  }
+  if(!fromHash())activate(tabs[0]);
+  window.addEventListener("hashchange",fromHash);
+  window.addEventListener("resize",function(){moveInd(current())},{passive:true});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){moveInd(current())});
+})();
+</script>
 <script>
 (function(){
   var items=[].slice.call(document.querySelectorAll(".nav__item[data-menu]"));

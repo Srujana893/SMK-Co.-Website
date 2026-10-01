@@ -264,7 +264,7 @@ html{font-optical-sizing:auto}
   letter-spacing:var(--ls-h3);font-weight:var(--w-display)}
 
 /* Label — headings used as labels. Still a step on the same ladder. */
-.hx .hx-two h4,.hx .hx-two h3,.hx .hx-svc__gh,.hx .statement h3,.hx .footer__col h5,
+.hx .hx-two h4,.hx .hx-two h3,.hx .sv-group__h,.hx .statement h3,.hx .footer__col h5,
 .hx .cr-why__lists h4,.hx .cr-apply__step h4,.hx h5{
   font-size:var(--text-label);line-height:var(--lh-label);
   letter-spacing:var(--ls-label);font-weight:var(--w-medium)}
