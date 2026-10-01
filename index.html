@@ -496,6 +496,8 @@
     function onScroll(){if(tick)return;tick=true;requestAnimationFrame(function(){update();tick=false;});}
     window.addEventListener("scroll",onScroll,{passive:true});
     window.addEventListener("resize",onScroll,{passive:true});
+    /* layout above the section can shift after load (images, fonts); follow it */
+    if(window.ResizeObserver)new ResizeObserver(onScroll).observe(document.body);
     update();
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(update);
   }
