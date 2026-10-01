@@ -56,7 +56,7 @@
       <p class="mega__label">About</p>
       <div class="mega__grid mega__grid--two">
         <a class="mega__link" href="/about"><span class="mega__n">01</span><span class="mega__t">About the firm</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Who we are, where we work and what the practice stands for.</p></a>
-        <a class="mega__link" href="/careers#how-we-work"><span class="mega__n">02</span><span class="mega__t">How we work</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">The five stages every engagement runs through.</p></a>
+        <a class="mega__link" href="/#how-we-work"><span class="mega__n">02</span><span class="mega__t">How we work</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">The five stages every engagement runs through.</p></a>
         <a class="mega__link" href="/team"><span class="mega__n">03</span><span class="mega__t">Our people</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">The partners who lead the work, and how to reach them.</p></a>
       </div>
     </div>
@@ -134,47 +134,6 @@
           <li>Willingness to keep learning</li>
           <li>Standards and amendments kept current</li>
         </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ HOW WE WORK ============ -->
-<section class="cr-flow hx-band" id="how-we-work" data-screen-label="How we work">
-  <div class="hx-wrap">
-    <header class="hx-sec" data-reveal>
-      <p class="hx-sec-label">How we work</p>
-      <h2 class="hx-sec-title">Five stages, on every engagement.</h2>
-    </header>
-    <div class="cr-rail" role="tablist" aria-label="Engagement stages" data-reveal>
-      <span class="cr-rail__line" aria-hidden="true"></span>
-      <span class="cr-rail__fill" aria-hidden="true"></span>
-      <button class="cr-step is-active" type="button" role="tab" aria-selected="true" aria-controls="cr-p1" data-step="1"><span class="cr-step__dot" aria-hidden="true"></span><span class="cr-step__n">01</span><span class="cr-step__t">Understand</span></button>
-      <button class="cr-step" type="button" role="tab" aria-selected="false" aria-controls="cr-p2" data-step="2"><span class="cr-step__dot" aria-hidden="true"></span><span class="cr-step__n">02</span><span class="cr-step__t">Plan</span></button>
-      <button class="cr-step" type="button" role="tab" aria-selected="false" aria-controls="cr-p3" data-step="3"><span class="cr-step__dot" aria-hidden="true"></span><span class="cr-step__n">03</span><span class="cr-step__t">Execute</span></button>
-      <button class="cr-step" type="button" role="tab" aria-selected="false" aria-controls="cr-p4" data-step="4"><span class="cr-step__dot" aria-hidden="true"></span><span class="cr-step__n">04</span><span class="cr-step__t">Support</span></button>
-      <button class="cr-step" type="button" role="tab" aria-selected="false" aria-controls="cr-p5" data-step="5"><span class="cr-step__dot" aria-hidden="true"></span><span class="cr-step__n">05</span><span class="cr-step__t">Review</span></button>
-    </div>
-    <div class="cr-panels">
-      <div class="cr-panel is-active" id="cr-p1" role="tabpanel" data-panel="1">
-        <p class="cr-panel__lead">We learn your business, obligations and goals before proposing anything.</p>
-        <p class="cr-panel__d">Who keeps the records, how the numbers are produced, what the business is obliged to file and what has caused trouble before. Junior staff sit in on these conversations from the start.</p>
-      </div>
-      <div class="cr-panel" id="cr-p2" role="tabpanel" data-panel="2">
-        <p class="cr-panel__lead">A scoped engagement with clear deliverables, timelines and ownership.</p>
-        <p class="cr-panel__d">Risk is assessed against real records and prior filings, then the work is scoped in writing. Everyone on the team knows what they own before fieldwork begins.</p>
-      </div>
-      <div class="cr-panel" id="cr-p3" role="tabpanel" data-panel="3">
-        <p class="cr-panel__lead">Partner-led work, supported by modern tools and tight documentation.</p>
-        <p class="cr-panel__d">Fieldwork, sampling and testing to ICAI standards, with working papers prepared to stand up to later review by a bank, a buyer or the department.</p>
-      </div>
-      <div class="cr-panel" id="cr-p4" role="tabpanel" data-panel="4">
-        <p class="cr-panel__lead">Continued availability for filings, queries and the work that follows.</p>
-        <p class="cr-panel__d">Notices, assessments and routine filings are handled as they arise, by the people who did the original work rather than a new team each time.</p>
-      </div>
-      <div class="cr-panel" id="cr-p5" role="tabpanel" data-panel="5">
-        <p class="cr-panel__lead">Each cycle informs the next.</p>
-        <p class="cr-panel__d">At the close of a cycle the file is reviewed for what recurred — adjustments, weak controls, late records — and what should be tightened before the next year begins.</p>
       </div>
     </div>
   </div>
@@ -382,25 +341,6 @@
 <script src="image-slot.js"></script>
 <script src="js/config.js"></script>
 <script src="js/site.js"></script>
-<script>
-(function(){
-  var steps=[].slice.call(document.querySelectorAll(".cr-step")),
-      panels=[].slice.call(document.querySelectorAll(".cr-panel")),
-      fill=document.querySelector(".cr-rail__fill");
-  function set(s){
-    steps.forEach(function(x){var on=x===s;x.classList.toggle("is-active",on);x.setAttribute("aria-selected",on?"true":"false")});
-    var k=s.getAttribute("data-step");
-    panels.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-panel")===k)});
-    if(fill)fill.style.width=((parseInt(k,10)-1)/(steps.length-1)*100||0)+"%";
-  }
-  steps.forEach(function(s){
-    s.addEventListener("mouseenter",function(){set(s)});
-    s.addEventListener("click",function(){set(s)});
-    s.addEventListener("focus",function(){set(s)});
-  });
-  if(steps.length)set(steps[0]);
-})();
-</script>
 <script>
 (function(){
   var items=[].slice.call(document.querySelectorAll(".nav__item[data-menu]"));
