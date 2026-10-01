@@ -62,6 +62,35 @@ window.siteConfig = {
 };
 
 /* ============================================================
+   TESTIMONIALS — homepage, before the closing CTA.
+   Enable only with client-approved testimonials, after confirming ICAI
+   advertising/website guidelines permit them.
+   Empty by default: with no entries the section is not rendered at all,
+   heading included. Each entry:
+     { quote: "…", name: "Client or company", role: "Role or industry" }
+   `role` is optional. No star ratings, no photos, no results.
+   ============================================================ */
+window.testimonials = [];
+
+/* ============================================================
+   NETWORK / TIE-UPS RAIL — homepage, after Industries and before Insights.
+   Confirm the relationship wording with each organisation, and confirm ICAI
+   guidelines permit displaying it.
+   Empty by default: with no items the rail is not rendered at all. Supply
+   real, approved logo files (monochrome or ink-tinted, consistent height)
+   under assets/ — nothing here is invented or recreated. Each item:
+     { name: "Organisation", logo: "assets/….svg", descriptor: "", url: "" }
+   `descriptor` and `url` are optional. The heading must match the actual
+   relationship: "Working with" or "Our network", not "Partners", unless a
+   formal partnership is confirmed. assets/ca-india-mark.png is not a
+   network logo and must not be listed here.
+   ============================================================ */
+window.network = {
+  heading: "Working with",
+  items: []
+};
+
+/* ============================================================
    BLOG POSTS — add / edit articles in one place.
    image: null renders the striped placeholder graphic.
    ============================================================ */
