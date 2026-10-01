@@ -17,11 +17,22 @@
     var v = getPath(cfg, el.getAttribute("data-cfg"));
     if (v == null) return;
     if (el.hasAttribute("data-cfg-href")) {
-      el.setAttribute("href", el.getAttribute("data-cfg-href") + v);
+      var pre = el.getAttribute("data-cfg-href"), val = String(v);
+      /* tel: URIs must not carry the spaces the display text uses */
+      if (pre.slice(0, 4) === "tel:") val = val.replace(/[^\d]/g, "");
+      el.setAttribute("href", pre + val);
     } else {
       el.textContent = v;
     }
   });
+
+  /* ---- social links: href comes from config; drop any still unconfigured ---- */
+  document.querySelectorAll("[data-social]").forEach(function (el) {
+    var url = getPath(cfg, "social." + el.getAttribute("data-social"));
+    if (!url || url === "#") { el.remove(); return; }
+    el.setAttribute("href", url);
+  });
+
 
   var nav = document.querySelector(".nav");
   var reveals = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
@@ -60,7 +71,11 @@
       for (var i = reveals.length - 1; i >= 0; i--) {
         var el = reveals[i];
         var r = el.getBoundingClientRect();
-        if (r.top < vh * 0.9 && r.bottom > 0) { el.classList.add("in"); reveals.splice(i, 1); }
+        // No `r.bottom > 0` clause: an element that has scrolled entirely past
+        // the top still has to be revealed, or a fast fling, a scrollbar drag
+        // or Cmd+End jumps it from below the fold to above it between two
+        // frames and it stays invisible for good.
+        if (r.top < vh * 0.9) { el.classList.add("in"); reveals.splice(i, 1); }
       }
     }
 
@@ -88,11 +103,19 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
   update();
-  // failsafe: if anything is still hidden shortly after load, reveal it
+  // Failsafe: if anything the visitor can already see is still hidden shortly
+  // after load, reveal it. Scoped to the viewport on purpose -- a blanket
+  // reveal here fires every section at once, off-screen, about two seconds in,
+  // so by the time you scroll down the animation has already been and gone.
+  // Anything below the fold stays with the scroll handler, which owns it.
   setTimeout(function () {
     update();
-    reveals.forEach(function (el) { el.classList.add("in"); });
-    reveals.length = 0;
+    for (var i = reveals.length - 1; i >= 0; i--) {
+      if (reveals[i].getBoundingClientRect().top < window.innerHeight) {
+        reveals[i].classList.add("in");
+        reveals.splice(i, 1);
+      }
+    }
   }, 1800);
 
   /* ---- smooth-scroll anchor links ---- */

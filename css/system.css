@@ -26,30 +26,31 @@
 .hx .article__body h2{font-size:1.34rem}
 .hx .article__pull{font-family:var(--font);font-style:normal;font-weight:500;font-size:clamp(1.2rem,1.9vw,1.5rem);border-left-color:var(--accent);color:var(--ink)}
 .hx .proc-row__n,.hx .fact .n,.hx .flow-step__node{font-family:var(--font);font-weight:600}
-/* eyebrow: quiet mono label in olive, replacing the italic display eyebrow */
-.hx .eyebrow{font-family:var(--font-ui);font-size:.68rem;font-weight:500;font-style:normal;
-  letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);white-space:normal;line-height:1.4}
-.hx .eyebrow::before{width:22px;opacity:1;background:var(--line)}
+
+
 .hx .bg-navy .eyebrow,.hx .bg-deep .eyebrow{color:var(--on-ink-muted)}
-.hx .bg-navy .eyebrow::before,.hx .bg-deep .eyebrow::before{background:var(--line-on-ink)}
+/* the 12px belongs to the eyebrow; the heading contributes nothing */
+.hx .eyebrow+*,.hx .hx-sec-label+*{margin-top:0}
+.hx .bg-navy .eyebrow::after,.hx .bg-deep .eyebrow::after,
+.hx .bg-navy .hx-sec-label::after,.hx .bg-deep .hx-sec-label::after{background:var(--line-on-ink)}
 
 /* ---------- accent: restrained olive for interface states ---------- */
 .hx .nav__link::after{background:var(--accent)}
 .hx .nav__link.is-active{color:var(--accent)}
 .hx .ulink::after{background:var(--accent)}
 .hx .cat-tag,.hx .office__tag,.hx .partner__memb{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 28%,transparent)}
-.hx .office__tag::before{background:var(--accent)}
+.hx .office__tag::before{background:var(--line)}
 .hx .filter__btn.is-active{background:var(--accent);border-color:var(--accent);color:var(--surface)}
 .hx .filter__btn:hover{border-color:var(--accent)}
 .hx .btn--gold{--bg:var(--accent);--fg:var(--surface);--bd:var(--accent)}
 .hx .btn--gold:hover{--bg:var(--accent-ink);--bd:var(--accent-ink)}
 .hx .field input:focus,.hx .field select:focus,.hx .field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
-.hx .row__num{color:var(--accent)}
+.hx .row__num{color:var(--text-muted)}
 .hx .svc__bul li::before,.hx .row__bul li::before{background:var(--accent);opacity:.7}
 .hx .sector-chip:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 5%,transparent)}
-.hx .sector-chip svg{stroke:var(--accent)}
+.hx .sector-chip svg{stroke:var(--text-muted)}
 .hx .statement{border-top-color:var(--line)}
-.hx .statement h3{font-family:var(--font-ui);color:var(--accent);font-size:.68rem}
+.hx .statement h3{font-family:var(--font);color:var(--text-muted);font-size:.68rem}
 
 /* ---------- CA / professional marks: neutral panel, consistent sizing ---------- */
 .ca-badge{background:var(--surface);border:1px solid var(--line);border-radius:3px;box-shadow:none;
@@ -129,7 +130,7 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
 .cr-role{display:grid;grid-template-columns:1fr auto;gap:8px 20px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
 .cr-role h3{font-size:1.06rem;font-weight:600;margin:0}
 .cr-role p{margin:6px 0 0;font-size:.92rem;line-height:1.6;color:var(--text);max-width:52ch;grid-column:1}
-.cr-role__meta{font-family:var(--font-ui);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.cr-role__meta{font-family:var(--font);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
 .cr-note{grid-column:6/span 7;margin-top:22px;font-size:.92rem;line-height:1.7;color:var(--text)}
 @media (max-width:1000px){
   .cr-intro__l,.cr-intro__r,.cr-work__head,.cr-work__list,.cr-dev__fig,.cr-dev__body,.cr-open__head,.cr-open__list,.cr-note{grid-column:1/span 12}
@@ -160,7 +161,7 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
 /* ---------- expanded navigation ---------- */
 .nav__row{position:relative}
 .nav__item{position:relative;display:flex;align-items:center;flex:none}
-.nav__trigger{display:inline-flex;align-items:center;white-space:nowrap;color:var(--ink);gap:.45em;background:none;border:0;padding:0;font-family:var(--font-ui);font-size:.9rem;font-weight:500;cursor:pointer;transition:color .25s var(--ease)}
+.nav__trigger{display:inline-flex;align-items:center;white-space:nowrap;color:var(--ink);gap:.45em;background:none;border:0;padding:0;font-family:var(--font);font-size:.9rem;font-weight:500;cursor:pointer;transition:color .25s var(--ease)}
 .nav__trigger:hover,.nav__item.is-open .nav__trigger{color:var(--accent-ink)}
 .nav__chev{width:7px;height:7px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;transform:rotate(45deg) translateY(-1px);transition:transform .28s var(--ease);opacity:.7}
 .nav__item.is-open .nav__chev{transform:rotate(225deg) translateY(-2px)}
@@ -168,7 +169,7 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
   opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .22s var(--ease),transform .26s var(--ease),visibility .26s;z-index:59}
 .mega.is-open{opacity:1;visibility:visible;transform:translateY(0)}
 .mega__inner{max-width:var(--container);margin-inline:auto;padding:clamp(28px,3vw,44px) var(--gutter) clamp(20px,2.2vw,28px)}
-.mega__label{font-family:var(--font-ui);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin:0 0 clamp(18px,2vw,26px)}
+.mega__label{font-family:var(--font);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin:0 0 clamp(18px,2vw,26px)}
 .mega__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(24px,3vw,48px)}
 /* services panel: horizontal row of practice areas */
 .mega__grid--row{grid-template-columns:repeat(6,1fr);gap:0;border-top:1px solid var(--line)}
@@ -188,7 +189,7 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
 .mega__link{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;column-gap:clamp(12px,1.4vw,18px);row-gap:4px;
   padding:14px 0;border-top:1px solid var(--line);transition:border-color .25s var(--ease)}
 .mega__link:hover{border-color:var(--accent)}
-.mega__n{font-family:var(--font-ui);font-size:.62rem;letter-spacing:.14em;color:var(--text-muted);transition:color .25s var(--ease)}
+.mega__n{font-family:var(--font);font-size:.62rem;letter-spacing:.14em;color:var(--text-muted);transition:color .25s var(--ease)}
 .mega__t{font-family:var(--font);font-size:.98rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);transition:color .25s var(--ease)}
 .mega__arr{color:var(--accent-ink);opacity:0;transform:translateX(-4px);transition:opacity .25s var(--ease),transform .25s var(--ease)}
 .mega__d{grid-column:2/span 2;margin:0;font-size:.86rem;line-height:1.55;color:var(--text);max-width:34ch}
@@ -219,3 +220,143 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
 .nav__item::after{content:"";position:absolute;left:0;right:14px;bottom:-6px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .nav__item.is-open::after,.nav__item.is-active::after,.nav__item:hover::after{transform:scaleX(1)}
 .nav__item.is-open .nav__trigger{color:var(--ink)}
+
+/* ============================================================================
+   THE TYPE SCALE — one ladder, all seven pages. Stage 3.
+   Nine steps, defined in tokens.css. The H1 is Display 1 on every page and
+   nothing on that page is larger. This block replaces the three scales that
+   ran in parallel: home.css's 80px section titles, system.css's 40px hero cap
+   and the legacy 31px .h-sec.
+   Selectors are specific enough to beat the rules they supersede; those are
+   removed at Stage 5 when the stylesheets are reorganised.
+   ============================================================================ */
+html{font-optical-sizing:auto}
+
+/* Display 1 — the page H1. One per page. */
+.hx .hx-hero h1,.hx .blog-hero h1,.hx .article h1,.hx h1.hx-sec-title,
+.hx h1.h-sec,.hx h1{
+  font-family:var(--font);font-size:var(--text-d1);line-height:var(--lh-d1);
+  letter-spacing:var(--ls-d1);font-weight:var(--w-display)}
+
+/* Display 2 — statements. Two per page maximum. */
+.hx .hx-firm__st,.hx .hx-close--pure h2{
+  font-size:var(--text-d2);line-height:var(--lh-d2);
+  letter-spacing:var(--ls-d2);font-weight:var(--w-display)}
+
+/* Heading 1 — section headings. */
+.hx h2.hx-sec-title,.hx .h-sec,.hx .hx-h2,.hx h2{
+  font-size:var(--text-h1);line-height:var(--lh-h1);
+  letter-spacing:var(--ls-h1);font-weight:var(--w-display)}
+
+/* Heading 2 — the larger component titles. */
+.hx .hx-svc h3,.hx .row__title,.hx .featured__title,.hx h3{
+  font-size:var(--text-h2);line-height:var(--lh-h2);
+  letter-spacing:var(--ls-h2);font-weight:var(--w-display)}
+
+/* Heading 3 — row and card titles. */
+.hx .hx-person h3,.hx .partner__name,.hx .svc-card__title,.hx .post__title,
+.hx .hx-ins__lead h3,.hx .office h4,.hx .spot__item h4,.hx .step h4,
+.hx .value h4,.hx .svc__card h3,.hx h4{
+  font-size:var(--text-h3);line-height:var(--lh-h3);
+  letter-spacing:var(--ls-h3);font-weight:var(--w-display)}
+
+/* Label — headings used as labels. Still a step on the same ladder. */
+.hx .hx-two h4,.hx .hx-ins__list h4,.hx .statement h3,.hx .footer__col h5,
+.hx .cr-why__lists h4,.hx .cr-apply__step h4,.hx h5{
+  font-size:var(--text-label);line-height:var(--lh-label);
+  letter-spacing:var(--ls-label);font-weight:var(--w-medium)}
+
+/* ----------------------------------------------------------------------------
+   SECTION EYEBROW — one component. .eyebrow (legacy pages) and .hx-sec-label
+   (hx pages) were five competing definitions across three files: 12/11.7/24px,
+   three tracking values, the rule line on ::before in one and ::after in the
+   other. They are one thing now.
+   Sized at Small rather than Label so the step down to the heading is 2.3x
+   rather than 2.7x, and the gap is halved, so the pair reads as one unit.
+   ---------------------------------------------------------------------------- */
+.hx .eyebrow,.hx .hx-sec-label{
+  font-family:var(--font);font-size:var(--text-sm);line-height:var(--lh-sm);
+  letter-spacing:var(--ls-label);font-weight:var(--w-medium);text-transform:uppercase;
+  color:var(--text-muted);display:flex;align-items:center;gap:14px;margin:0 0 12px}
+.hx .eyebrow::after,.hx .hx-sec-label::after{
+  content:"";flex:0 0 44px;height:1px;background:var(--line)}
+.hx .bg-navy .eyebrow,.hx .bg-deep .eyebrow{color:var(--on-ink-muted)}
+/* the 12px belongs to the eyebrow; the heading contributes nothing */
+.hx .eyebrow+*,.hx .hx-sec-label+*{margin-top:0}
+
+/* ============================================================
+   MOTION — section arrival  (redesign: option 2)
+   Two changes, both keyed off the existing [data-reveal]/.in pair.
+   No new JS, no new markup, no new observer, no new dependency.
+     1. the eyebrow's 44px rule draws itself as its block arrives
+     2. section heads arrive in two beats: label settles, title follows
+   ============================================================ */
+
+/* 1 — the rule draws itself. Drawn is the resting state, so an eyebrow that
+   no [data-reveal] governs (the careers hero label runs on [data-load])
+   is simply present rather than stuck at zero width. */
+.hx .eyebrow::after,
+.hx .hx-sec-label::after{transform-origin:left;transition:transform .55s var(--ease) .1s}
+.hx [data-reveal]:not(.in) .eyebrow::after,
+.hx [data-reveal]:not(.in) .hx-sec-label::after,
+.hx [data-reveal]:not(.in).eyebrow::after,
+.hx [data-reveal]:not(.in).hx-sec-label::after{transform:scaleX(0)}
+
+/* 2 — two-beat section head. The wrapper stops animating and hands the motion
+   to its children: the label fades in place (small text carried the full 22px
+   is what reads as loose), the title and anything after it rise just behind. */
+.hx .hx-sec[data-reveal],
+.hx .section-head[data-reveal]{opacity:1;transform:none;transition:none}
+.hx .hx-sec[data-reveal] > *,
+.hx .section-head[data-reveal] > *{opacity:0;transform:translateY(18px);
+  transition:opacity .6s var(--ease) .12s,transform .6s var(--ease) .12s}
+.hx .hx-sec[data-reveal] > .hx-sec-label,
+.hx .section-head[data-reveal] > .eyebrow{transform:none;transition:opacity .5s var(--ease)}
+.hx .hx-sec[data-reveal].in > *,
+.hx .section-head[data-reveal].in > *{opacity:1;transform:none}
+
+/* .hx-sec--row is the one head that nests label+title in a bare div.
+   Make the wrapper transparent so the beat reaches them. */
+.hx .hx-sec[data-reveal] > div{opacity:1;transform:none;transition:none}
+.hx .hx-sec[data-reveal] > div > *{opacity:0;transform:translateY(18px);
+  transition:opacity .6s var(--ease) .12s,transform .6s var(--ease) .12s}
+.hx .hx-sec[data-reveal] > div > .hx-sec-label{transform:none;transition:opacity .5s var(--ease)}
+.hx .hx-sec[data-reveal].in > div > *{opacity:1;transform:none}
+
+/* 3 — the small thing pops last. In a row that arrives on its own beat, the
+   ordinal (01, 02 …) and a stat's value hold back ~.18s and then pop in from
+   half size, on the overshoot easing. Their delay is read off the row's --d,
+   so a staggered row's ordinal lands just after the row does. colour rides
+   along because .hx-svc__n and .hx-ind__n already transition it on hover. */
+.hx .hx-svc[data-reveal] .hx-svc__n,
+.hx .hx-ind__row[data-reveal] .hx-ind__n{
+  transition:scale .6s var(--ease-pop) calc(var(--d,0s) + .18s),opacity .35s var(--ease) calc(var(--d,0s) + .18s),color .3s var(--ease)}
+.hx .hx-stats__row > [data-reveal] dd{transform-origin:left center;
+  transition:scale .6s var(--ease-pop) calc(var(--d,0s) + .18s),opacity .35s var(--ease) calc(var(--d,0s) + .18s)}
+.hx .hx-svc[data-reveal]:not(.in) .hx-svc__n,
+.hx .hx-ind__row[data-reveal]:not(.in) .hx-ind__n{scale:.5;opacity:0}
+.hx .hx-stats__row > [data-reveal]:not(.in) dd{scale:.9;opacity:0}
+
+/* 4 — the closing block arrives in beats like a section head: label, then
+   the headline, then the line under it, then the button. */
+.hx .hx-close__mid[data-reveal]{opacity:1;transform:none;transition:none}
+.hx .hx-close__mid[data-reveal] > *{opacity:0;transform:translateY(18px);
+  transition:opacity .6s var(--ease) .12s,transform .7s var(--ease-pop) .12s}
+.hx .hx-close__mid[data-reveal] > .hx-sec-label{transform:none;transition:opacity .5s var(--ease)}
+.hx .hx-close__mid[data-reveal] > :nth-child(3){transition-delay:.2s}
+.hx .hx-close__mid[data-reveal] > :nth-child(4){transition-delay:.3s}
+.hx .hx-close__mid[data-reveal].in > *{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .hx .eyebrow::after,.hx .hx-sec-label::after,
+  .hx [data-reveal]:not(.in) .eyebrow::after,
+  .hx [data-reveal]:not(.in) .hx-sec-label::after,
+  .hx [data-reveal]:not(.in).eyebrow::after,
+  .hx [data-reveal]:not(.in).hx-sec-label::after{transform:none!important;transition:none!important}
+  .hx .hx-sec[data-reveal] > *,
+  .hx .hx-sec[data-reveal] > div > *,
+  .hx .section-head[data-reveal] > *,
+  .hx .hx-close__mid[data-reveal] > *{opacity:1!important;transform:none!important;transition:none!important}
+  .hx .hx-svc__n,.hx .hx-ind__n,.hx .hx-stats__row dd{scale:none!important;opacity:1!important;transition:none!important}
+  .hx .hx-person image-slot{scale:none!important}
+}

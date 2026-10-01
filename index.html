@@ -84,7 +84,11 @@
 <!-- ============ 01 HERO ============ -->
 <section class="hx-hero" data-screen-label="Hero">
   <div class="hx-hero__pic">
-    <image-slot id="hx-hero-wide" shape="rect" fit="cover" placeholder="Hero photograph — drop or click to add"></image-slot>
+    <picture>
+      <source srcset="assets/hero-ledger-1600.webp" type="image/webp" />
+      <img src="assets/hero-ledger-1600.jpg" alt="" width="1600" height="900"
+           decoding="async" fetchpriority="high" />
+    </picture>
     <div class="hx-hero__veil"></div>
   </div>
   <div class="hx-hero__inner hx-wrap">
@@ -178,7 +182,7 @@
   <div class="hx-wrap">
     <header class="hx-sec" data-reveal>
       <p class="hx-sec-label">What we do</p>
-      <h2 class="hx-sec-title">Six practice areas.</h2>
+      <h2 class="hx-sec-title">Practice areas.</h2>
     </header>
     <div class="hx-do__list" data-reveal data-d="1">
       <a class="hx-svc" href="/services">
@@ -250,34 +254,63 @@
       <p class="hx-sec-label">How we work</p>
       <h2 class="hx-sec-title">A clear process, from understanding the business to supporting it.</h2>
     </header>
-    <div class="hx-proc__bar" role="tablist" aria-label="Engagement stages" data-reveal data-d="1">
-      <button class="hx-proc__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="proc-1" data-proc="1"><span class="hx-proc__n">01</span><span class="hx-proc__t">Understand</span></button>
-      <button class="hx-proc__tab" type="button" role="tab" aria-selected="false" aria-controls="proc-2" data-proc="2"><span class="hx-proc__n">02</span><span class="hx-proc__t">Assess</span></button>
-      <button class="hx-proc__tab" type="button" role="tab" aria-selected="false" aria-controls="proc-3" data-proc="3"><span class="hx-proc__n">03</span><span class="hx-proc__t">Execute</span></button>
-      <button class="hx-proc__tab" type="button" role="tab" aria-selected="false" aria-controls="proc-4" data-proc="4"><span class="hx-proc__n">04</span><span class="hx-proc__t">Support</span></button>
-      <button class="hx-proc__tab" type="button" role="tab" aria-selected="false" aria-controls="proc-5" data-proc="5"><span class="hx-proc__n">05</span><span class="hx-proc__t">Review</span></button>
-    </div>
-    <div class="hx-proc__panels">
-      <div class="hx-proc__panel is-active" id="proc-1" role="tabpanel" data-panel="1">
-        <p class="hx-proc__lead">We start with the business, not the file.</p>
-        <p class="hx-proc__d">Before any scope is proposed we learn how the business operates, what it is obliged to file, and where the pressure points sit — who keeps the records, how the numbers are produced, and what has caused trouble before.</p>
-      </div>
-      <div class="hx-proc__panel" id="proc-2" role="tabpanel" data-panel="2">
-        <p class="hx-proc__lead">Scope set against real risk.</p>
-        <p class="hx-proc__d">Records, systems and prior filings are reviewed to establish what genuinely needs attention. The engagement is then scoped in writing — deliverables, timelines and the partner who owns the work.</p>
-      </div>
-      <div class="hx-proc__panel" id="proc-3" role="tabpanel" data-panel="3">
-        <p class="hx-proc__lead">Partner-led work, properly documented.</p>
-        <p class="hx-proc__d">The work is carried out by a partner-led team to ICAI standards, with working papers and documentation prepared to stand up to later review by a bank, a buyer or the department.</p>
-      </div>
-      <div class="hx-proc__panel" id="proc-4" role="tabpanel" data-panel="4">
-        <p class="hx-proc__lead">We remain involved after the filing.</p>
-        <p class="hx-proc__d">Notices, queries and the filings that follow are handled as they arise. Clients reach the partner who did the work rather than starting again with someone new.</p>
-      </div>
-      <div class="hx-proc__panel" id="proc-5" role="tabpanel" data-panel="5">
-        <p class="hx-proc__lead">Each cycle informs the next.</p>
-        <p class="hx-proc__d">At the close of a cycle we go back over what came up — recurring adjustments, weak controls, late records — and agree what to tighten before the next year begins.</p>
-      </div>
+    <div class="hx-proc__snake" data-reveal data-d="1">
+      <svg class="hx-proc__path" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+        <path class="hx-proc__track" d="M100 60 C200 60 200 160 300 160 S400 60 500 60 S600 160 700 160 S800 60 900 60" pathLength="100"/>
+        <path class="hx-proc__fill" d="M100 60 C200 60 200 160 300 160 S400 60 500 60 S600 160 700 160 S800 60 900 60" pathLength="100"/>
+      </svg>
+      <ol class="hx-proc__steps" role="tablist" aria-label="Engagement stages">
+        <li class="hx-proc__step is-active" role="presentation">
+          <button class="hx-proc__node" type="button" role="tab" id="proc-tab-1" aria-controls="proc-1" aria-selected="true" tabindex="0">
+            <span class="hx-proc__dot" aria-hidden="true"></span>
+            <span class="hx-proc__lbl"><span class="hx-proc__n">01</span><span class="hx-proc__t">Understand</span></span>
+          </button>
+          <div class="hx-proc__detail" id="proc-1" role="tabpanel" aria-labelledby="proc-tab-1">
+            <p class="hx-proc__lead">We start with the business, not the file.</p>
+            <p class="hx-proc__d">Before any scope is proposed we learn how the business operates, what it is obliged to file, and where the pressure points sit — who keeps the records, how the numbers are produced, and what has caused trouble before.</p>
+          </div>
+        </li>
+        <li class="hx-proc__step" role="presentation">
+          <button class="hx-proc__node" type="button" role="tab" id="proc-tab-2" aria-controls="proc-2" aria-selected="false" tabindex="-1">
+            <span class="hx-proc__dot" aria-hidden="true"></span>
+            <span class="hx-proc__lbl"><span class="hx-proc__n">02</span><span class="hx-proc__t">Assess</span></span>
+          </button>
+          <div class="hx-proc__detail" id="proc-2" role="tabpanel" aria-labelledby="proc-tab-2">
+            <p class="hx-proc__lead">Scope set against real risk.</p>
+            <p class="hx-proc__d">Records, systems and prior filings are reviewed to establish what genuinely needs attention. The engagement is then scoped in writing — deliverables, timelines and the partner who owns the work.</p>
+          </div>
+        </li>
+        <li class="hx-proc__step" role="presentation">
+          <button class="hx-proc__node" type="button" role="tab" id="proc-tab-3" aria-controls="proc-3" aria-selected="false" tabindex="-1">
+            <span class="hx-proc__dot" aria-hidden="true"></span>
+            <span class="hx-proc__lbl"><span class="hx-proc__n">03</span><span class="hx-proc__t">Execute</span></span>
+          </button>
+          <div class="hx-proc__detail" id="proc-3" role="tabpanel" aria-labelledby="proc-tab-3">
+            <p class="hx-proc__lead">Partner-led work, properly documented.</p>
+            <p class="hx-proc__d">The work is carried out by a partner-led team to ICAI standards, with working papers and documentation prepared to stand up to later review by a bank, a buyer or the department.</p>
+          </div>
+        </li>
+        <li class="hx-proc__step" role="presentation">
+          <button class="hx-proc__node" type="button" role="tab" id="proc-tab-4" aria-controls="proc-4" aria-selected="false" tabindex="-1">
+            <span class="hx-proc__dot" aria-hidden="true"></span>
+            <span class="hx-proc__lbl"><span class="hx-proc__n">04</span><span class="hx-proc__t">Support</span></span>
+          </button>
+          <div class="hx-proc__detail" id="proc-4" role="tabpanel" aria-labelledby="proc-tab-4">
+            <p class="hx-proc__lead">We remain involved after the filing.</p>
+            <p class="hx-proc__d">Notices, queries and the filings that follow are handled as they arise. Clients reach the partner who did the work rather than starting again with someone new.</p>
+          </div>
+        </li>
+        <li class="hx-proc__step" role="presentation">
+          <button class="hx-proc__node" type="button" role="tab" id="proc-tab-5" aria-controls="proc-5" aria-selected="false" tabindex="-1">
+            <span class="hx-proc__dot" aria-hidden="true"></span>
+            <span class="hx-proc__lbl"><span class="hx-proc__n">05</span><span class="hx-proc__t">Review</span></span>
+          </button>
+          <div class="hx-proc__detail" id="proc-5" role="tabpanel" aria-labelledby="proc-tab-5">
+            <p class="hx-proc__lead">Each cycle informs the next.</p>
+            <p class="hx-proc__d">At the close of a cycle we go back over what came up — recurring adjustments, weak controls, late records — and agree what to tighten before the next year begins.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
@@ -290,13 +323,13 @@
       <h2 class="hx-sec-title">Different businesses. Different risks. Different decisions.</h2>
     </header>
     <div class="hx-ind__wrap">
-      <ul class="hx-ind__rows" data-reveal>
-        <li class="hx-ind__row is-active" data-ind="0"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">01</span><span class="hx-ind__name">Technology &amp; IT Services</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Revenue recognition across contracts, ESOP and cross-border structuring, and IT general controls.</p></li>
-        <li class="hx-ind__row" data-ind="1"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">02</span><span class="hx-ind__name">Manufacturing</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Inventory valuation and costing, GST on movement of goods, and reconciliation of plant records to the books.</p></li>
-        <li class="hx-ind__row" data-ind="2"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">03</span><span class="hx-ind__name">Banking &amp; Financial Services</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Advances classification and IRAC norms, branch documentation, and concurrent and statutory audit cycles.</p></li>
-        <li class="hx-ind__row" data-ind="3"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">04</span><span class="hx-ind__name">Professional Services</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Firm structure and partner remuneration, receivables discipline, and TDS on professional payments.</p></li>
-        <li class="hx-ind__row" data-ind="4"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">05</span><span class="hx-ind__name">Real Estate &amp; Construction</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Percentage-of-completion accounting, project-wise cost tracking and GST on works contracts.</p></li>
-        <li class="hx-ind__row" data-ind="5"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">06</span><span class="hx-ind__name">Startups &amp; Founders</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Entity structure, cap table hygiene, statutory registers and a close process that survives first diligence.</p></li>
+      <ul class="hx-ind__rows">
+        <li class="hx-ind__row is-active" data-ind="0" data-reveal data-d="1"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">01</span><span class="hx-ind__name">Technology &amp; IT Services</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Revenue recognition across contracts, ESOP and cross-border structuring, and IT general controls.</p></li>
+        <li class="hx-ind__row" data-ind="1" data-reveal data-d="2"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">02</span><span class="hx-ind__name">Manufacturing</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Inventory valuation and costing, GST on movement of goods, and reconciliation of plant records to the books.</p></li>
+        <li class="hx-ind__row" data-ind="2" data-reveal data-d="3"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">03</span><span class="hx-ind__name">Banking &amp; Financial Services</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Advances classification and IRAC norms, branch documentation, and concurrent and statutory audit cycles.</p></li>
+        <li class="hx-ind__row" data-ind="3" data-reveal data-d="4"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">04</span><span class="hx-ind__name">Professional Services</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Firm structure and partner remuneration, receivables discipline, and TDS on professional payments.</p></li>
+        <li class="hx-ind__row" data-ind="4" data-reveal data-d="5"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">05</span><span class="hx-ind__name">Real Estate &amp; Construction</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Percentage-of-completion accounting, project-wise cost tracking and GST on works contracts.</p></li>
+        <li class="hx-ind__row" data-ind="5" data-reveal data-d="6"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">06</span><span class="hx-ind__name">Startups &amp; Founders</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Entity structure, cap table hygiene, statutory registers and a close process that survives first diligence.</p></li>
       </ul>
       <div class="hx-ind__foot" data-reveal data-d="1">
         <p class="hx-ind__cap">We spend our time in the businesses we audit, not only in their ledgers.</p>
@@ -360,6 +393,12 @@
         </a>
         <p class="footer__desc">Chartered Accountants</p>
         <p>A Chartered Accountancy practice in Bengaluru and Shivamogga, advising owner-managed businesses on audit, tax, compliance and the systems behind them.</p>
+        <nav class="footer__social" aria-label="Social and contact links">
+          <a data-social="linkedin" aria-label="SMK &amp; Co. on LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v0M11 17v-4a2 2 0 014 0v4"/></svg></a>
+          <a data-social="facebook" aria-label="SMK &amp; Co. on Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M15.5 7.5h-1A1.5 1.5 0 0 0 13 9v9M10.5 12h5"/></svg></a>
+          <a data-cfg="email" data-cfg-href="mailto:" href="mailto:contactsachinandco@gmail.com" aria-label="Email SMK &amp; Co."><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a>
+          <a data-cfg="phone" data-cfg-href="tel:+91" href="tel:+919902602692" aria-label="Call SMK &amp; Co."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2C9.6 21 3 14.4 3 6a2 2 0 012-2z"/></svg></a>
+        </nav>
       </div>
       <div class="footer__col">
         <h5>Navigate</h5>
@@ -391,6 +430,71 @@
 <script src="js/config.js"></script>
 <script src="js/site.js"></script>
 <script>
+/* Hero headline reveals one rendered line at a time. The line breaks depend on
+   where the text actually wraps, so they are measured after the fonts load
+   rather than hard-coded — hard-coded breaks would be wrong at every other
+   width. Falls back to the whole-headline fade if this never runs, and is
+   skipped entirely under prefers-reduced-motion. */
+(function () {
+  var h1 = document.querySelector(".hx-hero h1");
+  if (!h1 || !window.matchMedia) return;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  var FIRST = 300, STEP = 140;   /* ms: first line, then one every STEP */
+
+  function splitIntoLines(el) {
+    var text = (el.getAttribute("data-raw") || el.textContent).trim();
+    el.setAttribute("data-raw", text);
+    var words = text.split(/\s+/);
+
+    /* measure: one probe span per word, grouped by the top it lands on */
+    el.textContent = "";
+    var probes = words.map(function (w, i) {
+      var s = document.createElement("span");
+      s.textContent = w;
+      el.appendChild(s);
+      if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
+      return s;
+    });
+    var lines = [], current = null, top = null;
+    probes.forEach(function (s) {
+      var t = s.offsetTop;
+      if (top === null || Math.abs(t - top) > 2) { current = []; lines.push(current); top = t; }
+      current.push(s.textContent);
+    });
+
+    /* rebuild: one block span per line, each on its own delay. The space
+       between lines is a real text node, so the heading still reads and copies
+       as one sentence rather than "for thenumbers". */
+    el.textContent = "";
+    lines.forEach(function (w, i) {
+      if (i) el.appendChild(document.createTextNode(" "));
+      var line = document.createElement("span");
+      line.className = "hx-line";
+      line.textContent = w.join(" ");
+      line.style.animationDelay = (FIRST + i * STEP) + "ms";
+      el.appendChild(line);
+    });
+    el.classList.add("is-split");
+    return lines.length;
+  }
+
+  function run() {
+    try {
+      var n = splitIntoLines(h1);
+      /* the sub-line and the action wait for the last line, whatever the width:
+         three lines at desktop, four at 390px. */
+      var after = FIRST + n * STEP;
+      var sub = document.querySelector(".hx-hero__sub");
+      var act = document.querySelector(".hx-hero__act");
+      if (sub) sub.style.animationDelay = (after + 60) + "ms";
+      if (act) act.style.animationDelay = (after + 220) + "ms";
+    } catch (e) { /* leave the headline as written */ }
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(run); else run();
+})();
+</script>
+<script>
 (function(){
   var rows=[].slice.call(document.querySelectorAll(".hx-ind__row"));
   function setInd(el){rows.forEach(function(r){r.classList.toggle("is-active",r===el)})}
@@ -399,17 +503,28 @@
     r.querySelector(".hx-ind__btn").addEventListener("focus",function(){setInd(r)});
     r.addEventListener("click",function(){setInd(r)});
   });
-  var tabs=[].slice.call(document.querySelectorAll(".hx-proc__tab")),
-      panels=[].slice.call(document.querySelectorAll(".hx-proc__panel"));
-  function setProc(t){
-    tabs.forEach(function(x){var on=x===t;x.classList.toggle("is-active",on);x.setAttribute("aria-selected",on?"true":"false")});
-    var k=t.getAttribute("data-proc");
-    panels.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-panel")===k)});
+  var steps=[].slice.call(document.querySelectorAll(".hx-proc__step"));
+  function setStep(s){
+    steps.forEach(function(x){
+      var on=x===s,b=x.querySelector(".hx-proc__node");
+      x.classList.toggle("is-active",on);
+      b.setAttribute("aria-selected",on?"true":"false");
+      b.tabIndex=on?0:-1;
+    });
   }
-  tabs.forEach(function(t){
-    t.addEventListener("click",function(){setProc(t)});
-    t.addEventListener("mouseenter",function(){setProc(t)});
-    t.addEventListener("focus",function(){setProc(t)});
+  steps.forEach(function(s,i){
+    var b=s.querySelector(".hx-proc__node");
+    b.addEventListener("click",function(){setStep(s)});
+    b.addEventListener("mouseenter",function(){setStep(s)});
+    b.addEventListener("focus",function(){setStep(s)});
+    b.addEventListener("keydown",function(e){
+      var n=null;
+      if(e.key==="ArrowRight"||e.key==="ArrowDown")n=steps[(i+1)%steps.length];
+      else if(e.key==="ArrowLeft"||e.key==="ArrowUp")n=steps[(i-1+steps.length)%steps.length];
+      else if(e.key==="Home")n=steps[0];
+      else if(e.key==="End")n=steps[steps.length-1];
+      if(n){e.preventDefault();n.querySelector(".hx-proc__node").focus();}
+    });
   });
 })();
 </script>

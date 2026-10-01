@@ -23,8 +23,8 @@
 .tm-card .hx-fig{aspect-ratio:4/5;overflow:hidden;background:var(--placeholder)}
 .tm-card image-slot{display:block;width:100%;height:100%;transition:transform .6s var(--ease)}
 .tm-card:hover image-slot{transform:scale(1.025)}
-.hx .tm-card h3{font-size:1.24rem;font-weight:600;letter-spacing:-.018em;margin:20px 0 0}
-.tm-card__d{font-family:var(--font-ui);font-size:.74rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-ink);margin:8px 0 0}
+.hx .tm-card h3{font-size:var(--text-h3);line-height:var(--lh-h3);font-weight:var(--w-display);letter-spacing:var(--ls-h3);margin:20px 0 0}
+.tm-card__d{color:var(--text-muted);font-family:var(--font);font-size:.74rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin:8px 0 0}
 .tm-card__e{margin:12px 0 0;font-size:.95rem;line-height:1.64;color:var(--text)}
 .tm-card__l{display:inline-flex;align-items:center;gap:.5em;align-self:flex-start;margin:auto 0 0;padding-top:16px;font-size:.86rem;font-weight:600;color:var(--ink)}
 .tm-card__l::after{content:"→";transition:transform .25s var(--ease)}
@@ -35,21 +35,21 @@
 .view.is-leaving{opacity:0;transition:opacity .26s var(--ease)}
 #profileView{display:none}
 .pf{background:var(--surface);padding-block:clamp(112px,11vw,150px) clamp(70px,8vw,110px)}
-.pf__back{display:inline-flex;align-items:center;gap:.6em;background:none;border:0;padding:0;margin:0 0 clamp(34px,4vw,52px);font-family:var(--font-ui);font-size:.88rem;font-weight:600;color:var(--ink);cursor:pointer}
+.pf__back{display:inline-flex;align-items:center;gap:.6em;background:none;border:0;padding:0;margin:0 0 clamp(34px,4vw,52px);font-family:var(--font);font-size:.88rem;font-weight:600;color:var(--ink);cursor:pointer}
 .pf__back:hover{color:var(--accent-ink)}
 .pf__head{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,4vw,64px);align-items:start}
 .pf__fig{aspect-ratio:4/5;overflow:hidden;background:var(--placeholder)}
 .pf__fig image-slot{display:block;width:100%;height:100%}
-.pf__badge{font-family:var(--font-ui);font-size:.74rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-ink)}
-.hx .pf__name{margin:16px 0 0;font-weight:600;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.04;letter-spacing:-.03em}
+.pf__badge{color:var(--text-muted);font-family:var(--font);font-size:.74rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;}
+.hx .pf__name{margin:16px 0 0;font-weight:var(--w-display);font-size:var(--text-d1);line-height:var(--lh-d1);letter-spacing:var(--ls-d1)}
 .pf__desig{margin:12px 0 0;font-size:1.02rem;color:var(--text)}
 .pf__meta{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,3vw,44px);margin:clamp(28px,3.2vw,42px) 0 0;border-top:1px solid var(--line)}
 .pf__meta>div{padding:20px 0 0}
-.pf__meta dt{font-family:var(--font-ui);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin:0 0 10px}
+.pf__meta dt{font-family:var(--font);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin:0 0 10px}
 .pf__meta dd{margin:0;font-family:var(--font);font-size:1.06rem;font-weight:600;letter-spacing:-.018em;color:var(--ink);line-height:1.3}
 .pf__body{margin-top:clamp(44px,5vw,72px);max-width:74ch}
 .pf__lead{margin:0;font-size:1.08rem;line-height:1.74;color:var(--text)}
-.hx .pf__sub{margin:clamp(38px,4vw,56px) 0 20px;font-family:var(--font-ui);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:.9em}
+.hx .pf__sub{margin:clamp(38px,4vw,56px) 0 20px;font-family:var(--font);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:.9em}
 .pf__sub::after{content:"";flex:1;height:1px;background:var(--line)}
 .pf__resp{list-style:none;margin:0;padding:0}
 .pf__resp li{font-size:1rem;line-height:1.6;color:var(--text);padding:15px 0;border-top:1px solid var(--line)}
@@ -149,6 +149,12 @@
         </a>
         <p class="footer__desc">Chartered Accountants</p>
         <p>A Chartered Accountancy practice in Bengaluru and Shivamogga, advising owner-managed businesses on audit, tax, compliance and the systems behind them.</p>
+        <nav class="footer__social" aria-label="Social and contact links">
+          <a data-social="linkedin" aria-label="SMK &amp; Co. on LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v0M11 17v-4a2 2 0 014 0v4"/></svg></a>
+          <a data-social="facebook" aria-label="SMK &amp; Co. on Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M15.5 7.5h-1A1.5 1.5 0 0 0 13 9v9M10.5 12h5"/></svg></a>
+          <a data-cfg="email" data-cfg-href="mailto:" href="mailto:contactsachinandco@gmail.com" aria-label="Email SMK &amp; Co."><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a>
+          <a data-cfg="phone" data-cfg-href="tel:+91" href="tel:+919902602692" aria-label="Call SMK &amp; Co."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2C9.6 21 3 14.4 3 6a2 2 0 012-2z"/></svg></a>
+        </nav>
       </div>
       <div class="footer__col">
         <h5>Navigate</h5>

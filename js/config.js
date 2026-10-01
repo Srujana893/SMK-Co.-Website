@@ -25,7 +25,10 @@ window.siteConfig = {
   year: "2026",                   // e.g. 2026  (used in © line)
 
   social: {
+    /* Paste the full public URLs here. Any entry left as "#" is hidden
+       in the footer rather than rendered as a dead link. */
     linkedin: "#",
+    facebook: "#",
     instagram: "#",
   },
 
