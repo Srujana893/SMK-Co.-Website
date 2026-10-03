@@ -79,30 +79,38 @@
   </div>
 </div>
 
-<main class="blog-top">
-  <!-- ===== LISTING VIEW ===== -->
+<main class="blog-top ledger">
+  <!-- ===== LISTING: the journal index. The latest note on ink, then every other note as a dated row under plain word filters. ===== -->
   <div class="view" id="listView">
-    <section class="blog-hero bg-ivory grain" data-screen-label="Blog">
+    <section class="blog-hero" data-screen-label="Blog">
       <div class="container">
+        <aside class="lg-mg"><p class="lg-mg__k">Insights</p><p class="lg-mg__n">Notes on the questions clients ask most.</p><p class="lg-mg__fig"><span data-count-of=".jr-row, .jr-lead">09</span><small>notes</small></p></aside>
         <p class="eyebrow" data-reveal>Insights</p>
-        <h1 data-reveal data-d="1" style="text-align: left">Insights &amp; Perspectives</h1>
+        <h1 data-reveal data-d="1">Insights &amp; Perspectives</h1>
         <p class="lede" data-reveal data-d="2">Factual, educational notes on the questions our clients ask most — across audit, taxation, technology, compliance and forensic accounting.</p>
       </div>
     </section>
 
-    <section class="section section--tight bg-ivory grain" style="padding-top:0">
+    <section class="section section--tight bg-navy is-dark jr-latest" data-screen-label="Latest note">
       <div class="container">
-        <article class="featured" id="featured" data-reveal aria-label="Featured insight"></article>
-        <div class="filter" id="filter" role="tablist" aria-label="Filter by category"></div>
-        <div class="post-grid" id="postGrid"></div>
-        <div class="loadmore" id="loadMore" style="display:none"><button class="btn btn--outline-gold" type="button">Load more <span class="arr">&darr;</span></button></div>
+        <aside class="lg-mg"><p class="lg-mg__k">Latest note</p><p class="lg-mg__n" id="jrLeadMeta"></p></aside>
+        <!-- Filled from window.blogPosts by js/blog.js. -->
+        <article class="jr-lead" id="jrLead" aria-label="Latest note" data-reveal></article>
+      </div>
+    </section>
+
+    <section class="section section--tight jr-all" data-screen-label="All notes">
+      <div class="container">
+        <aside class="lg-mg"><p class="lg-mg__k">All notes</p><p class="lg-mg__n">Newest first. Filter by topic.</p></aside>
+        <div class="jr-filters" id="jrFilters" role="group" aria-label="Filter by topic"></div>
+        <ol class="jr-index" id="jrRows" aria-label="All notes"></ol>
       </div>
     </section>
   </div>
 
-  <!-- ===== ARTICLE VIEW (route switch) ===== -->
+  <!-- ===== ARTICLE: a reading column with the note's facts in a side rail ===== -->
   <div class="view article-view" id="articleView" aria-hidden="true">
-    <section class="section bg-ivory grain">
+    <section class="section" data-screen-label="Article">
       <div class="container">
         <div class="article"></div>
       </div>
@@ -157,7 +165,6 @@
 </footer>
 
 <script src="js/config.js"></script>
-<script src="image-slot.js"></script>
 <script src="js/blog.js"></script>
 <script src="js/site.js"></script>
 <script>

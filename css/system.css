@@ -287,12 +287,12 @@ html{font-optical-sizing:auto}
   letter-spacing:var(--ls-h1);font-weight:var(--w-display)}
 
 /* Heading 2 — the larger component titles. */
-.hx .hx-svc__t,.hx .row__title,.hx .featured__title,.hx h3{
+.hx .hx-svc__t,.hx .row__title,.hx h3{
   font-size:var(--text-h2);line-height:var(--lh-h2);
   letter-spacing:var(--ls-h2);font-weight:var(--w-display)}
 
 /* Heading 3 — row and card titles. */
-.hx .hx-person h3,.hx .partner__name,.hx .post__title,
+.hx .hx-person h3,.hx .partner__name,.hx .jr-row__t,
 .hx .office h4,.hx .step h4,
 .hx .value h4,.hx .svc__card h3,.hx h4{
   font-size:var(--text-h3);line-height:var(--lh-h3);
