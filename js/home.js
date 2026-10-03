@@ -16,7 +16,7 @@
   }
   var closing = document.querySelector(".hx-close");
 
-  /* ---- client reviews: after the closing CTA, directly above the footer.
+  /* ---- client reviews: before the closing CTA, between Industries and Contact.
      Nothing renders, heading included, while window.testimonials is empty.
      Enable only with client-approved testimonials, after confirming ICAI
      advertising/website guidelines permit them. ---- */
@@ -43,7 +43,7 @@
     });
     var wrap = el("div", "hx-wrap");
     wrap.appendChild(head); wrap.appendChild(row); sec.appendChild(wrap);
-    closing.parentNode.insertBefore(sec, closing.nextSibling);
+    closing.parentNode.insertBefore(sec, closing);
   }
 
   /* ---- client logos: inside the reviews band, above the quotes. A belt of

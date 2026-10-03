@@ -186,7 +186,7 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-ind__cap{margin:0;font-family:var(--font);font-weight:600;font-size:clamp(1.1rem,1.7vw,1.42rem);line-height:1.36;letter-spacing:-.018em;color:var(--ink);max-width:34ch}
 
 /* ============ CLIENT REVIEWS — rendered by js/home.js only when window.testimonials has entries ============
-   Sits after the closing CTA, directly above the footer: a short tinted band,
+   Sits between Industries and the closing CTA: a short tinted band,
    two or three quotes in a row, hairline above, no cards. Four or more become
    a manual, snap-scrolling track: nothing autoplays. */
 .hx-quotes{background:var(--surface-tint);border-top:1px solid var(--line);padding-block:clamp(48px,5.6vw,84px)}

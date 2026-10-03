@@ -223,7 +223,8 @@ main.ledger .cr-apply__l > .hx-sec-label{display:none}
 .mega__grid--row .mega__d{grid-column:1;margin-top:9px;font-size:.82rem;line-height:1.5;max-width:none;color:var(--text)}
 @media (max-width:1180px){.mega__grid--row{grid-template-columns:repeat(3,1fr)}.mega__grid--row .mega__link:nth-child(3n+1){border-left:0}.mega__grid--row .mega__link:nth-child(n+4){border-top:1px solid var(--line)}}
 @media (max-width:1040px){.mega__grid--row{grid-template-columns:repeat(2,1fr)}.mega__grid--row .mega__link{border-top:0}.mega__grid--row .mega__link:nth-child(2n+1){border-left:0}.mega__grid--row .mega__link:nth-child(n+3){border-top:1px solid var(--line)}}
-.mega__grid--two{grid-template-columns:repeat(2,1fr);max-width:640px}
+/* about panel: three links on one line at every width the menu exists */
+.mega__grid--three{grid-template-columns:repeat(3,1fr);max-width:1000px}
 .mega__link{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;column-gap:clamp(12px,1.4vw,18px);row-gap:4px;
   padding:14px 0;border-top:1px solid var(--line);transition:border-color .25s var(--ease)}
 .mega__link:hover{border-color:var(--accent)}
@@ -237,7 +238,7 @@ main.ledger .cr-apply__l > .hx-sec-label{display:none}
 .mega__foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
   margin-top:clamp(18px,2vw,26px);padding-top:16px;border-top:1px solid var(--line)}
 .mega__foot p{margin:0;font-size:.86rem;color:var(--text);max-width:52ch}
-@media (max-width:1040px){.mega__grid:not(.mega__grid--row){grid-template-columns:repeat(2,1fr)}}
+@media (max-width:1040px){.mega__grid:not(.mega__grid--row):not(.mega__grid--three){grid-template-columns:repeat(2,1fr)}}
 @media (max-width:900px){.mega{display:none}.nav__item{display:none}}
 @media (prefers-reduced-motion:reduce){.mega{transition:none}}
 
