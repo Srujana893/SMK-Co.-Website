@@ -142,6 +142,41 @@ a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:
 /* headings on dark surfaces: home.css sets every .hx heading to --ink, which
    on a dark band is ink on ink. The band's own colour wins here. */
 .hx .bg-navy h1,.hx .bg-navy h2,.hx .bg-navy h3,.hx .bg-deep h1,.hx .bg-deep h2,.hx .bg-deep h3{color:var(--on-ink)}
+/* ---------- the ledger: Services, Careers, Insights ----------
+   A margin column down the page carries each section's label, a one-line
+   note and, where it is a true count, a figure. One rule divides margin from
+   content the length of the page, the way a ledger's margin line does, and
+   the section rules run to the window's edges. The in-content eyebrow is
+   hidden on these pages: the margin carries the label. Below 820px the
+   margin stacks above the content and the rule goes. Only a wrapper that
+   holds a margin takes the grid, so the article view is untouched. */
+main.ledger section{position:relative;overflow:clip}
+main.ledger .view > section + section,main.ledger > section + section{border-top:1px solid var(--line)}
+main.ledger section.is-dark + section,main.ledger section + section.is-dark{border-top-color:var(--line-on-ink)}
+.lg-mg{position:relative;padding-right:clamp(20px,2.4vw,36px)}
+.lg-mg::after{content:"";position:absolute;top:-2000px;bottom:-2000px;right:0;width:1px;background:var(--line)}
+.is-dark .lg-mg::after{background:var(--line-on-ink)}
+.lg-mg__k{margin:0;font-family:var(--font);font-size:var(--text-sm);line-height:var(--lh-sm);letter-spacing:var(--ls-label);font-weight:var(--w-medium);text-transform:uppercase;color:var(--text-muted)}
+.lg-mg__n{margin:12px 0 0;font-size:var(--text-sm);line-height:1.55;color:var(--text);max-width:22ch}
+.lg-mg__fig{margin:18px 0 0;font-family:var(--font);font-size:clamp(1.6rem,3vw,2.5rem);line-height:1;letter-spacing:-.02em;font-weight:var(--w-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.lg-mg__fig small{display:block;margin-top:6px;font-size:var(--text-label);font-weight:var(--w-medium);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-muted)}
+.is-dark .lg-mg__k,.is-dark .lg-mg__n,.is-dark .lg-mg__fig small{color:var(--on-ink-muted)}
+.is-dark .lg-mg__fig{color:var(--on-ink)}
+/* the margin carries the label at every width */
+main.ledger .lg-mg ~ .eyebrow,main.ledger .lg-mg ~ .hx-sec-label,
+main.ledger .lg-mg ~ * > .eyebrow:first-child,main.ledger .lg-mg ~ * > .hx-sec-label:first-child,
+main.ledger .cr-apply__l > .hx-sec-label{display:none}
+@media (min-width:821px){
+  main.ledger section > :is(.container,.hx-wrap):has(> .lg-mg){display:grid;grid-template-columns:minmax(150px,22%) minmax(0,1fr);column-gap:clamp(28px,4vw,64px);row-gap:0;align-items:start}
+  main.ledger .lg-mg{grid-column:1;grid-row:1/span 40}
+  main.ledger .lg-mg ~ *{grid-column:2}
+}
+@media (max-width:820px){
+  .lg-mg{margin-bottom:22px;padding-right:0}
+  .lg-mg::after{display:none}
+  .lg-mg__fig{display:none}
+}
+
 /* links inside dark surfaces keep their inherited colour */
 .hx .is-dark a,.hx .bg-navy a,.hx .bg-deep a,.hx .footer a,.hx .mnav a{color:inherit}
 .hx .footer a:hover,.hx .mnav a:hover{color:var(--surface)}

@@ -155,6 +155,24 @@ ground, so every band is now pure white and the 1px hairline between sections
 carries the rhythm. The token names stay so a second ground can return in the
 palette round, which waits on the final logo.
 
+## The ledger — 3 Oct 2026 · owner: `smk-design-system`
+
+With every ground pure white, the inner pages had only a hairline between
+sections. Services, Careers and Insights now carry a margin column down the
+page: each section's label, a one-line note and, where it is a true count, a
+figure (the figures are counted from the page by `js/site.js`, never typed).
+One rule divides margin from content the length of the page, the way a
+ledger's margin line does. The in-content eyebrow is hidden on these pages.
+One block per page sits on ink: the technology edge, the "why work here"
+statement, the latest note. The homepage is unchanged. Rejected on the way:
+a scroll-drawn guide line in the gutter (too subtle), framed wash panels and
+alternating ink bands (shown side by side on a preview page).
+
+Insights is a journal index: the latest note on ink, every other note as a
+dated row under plain word filters, no cards or thumbnails. The article is a
+reading column with a side rail of the note's facts and section links, and
+every note has a link of its own (`/blog#<id>`).
+
 ## Still open
 
 1. **Photography** — not commissioned. Until it is, empty image slots are

@@ -9,7 +9,7 @@
 .hx .cr-hero h1{margin:0;font-weight:600;font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.05;letter-spacing:-.03em;max-width:24ch;text-wrap:pretty}
 .cr-hero__sub{margin:24px 0 0;font-size:1.06rem;line-height:1.72;color:var(--text);max-width:56ch}
 .cr-hero__act{display:flex;align-items:center;gap:clamp(20px,3vw,40px);flex-wrap:wrap;margin-top:36px}
-.cr-hero__facts{display:flex;flex-wrap:wrap;gap:0 clamp(28px,4vw,64px);margin:clamp(48px,5.6vw,80px) 0 0;border-top:1px solid var(--line);padding-top:clamp(22px,2.4vw,30px)}
+.cr-hero__facts{display:flex;flex-wrap:wrap;gap:22px clamp(28px,4vw,64px);margin:clamp(48px,5.6vw,80px) 0 0;border-top:1px solid var(--line);padding-top:clamp(22px,2.4vw,30px)}
 .cr-hero__facts div{max-width:26ch}
 .cr-hero__facts dt{font-family:var(--font);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin:0 0 9px}
 .cr-hero__facts dd{margin:0;font-family:var(--font);font-size:1.02rem;font-weight:600;letter-spacing:-.018em;color:var(--ink);line-height:1.35}
@@ -24,7 +24,13 @@
 .cr-why__lists li{font-size:.96rem;color:var(--text);padding:9px 0;border-top:1px solid var(--line)}
 .cr-why__lists li:first-child{border-top:0}
 
-/* ---------- how we work: horizontal journey ---------- */
+/* why work here sits on ink */
+.cr-why.is-dark{background:var(--ink);border-top-color:var(--line-on-ink)}
+.cr-why.is-dark .cr-why__st{color:var(--on-ink)}
+.cr-why.is-dark .hx-body,.cr-why.is-dark .cr-why__lists li{color:var(--on-ink-muted)}
+.cr-why.is-dark .cr-why__lists h4{color:var(--on-ink-muted)}
+.cr-why.is-dark .cr-why__lists,.cr-why.is-dark .cr-why__lists li{border-color:var(--line-on-ink)}
+
 
 /* ---------- what we look for: aligned 2x2 ---------- */
 .cr-look{background:var(--surface-tint);border-top:1px solid var(--line)}

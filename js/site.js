@@ -26,6 +26,15 @@
     }
   });
 
+  /* ---- margin figures: a count is only shown when it is counted. The element
+     names a selector; its text becomes the number of matches, or the figure
+     goes if there are none. ---- */
+  document.querySelectorAll("[data-count-of]").forEach(function (el) {
+    var n = document.querySelectorAll(el.getAttribute("data-count-of")).length;
+    if (!n) { var fig = el.closest(".lg-mg__fig"); if (fig) fig.remove(); return; }
+    el.textContent = (n < 10 ? "0" : "") + n;
+  });
+
   /* ---- social links: href comes from config; drop any still unconfigured ---- */
   document.querySelectorAll("[data-social]").forEach(function (el) {
     var url = getPath(cfg, "social." + el.getAttribute("data-social"));
