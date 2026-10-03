@@ -1,7 +1,7 @@
 /* ============================================================
    SMK & Co — homepage data-driven blocks
-   client reviews · network rail
-   Reads window.testimonials and window.network from
+   client reviews · client logos
+   Reads window.testimonials and window.clients from
    js/config.js. Loads before js/site.js so anything inserted here with
    data-reveal is picked up by the scroll-reveal handler.
    ============================================================ */
@@ -46,34 +46,24 @@
     closing.parentNode.insertBefore(sec, closing.nextSibling);
   }
 
-  /* ---- network rail: after Industries, before the closing CTA. Nothing
-     renders while window.network.items is empty.
-     Confirm the relationship wording with each organisation, and confirm ICAI
-     guidelines permit displaying it. ---- */
-  var net = window.network || {};
-  var items = (Array.isArray(net.items) ? net.items : []).filter(function (n) { return n && n.name; });
-  var before = closing;
-  if (items.length && before) {
-    var rail = el("section", "hx-net");
-    rail.id = "network";
-    rail.setAttribute("data-screen-label", "Network");
-    rail.setAttribute("aria-labelledby", "network-heading");
-    var h = el("h2", "hx-net__h", esc(net.heading || "Working with"));
-    h.id = "network-heading";
+  /* ---- client logos: inside the reviews band, above the quotes. A belt of
+     two identical tracks moves left to right; the second track is aria-hidden
+     so each name is read once. Nothing renders while window.clients.items is
+     empty. Confirm with each client, and against ICAI website guidelines,
+     before real logos go live. ---- */
+  var cl = window.clients || {};
+  var logos = (Array.isArray(cl.items) ? cl.items : []).filter(function (n) { return n && n.name && n.logo; });
+  var band = document.getElementById("testimonials");
+  if (logos.length && band) {
     function track(hidden) {
       var ul = el("ul", "hx-net__track");
       if (hidden) ul.setAttribute("aria-hidden", "true");
-      items.forEach(function (n) {
+      logos.forEach(function (n) {
         var li = el("li", "hx-net__item");
-        var inner =
-          (n.logo ? '<img class="hx-net__logo" src="' + esc(n.logo) + '" alt="" loading="lazy" />' : '') +
-          '<span class="hx-net__name">' + esc(n.name) + '</span>' +
-          (n.descriptor ? '<span class="hx-net__d">' + esc(n.descriptor) + '</span>' : '');
-        if (n.url && !hidden) {
-          li.innerHTML = '<a href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>';
-        } else {
-          li.innerHTML = inner;
-        }
+        var img = '<img class="hx-net__logo" src="' + esc(n.logo) + '" alt="' + (hidden ? '' : esc(n.name)) + '" decoding="async" />';
+        li.innerHTML = (n.url && !hidden)
+          ? '<a href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(n.name) + '">' + img + '</a>'
+          : img;
         ul.appendChild(li);
       });
       return ul;
@@ -81,17 +71,32 @@
     var belt = el("div", "hx-net__belt");
     belt.appendChild(track(false));
     belt.appendChild(track(true));
-    belt.style.setProperty("--dur", Math.max(24, items.length * 6) + "s");
+    belt.style.setProperty("--dur", Math.max(28, logos.length * 5) + "s");
     var railWrap = el("div", "hx-net__rail");
+    railWrap.setAttribute("aria-label", "Clients");
     railWrap.appendChild(belt);
-    var nw = el("div", "hx-wrap");
-    nw.appendChild(h); nw.appendChild(railWrap); rail.appendChild(nw);
-    before.parentNode.insertBefore(rail, before);
-    /* a set too short to fill the rail is shown as a still row rather than
-       a marquee with a gap in it */
-    requestAnimationFrame(function () {
-      var first = belt.firstElementChild;
-      if (first && first.offsetWidth < railWrap.offsetWidth) belt.classList.add("is-static");
-    });
+    var row = band.querySelector(".hx-quotes__row");
+    row.parentNode.insertBefore(railWrap, row);
+    /* The loop needs each track at least as wide as the rail. Measure once the
+       logo images have loaded (they are lazy, so they have no width before),
+       and repeat the items until the track fills; repeats are aria-hidden so
+       each name is still read once. A set that cannot fill is shown still. */
+    function fit() {
+      var tracks = belt.querySelectorAll(".hx-net__track"), guard = 0;
+      while (tracks[0].offsetWidth < railWrap.offsetWidth && guard++ < 4) {
+        tracks.forEach(function (t) {
+          Array.prototype.slice.call(t.children).slice(0, logos.length).forEach(function (li) {
+            var copy = li.cloneNode(true); copy.setAttribute("aria-hidden", "true");
+            copy.querySelectorAll("a").forEach(function (a) { a.tabIndex = -1; });
+            t.appendChild(copy);
+          });
+        });
+      }
+      belt.classList.toggle("is-static", tracks[0].offsetWidth < railWrap.offsetWidth);
+    }
+    var pending = Array.prototype.slice.call(belt.querySelectorAll("img")).filter(function (i) { return !(i.complete && i.naturalWidth); });
+    if (!pending.length) fit();
+    else { var left = pending.length; pending.forEach(function (i) { i.addEventListener("load", function () { if (--left === 0) fit(); }); i.addEventListener("error", function () { if (--left === 0) fit(); }); }); }
+    window.addEventListener("load", fit);
   }
 })();

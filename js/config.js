@@ -93,21 +93,29 @@ window.testimonials = [
 ];
 
 /* ============================================================
-   NETWORK / TIE-UPS RAIL — homepage, after Industries and before the closing CTA.
-   Confirm the relationship wording with each organisation, and confirm ICAI
-   guidelines permit displaying it.
-   Empty by default: with no items the rail is not rendered at all. Supply
-   real, approved logo files (monochrome or ink-tinted, consistent height)
-   under assets/ — nothing here is invented or recreated. Each item:
-     { name: "Organisation", logo: "assets/….svg", descriptor: "", url: "" }
-   `descriptor` and `url` are optional. The heading must match the actual
-   relationship: "Working with" or "Our network", not "Partners", unless a
-   formal partnership is confirmed. assets/ca-india-mark.png is not a
-   network logo and must not be listed here.
+   CLIENT LOGOS — homepage, inside the client reviews band, above the quotes.
+   A slow strip moving left to right; pauses on hover and keyboard focus;
+   still under reduced motion. Nothing renders while `items` is empty.
+   Confirm with each client that their logo may be shown, and confirm ICAI
+   website guidelines permit naming clients, before real logos go live.
+   THE EIGHT ENTRIES BELOW ARE PLACEHOLDERS, NOT REAL CLIENTS. Each file in
+   assets/clients/ is a neutral invented mark; replace file, name and url
+   with the client's approved logo (SVG or PNG, any colour: the strip shows
+   it in greyscale and restores colour on hover). Each item:
+     { name: "Company", logo: "assets/clients/….svg", url: "" }
+   `url` is optional. `name` is the accessible label for the logo.
    ============================================================ */
-window.network = {
-  heading: "Working with",
-  items: []
+window.clients = {
+  items: [
+    { name: "Sample Client 1 (placeholder)", logo: "assets/clients/sample-client-01.svg" },
+    { name: "Sample Client 2 (placeholder)", logo: "assets/clients/sample-client-02.svg" },
+    { name: "Sample Client 3 (placeholder)", logo: "assets/clients/sample-client-03.svg" },
+    { name: "Sample Client 4 (placeholder)", logo: "assets/clients/sample-client-04.svg" },
+    { name: "Sample Client 5 (placeholder)", logo: "assets/clients/sample-client-05.svg" },
+    { name: "Sample Client 6 (placeholder)", logo: "assets/clients/sample-client-06.svg" },
+    { name: "Sample Client 7 (placeholder)", logo: "assets/clients/sample-client-07.svg" },
+    { name: "Sample Client 8 (placeholder)", logo: "assets/clients/sample-client-08.svg" }
+  ]
 };
 
 /* ============================================================
