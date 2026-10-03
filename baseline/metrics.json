@@ -3,29 +3,29 @@
     "per_file": [
       [
         "css/styles.css",
-        230,
-        92
+        220,
+        81
       ],
       [
         "css/home.css",
-        98,
+        94,
         3
       ],
       [
         "css/system.css",
-        112,
-        38
+        120,
+        42
       ],
       [
         "css/careers.css",
-        34,
+        36,
         1
       ]
     ],
-    "sum_of_files": 474,
-    "dead_sum": 134,
-    "unique": 388,
-    "dead_unique": 116
+    "sum_of_files": 470,
+    "dead_sum": 127,
+    "unique": 383,
+    "dead_unique": 109
   },
   "_dead_by_file": {
     "css/styles.css": [
@@ -75,17 +75,6 @@
       "partner__memb",
       "partner__meta",
       "partner__name",
-      "ph",
-      "ph--audit",
-      "ph--cat",
-      "ph--compliance",
-      "ph--default",
-      "ph--forensic",
-      "ph--gold",
-      "ph--taxation",
-      "ph--technology",
-      "ph__cap",
-      "post-hidden",
       "proc-row",
       "proc-row__d",
       "proc-row__n",
@@ -132,6 +121,7 @@
       "bg-deep",
       "ca-badge",
       "ca-badge--nav",
+      "cat-tag",
       "cr-dev",
       "cr-dev__body",
       "cr-dev__fig",
@@ -148,6 +138,8 @@
       "cr-work__head",
       "cr-work__list",
       "cta-olive",
+      "featured__title",
+      "filter__btn",
       "flow-step__node",
       "flow-step__t",
       "h-card",
@@ -159,6 +151,7 @@
       "mega__link--ins",
       "partner__memb",
       "partner__name",
+      "post__title",
       "proc-row__n",
       "proc-row__t",
       "row__bul",
@@ -176,12 +169,12 @@
       "index.html": 20,
       "about.html": 13,
       "team.html": 0,
-      "services.html": 9,
-      "blog.html": 9,
+      "services.html": 10,
+      "blog.html": 10,
       "contact.html": 9,
-      "careers.html": 17
+      "careers.html": 18
     },
-    "total": 77
+    "total": 80
   },
   "arrows": {
     "per_page": {
@@ -197,7 +190,7 @@
     "css_pseudo_element_arrows": 2
   },
   "motion": {
-    "transition_declarations": 100,
+    "transition_declarations": 102,
     "distinct_durations": 23,
     "durations_ms": [
       0.0,
@@ -251,17 +244,14 @@
       "about.html": 1,
       "team.html": 1,
       "services.html": 0,
-      "blog.html": 3,
+      "blog.html": 0,
       "contact.html": 0,
       "careers.html": 0
     },
-    "total": 5,
+    "total": 2,
     "values": [
-      "display:none",
       "grid-column:1/-1",
-      "margin-top:1.4rem",
-      "padding-top:0",
-      "text-align: left"
+      "margin-top:1.4rem"
     ]
   },
   "firm_names": {
@@ -284,9 +274,10 @@
     "uploads_bytes": 0,
     "uploads_files": 0,
     "uploads_unreferenced": [],
-    "assets_bytes": 3371008,
-    "assets_files": 13,
+    "assets_bytes": 3403776,
+    "assets_files": 14,
     "assets_unreferenced": [
+      "ca-india-mark.png",
       "hero-ledger-source.png",
       "smk-favicon-source.png",
       "smk-logo-source.png"
@@ -374,8 +365,8 @@
     }
   },
   "fingerprints": {
-    "data_screen_label": 31,
-    "border_radius_declarations": 37,
+    "data_screen_label": 34,
+    "border_radius_declarations": 31,
     "distinct_radius_values": [
       "2px",
       "3px",
@@ -394,26 +385,26 @@
   },
   "sizes": {
     "html_bytes": {
-      "index.html": 33670,
+      "index.html": 33679,
       "about.html": 15555,
       "team.html": 17199,
-      "services.html": 25416,
-      "blog.html": 12728,
+      "services.html": 26014,
+      "blog.html": 13335,
       "contact.html": 16267,
-      "careers.html": 21184
+      "careers.html": 22170
     },
     "css_bytes": {
-      "css/styles.css": 52039,
-      "css/home.css": 23182,
-      "css/system.css": 23588,
-      "css/careers.css": 7646
+      "css/styles.css": 50252,
+      "css/home.css": 22873,
+      "css/system.css": 26189,
+      "css/careers.css": 7991
     },
-    "css_total": 106455,
+    "css_total": 107305,
     "js_bytes": {
-      "js/site.js": 12715,
-      "js/config.js": 8845,
-      "js/home.js": 4545,
-      "js/blog.js": 7832,
+      "js/site.js": 13197,
+      "js/config.js": 9586,
+      "js/home.js": 5308,
+      "js/blog.js": 9998,
       "js/team.js": 7724,
       "image-slot.js": 31363
     }

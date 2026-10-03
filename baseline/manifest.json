@@ -2,20 +2,20 @@
   {
     "page": "index",
     "width": 390,
-    "height": 8353,
-    "bytes": 603383
+    "height": 8407,
+    "bytes": 606162
   },
   {
     "page": "index",
     "width": 900,
-    "height": 7268,
-    "bytes": 845234
+    "height": 7330,
+    "bytes": 851389
   },
   {
     "page": "index",
     "width": 1440,
-    "height": 7816,
-    "bytes": 1020134
+    "height": 7898,
+    "bytes": 1032099
   },
   {
     "page": "about",
@@ -56,38 +56,38 @@
   {
     "page": "services",
     "width": 390,
-    "height": 3953,
-    "bytes": 261106
+    "height": 4151,
+    "bytes": 273234
   },
   {
     "page": "services",
     "width": 900,
-    "height": 2869,
-    "bytes": 277648
+    "height": 2963,
+    "bytes": 300904
   },
   {
     "page": "services",
     "width": 1440,
-    "height": 2508,
-    "bytes": 293175
+    "height": 2689,
+    "bytes": 326845
   },
   {
     "page": "blog",
     "width": 390,
-    "height": 5855,
-    "bytes": 1138465
+    "height": 4224,
+    "bytes": 308070
   },
   {
     "page": "blog",
     "width": 900,
-    "height": 3721,
-    "bytes": 1461139
+    "height": 3342,
+    "bytes": 356566
   },
   {
     "page": "blog",
     "width": 1440,
-    "height": 2734,
-    "bytes": 1351959
+    "height": 2926,
+    "bytes": 369080
   },
   {
     "page": "contact",
@@ -110,19 +110,19 @@
   {
     "page": "careers",
     "width": 390,
-    "height": 7533,
-    "bytes": 529241
+    "height": 7969,
+    "bytes": 555459
   },
   {
     "page": "careers",
     "width": 900,
-    "height": 6320,
-    "bytes": 568660
+    "height": 6318,
+    "bytes": 611707
   },
   {
     "page": "careers",
     "width": 1440,
-    "height": 5498,
-    "bytes": 616135
+    "height": 5694,
+    "bytes": 677452
   }
 ]
