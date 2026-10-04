@@ -11,39 +11,111 @@ window.API_BASE = "https://smk-enquiry-api-production.up.railway.app";
    Replace the [BRACKETED] placeholders before publishing.
    ============================================================ */
 window.siteConfig = {
-  firmName: "Sachin Mahendra & Co",
-  shortName: "SMK & Co",
+  /* Firm-name table. Trading name is used everywhere the firm is named:
+     <title>, OG/Twitter titles, nav, logo alt text. Legal name is used only
+     in the footer copyright and on the About page. */
+  legalName: "[Placeholder — confirm exact ICAI record]",
+  tradingName: "SMK & Co.",
+  shortName: "SMK & Co.",
   tagline: "Where Traditional Expertise Meets Modern Technology",
-  frn: "021859S",
 
   email: "contactsachinandco@gmail.com",            // e.g. connect@smkco.in
   phone: "99026 02692",            // e.g. +91 80 1234 5678
   domain: "[DOMAIN]",               // e.g. smkco.in
-  year: " ",                   // e.g. 2026  (used in © line)
+  year: "2026",                   // e.g. 2026  (used in © line)
 
   social: {
+    /* Paste the full public URLs here. Any entry left as "#" is hidden
+       in the footer rather than rendered as a dead link. */
     linkedin: "#",
+    facebook: "#",
     instagram: "#",
   },
 
   registeredOffice: {
     label: "Registered Office",
     city: "Bengaluru",
+    phone: "+91 34578 76543",
     lines: [
       "63/B, 3rd Floor, Chirag Plaza,",
       "10th Main, 4th Block, Rajaji Nagar,",
       "Bengaluru, Karnataka — 560 010"
-    ]
+    ],
+    /* Google Maps embed for 63/B, 3rd Floor, Chirag Plaza, 10th Main, 4th Block,
+       Rajaji Nagar, Bengaluru — 560 010. The iframe's src URL only; the map
+       container on /contact renders only while this is non-empty. The pin is
+       Google's listing "Sachin Mahendra & Co" at the Rajaji Nagar address. */
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.729629415279!2d77.55360947550595!3d12.989137014492709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d3bb4da6d57%3A0xd64052fc50178605!2sSachin%20Mahendra%20%26%20Co!5e0!3m2!1sen!2sus!4v1790844592072!5m2!1sen!2sus"
   },
   branchOffice: {
     label: "Branch Office",
     city: "Shivamogga",
+    phone: "+91 76890 65432",
     lines: [
       "Sri Manjunatha Complex, 1st Floor,",
       "Opp. Cauvery Ford Motors, Shankaramutt Road,",
       "Shivamogga, Karnataka — 577 201"
-    ]
+    ],
+    /* Awaiting verified Google Maps embed for Sri Manjunatha Complex, 1st Floor,
+       Opp. Cauvery Ford Motors, Shankaramutt Road, Shivamogga, Karnataka — 577 201.
+       Paste the iframe's src URL only. Renders only while non-empty. */
+    map: ""
   }
+};
+
+/* ============================================================
+   CLIENT REVIEWS — homepage, after the closing CTA, directly above the footer.
+   Enable only with client-approved testimonials, after confirming ICAI
+   advertising/website guidelines permit them.
+   THE THREE ENTRIES BELOW ARE PLACEHOLDERS FOR LAYOUT, NOT REAL CLIENTS.
+   Replace every quote and name with the client's approved words before
+   publishing, or empty the array: with no entries the section is not
+   rendered at all, heading included. Each entry:
+     { quote: "…", name: "Client or company", role: "Role or industry" }
+   `role` is optional. No star ratings, no photos, no results.
+   ============================================================ */
+window.testimonials = [
+  {
+    quote: "They explained what the accounts meant for the decision we were weighing up, not only what had to be filed.",
+    name: "Sample client 1 (placeholder)",
+    role: "Managing director · Manufacturing"
+  },
+  {
+    quote: "The same partner has handled our audit and our GST notices from the start. Nothing is handed down a chain.",
+    name: "Sample client 2 (placeholder)",
+    role: "Founder · Technology services"
+  },
+  {
+    quote: "Working papers that held up when the bank asked questions.",
+    name: "Sample client 3 (placeholder)",
+    role: "Partner · Professional services"
+  }
+];
+
+/* ============================================================
+   CLIENT LOGOS — homepage, inside the client reviews band, above the quotes.
+   A slow strip moving left to right; pauses on hover and keyboard focus;
+   still under reduced motion. Nothing renders while `items` is empty.
+   Confirm with each client that their logo may be shown, and confirm ICAI
+   website guidelines permit naming clients, before real logos go live.
+   THE EIGHT ENTRIES BELOW ARE PLACEHOLDERS, NOT REAL CLIENTS. Each file in
+   assets/clients/ is a neutral invented mark; replace file, name and url
+   with the client's approved logo (SVG or PNG, any colour: the strip shows
+   it in greyscale and restores colour on hover). Each item:
+     { name: "Company", logo: "assets/clients/….svg", url: "" }
+   `url` is optional. `name` is the accessible label for the logo.
+   ============================================================ */
+window.clients = {
+  items: [
+    { name: "Sample Client 1 (placeholder)", logo: "assets/clients/sample-client-01.svg" },
+    { name: "Sample Client 2 (placeholder)", logo: "assets/clients/sample-client-02.svg" },
+    { name: "Sample Client 3 (placeholder)", logo: "assets/clients/sample-client-03.svg" },
+    { name: "Sample Client 4 (placeholder)", logo: "assets/clients/sample-client-04.svg" },
+    { name: "Sample Client 5 (placeholder)", logo: "assets/clients/sample-client-05.svg" },
+    { name: "Sample Client 6 (placeholder)", logo: "assets/clients/sample-client-06.svg" },
+    { name: "Sample Client 7 (placeholder)", logo: "assets/clients/sample-client-07.svg" },
+    { name: "Sample Client 8 (placeholder)", logo: "assets/clients/sample-client-08.svg" }
+  ]
 };
 
 /* ============================================================

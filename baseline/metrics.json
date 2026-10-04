@@ -1,0 +1,418 @@
+{
+  "css_selectors": {
+    "per_file": [
+      [
+        "css/styles.css",
+        220,
+        81
+      ],
+      [
+        "css/home.css",
+        94,
+        3
+      ],
+      [
+        "css/system.css",
+        120,
+        42
+      ],
+      [
+        "css/careers.css",
+        36,
+        1
+      ]
+    ],
+    "sum_of_files": 470,
+    "dead_sum": 127,
+    "unique": 383,
+    "dead_unique": 109
+  },
+  "_dead_by_file": {
+    "css/styles.css": [
+      "acc-av",
+      "acc-id",
+      "acc-memb",
+      "acc-name",
+      "acc-panel",
+      "acc-panel__in",
+      "acc-toggle",
+      "bg-deep",
+      "btn--ghost",
+      "ca-badge",
+      "ca-badge--nav",
+      "card",
+      "card__ico",
+      "card__num",
+      "cards",
+      "cards--3",
+      "chip",
+      "cta-band",
+      "flow",
+      "flow-step",
+      "flow-step--ivory",
+      "flow-step--navy",
+      "flow-step__card",
+      "flow-step__d",
+      "flow-step__node",
+      "flow-step__t",
+      "footer__badge",
+      "footer__frn",
+      "h-card",
+      "hairline",
+      "hairline--gold",
+      "hero__bg",
+      "hero__cta",
+      "hero__firm",
+      "hero__glow",
+      "hero__inner",
+      "hero__scroll",
+      "hero__sub",
+      "muted",
+      "nav__menu",
+      "nav__right",
+      "partner__avatar",
+      "partner__exp",
+      "partner__memb",
+      "partner__meta",
+      "partner__name",
+      "proc-row",
+      "proc-row__d",
+      "proc-row__n",
+      "proc-row__t",
+      "proc-rows",
+      "process",
+      "row__bul",
+      "row__ico",
+      "rows--svc",
+      "sector",
+      "sector__ico",
+      "sectors",
+      "step",
+      "step__n",
+      "svc",
+      "svc__bul",
+      "svc__card",
+      "svc__card--flag",
+      "svc__card--wide",
+      "svc__head-col",
+      "svc__ico",
+      "svc__tag",
+      "svc__top",
+      "trust__item",
+      "trust__row",
+      "trust__sep",
+      "trust__spacer",
+      "value",
+      "values",
+      "vn",
+      "wordmark",
+      "wordmark__amp",
+      "wordmark__co",
+      "wordmark__dot",
+      "wordmark__smk"
+    ],
+    "css/home.css": [
+      "hx-h2",
+      "hx-label",
+      "hx-sec-sub"
+    ],
+    "css/system.css": [
+      "acc-name",
+      "bg-deep",
+      "ca-badge",
+      "ca-badge--nav",
+      "cat-tag",
+      "cr-dev",
+      "cr-dev__body",
+      "cr-dev__fig",
+      "cr-intro",
+      "cr-intro__l",
+      "cr-intro__r",
+      "cr-note",
+      "cr-open__head",
+      "cr-open__list",
+      "cr-who",
+      "cr-who__head",
+      "cr-who__item",
+      "cr-who__list",
+      "cr-work__head",
+      "cr-work__list",
+      "cta-olive",
+      "featured__title",
+      "filter__btn",
+      "flow-step__node",
+      "flow-step__t",
+      "h-card",
+      "hx-band-photo",
+      "hx-band-photo__cap",
+      "hx-h2",
+      "mark-panel",
+      "mega__grid--ins",
+      "mega__link--ins",
+      "partner__memb",
+      "partner__name",
+      "post__title",
+      "proc-row__n",
+      "proc-row__t",
+      "row__bul",
+      "step",
+      "svc__bul",
+      "svc__card",
+      "value"
+    ],
+    "css/careers.css": [
+      "cr-who__item"
+    ]
+  },
+  "ordinals": {
+    "per_page": {
+      "index.html": 20,
+      "about.html": 13,
+      "team.html": 0,
+      "services.html": 10,
+      "blog.html": 10,
+      "contact.html": 9,
+      "careers.html": 18
+    },
+    "total": 80
+  },
+  "arrows": {
+    "per_page": {
+      "index.html": 23,
+      "about.html": 11,
+      "team.html": 1,
+      "services.html": 12,
+      "blog.html": 11,
+      "contact.html": 12,
+      "careers.html": 14
+    },
+    "total": 84,
+    "css_pseudo_element_arrows": 2
+  },
+  "motion": {
+    "transition_declarations": 102,
+    "distinct_durations": 23,
+    "durations_ms": [
+      0.0,
+      35.0,
+      100.0,
+      120.0,
+      160.0,
+      180.0,
+      200.0,
+      220.0,
+      250.0,
+      260.0,
+      280.0,
+      300.0,
+      340.0,
+      350.0,
+      400.0,
+      420.0,
+      450.0,
+      500.0,
+      550.0,
+      600.0,
+      700.0,
+      750.0,
+      1100.0
+    ],
+    "animation_declarations": 21,
+    "keyframes_css": [
+      "heroLine",
+      "heroSettle",
+      "netScroll",
+      "procFade",
+      "procPop",
+      "smkFade",
+      "smkIn",
+      "svIn",
+      "svItem"
+    ],
+    "keyframes_inline": [],
+    "keyframes_inline_occurrences": 0,
+    "easings": [
+      "ease",
+      "linear"
+    ],
+    "data_reveal": 67,
+    "reduced_motion_guards": 10
+  },
+  "inline_style_attrs": {
+    "per_page": {
+      "index.html": 0,
+      "about.html": 1,
+      "team.html": 1,
+      "services.html": 0,
+      "blog.html": 0,
+      "contact.html": 0,
+      "careers.html": 0
+    },
+    "total": 2,
+    "values": [
+      "grid-column:1/-1",
+      "margin-top:1.4rem"
+    ]
+  },
+  "firm_names": {
+    "counts": {
+      "SMK & Co": 73,
+      "Sachin Mahendra Kiran & Co": 8,
+      "Sachin Mahendra & Co": 0
+    },
+    "titles": {
+      "index.html": "SMK &amp; Co. \u2014 Chartered Accountants, Bengaluru",
+      "about.html": "About \u2014 SMK &amp; Co.",
+      "team.html": "Our people \u2014 SMK &amp; Co.",
+      "services.html": "Services \u2014 SMK &amp; Co.",
+      "blog.html": "Insights &amp; Perspectives \u2014 SMK &amp; Co.",
+      "contact.html": "Contact \u2014 SMK &amp; Co.",
+      "careers.html": "Careers \u2014 SMK &amp; Co."
+    }
+  },
+  "assets": {
+    "uploads_bytes": 0,
+    "uploads_files": 0,
+    "uploads_unreferenced": [],
+    "assets_bytes": 3403776,
+    "assets_files": 14,
+    "assets_unreferenced": [
+      "ca-india-mark.png",
+      "hero-ledger-source.png",
+      "smk-favicon-source.png",
+      "smk-logo-source.png"
+    ],
+    "referenced_but_missing": [],
+    "image_slots_state_bytes": 892527
+  },
+  "headings": {
+    "index.html": {
+      "counts": {
+        "h1": 1,
+        "h2": 6,
+        "h3": 9,
+        "h5": 4
+      },
+      "skips": [
+        "h2->h5"
+      ]
+    },
+    "about.html": {
+      "counts": {
+        "h1": 1,
+        "h2": 2,
+        "h3": 8,
+        "h5": 4
+      },
+      "skips": [
+        "h1->h3",
+        "h3->h5"
+      ]
+    },
+    "team.html": {
+      "counts": {
+        "h1": 1,
+        "h3": 3,
+        "h5": 4
+      },
+      "skips": [
+        "h1->h3",
+        "h3->h5"
+      ]
+    },
+    "services.html": {
+      "counts": {
+        "h1": 1,
+        "h2": 8,
+        "h3": 3,
+        "h5": 4
+      },
+      "skips": [
+        "h2->h5"
+      ]
+    },
+    "blog.html": {
+      "counts": {
+        "h1": 1,
+        "h5": 4
+      },
+      "skips": [
+        "h1->h5"
+      ]
+    },
+    "contact.html": {
+      "counts": {
+        "h1": 1,
+        "h4": 2,
+        "h5": 4
+      },
+      "skips": [
+        "h1->h4"
+      ]
+    },
+    "careers.html": {
+      "counts": {
+        "h1": 1,
+        "h2": 5,
+        "h3": 11,
+        "h4": 5,
+        "h5": 4
+      },
+      "skips": [
+        "h2->h4",
+        "h2->h4"
+      ]
+    }
+  },
+  "fingerprints": {
+    "data_screen_label": 34,
+    "border_radius_declarations": 31,
+    "distinct_radius_values": [
+      "2px",
+      "3px",
+      "40px",
+      "50%",
+      "50px",
+      "8px",
+      "999px",
+      "var(--radius)",
+      "var(--radius-sm)"
+    ],
+    "border_declarations": 196,
+    "image_slot_elements": 7,
+    "internal_links_with_dot_html": 0,
+    "chrome_lines_header_footer": 614
+  },
+  "sizes": {
+    "html_bytes": {
+      "index.html": 33679,
+      "about.html": 15555,
+      "team.html": 17199,
+      "services.html": 26014,
+      "blog.html": 13335,
+      "contact.html": 16267,
+      "careers.html": 22170
+    },
+    "css_bytes": {
+      "css/styles.css": 50252,
+      "css/home.css": 22873,
+      "css/system.css": 26189,
+      "css/careers.css": 7991
+    },
+    "css_total": 107305,
+    "js_bytes": {
+      "js/site.js": 13197,
+      "js/config.js": 9586,
+      "js/home.js": 5308,
+      "js/blog.js": 9998,
+      "js/team.js": 7724,
+      "image-slot.js": 31363
+    }
+  },
+  "colour": {
+    "hex_literals": 1,
+    "distinct_hex": 1,
+    "rgb_functions": 0,
+    "rgba_2F6FA3_untokenised": 0
+  }
+}

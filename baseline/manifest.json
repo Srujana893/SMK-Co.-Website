@@ -1,0 +1,128 @@
+[
+  {
+    "page": "index",
+    "width": 390,
+    "height": 8407,
+    "bytes": 606162
+  },
+  {
+    "page": "index",
+    "width": 900,
+    "height": 7330,
+    "bytes": 851389
+  },
+  {
+    "page": "index",
+    "width": 1440,
+    "height": 7898,
+    "bytes": 1032099
+  },
+  {
+    "page": "about",
+    "width": 390,
+    "height": 4071,
+    "bytes": 250108
+  },
+  {
+    "page": "about",
+    "width": 900,
+    "height": 2989,
+    "bytes": 272614
+  },
+  {
+    "page": "about",
+    "width": 1440,
+    "height": 2897,
+    "bytes": 319529
+  },
+  {
+    "page": "team",
+    "width": 390,
+    "height": 3720,
+    "bytes": 176926
+  },
+  {
+    "page": "team",
+    "width": 900,
+    "height": 2752,
+    "bytes": 192204
+  },
+  {
+    "page": "team",
+    "width": 1440,
+    "height": 1737,
+    "bytes": 186085
+  },
+  {
+    "page": "services",
+    "width": 390,
+    "height": 4151,
+    "bytes": 273234
+  },
+  {
+    "page": "services",
+    "width": 900,
+    "height": 2963,
+    "bytes": 300904
+  },
+  {
+    "page": "services",
+    "width": 1440,
+    "height": 2689,
+    "bytes": 326845
+  },
+  {
+    "page": "blog",
+    "width": 390,
+    "height": 4224,
+    "bytes": 308070
+  },
+  {
+    "page": "blog",
+    "width": 900,
+    "height": 3342,
+    "bytes": 356566
+  },
+  {
+    "page": "blog",
+    "width": 1440,
+    "height": 2926,
+    "bytes": 369080
+  },
+  {
+    "page": "contact",
+    "width": 390,
+    "height": 3459,
+    "bytes": 163353
+  },
+  {
+    "page": "contact",
+    "width": 900,
+    "height": 2982,
+    "bytes": 184199
+  },
+  {
+    "page": "contact",
+    "width": 1440,
+    "height": 2162,
+    "bytes": 197527
+  },
+  {
+    "page": "careers",
+    "width": 390,
+    "height": 7969,
+    "bytes": 555459
+  },
+  {
+    "page": "careers",
+    "width": 900,
+    "height": 6318,
+    "bytes": 611707
+  },
+  {
+    "page": "careers",
+    "width": 1440,
+    "height": 5694,
+    "bytes": 677452
+  }
+]

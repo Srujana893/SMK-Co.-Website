@@ -3,249 +3,318 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sachin Mahendra &amp; Co — Chartered Accountants</title>
-<meta name="description" content="Sachin Mahendra & Co — a technology-integrated Chartered Accountancy practice in Bengaluru & Shivamogga. Audit, tax and compliance with IS audit, AI automation and forensic accounting. ICAI FRN 021859S." />
-
-<!-- Open Graph / social preview -->
-<meta property="og:title" content="Sachin Mahendra &amp; Co — Chartered Accountants" />
-<meta property="og:description" content="Sachin Mahendra & Co — a technology-integrated Chartered Accountancy practice in Bengaluru & Shivamogga. Audit, tax and compliance with IS audit, AI automation and forensic accounting. ICAI FRN 021859S." />
-<meta property="og:image" content="https://smkindia.com/assets/smk-og-preview.png" />
-<meta property="og:url" content="https://smkindia.com/" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Sachin Mahendra &amp; Co — Chartered Accountants" />
-<meta name="twitter:description" content="Sachin Mahendra & Co — a technology-integrated Chartered Accountancy practice in Bengaluru & Shivamogga. Audit, tax and compliance with IS audit, AI automation and forensic accounting. ICAI FRN 021859S." />
-<meta name="twitter:image" content="https://smkindia.com/assets/smk-og-preview.png" />
-
-<!-- Favicon -->
-<link rel="icon" href="/assets/favicon.ico?v=3" sizes="any" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=3" />
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png?v=3" />
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=3" />
-<link rel="manifest" href="/assets/site.webmanifest" />
-
+<title>SMK &amp; Co. — Chartered Accountants, Bengaluru</title>
+<meta name="description" content="SMK &amp; Co. is a Chartered Accountancy firm in Bengaluru providing audit and assurance, tax and compliance, advisory, forensic accounting and information systems audit to businesses across Karnataka." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
+<link rel="apple-touch-icon" sizes="192x192" href="assets/favicon-192.png" />
+<link rel="manifest" href="assets/site.webmanifest" />
+<meta property="og:title" content="SMK &amp; Co. — Chartered Accountants" />
+<meta property="og:image" content="assets/smk-og-preview.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="css/styles.css?v=2" />
-<style>
-  /* hero geometry motion (decorative — disabled for reduced-motion) */
-  @keyframes drift{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-14px,0)}100%{transform:translate3d(0,0,0)}}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  @keyframes dash{to{stroke-dashoffset:-220}}
-  .hero__rings{transform-box:fill-box;transform-origin:center;animation:spin 80s linear infinite}
-  .hero__mesh{animation:drift 14s ease-in-out infinite}
-  .hero__trace{stroke-dasharray:6 14;animation:dash 9s linear infinite}
-  @media (prefers-reduced-motion:reduce){.hero__rings,.hero__mesh,.hero__trace{animation:none}}
-  /* spotlight viz */
-  @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
-  .spot__ring{animation:spin 60s linear infinite;transform-box:fill-box;transform-origin:center}
-  .spot__ring--rev{animation-duration:42s;animation-direction:reverse}
-  .spot__node{animation:pulse 4s ease-in-out infinite}
-  .spot__node:nth-child(odd){animation-delay:1.5s}
-  @media (prefers-reduced-motion:reduce){.spot__ring,.spot__node{animation:none}}
-</style>
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/home.css" />
+<link rel="stylesheet" href="css/system.css" />
 </head>
-<body>
+<body class="hx">
 
-
-<!-- ============ FIXED NAV ============ -->
-<header class="nav" id="top">
+<!-- ============ NAV ============ -->
+<header class="nav is-solid" id="top">
   <div class="container nav__row">
-    <a href="/" class="nav__brand" aria-label="SMK & Co — home">
-      <span class="ca-badge ca-badge--nav"><img src="assets/ca-india-mark.png" alt="CA India — ICAI professional mark" /></span>
-      <span class="wordmark"><span class="wordmark__smk">SMK</span><span class="wordmark__co">&amp; Co<span class="wordmark__dot">.</span></span></span>
+    <a href="/" class="nav__brand" aria-label="SMK &amp; Co. — home">
+      <img class="brand__logo" src="assets/smk-logo-lockup.png" alt="SMK &amp; Co. — Chartered Accountants" />
     </a>
     <nav class="nav__links" aria-label="Primary">
-      <a class="nav__link is-active" href="/">Home</a>
-      <a class="nav__link" href="/about">About</a>
-      <a class="nav__link" href="/services">Services</a>
-      <a class="nav__link" href="/team">Team</a>
-      <a class="nav__link" href="/contact">Contact</a>
-      <a class="nav__link" href="/blog">Blog</a>
+      <div class="nav__item" data-menu="services"><button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-services">What We Do <span class="nav__chev"></span></button></div>
+      <a class="nav__link" href="/blog">Insights</a>
+      <div class="nav__item" data-menu="about"><button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-about">About <span class="nav__chev"></span></button></div>
+      <a class="nav__link" href="/careers">Careers</a>
+      <a class="btn btn--outline-gold nav__cta" href="/contact">Contact us</a>
     </nav>
+    <button class="nav__burger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mega" id="mega-services" data-mega="services">
+    <div class="mega__inner">
+      <p class="mega__label">What we do</p>
+      <div class="mega__grid mega__grid--row">
+        <a class="mega__link" href="/services#audit-assurance"><span class="mega__n">01</span><span class="mega__t">Audit &amp; Assurance</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Statutory, internal, bank branch and PSU audits, carried out to ICAI standards.</p></a>
+        <a class="mega__link" href="/services#tax-compliance"><span class="mega__n">02</span><span class="mega__t">Tax &amp; Compliance</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Income tax and GST — returns, assessments, notices and representation.</p></a>
+        <a class="mega__link" href="/services#advisory"><span class="mega__n">03</span><span class="mega__t">Advisory</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Business structuring, financial due diligence and planning support.</p></a>
+        <a class="mega__link" href="/services#forensic"><span class="mega__n">04</span><span class="mega__t">Forensic</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Investigation, fund tracing and fraud examination.</p></a>
+        <a class="mega__link" href="/services#technology-cyber"><span class="mega__n">05</span><span class="mega__t">Technology &amp; Cyber</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Information systems audit, IT general controls and data-protection review.</p></a>
+        <a class="mega__link" href="/services#business-regulatory"><span class="mega__n">06</span><span class="mega__t">Business, LLP &amp; Regulatory</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Incorporation, ROC and annual filings, and secretarial compliance.</p></a>
+      </div>
+      <div class="mega__foot">
+        <p>Most clients begin with one practice area and take on others as the business grows.</p>
+        <a class="hx-cta" href="/services">View all services <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="mega" id="mega-about" data-mega="about">
+    <div class="mega__inner">
+      <p class="mega__label">About</p>
+      <div class="mega__grid mega__grid--three">
+        <a class="mega__link" href="/about"><span class="mega__n">01</span><span class="mega__t">About the firm</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">Who we are, where we work and what the practice stands for.</p></a>
+        <a class="mega__link" href="/#how-we-work"><span class="mega__n">02</span><span class="mega__t">How we work</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">The five stages every engagement runs through.</p></a>
+        <a class="mega__link" href="/team"><span class="mega__n">03</span><span class="mega__t">Our people</span><span class="mega__arr" aria-hidden="true">&rarr;</span><p class="mega__d">The partners who lead the work, and how to reach them.</p></a>
+      </div>
+    </div>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero bg-navy is-dark" data-screen-label="Hero">
-  <div class="hero__bg" data-parallax aria-hidden="true">
-    <div class="hero__glow"></div>
-    <svg class="hero__mesh" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <linearGradient id="gline" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#B89150" stop-opacity=".5"/>
-          <stop offset="1" stop-color="#B89150" stop-opacity="0"/>
-        </linearGradient>
-        <pattern id="dots" width="46" height="46" patternUnits="userSpaceOnUse">
-          <circle cx="1" cy="1" r="1" fill="#EAE2D2" opacity="0.06"/>
-        </pattern>
-      </defs>
-      <rect width="1440" height="900" fill="url(#dots)"/>
-      <g class="hero__rings" stroke="url(#gline)" fill="none" style="transform-origin:1080px 360px">
-        <circle cx="1080" cy="360" r="150" stroke-width="1"/>
-        <circle cx="1080" cy="360" r="250" stroke-width="1" opacity="0.7"/>
-        <circle cx="1080" cy="360" r="360" stroke-width="1" opacity="0.45"/>
-        <circle cx="1080" cy="360" r="480" stroke-width="1" opacity="0.25"/>
-      </g>
-      <path class="hero__trace" d="M-20 620 C 360 540, 620 720, 1000 560 S 1500 460, 1700 540" stroke="#B89150" stroke-opacity="0.4" stroke-width="1" fill="none"/>
-      <path class="hero__trace" style="animation-delay:-4s" d="M-20 720 C 300 700, 700 820, 1100 700 S 1520 640, 1700 700" stroke="#EAE2D2" stroke-opacity="0.12" stroke-width="1" fill="none"/>
-    </svg>
-  </div>
-
-  <div class="container hero__inner">
-    <p class="hero__firm" data-reveal style="font-family: &quot;Cormorant Garamond&quot;; font-size: 37px; font-weight: 600; color: rgb(201, 168, 106); line-height: 1.4; letter-spacing: 6px; height: auto; margin: 0px 0px 26px">SACHIN MAHENDRA KIRAN &amp; CO.</p>
-    <p class="eyebrow hero__eyebrow" data-reveal data-d="1" style="font-size: 35px">Chartered Accountants </p>
-    <h1 class="display" data-reveal data-d="1">Traditional expertise.<br/>Modern technology.<br/><em>Built for what's next.</em></h1>
-    <p class="lede hero__sub" data-reveal data-d="2">A technology-integrated CA practice combining audit, tax and compliance with IS audit, AI automation and forensic accounting.</p>
-    <div class="hero__cta" data-reveal data-d="3">
-      <a class="btn btn--gold" href="/contact">Request a Consultation <span class="arr">&rarr;</span></a>
-      <a class="btn btn--ghost" href="/services">Explore Services</a>
+<div class="mnav" aria-hidden="true">
+  <div class="mnav__scrim"></div>
+  <div class="mnav__panel">
+    <div class="mnav__head">
+      <img class="brand__logo brand__logo--mnav" src="assets/smk-logo-lockup.png" alt="SMK &amp; Co. — Chartered Accountants" />
+      <button class="mnav__close" type="button" data-close-menu aria-label="Close menu">&times;</button>
     </div>
+    <a class="mnav__link" href="/services" data-close-menu>What We Do</a>
+    <a class="mnav__link" href="/blog" data-close-menu>Insights</a>
+    <a class="mnav__link" href="/about" data-close-menu>About</a>
+    <a class="mnav__link" href="/careers" data-close-menu>Careers</a>
+    <a class="btn btn--gold" href="/contact" data-close-menu>Contact us <span class="arr">&rarr;</span></a>
   </div>
+</div>
 
-  <!-- trust strip -->
-  <div class="trust">
-    <div class="container trust__row" data-reveal>
-      <span class="trust__item"><b data-count="7" data-suffix="+">7+</b> Years</span>
-      <span class="trust__sep"></span>
-      <span class="trust__item"><b data-count="3">3</b> Partners</span>
-      <span class="trust__sep"></span>
-      <span class="trust__item">ICAI FRN <b>021859S</b></span>
-      <span class="trust__sep"></span>
-      <span class="trust__item">Multi-Domain</span>
+<main>
+
+<!-- ============ 01 HERO ============ -->
+<section class="hx-hero" data-screen-label="Hero">
+  <div class="hx-hero__pic">
+    <picture>
+      <source srcset="assets/hero-ledger-1600.webp" type="image/webp" />
+      <img src="assets/hero-ledger-1600.jpg" alt="" width="1600" height="900"
+           decoding="async" fetchpriority="high" />
+    </picture>
+    <div class="hx-hero__veil"></div>
+  </div>
+  <div class="hx-hero__inner hx-wrap">
+    <div class="hx-hero__box">
+      <h1 data-load="1">Accounting for the numbers. Advising on the decisions behind them.</h1>
+      <p class="hx-hero__sub" data-load="2">Audit, tax, compliance and advisory services, with a partner involved in every engagement.</p>
+      <div class="hx-hero__act" data-load="3"><a class="hx-btn hx-btn--pill" href="/contact">Contact us <span class="arr">&rarr;</span></a></div>
     </div>
   </div>
 </section>
 
-<!-- ============ WHY CHOOSE US ============ -->
-<section class="section bg-soft grain" id="why" data-screen-label="Why Choose Us">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow" style="font-size: 37px">Why Choose Us</p>
-      <h2 class="h-sec">Built differently, by design.</h2>
-    </div>
-    <div class="rows" data-reveal>
-      <article class="row">
-        <div class="row__lead"><span class="row__ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 20h8M12 17v3"/></svg></span><h3 class="row__title">Technology-Integrated Practice</h3></div>
-        <p class="row__desc">Audit, tax and advisory delivered through modern systems — not bolted on, but built into how we work.</p>
-      </article>
-      <article class="row">
-        <div class="row__lead"><span class="row__ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-2.8 2.2-5 5-5s5 2.2 5 5M14 18c.2-2 1.8-3.6 3.8-3.6S21.4 16 21.5 18"/></svg></span><h3 class="row__title">Multi-Domain Partner Leadership</h3></div>
-        <p class="row__desc">Three partners spanning compliance, statutory audit, IS audit and forensic work — engagements are partner-led.</p>
-      </article>
-      <article class="row">
-        <div class="row__lead"><span class="row__ico"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M5 12H2M22 12h-3M6 6l-2-2M20 20l-2-2M18 6l2-2M4 20l2-2"/><circle cx="12" cy="12" r="3.4"/></svg></span><h3 class="row__title">AI-Powered Workflows</h3></div>
-        <p class="row__desc">Automation applied where it earns its place — reconciliations, classification and review, with human judgement on top.</p>
-      </article>
-      <article class="row">
-        <div class="row__lead"><span class="row__ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.4-3.2 7.6-8 9-4.8-1.4-8-4.6-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3 class="row__title">End-to-End Compliance Coverage</h3></div>
-        <p class="row__desc">From bookkeeping to statutory filings and regulatory representation — a single, continuous compliance thread.</p>
-      </article>
-      <article class="row">
-        <div class="row__lead"><span class="row__ico"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 018 0v3"/><circle cx="12" cy="15" r="1.3"/></svg></span><h3 class="row__title">Confidentiality &amp; Ethics</h3></div>
-        <p class="row__desc">Client information is handled to the standards our profession demands — discretion is a baseline, not a feature.</p>
-      </article>
-      <article class="row">
-        <div class="row__lead"><span class="row__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.6 3.8 9S14.5 18.5 12 21M12 3C9.5 5.5 8.2 8.6 8.2 12S9.5 18.5 12 21"/></svg></span><h3 class="row__title">Pan-India Multi-State Reach</h3></div>
-        <p class="row__desc">Offices in Bengaluru and Shivamogga, with the systems to support multi-state engagements across India.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ENGAGEMENT APPROACH ============ -->
-<section class="section bg-soft grain" id="approach" data-screen-label="Approach">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow" style="font-size: 37px">Engagement Approach</p>
-      <h2 class="h-sec">A clear path, every time.</h2>
-    </div>
-    <ol class="flow" data-reveal>
-      <li class="flow-step flow-step--navy">
-        <span class="flow-step__node">01</span>
-        <div class="flow-step__card">
-          <h4 class="flow-step__t">Understand</h4>
-          <p class="flow-step__d">We learn your business, obligations and goals before proposing anything.</p>
-        </div>
-      </li>
-      <li class="flow-step flow-step--ivory">
-        <span class="flow-step__node">02</span>
-        <div class="flow-step__card">
-          <h4 class="flow-step__t">Plan</h4>
-          <p class="flow-step__d">A scoped engagement with clear deliverables, timelines and ownership.</p>
-        </div>
-      </li>
-      <li class="flow-step flow-step--navy">
-        <span class="flow-step__node">03</span>
-        <div class="flow-step__card">
-          <h4 class="flow-step__t">Execute</h4>
-          <p class="flow-step__d">Partner-led work, supported by modern tools and tight documentation.</p>
-        </div>
-      </li>
-      <li class="flow-step flow-step--ivory">
-        <span class="flow-step__node">04</span>
-        <div class="flow-step__card">
-          <h4 class="flow-step__t">Report</h4>
-          <p class="flow-step__d">Findings communicated clearly — accurate, compliant and actionable.</p>
-        </div>
-      </li>
-      <li class="flow-step flow-step--navy">
-        <span class="flow-step__node">05</span>
-        <div class="flow-step__card">
-          <h4 class="flow-step__t">Support</h4>
-          <p class="flow-step__d">Continued availability for filings, queries and the work that follows.</p>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<!--
-  To update a testimonial in the future, edit only the three text fields inside each <article class="testimonial">:
-    1. .testimonial__tag    → service area label
-    2. .testimonial__quote  → the client's quote
-    3. .testimonial__client → client role / type (no personal names unless approved)
-  Do not change the surrounding markup or classes.
--->
-<section class="section bg-ivory grain" id="testimonials" data-screen-label="Testimonials">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow" style="font-size: 37px">Client Words</p>
-      <h2 class="h-sec">What our clients say.</h2>
-    </div>
-    <div class="testimonial-grid" data-reveal>
-      <article class="testimonial">
-        <span class="testimonial__tag">Audit &amp; Assurance</span>
-        <p class="testimonial__quote">SMK &amp; Co. brought clarity and structure to our audit process. Their team was thorough, responsive, and helped us close key compliance gaps with confidence.</p>
-        <p class="testimonial__client">Manufacturing Client</p>
-      </article>
-      <article class="testimonial">
-        <span class="testimonial__tag">Taxation</span>
-        <p class="testimonial__quote">The team guided us through complex tax matters with practical advice and timely support. Their approach made the entire filing and compliance process much smoother.</p>
-        <p class="testimonial__client">SME Business Owner</p>
-      </article>
-      <article class="testimonial">
-        <span class="testimonial__tag">Compliance &amp; Advisory</span>
-        <p class="testimonial__quote">SMK &amp; Co. helped us improve our internal processes and stay aligned with regulatory requirements. Their advice was clear, professional, and business-focused.</p>
-        <p class="testimonial__client">Growing Enterprise Client</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA BAND ============ -->
-<section class="section bg-navy is-dark grain" data-screen-label="Get Started">
-  <div class="container">
-    <div class="cta-band" data-reveal>
-      <div>
-        <p class="eyebrow" style="font-size: 37px">Get Started</p>
-        <h2 class="h-sec">Let's talk about what you need.</h2>
+<!-- ============ 02 THE FIRM ============ -->
+<section class="hx-firm hx-band" id="the-firm" data-screen-label="The firm">
+  <div class="hx-wrap">
+    <header class="hx-sec" data-reveal>
+      <p class="hx-sec-label">The firm</p>
+      <h2 class="hx-firm__st">We handle the obligations, and help you understand what they mean.</h2>
+    </header>
+    <div class="hx-grid hx-firm__body">
+      <div class="hx-firm__txt" data-reveal>
+        <p class="hx-body">SMK &amp; Co. is a Chartered Accountancy practice based in Bengaluru, with a second office in Shivamogga. We work with private companies, LLPs, partnerships and proprietors — most of them owner-managed businesses that need their statutory work done properly and want a straight answer when something is unclear.</p>
+        <a class="hx-cta" href="/about">About the firm <span class="arr">&rarr;</span></a>
       </div>
-      <a class="btn btn--gold" href="/contact">Request a Consultation <span class="arr">&rarr;</span></a>
     </div>
   </div>
 </section>
+
+<!-- ============ 03 OUR PEOPLE ============ -->
+<section class="hx-ppl hx-band" id="our-people" data-screen-label="Our people">
+  <div class="hx-wrap">
+    <header class="hx-sec hx-sec--row" data-reveal>
+      <div>
+        <p class="hx-sec-label">Our people</p>
+        <h2 class="hx-sec-title">The partners behind the work.</h2>
+      </div>
+      <a class="hx-cta" href="/team">All profiles <span class="arr">&rarr;</span></a>
+    </header>
+    <div class="hx-ppl__grid">
+      <a class="hx-person" href="/team#sachin" data-reveal data-d="1">
+        <div class="hx-fig"><image-slot id="partner-sachin" shape="rect" fit="cover" placeholder="Drop FCA Sachin U's portrait"></image-slot></div>
+        <h3>FCA Sachin U</h3>
+        <p class="hx-person__d">Partner &middot; Audit &amp; Tax</p>
+        <p class="hx-person__e">Leads assurance and compliance — statutory audit, financial accounting and direct and indirect taxation.</p>
+        <span class="hx-person__l">View profile</span>
+      </a>
+      <a class="hx-person" href="/team#mahendra" data-reveal data-d="2">
+        <div class="hx-fig"><image-slot id="partner-mahendra" shape="rect" fit="cover" placeholder="Drop FCA Mahendra's portrait"></image-slot></div>
+        <h3>FCA Mahendra</h3>
+        <p class="hx-person__d">Partner &middot; Bank &amp; PSU Audit</p>
+        <p class="hx-person__e">Heads banking and public-sector engagements — branch, concurrent and statutory bank audits.</p>
+        <span class="hx-person__l">View profile</span>
+      </a>
+      <a class="hx-person" href="/team#kiran" data-reveal data-d="3">
+        <div class="hx-fig"><image-slot id="partner-kiran" shape="rect" fit="cover" placeholder="Drop ACA Kiran K's portrait"></image-slot></div>
+        <h3>ACA Kiran K</h3>
+        <p class="hx-person__d">Partner &middot; IS Audit &amp; Forensic</p>
+        <p class="hx-person__e">Runs the technology-integrated practice — information systems audit, forensic accounting and applied AI.</p>
+        <span class="hx-person__l">View profile</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 WHAT WE DO ============ -->
+<section class="hx-do hx-band" id="what-we-do" data-screen-label="What we do">
+  <div class="hx-wrap">
+    <header class="hx-sec" data-reveal>
+      <p class="hx-sec-label">What we do</p>
+      <h2 class="hx-sec-title">Practice areas.</h2>
+    </header>
+    <div class="hx-do__list">
+      <a class="hx-svc" href="/services#audit-assurance" data-reveal data-d="1">
+        <h3 class="hx-svc__t">Audit &amp; Assurance</h3>
+        <p class="hx-svc__d">Statutory, internal, bank branch and PSU audits, carried out to ICAI standards.</p>
+      </a>
+      <a class="hx-svc" href="/services#tax-compliance" data-reveal data-d="2">
+        <h3 class="hx-svc__t">Tax &amp; Compliance</h3>
+        <p class="hx-svc__d">Income tax and GST — returns, assessments, notices and representation.</p>
+      </a>
+      <a class="hx-svc" href="/services#advisory" data-reveal data-d="3">
+        <h3 class="hx-svc__t">Advisory</h3>
+        <p class="hx-svc__d">Business structuring, financial due diligence and planning support.</p>
+      </a>
+      <a class="hx-svc" href="/services#forensic" data-reveal data-d="4">
+        <h3 class="hx-svc__t">Forensic</h3>
+        <p class="hx-svc__d">Investigation, fund tracing and fraud examination.</p>
+      </a>
+      <a class="hx-svc" href="/services#technology-cyber" data-reveal data-d="5">
+        <h3 class="hx-svc__t">Technology &amp; Cyber</h3>
+        <p class="hx-svc__d">Information systems audit, IT general controls and data-protection review.</p>
+      </a>
+      <a class="hx-svc" href="/services#business-regulatory" data-reveal data-d="6">
+        <h3 class="hx-svc__t">Business, LLP &amp; Regulatory</h3>
+        <p class="hx-svc__d">Incorporation, ROC and annual filings, and secretarial compliance.</p>
+      </a>
+    </div>
+    <div class="hx-do__foot" data-reveal>
+      <p>Most clients begin with one practice area and take on others as the business grows.</p>
+      <a class="hx-cta" href="/services">View all services <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 HOW WE WORK ============ -->
+<!-- The snake, drawn by scrolling. One winding line across the page with the
+     five stages on its bends, names above and below. On desktop the block pins
+     while the page scrolls: the line draws from left to right, each stage lights
+     as the line reaches it and its detail reads below, then the page releases.
+     On phones and short screens it draws as the block comes into view. After the
+     draw, hover, tap or the arrow keys read any stage. Without JavaScript the
+     line is drawn and the first stage reads. -->
+<section class="hx-proc" id="how-we-work" data-screen-label="How we work">
+  <div class="hx-proc__pin">
+    <div class="hx-wrap">
+      <header class="hx-sec" data-reveal>
+        <p class="hx-sec-label">How we work</p>
+        <h2 class="hx-sec-title">A clear process, from understanding the business to supporting it.</h2>
+      </header>
+      <div class="hx-proc__snake">
+        <div class="hx-proc__board">
+          <svg class="hx-proc__path" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+            <path class="hx-proc__track" d="M100 60 C200 60 200 160 300 160 S400 60 500 60 S600 160 700 160 S800 60 900 60" pathLength="100"/>
+            <path class="hx-proc__fill" d="M100 60 C200 60 200 160 300 160 S400 60 500 60 S600 160 700 160 S800 60 900 60" pathLength="100"/>
+          </svg>
+          <ol class="hx-proc__steps" role="tablist" aria-label="Engagement stages">
+          <li class="hx-proc__step is-on is-active" role="presentation">
+            <button class="hx-proc__node" type="button" role="tab" id="proc-tab-1" aria-controls="proc-1" aria-selected="true" tabindex="0">
+              <span class="hx-proc__dot" aria-hidden="true"></span>
+              <span class="hx-proc__lbl"><span class="hx-proc__n">01</span><span class="hx-proc__t">Understand</span></span>
+            </button>
+            <div class="hx-proc__detail" id="proc-1" role="tabpanel" aria-labelledby="proc-tab-1">
+              <p class="hx-proc__lead">We start with the business, not the file.</p>
+              <p class="hx-proc__d">Before any scope is proposed we learn how the business operates, what it is obliged to file, and where the pressure points sit — who keeps the records, how the numbers are produced, and what has caused trouble before.</p>
+            </div>
+          </li>
+          <li class="hx-proc__step" role="presentation">
+            <button class="hx-proc__node" type="button" role="tab" id="proc-tab-2" aria-controls="proc-2" aria-selected="false" tabindex="-1">
+              <span class="hx-proc__dot" aria-hidden="true"></span>
+              <span class="hx-proc__lbl"><span class="hx-proc__n">02</span><span class="hx-proc__t">Assess</span></span>
+            </button>
+            <div class="hx-proc__detail" id="proc-2" role="tabpanel" aria-labelledby="proc-tab-2">
+              <p class="hx-proc__lead">Scope set against real risk.</p>
+              <p class="hx-proc__d">Records, systems and prior filings are reviewed to establish what genuinely needs attention. The engagement is then scoped in writing — deliverables, timelines and the partner who owns the work.</p>
+            </div>
+          </li>
+          <li class="hx-proc__step" role="presentation">
+            <button class="hx-proc__node" type="button" role="tab" id="proc-tab-3" aria-controls="proc-3" aria-selected="false" tabindex="-1">
+              <span class="hx-proc__dot" aria-hidden="true"></span>
+              <span class="hx-proc__lbl"><span class="hx-proc__n">03</span><span class="hx-proc__t">Execute</span></span>
+            </button>
+            <div class="hx-proc__detail" id="proc-3" role="tabpanel" aria-labelledby="proc-tab-3">
+              <p class="hx-proc__lead">Partner-led work, properly documented.</p>
+              <p class="hx-proc__d">The work is carried out by a partner-led team to ICAI standards, with working papers and documentation prepared to stand up to later review by a bank, a buyer or the department.</p>
+            </div>
+          </li>
+          <li class="hx-proc__step" role="presentation">
+            <button class="hx-proc__node" type="button" role="tab" id="proc-tab-4" aria-controls="proc-4" aria-selected="false" tabindex="-1">
+              <span class="hx-proc__dot" aria-hidden="true"></span>
+              <span class="hx-proc__lbl"><span class="hx-proc__n">04</span><span class="hx-proc__t">Support</span></span>
+            </button>
+            <div class="hx-proc__detail" id="proc-4" role="tabpanel" aria-labelledby="proc-tab-4">
+              <p class="hx-proc__lead">We remain involved after the filing.</p>
+              <p class="hx-proc__d">Notices, queries and the filings that follow are handled as they arise. Clients reach the partner who did the work rather than starting again with someone new.</p>
+            </div>
+          </li>
+          <li class="hx-proc__step" role="presentation">
+            <button class="hx-proc__node" type="button" role="tab" id="proc-tab-5" aria-controls="proc-5" aria-selected="false" tabindex="-1">
+              <span class="hx-proc__dot" aria-hidden="true"></span>
+              <span class="hx-proc__lbl"><span class="hx-proc__n">05</span><span class="hx-proc__t">Review</span></span>
+            </button>
+            <div class="hx-proc__detail" id="proc-5" role="tabpanel" aria-labelledby="proc-tab-5">
+              <p class="hx-proc__lead">Each cycle informs the next.</p>
+              <p class="hx-proc__d">At the close of a cycle we go back over what came up — recurring adjustments, weak controls, late records — and agree what to tighten before the next year begins.</p>
+            </div>
+          </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- the scroll room for the drawing while the block above is pinned -->
+  <div class="hx-proc__space" aria-hidden="true"></div>
+</section>
+
+<!-- ============ 06 INDUSTRIES ============ -->
+<section class="hx-ind hx-band" id="industries" data-screen-label="Industries">
+  <div class="hx-wrap">
+    <header class="hx-sec" data-reveal>
+      <p class="hx-sec-label">Industries</p>
+      <h2 class="hx-sec-title">Different businesses. Different risks. Different decisions.</h2>
+    </header>
+    <div class="hx-ind__wrap">
+      <ul class="hx-ind__rows">
+        <li class="hx-ind__row is-active" data-ind="0" data-reveal data-d="1"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">01</span><span class="hx-ind__name">Technology &amp; IT Services</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Revenue recognition across contracts, ESOP and cross-border structuring, and IT general controls.</p></li>
+        <li class="hx-ind__row" data-ind="1" data-reveal data-d="2"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">02</span><span class="hx-ind__name">Manufacturing</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Inventory valuation and costing, GST on movement of goods, and reconciliation of plant records to the books.</p></li>
+        <li class="hx-ind__row" data-ind="2" data-reveal data-d="3"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">03</span><span class="hx-ind__name">Banking &amp; Financial Services</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Advances classification and IRAC norms, branch documentation, and concurrent and statutory audit cycles.</p></li>
+        <li class="hx-ind__row" data-ind="3" data-reveal data-d="4"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">04</span><span class="hx-ind__name">Professional Services</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Firm structure and partner remuneration, receivables discipline, and TDS on professional payments.</p></li>
+        <li class="hx-ind__row" data-ind="4" data-reveal data-d="5"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">05</span><span class="hx-ind__name">Real Estate &amp; Construction</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Percentage-of-completion accounting, project-wise cost tracking and GST on works contracts.</p></li>
+        <li class="hx-ind__row" data-ind="5" data-reveal data-d="6"><button class="hx-ind__btn" type="button"><span class="hx-ind__n">06</span><span class="hx-ind__name">Startups &amp; Founders</span><span class="hx-ind__arr" aria-hidden="true">&rarr;</span></button><p class="hx-ind__d">Entity structure, cap table hygiene, statutory registers and a close process that survives first diligence.</p></li>
+      </ul>
+      <div class="hx-ind__foot" data-reveal data-d="1">
+        <p class="hx-ind__cap">We spend our time in the businesses we audit, not only in their ledgers.</p>
+        <a class="hx-cta" href="/services#sectors">What we do for them <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The client reviews band is rendered here, between Industries and the
+     closing CTA, by js/home.js from js/config.js; the client logo strip sits
+     inside it, above the quotes. Both read placeholder data until replaced. -->
+
+<!-- ============ 07 CONTACT ============ -->
+<section class="hx-close hx-band hx-close--pure" data-screen-label="Contact">
+  <div class="hx-wrap">
+    <div class="hx-close__mid" data-reveal>
+      <p class="hx-sec-label">Contact</p>
+      <h2>Let's talk about your business.</h2>
+      <p class="hx-close__sub">Tell us where things stand. We'll explain what we can help with, what the engagement involves, and the next steps.</p>
+      <a class="hx-btn" href="/contact">Contact us <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer is-dark" data-screen-label="Footer">
@@ -253,39 +322,223 @@
     <div class="footer__top">
       <div class="footer__brand">
         <a href="/" class="footer__brandrow">
-          <span class="ca-badge ca-badge--nav"><img src="assets/ca-india-mark.png" alt="CA India — ICAI professional mark" /></span>
-          <span class="wordmark"><span class="wordmark__smk">SMK</span><span class="wordmark__co">&amp; Co<span class="wordmark__dot">.</span></span></span>
+          <span class="footer__plate"><img src="assets/smk-logo-lockup-reversed.png" alt="SMK &amp; Co. — Chartered Accountants" /></span>
         </a>
-        <p>A technology-integrated Chartered Accountancy practice — where traditional expertise meets modern technology.</p>
+        <p class="footer__desc">Chartered Accountants</p>
+        <p>A Chartered Accountancy practice in Bengaluru and Shivamogga, advising owner-managed businesses on audit, tax, compliance and the systems behind them.</p>
       </div>
       <div class="footer__col">
         <h5>Navigate</h5>
         <ul>
+          <li><a class="ulink" href="/services">What We Do</a></li>
+          <li><a class="ulink" href="/blog">Insights</a></li>
           <li><a class="ulink" href="/about">About</a></li>
-          <li><a class="ulink" href="/services">Services</a></li>
-          <li><a class="ulink" href="/team">Team</a></li>
+          <li><a class="ulink" href="/careers">Careers</a></li>
           <li><a class="ulink" href="/contact">Contact</a></li>
-          <li><a class="ulink" href="/blog">Blog</a></li>
         </ul>
+      </div>
+      <div class="footer__col footer__col--contact">
+        <h5>Contact us</h5>
+        <nav class="footer__social" aria-label="Social and contact links">
+          <a data-social="linkedin" aria-label="SMK &amp; Co. on LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v0M11 17v-4a2 2 0 014 0v4"/></svg></a>
+          <a data-social="facebook" aria-label="SMK &amp; Co. on Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M15.5 7.5h-1A1.5 1.5 0 0 0 13 9v9M10.5 12h5"/></svg></a>
+          <a data-cfg="email" data-cfg-href="mailto:" href="mailto:contactsachinandco@gmail.com" aria-label="Email SMK &amp; Co."><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></a>
+          <a data-cfg="phone" data-cfg-href="tel:+91" href="tel:+919902602692" aria-label="Call SMK &amp; Co."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2C9.6 21 3 14.4 3 6a2 2 0 012-2z"/></svg></a>
+        </nav>
       </div>
       <div class="footer__col">
         <h5>Bengaluru</h5>
-        <address>Head Office<br/>63/B, 3rd Floor, Chirag Plaza,<br/>10th Main, 4th Block, Rajaji Nagar,<br/>Bengaluru — 560 010</address>
+        <address>Head Office<br />63/B, 3rd Floor, Chirag Plaza,<br />10th Main, 4th Block, Rajaji Nagar,<br />Bengaluru — 560 010<br /><a class="ulink" data-cfg="registeredOffice.phone" data-cfg-href="tel:+" href="tel:+913457876543">+91 34578 76543</a></address>
       </div>
       <div class="footer__col">
         <h5>Shivamogga</h5>
-        <address>Branch Office<br/>Sri Manjunatha Complex, 1st Floor,<br/>Opp. Cauvery Ford Motors,<br/>Shankaramutt Road,<br/>Shivamogga — 577 201</address>
+        <address>Branch Office<br />Sri Manjunatha Complex, 1st Floor,<br />Opp. Cauvery Ford Motors,<br />Shankaramutt Road,<br />Shivamogga — 577 201<br /><a class="ulink" data-cfg="branchOffice.phone" data-cfg-href="tel:+" href="tel:+917689065432">+91 76890 65432</a></address>
       </div>
     </div>
     <div class="footer__bottom">
       <p>Confidentiality assured · Information handled to ICAI professional standards.</p>
-      <p>© Sachin Mahendra Kiran &amp; Co <span data-cfg="year">[YEAR]</span> · All Rights Reserved · <span class="footer__frn">ICAI FRN 021859S</span></p>
+      <p>© Sachin Mahendra Kiran &amp; Co <span data-cfg="year">[YEAR]</span> · All Rights Reserved</p>
     </div>
   </div>
 </footer>
 
 <script src="image-slot.js"></script>
 <script src="js/config.js"></script>
+<script src="js/home.js"></script>
 <script src="js/site.js"></script>
+<script>
+/* Hero headline reveals one rendered line at a time. The line breaks depend on
+   where the text actually wraps, so they are measured after the fonts load
+   rather than hard-coded — hard-coded breaks would be wrong at every other
+   width. Falls back to the whole-headline fade if this never runs, and is
+   skipped entirely under prefers-reduced-motion. */
+(function () {
+  var h1 = document.querySelector(".hx-hero h1");
+  if (!h1 || !window.matchMedia) return;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  var FIRST = 300, STEP = 140;   /* ms: first line, then one every STEP */
+
+  function splitIntoLines(el) {
+    var text = (el.getAttribute("data-raw") || el.textContent).trim();
+    el.setAttribute("data-raw", text);
+    var words = text.split(/\s+/);
+
+    /* measure: one probe span per word, grouped by the top it lands on */
+    el.textContent = "";
+    var probes = words.map(function (w, i) {
+      var s = document.createElement("span");
+      s.textContent = w;
+      el.appendChild(s);
+      if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
+      return s;
+    });
+    var lines = [], current = null, top = null;
+    probes.forEach(function (s) {
+      var t = s.offsetTop;
+      if (top === null || Math.abs(t - top) > 2) { current = []; lines.push(current); top = t; }
+      current.push(s.textContent);
+    });
+
+    /* rebuild: one block span per line, each on its own delay. The space
+       between lines is a real text node, so the heading still reads and copies
+       as one sentence rather than "for thenumbers". */
+    el.textContent = "";
+    lines.forEach(function (w, i) {
+      if (i) el.appendChild(document.createTextNode(" "));
+      var line = document.createElement("span");
+      line.className = "hx-line";
+      line.textContent = w.join(" ");
+      line.style.animationDelay = (FIRST + i * STEP) + "ms";
+      el.appendChild(line);
+    });
+    el.classList.add("is-split");
+    return lines.length;
+  }
+
+  function run() {
+    try {
+      var n = splitIntoLines(h1);
+      /* the sub-line and the action wait for the last line, whatever the width:
+         three lines at desktop, four at 390px. */
+      var after = FIRST + n * STEP;
+      var sub = document.querySelector(".hx-hero__sub");
+      var act = document.querySelector(".hx-hero__act");
+      if (sub) sub.style.animationDelay = (after + 60) + "ms";
+      if (act) act.style.animationDelay = (after + 220) + "ms";
+    } catch (e) { /* leave the headline as written */ }
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(run); else run();
+})();
+</script>
+<script>
+(function(){
+  var rows=[].slice.call(document.querySelectorAll(".hx-ind__row"));
+  function setInd(el){rows.forEach(function(r){r.classList.toggle("is-active",r===el)})}
+  rows.forEach(function(r){
+    r.addEventListener("mouseenter",function(){setInd(r)});
+    r.querySelector(".hx-ind__btn").addEventListener("focus",function(){setInd(r)});
+    r.addEventListener("click",function(){setInd(r)});
+  });
+  /* How we work: the line draws as the page scrolls. On desktop the block is
+     pinned (a spacer after it gives the section its scroll room) and progress
+     is the distance scrolled through the pin; otherwise progress is the block's
+     own passage into view. A stage comes on when the line reaches its bend; its
+     detail reads below. After the draw, hover, tap or the arrow keys pick a
+     stage. Reduced motion shows the finished line at once. */
+  var sec=document.querySelector(".hx-proc");
+  if(sec){
+    var pin=sec.querySelector(".hx-proc__pin"),board=sec.querySelector(".hx-proc__board"),fill=sec.querySelector(".hx-proc__fill");
+    var steps=[].slice.call(sec.querySelectorAll(".hx-proc__step"));
+    var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
+    var F=[0,25,50,75,100],NAV=74,pick=null,lastOn=-1;
+    var clamp=function(v){return Math.max(0,Math.min(1,v))};
+    function pinned(){return getComputedStyle(pin).position==="sticky"}
+    function progress(){
+      if(reduce)return 100;
+      if(pinned()){
+        var start=sec.getBoundingClientRect().top+window.scrollY-NAV,dist=sec.offsetHeight-pin.offsetHeight;
+        if(dist<=0)return 100;
+        return clamp(((window.scrollY-start)/dist)/0.85)*100;   /* finished with 15% of the pin still to go */
+      }
+      var r=board.getBoundingClientRect(),vh=window.innerHeight;
+      return clamp((vh*0.85-r.top)/(vh*0.45))*100;
+    }
+    function setActive(li){
+      steps.forEach(function(x){
+        var on=x===li,b=x.querySelector(".hx-proc__node");
+        x.classList.toggle("is-active",on);b.setAttribute("aria-selected",on?"true":"false");b.tabIndex=on?0:-1;
+      });
+    }
+    function update(){
+      var p=progress(),on=-1;
+      fill.style.setProperty("--prog",p.toFixed(2));
+      steps.forEach(function(s,i){var hit=p>=F[i]-0.01;s.classList.toggle("is-on",hit);if(hit)on=i;});
+      if(on!==lastOn){pick=null;lastOn=on;}
+      setActive(pick||steps[Math.max(0,on)]);
+    }
+    steps.forEach(function(s,i){
+      var b=s.querySelector(".hx-proc__node");
+      function choose(){pick=s;setActive(s);}
+      b.addEventListener("click",choose);
+      b.addEventListener("mouseenter",choose);
+      b.addEventListener("focus",choose);
+      b.addEventListener("keydown",function(e){
+        var n=null;
+        if(e.key==="ArrowRight"||e.key==="ArrowDown")n=steps[(i+1)%steps.length];
+        else if(e.key==="ArrowLeft"||e.key==="ArrowUp")n=steps[(i-1+steps.length)%steps.length];
+        else if(e.key==="Home")n=steps[0];
+        else if(e.key==="End")n=steps[steps.length-1];
+        if(n){e.preventDefault();pick=n;setActive(n);n.querySelector(".hx-proc__node").focus();}
+      });
+    });
+    var tick=false;
+    function onScroll(){if(tick)return;tick=true;requestAnimationFrame(function(){update();tick=false;});}
+    window.addEventListener("scroll",onScroll,{passive:true});
+    window.addEventListener("resize",onScroll,{passive:true});
+    /* layout above the section can shift after load (images, fonts); follow it */
+    if(window.ResizeObserver)new ResizeObserver(onScroll).observe(document.body);
+    update();
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(update);
+  }
+})();
+</script>
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll(".nav__item[data-menu]"));
+  if(!items.length)return;
+  var openItem=null,timer=null;
+  function panel(it){return document.getElementById("mega-"+it.getAttribute("data-menu"))}
+  function open(it){
+    clearTimeout(timer);
+    if(openItem&&openItem!==it)close(openItem);
+    openItem=it;it.classList.add("is-open");
+    var p=panel(it);if(p)p.classList.add("is-open");
+    var b=it.querySelector(".nav__trigger");if(b)b.setAttribute("aria-expanded","true");
+  }
+  function close(it){
+    it.classList.remove("is-open");
+    var p=panel(it);if(p)p.classList.remove("is-open");
+    var b=it.querySelector(".nav__trigger");if(b)b.setAttribute("aria-expanded","false");
+    if(openItem===it)openItem=null;
+  }
+  function closeSoon(it){clearTimeout(timer);timer=setTimeout(function(){close(it)},140)}
+  items.forEach(function(it){
+    var p=panel(it);
+    it.addEventListener("mouseenter",function(){open(it)});
+    it.addEventListener("mouseleave",function(){closeSoon(it)});
+    if(p){p.addEventListener("mouseenter",function(){open(it)});p.addEventListener("mouseleave",function(){closeSoon(it)})}
+    var b=it.querySelector(".nav__trigger");
+    if(b){
+      b.addEventListener("click",function(e){e.preventDefault();it.classList.contains("is-open")?close(it):open(it)});
+      b.addEventListener("focus",function(){open(it)});
+    }
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&openItem)close(openItem)});
+  document.addEventListener("click",function(e){
+    if(openItem&&!openItem.contains(e.target)&&!panel(openItem).contains(e.target))close(openItem);
+  });
+})();
+</script>
 </body>
 </html>

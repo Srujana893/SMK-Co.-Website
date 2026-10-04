@@ -17,11 +17,54 @@
     var v = getPath(cfg, el.getAttribute("data-cfg"));
     if (v == null) return;
     if (el.hasAttribute("data-cfg-href")) {
-      el.setAttribute("href", el.getAttribute("data-cfg-href") + v);
+      var pre = el.getAttribute("data-cfg-href"), val = String(v);
+      /* tel: URIs must not carry the spaces the display text uses */
+      if (pre.slice(0, 4) === "tel:") val = val.replace(/[^\d]/g, "");
+      el.setAttribute("href", pre + val);
     } else {
       el.textContent = v;
     }
   });
+
+  /* ---- margin figures: a count is only shown when it is counted. The element
+     names a selector; its text becomes the number of matches, or the figure
+     goes if there are none. ---- */
+  document.querySelectorAll("[data-count-of]").forEach(function (el) {
+    var n = document.querySelectorAll(el.getAttribute("data-count-of")).length;
+    if (!n) { var fig = el.closest(".lg-mg__fig"); if (fig) fig.remove(); return; }
+    el.textContent = (n < 10 ? "0" : "") + n;
+  });
+
+  /* ---- social links: href comes from config; drop any still unconfigured ---- */
+  document.querySelectorAll("[data-social]").forEach(function (el) {
+    var url = getPath(cfg, "social." + el.getAttribute("data-social"));
+    if (!url || url === "#") { el.remove(); return; }
+    el.setAttribute("href", url);
+  });
+
+  /* ---- office maps (contact page): one frame per office that has a verified
+     embed src in config. While every src is empty nothing is rendered, and the
+     [data-maps] anchor stays hidden. ---- */
+  var mapsWrap = document.querySelector("[data-maps]");
+  if (mapsWrap) {
+    var withMaps = ["registeredOffice", "branchOffice"].map(function (k) { return cfg[k]; })
+      .filter(function (o) { return o && typeof o.map === "string" && /^https:\/\//i.test(o.map.trim()); });
+    withMaps.forEach(function (o) {
+      var wrap = document.createElement("div"); wrap.className = "map";
+      var cap = document.createElement("p"); cap.className = "map__cap";
+      cap.textContent = o.city + " · " + o.label;
+      var frame = document.createElement("div"); frame.className = "map__frame";
+      var ifr = document.createElement("iframe");
+      ifr.src = o.map.trim();
+      ifr.loading = "lazy";
+      ifr.title = "Map of the SMK & Co. " + o.city + " office: " + (o.lines || []).join(" ");
+      ifr.referrerPolicy = "strict-origin-when-cross-origin";
+      ifr.setAttribute("allowfullscreen", "");
+      frame.appendChild(ifr); wrap.appendChild(cap); wrap.appendChild(frame);
+      mapsWrap.appendChild(wrap);
+    });
+    if (withMaps.length) mapsWrap.hidden = false;
+  }
 
   var nav = document.querySelector(".nav");
   var reveals = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
@@ -60,7 +103,11 @@
       for (var i = reveals.length - 1; i >= 0; i--) {
         var el = reveals[i];
         var r = el.getBoundingClientRect();
-        if (r.top < vh * 0.9 && r.bottom > 0) { el.classList.add("in"); reveals.splice(i, 1); }
+        // No `r.bottom > 0` clause: an element that has scrolled entirely past
+        // the top still has to be revealed, or a fast fling, a scrollbar drag
+        // or Cmd+End jumps it from below the fold to above it between two
+        // frames and it stays invisible for good.
+        if (r.top < vh * 0.9) { el.classList.add("in"); reveals.splice(i, 1); }
       }
     }
 
@@ -88,11 +135,19 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
   update();
-  // failsafe: if anything is still hidden shortly after load, reveal it
+  // Failsafe: if anything the visitor can already see is still hidden shortly
+  // after load, reveal it. Scoped to the viewport on purpose -- a blanket
+  // reveal here fires every section at once, off-screen, about two seconds in,
+  // so by the time you scroll down the animation has already been and gone.
+  // Anything below the fold stays with the scroll handler, which owns it.
   setTimeout(function () {
     update();
-    reveals.forEach(function (el) { el.classList.add("in"); });
-    reveals.length = 0;
+    for (var i = reveals.length - 1; i >= 0; i--) {
+      if (reveals[i].getBoundingClientRect().top < window.innerHeight) {
+        reveals[i].classList.add("in");
+        reveals.splice(i, 1);
+      }
+    }
   }, 1800);
 
   /* ---- smooth-scroll anchor links ---- */
@@ -152,6 +207,18 @@
     var errNote = form.querySelector(".form__err");
 
     console.log("contact form handler attached");
+
+    /* ---- ?area=<practice-area slug> from a services row preselects the matching
+       option. Options carry data-area; a bare option value also matches. ---- */
+    var areaSel = form.querySelector('[name="service"]');
+    var area = "";
+    try { area = new URLSearchParams(window.location.search).get("area") || ""; } catch (e) {}
+    if (areaSel && area) {
+      var match = Array.prototype.slice.call(areaSel.options).filter(function (o) {
+        return o.getAttribute("data-area") === area || o.value === area;
+      })[0];
+      if (match) areaSel.value = match.value;
+    }
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();

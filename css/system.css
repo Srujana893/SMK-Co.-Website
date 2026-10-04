@@ -1,0 +1,396 @@
+/* ============================================================
+   SMK & Co — site-wide system layer
+   Loaded on every page after styles.css (+ home.css).
+   Unifies typography, accent colour, CA-mark treatment and motion.
+   ============================================================ */
+
+/* ---------- typography unification (Manrope headings / Inter text) ---------- */
+.hx h1,.hx h2,.hx h3,.hx h4,.hx h5,.hx .display,.hx .h-sec,.hx .h-card,
+.hx .row__title,.hx .proc-row__t,.hx .flow-step__t,
+.hx .partner__name,.hx .acc-name,.hx .post__title,.hx .featured__title,
+.hx .blog-hero h1,.hx .article h1,.hx .article__body h2,.hx .statement p{
+  font-family:var(--font);font-weight:600;letter-spacing:-.014em;font-style:normal}
+.hx .display{font-size:clamp(2rem,3.9vw,3.1rem);line-height:1.12}
+.hx .h-sec{font-size:clamp(1.6rem,2.6vw,2.25rem);line-height:1.18}
+.hx .h-card{font-size:1.12rem}
+.hx .lede{font-size:clamp(1.02rem,1.3vw,1.14rem);line-height:1.68}
+.hx .statement p{font-size:clamp(1.1rem,1.5vw,1.3rem);line-height:1.4;font-weight:500}
+.hx .row__title{font-size:clamp(1.2rem,1.8vw,1.5rem)}
+.hx .proc-row__t{font-size:clamp(1.15rem,1.7vw,1.4rem)}
+.hx .flow-step__t{font-size:clamp(1.15rem,1.7vw,1.4rem)}
+.hx .acc-name{font-size:clamp(1.25rem,2vw,1.6rem)}
+.hx .partner__name,.hx .post__title{font-size:1.16rem}
+.hx .featured__title{font-size:clamp(1.4rem,2.2vw,1.9rem)}
+.hx .blog-hero h1{font-size:clamp(2rem,3.8vw,3rem)}
+.hx .article h1{font-size:clamp(1.7rem,3vw,2.4rem)}
+.hx .article__body h2{font-size:1.34rem}
+.hx .article__pull{font-family:var(--font);font-style:normal;font-weight:500;font-size:clamp(1.2rem,1.9vw,1.5rem);border-left-color:var(--accent);color:var(--ink)}
+.hx .proc-row__n,.hx .fact .n,.hx .flow-step__node{font-family:var(--font);font-weight:600}
+
+
+.hx .bg-navy .eyebrow,.hx .bg-deep .eyebrow{color:var(--on-ink-muted)}
+/* the 12px belongs to the eyebrow; the heading contributes nothing */
+.hx .eyebrow+*,.hx .hx-sec-label+*{margin-top:0}
+.hx .bg-navy .eyebrow::after,.hx .bg-deep .eyebrow::after,
+.hx .bg-navy .hx-sec-label::after,.hx .bg-deep .hx-sec-label::after{background:var(--line-on-ink)}
+
+/* ---------- accent: restrained olive for interface states ---------- */
+.hx .nav__link::after{background:var(--accent)}
+.hx .nav__link.is-active{color:var(--accent)}
+.hx .ulink::after{background:var(--accent)}
+.hx .cat-tag,.hx .office__tag,.hx .partner__memb{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 28%,transparent)}
+.hx .office__tag::before{background:var(--line)}
+.hx .filter__btn.is-active{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.hx .filter__btn:hover{border-color:var(--accent)}
+.hx .btn--gold{--bg:var(--accent);--fg:var(--surface);--bd:var(--accent)}
+.hx .btn--gold:hover{--bg:var(--accent-ink);--bd:var(--accent-ink)}
+.hx .field input:focus,.hx .field select:focus,.hx .field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
+.hx .row__num{color:var(--text-muted)}
+.hx .svc__bul li::before,.hx .row__bul li::before{background:var(--accent);opacity:.7}
+.hx .sector-chip:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 5%,transparent)}
+.hx .sector-chip svg{stroke:var(--text-muted)}
+.hx .statement{border-top-color:var(--line)}
+.hx .statement h3{font-family:var(--font);color:var(--text-muted);font-size:.68rem}
+
+/* ---------- CA / professional marks: neutral panel, consistent sizing ---------- */
+.ca-badge{background:var(--surface);border:1px solid var(--line);border-radius:3px;box-shadow:none;
+  padding:6px 9px;align-items:center}
+.ca-badge img{height:26px}
+.ca-badge--nav{padding:6px 9px}
+.ca-badge--nav img{height:26px}
+.is-dark .ca-badge,.footer .ca-badge{background:var(--surface);border-color:color-mix(in srgb,var(--surface) 16%,transparent)}
+.mark-panel{display:flex;align-items:center;gap:clamp(20px,3vw,40px);flex-wrap:wrap;
+  background:var(--surface);border:1px solid var(--line);border-radius:3px;
+  padding:clamp(18px,2vw,26px) clamp(20px,2.4vw,30px)}
+.mark-panel img{height:34px;width:auto}
+.mark-panel p{margin:0;font-size:.88rem;line-height:1.6;color:var(--text);max-width:46ch}
+
+/* ---------- shared image treatment: quiet zoom on hover ---------- */
+.hx-fig{position:relative;overflow:hidden;background:var(--surface-warm)}
+.hx-fig image-slot,.hx-fig img{display:block;width:100%;height:100%;transition:transform .7s var(--ease)}
+a:hover .hx-fig image-slot,a:hover .hx-fig img,.hx-fig:hover image-slot,.hx-fig:hover img{transform:scale(1.028)}
+
+/* ---------- page-load stagger ---------- */
+@keyframes smkIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes smkFade{from{opacity:0}to{opacity:1}}
+.hx .nav{animation:smkFade .5s var(--ease) both}
+.hx [data-load]{animation:smkIn .72s var(--ease) both}
+.hx [data-load="1"]{animation-delay:.06s}
+.hx [data-load="2"]{animation-delay:.14s}
+.hx [data-load="3"]{animation-delay:.22s}
+.hx [data-load="4"]{animation-delay:.3s}
+@media (prefers-reduced-motion:reduce){
+  .hx .nav,.hx [data-load]{animation:none!important}
+  .hx-fig image-slot,.hx-fig img{transition:none!important}
+}
+
+/* ---------- olive CTA band (shared closing section) ---------- */
+.cta-olive{background:var(--accent);color:var(--on-ink)}
+.hx .cta-olive h2{color:var(--surface)}
+.cta-olive p{color:color-mix(in srgb,var(--on-ink) 78%,transparent)}
+.cta-olive h5{color:color-mix(in srgb,var(--on-ink) 62%,transparent)}
+.cta-olive address{color:color-mix(in srgb,var(--on-ink) 82%,transparent)}
+.hx .cta-olive .hx-btn{background:var(--surface);color:var(--ink);border-color:var(--surface)}
+.hx .cta-olive .hx-btn:hover{background:var(--surface);border-color:var(--surface);color:var(--ink)}
+
+/* ---------- full-width photographic band ---------- */
+.hx-band-photo{position:relative;background:var(--ink-2);overflow:hidden}
+.hx-band-photo .hx-fig{height:min(46vh,420px);min-height:280px}
+.hx-band-photo .hx-fig image-slot{--is-bg:var(--placeholder);--is-fg:var(--ink-2)}
+.hx-band-photo__cap{position:absolute;inset:auto 0 0 0;padding:clamp(24px,3vw,40px) 0;
+  background:linear-gradient(to top,color-mix(in srgb,var(--ink) 78%,transparent),color-mix(in srgb,var(--ink) 0%,transparent))}
+.hx-band-photo__cap p{margin:0;max-width:34ch;color:var(--surface);font-family:var(--font);font-weight:600;
+  font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.3;letter-spacing:-.014em}
+@media (max-width:680px){.hx-band-photo .hx-fig{height:34vh;min-height:220px}}
+
+/* ============================================================
+   CAREERS
+   ============================================================ */
+.cr-intro{background:var(--surface)}
+.cr-intro__l{grid-column:1/span 4}
+.cr-intro__r{grid-column:6/span 6}
+.cr-intro__r .hx-h2{margin-bottom:22px;max-width:26ch}
+.cr-work{background:var(--surface);border-top:1px solid var(--line)}
+.cr-work__head{grid-column:1/span 4}
+.cr-work__list{grid-column:6/span 7}
+.cr-dev{background:var(--surface-tint);border-top:1px solid var(--line)}
+.cr-dev__fig{grid-column:1/span 5}
+.cr-dev__fig .hx-fig{aspect-ratio:4/5}
+.cr-dev__body{grid-column:7/span 6}
+.cr-dev__body .hx-h2{margin-bottom:20px;max-width:24ch}
+.cr-who{background:var(--surface);border-top:1px solid var(--line)}
+.cr-who__head{grid-column:1/span 12;margin-bottom:clamp(26px,3vw,38px)}
+.cr-who__list{grid-column:1/span 12;display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(24px,3vw,44px);border-top:1px solid var(--line)}
+.cr-who__item{padding:22px 0;border-bottom:1px solid var(--line)}
+.cr-who__item h3{font-size:1.02rem;font-weight:600;margin:0 0 7px}
+.cr-who__item p{margin:0;font-size:.9rem;line-height:1.6;color:var(--text);max-width:38ch}
+.cr-open{background:var(--surface);border-top:1px solid var(--line)}
+.cr-open__head{grid-column:1/span 4}
+.cr-open__list{grid-column:6/span 7;border-top:1px solid var(--line)}
+.cr-role{display:grid;grid-template-columns:1fr auto;gap:8px 20px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.cr-role h3{font-size:1.06rem;font-weight:600;margin:0}
+.cr-role p{margin:6px 0 0;font-size:.92rem;line-height:1.6;color:var(--text);max-width:52ch;grid-column:1}
+.cr-role__meta{font-family:var(--font);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.cr-note{grid-column:6/span 7;margin-top:22px;font-size:.92rem;line-height:1.7;color:var(--text)}
+@media (max-width:1000px){
+  .cr-intro__l,.cr-intro__r,.cr-work__head,.cr-work__list,.cr-dev__fig,.cr-dev__body,.cr-open__head,.cr-open__list,.cr-note{grid-column:1/span 12}
+  .cr-intro__r,.cr-work__list,.cr-dev__body,.cr-open__list{margin-top:28px}
+  .cr-dev__fig .hx-fig{aspect-ratio:16/9}
+}
+@media (max-width:680px){.cr-who__list{grid-template-columns:1fr}}
+
+/* headings on dark surfaces: home.css sets every .hx heading to --ink, which
+   on a dark band is ink on ink. The band's own colour wins here. */
+.hx .bg-navy h1,.hx .bg-navy h2,.hx .bg-navy h3,.hx .bg-deep h1,.hx .bg-deep h2,.hx .bg-deep h3{color:var(--on-ink)}
+/* ---------- the ledger: Services, Careers, Insights ----------
+   A margin column down the page carries each section's label, a one-line
+   note and, where it is a true count, a figure. One rule divides margin from
+   content the length of the page, the way a ledger's margin line does, and
+   the section rules run to the window's edges. The in-content eyebrow is
+   hidden on these pages: the margin carries the label. Below 820px the
+   margin stacks above the content and the rule goes. Only a wrapper that
+   holds a margin takes the grid, so the article view is untouched. */
+main.ledger section{position:relative;overflow:clip}
+main.ledger .view > section + section,main.ledger > section + section{border-top:1px solid var(--line)}
+main.ledger section.is-dark + section,main.ledger section + section.is-dark{border-top-color:var(--line-on-ink)}
+.lg-mg{position:relative;padding-right:clamp(20px,2.4vw,36px)}
+.lg-mg::after{content:"";position:absolute;top:-2000px;bottom:-2000px;right:0;width:1px;background:var(--line)}
+.is-dark .lg-mg::after{background:var(--line-on-ink)}
+.lg-mg__k{margin:0;font-family:var(--font);font-size:var(--text-sm);line-height:var(--lh-sm);letter-spacing:var(--ls-label);font-weight:var(--w-medium);text-transform:uppercase;color:var(--text-muted)}
+.lg-mg__n{margin:12px 0 0;font-size:var(--text-sm);line-height:1.55;color:var(--text);max-width:22ch}
+.lg-mg__fig{margin:18px 0 0;font-family:var(--font);font-size:clamp(1.6rem,3vw,2.5rem);line-height:1;letter-spacing:-.02em;font-weight:var(--w-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.lg-mg__fig small{display:block;margin-top:6px;font-size:var(--text-label);font-weight:var(--w-medium);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-muted)}
+.is-dark .lg-mg__k,.is-dark .lg-mg__n,.is-dark .lg-mg__fig small{color:var(--on-ink-muted)}
+.is-dark .lg-mg__fig{color:var(--on-ink)}
+/* the margin carries the label at every width */
+main.ledger .lg-mg ~ .eyebrow,main.ledger .lg-mg ~ .hx-sec-label,
+main.ledger .lg-mg ~ * > .eyebrow:first-child,main.ledger .lg-mg ~ * > .hx-sec-label:first-child,
+main.ledger .cr-apply__l > .hx-sec-label{display:none}
+@media (min-width:821px){
+  main.ledger section > :is(.container,.hx-wrap):has(> .lg-mg){display:grid;grid-template-columns:minmax(150px,22%) minmax(0,1fr);column-gap:clamp(28px,4vw,64px);row-gap:0;align-items:start}
+  main.ledger .lg-mg{grid-column:1;grid-row:1/span 40}
+  main.ledger .lg-mg ~ *{grid-column:2}
+}
+@media (max-width:820px){
+  .lg-mg{margin-bottom:22px;padding-right:0}
+  .lg-mg::after{display:none}
+  .lg-mg__fig{display:none}
+}
+
+/* links inside dark surfaces keep their inherited colour */
+.hx .is-dark a,.hx .bg-navy a,.hx .bg-deep a,.hx .footer a,.hx .mnav a{color:inherit}
+.hx .footer a:hover,.hx .mnav a:hover{color:var(--surface)}
+
+/* ---------- primary headings in the brand serif (h1 / h2 only) ---------- */
+.hx h1,.hx h2,.hx .display,.hx .h-sec,.hx .hx-h2,.hx .blog-hero h1,.hx .article h1,.hx .featured__title{
+  font-family:var(--font);font-weight:400;letter-spacing:-.004em}
+.hx .display{font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.16}
+.hx .h-sec,.hx .hx-h2{font-size:clamp(1.42rem,2.3vw,1.95rem);line-height:1.24}
+.hx .hx-hero h1{font-size:clamp(1.65rem,2.7vw,2.5rem);line-height:1.26;letter-spacing:-.006em}
+.hx .blog-hero h1{font-size:clamp(1.8rem,3.3vw,2.6rem)}
+.hx .article h1{font-size:clamp(1.55rem,2.7vw,2.15rem);line-height:1.26}
+.hx .featured__title{font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.26}
+.hx .cta-olive h2,.hx .hx-close h2{letter-spacing:-.004em}
+
+/* ---------- closing CTA band: charcoal, not accent ---------- */
+.cta-olive{background:var(--ink);color:var(--on-ink)}
+.cta-olive p,.cta-olive address{color:var(--on-ink-muted)}
+
+/* ---------- expanded navigation ---------- */
+.nav__row{position:relative}
+.nav__item{position:relative;display:flex;align-items:center;flex:none}
+.nav__trigger{display:inline-flex;align-items:center;white-space:nowrap;color:var(--ink);gap:.45em;background:none;border:0;padding:0;font-family:var(--font);font-size:.9rem;font-weight:500;cursor:pointer;transition:color .25s var(--ease)}
+.nav__trigger:hover,.nav__item.is-open .nav__trigger{color:var(--accent-ink)}
+.nav__chev{width:7px;height:7px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;transform:rotate(45deg) translateY(-1px);transition:transform .28s var(--ease);opacity:.7}
+.nav__item.is-open .nav__chev{transform:rotate(225deg) translateY(-2px)}
+.mega{position:absolute;left:0;right:0;top:100%;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .22s var(--ease),transform .26s var(--ease),visibility .26s;z-index:59}
+.mega.is-open{opacity:1;visibility:visible;transform:translateY(0)}
+.mega__inner{max-width:var(--container);margin-inline:auto;padding:clamp(28px,3vw,44px) var(--gutter) clamp(20px,2.2vw,28px)}
+.mega__label{font-family:var(--font);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin:0 0 clamp(18px,2vw,26px)}
+.mega__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(24px,3vw,48px)}
+/* services panel: horizontal row of practice areas */
+.mega__grid--row{grid-template-columns:repeat(6,1fr);gap:0;border-top:1px solid var(--line)}
+.mega__grid--row .mega__link{grid-template-columns:1fr;padding:clamp(16px,1.8vw,22px) clamp(12px,1.4vw,20px) clamp(18px,2vw,24px);border-top:0;border-left:1px solid var(--line);position:relative;transition:background .28s var(--ease)}
+.mega__grid--row .mega__link:first-child{border-left:0}
+.mega__grid--row .mega__link::after{content:"";position:absolute;left:clamp(12px,1.4vw,20px);right:clamp(12px,1.4vw,20px);top:-1px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .34s var(--ease)}
+.mega__grid--row .mega__link:hover{background:var(--accent-wash)}
+.mega__grid--row .mega__link:hover::after{transform:scaleX(1)}
+.mega__grid--row .mega__n{display:none}
+.mega__grid--row .mega__t{display:block;font-size:.96rem;line-height:1.26;transition:color .25s var(--ease),transform .3s var(--ease)}
+.mega__grid--row .mega__link:hover .mega__t{transform:translateX(3px)}
+.mega__grid--row .mega__arr{position:absolute;right:clamp(12px,1.4vw,20px);top:clamp(16px,1.8vw,22px)}
+.mega__grid--row .mega__d{grid-column:1;margin-top:9px;font-size:.82rem;line-height:1.5;max-width:none;color:var(--text)}
+@media (max-width:1180px){.mega__grid--row{grid-template-columns:repeat(3,1fr)}.mega__grid--row .mega__link:nth-child(3n+1){border-left:0}.mega__grid--row .mega__link:nth-child(n+4){border-top:1px solid var(--line)}}
+@media (max-width:1040px){.mega__grid--row{grid-template-columns:repeat(2,1fr)}.mega__grid--row .mega__link{border-top:0}.mega__grid--row .mega__link:nth-child(2n+1){border-left:0}.mega__grid--row .mega__link:nth-child(n+3){border-top:1px solid var(--line)}}
+/* about panel: three links on one line at every width the menu exists */
+.mega__grid--three{grid-template-columns:repeat(3,1fr);max-width:1000px}
+.mega__link{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;column-gap:clamp(12px,1.4vw,18px);row-gap:4px;
+  padding:14px 0;border-top:1px solid var(--line);transition:border-color .25s var(--ease)}
+.mega__link:hover{border-color:var(--accent)}
+.mega__n{font-family:var(--font);font-size:.62rem;letter-spacing:.14em;color:var(--text-muted);transition:color .25s var(--ease)}
+.mega__t{font-family:var(--font);font-size:.98rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);transition:color .25s var(--ease)}
+.mega__arr{color:var(--accent-ink);opacity:0;transform:translateX(-4px);transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.mega__d{grid-column:2/span 2;margin:0;font-size:.86rem;line-height:1.55;color:var(--text);max-width:34ch}
+.mega__link:hover .mega__t{color:var(--accent-ink)}
+.mega__link:hover .mega__n{color:var(--accent-ink)}
+.mega__link:hover .mega__arr{opacity:1;transform:translateX(0)}
+.mega__foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  margin-top:clamp(18px,2vw,26px);padding-top:16px;border-top:1px solid var(--line)}
+.mega__foot p{margin:0;font-size:.86rem;color:var(--text);max-width:52ch}
+@media (max-width:1040px){.mega__grid:not(.mega__grid--row):not(.mega__grid--three){grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){.mega{display:none}.nav__item{display:none}}
+@media (prefers-reduced-motion:reduce){.mega{transition:none}}
+
+/* insights panel: two columns of title rows, category as the meta slot */
+.mega__grid--ins{grid-template-columns:repeat(2,1fr)}
+.mega__link--ins{grid-template-columns:7.5em 1fr auto;align-items:center}
+.mega__link--ins .mega__n{text-transform:uppercase}
+.mega__link--ins .mega__t{font-weight:500;line-height:1.4}
+@media (max-width:1040px){.mega__grid--ins{grid-template-columns:1fr}}
+
+.nav__cta{white-space:nowrap}
+@media (max-width:1180px){.nav__links{gap:clamp(12px,1.6vw,22px)}.nav__trigger,.nav__link{font-size:.86rem}}
+
+.hx .nav__item.is-active .nav__trigger{color:var(--accent-ink)}
+.hx .nav__item.is-active .nav__chev{opacity:1}
+/* open/active state: the parent item stays visible and gains a rule */
+.nav__item{padding-bottom:2px}
+.nav__item::after{content:"";position:absolute;left:0;right:14px;bottom:-6px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav__item.is-open::after,.nav__item.is-active::after,.nav__item:hover::after{transform:scaleX(1)}
+.nav__item.is-open .nav__trigger{color:var(--ink)}
+
+/* ============================================================================
+   THE TYPE SCALE — one ladder, all seven pages. Stage 3.
+   Nine steps, defined in tokens.css. The H1 is Display 1 on every page and
+   nothing on that page is larger. This block replaces the three scales that
+   ran in parallel: home.css's 80px section titles, system.css's 40px hero cap
+   and the legacy 31px .h-sec.
+   Selectors are specific enough to beat the rules they supersede; those are
+   removed at Stage 5 when the stylesheets are reorganised.
+   ============================================================================ */
+html{font-optical-sizing:auto}
+
+/* Display 1 — the page H1. One per page. */
+.hx .hx-hero h1,.hx .blog-hero h1,.hx .article h1,.hx h1.hx-sec-title,
+.hx h1.h-sec,.hx h1{
+  font-family:var(--font);font-size:var(--text-d1);line-height:var(--lh-d1);
+  letter-spacing:var(--ls-d1);font-weight:var(--w-display)}
+
+/* Display 2 — statements. Two per page maximum. */
+.hx .hx-firm__st,.hx .hx-close--pure h2{
+  font-size:var(--text-d2);line-height:var(--lh-d2);
+  letter-spacing:var(--ls-d2);font-weight:var(--w-display)}
+
+/* Heading 1 — section headings. */
+.hx h2.hx-sec-title,.hx .h-sec,.hx .hx-h2,.hx h2{
+  font-size:var(--text-h1);line-height:var(--lh-h1);
+  letter-spacing:var(--ls-h1);font-weight:var(--w-display)}
+
+/* Heading 2 — the larger component titles. */
+.hx .hx-svc__t,.hx .row__title,.hx h3{
+  font-size:var(--text-h2);line-height:var(--lh-h2);
+  letter-spacing:var(--ls-h2);font-weight:var(--w-display)}
+
+/* Heading 3 — row and card titles. */
+.hx .hx-person h3,.hx .partner__name,.hx .jr-row__t,
+.hx .office h4,.hx .step h4,
+.hx .value h4,.hx .svc__card h3,.hx h4{
+  font-size:var(--text-h3);line-height:var(--lh-h3);
+  letter-spacing:var(--ls-h3);font-weight:var(--w-display)}
+
+/* Label — headings used as labels. Still a step on the same ladder. */
+.hx .hx-two h4,.hx .hx-two h3,.hx .sv-group__h,.hx .statement h3,.hx .footer__col h5,
+.hx .cr-why__lists h4,.hx .cr-apply__step h4,.hx h5{
+  font-size:var(--text-label);line-height:var(--lh-label);
+  letter-spacing:var(--ls-label);font-weight:var(--w-medium)}
+
+/* ----------------------------------------------------------------------------
+   SECTION EYEBROW — one component. .eyebrow (legacy pages) and .hx-sec-label
+   (hx pages) were five competing definitions across three files: 12/11.7/24px,
+   three tracking values, the rule line on ::before in one and ::after in the
+   other. They are one thing now.
+   Sized at Small rather than Label so the step down to the heading is 2.3x
+   rather than 2.7x, and the gap is halved, so the pair reads as one unit.
+   ---------------------------------------------------------------------------- */
+.hx .eyebrow,.hx .hx-sec-label{
+  font-family:var(--font);font-size:var(--text-sm);line-height:var(--lh-sm);
+  letter-spacing:var(--ls-label);font-weight:var(--w-medium);text-transform:uppercase;
+  color:var(--text-muted);display:flex;align-items:center;gap:14px;margin:0 0 12px}
+.hx .eyebrow::after,.hx .hx-sec-label::after{
+  content:"";flex:0 0 44px;height:1px;background:var(--line)}
+.hx .bg-navy .eyebrow,.hx .bg-deep .eyebrow{color:var(--on-ink-muted)}
+/* the 12px belongs to the eyebrow; the heading contributes nothing */
+.hx .eyebrow+*,.hx .hx-sec-label+*{margin-top:0}
+
+/* ============================================================
+   MOTION — section arrival  (redesign: option 2)
+   Two changes, both keyed off the existing [data-reveal]/.in pair.
+   No new JS, no new markup, no new observer, no new dependency.
+     1. the eyebrow's 44px rule draws itself as its block arrives
+     2. section heads arrive in two beats: label settles, title follows
+   ============================================================ */
+
+/* 1 — the rule draws itself. Drawn is the resting state, so an eyebrow that
+   no [data-reveal] governs (the careers hero label runs on [data-load])
+   is simply present rather than stuck at zero width. */
+.hx .eyebrow::after,
+.hx .hx-sec-label::after{transform-origin:left;transition:transform .55s var(--ease) .1s}
+.hx [data-reveal]:not(.in) .eyebrow::after,
+.hx [data-reveal]:not(.in) .hx-sec-label::after,
+.hx [data-reveal]:not(.in).eyebrow::after,
+.hx [data-reveal]:not(.in).hx-sec-label::after{transform:scaleX(0)}
+
+/* 2 — two-beat section head. The wrapper stops animating and hands the motion
+   to its children: the label fades in place (small text carried the full 22px
+   is what reads as loose), the title and anything after it rise just behind. */
+.hx .hx-sec[data-reveal],
+.hx .section-head[data-reveal]{opacity:1;transform:none;transition:none}
+.hx .hx-sec[data-reveal] > *,
+.hx .section-head[data-reveal] > *{opacity:0;transform:translateY(18px);
+  transition:opacity .6s var(--ease) .12s,transform .6s var(--ease) .12s}
+.hx .hx-sec[data-reveal] > .hx-sec-label,
+.hx .section-head[data-reveal] > .eyebrow{transform:none;transition:opacity .5s var(--ease)}
+.hx .hx-sec[data-reveal].in > *,
+.hx .section-head[data-reveal].in > *{opacity:1;transform:none}
+
+/* .hx-sec--row is the one head that nests label+title in a bare div.
+   Make the wrapper transparent so the beat reaches them. */
+.hx .hx-sec[data-reveal] > div{opacity:1;transform:none;transition:none}
+.hx .hx-sec[data-reveal] > div > *{opacity:0;transform:translateY(18px);
+  transition:opacity .6s var(--ease) .12s,transform .6s var(--ease) .12s}
+.hx .hx-sec[data-reveal] > div > .hx-sec-label{transform:none;transition:opacity .5s var(--ease)}
+.hx .hx-sec[data-reveal].in > div > *{opacity:1;transform:none}
+
+/* 3 — the small thing pops last. In an industry row that arrives on its own
+   beat, the ordinal (01, 02 …) holds back ~.18s and then pops in from half
+   size, on the overshoot easing. Its delay is read off the row's --d, so a
+   staggered row's ordinal lands just after the row does. colour rides along
+   because .hx-ind__n already transitions it on hover. */
+.hx .hx-ind__row[data-reveal] .hx-ind__n{
+  transition:scale .6s var(--ease-pop) calc(var(--d,0s) + .18s),opacity .35s var(--ease) calc(var(--d,0s) + .18s),color .3s var(--ease)}
+.hx .hx-ind__row[data-reveal]:not(.in) .hx-ind__n{scale:.5;opacity:0}
+
+/* 4 — the closing block arrives in beats like a section head: label, then
+   the headline, then the line under it, then the button. */
+.hx .hx-close__mid[data-reveal]{opacity:1;transform:none;transition:none}
+.hx .hx-close__mid[data-reveal] > *{opacity:0;transform:translateY(18px);
+  transition:opacity .6s var(--ease) .12s,transform .7s var(--ease-pop) .12s}
+.hx .hx-close__mid[data-reveal] > .hx-sec-label{transform:none;transition:opacity .5s var(--ease)}
+.hx .hx-close__mid[data-reveal] > :nth-child(3){transition-delay:.2s}
+.hx .hx-close__mid[data-reveal] > :nth-child(4){transition-delay:.3s}
+.hx .hx-close__mid[data-reveal].in > *{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .hx .eyebrow::after,.hx .hx-sec-label::after,
+  .hx [data-reveal]:not(.in) .eyebrow::after,
+  .hx [data-reveal]:not(.in) .hx-sec-label::after,
+  .hx [data-reveal]:not(.in).eyebrow::after,
+  .hx [data-reveal]:not(.in).hx-sec-label::after{transform:none!important;transition:none!important}
+  .hx .hx-sec[data-reveal] > *,
+  .hx .hx-sec[data-reveal] > div > *,
+  .hx .section-head[data-reveal] > *,
+  .hx .hx-close__mid[data-reveal] > *{opacity:1!important;transform:none!important;transition:none!important}
+  .hx .hx-ind__n{scale:none!important;opacity:1!important;transition:none!important}
+  .hx .hx-person image-slot{scale:none!important}
+}
