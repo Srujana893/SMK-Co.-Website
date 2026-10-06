@@ -46,21 +46,25 @@
     closing.parentNode.insertBefore(sec, closing);
   }
 
-  /* ---- client logos: inside the reviews band, above the quotes. A belt of
-     two identical tracks moves left to right; the second track is aria-hidden
-     so each name is read once. Nothing renders while window.clients.items is
-     empty. Confirm with each client, and against ICAI website guidelines,
-     before real logos go live. ---- */
+  /* ---- client logos: a quiet band of its own, "Our clients", between
+     Industries and the reviews band (or before the closing CTA when there
+     are no reviews). A belt of two identical tracks moves left to right; the
+     second track is aria-hidden so each name is read once. Nothing renders
+     while window.clients.items is empty. Logos are the clients' own
+     published files (see assets/clients/README.md); an optional `scale` per
+     item adjusts height only, never proportions. ---- */
   var cl = window.clients || {};
   var logos = (Array.isArray(cl.items) ? cl.items : []).filter(function (n) { return n && n.name && n.logo; });
   var band = document.getElementById("testimonials");
-  if (logos.length && band) {
+  var before = band || closing;
+  if (logos.length && before) {
     function track(hidden) {
       var ul = el("ul", "hx-net__track");
       if (hidden) ul.setAttribute("aria-hidden", "true");
       logos.forEach(function (n) {
         var li = el("li", "hx-net__item");
-        var img = '<img class="hx-net__logo" src="' + esc(n.logo) + '" alt="' + (hidden ? '' : esc(n.name)) + '" decoding="async" />';
+        var scale = (typeof n.scale === "number" && n.scale > 0) ? ' style="--s:' + n.scale + '"' : '';
+        var img = '<img class="hx-net__logo" src="' + esc(n.logo) + '" alt="' + (hidden ? '' : esc(n.name)) + '" decoding="async"' + scale + ' />';
         li.innerHTML = (n.url && !hidden)
           ? '<a href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(n.name) + '">' + img + '</a>'
           : img;
@@ -71,17 +75,30 @@
     var belt = el("div", "hx-net__belt");
     belt.appendChild(track(false));
     belt.appendChild(track(true));
-    belt.style.setProperty("--dur", Math.max(28, logos.length * 5) + "s");
+    belt.style.setProperty("--dur", Math.max(40, logos.length * 7) + "s");   /* slow: one track width per cycle */
+    var label = el("p", "hx-sec-label hx-net__label", "Our clients");
+    label.id = "clients-label";
+    label.setAttribute("data-reveal", "");
     var railWrap = el("div", "hx-net__rail");
-    railWrap.setAttribute("aria-label", "Clients");
+    railWrap.setAttribute("role", "group");
+    railWrap.setAttribute("aria-labelledby", "clients-label");
     railWrap.appendChild(belt);
-    var row = band.querySelector(".hx-quotes__row");
-    row.parentNode.insertBefore(railWrap, row);
+    var csec = el("section", "hx-clients");
+    csec.id = "clients";
+    csec.setAttribute("data-screen-label", "Clients");
+    var cwrap = el("div", "hx-wrap");
+    cwrap.appendChild(label); cwrap.appendChild(railWrap); csec.appendChild(cwrap);
+    before.parentNode.insertBefore(csec, before);
     /* The loop needs each track at least as wide as the rail. Measure once the
        logo images have loaded (they are lazy, so they have no width before),
        and repeat the items until the track fills; repeats are aria-hidden so
        each name is still read once. A set that cannot fill is shown still. */
     function fit() {
+      /* Under reduced motion the belt is a static wrapped row showing each
+         logo once; repeating items there would only duplicate them. */
+      if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        belt.classList.add("is-static"); return;
+      }
       var tracks = belt.querySelectorAll(".hx-net__track"), guard = 0;
       while (tracks[0].offsetWidth < railWrap.offsetWidth && guard++ < 4) {
         tracks.forEach(function (t) {

@@ -93,28 +93,42 @@ window.testimonials = [
 ];
 
 /* ============================================================
-   CLIENT LOGOS — homepage, inside the client reviews band, above the quotes.
-   A slow strip moving left to right; pauses on hover and keyboard focus;
-   still under reduced motion. Nothing renders while `items` is empty.
-   Confirm with each client that their logo may be shown, and confirm ICAI
-   website guidelines permit naming clients, before real logos go live.
-   THE EIGHT ENTRIES BELOW ARE PLACEHOLDERS, NOT REAL CLIENTS. Each file in
-   assets/clients/ is a neutral invented mark; replace file, name and url
-   with the client's approved logo (SVG or PNG, any colour: the strip shows
-   it in greyscale and restores colour on hover). Each item:
-     { name: "Company", logo: "assets/clients/….svg", url: "" }
-   `url` is optional. `name` is the accessible label for the logo.
+   CLIENT LOGOS — homepage, a quiet band of its own labelled "Our clients",
+   between Industries and the client reviews band. A slow strip moving left
+   to right; pauses on hover and keyboard focus; still under reduced motion.
+   Logos are shown in their official colours at one shared visual height.
+   Nothing renders while `items` is empty.
+   Every file in assets/clients/ is the company's own published asset, copied
+   byte-for-byte from its official website; provenance for each is in
+   assets/clients/README.md. None is redrawn, traced or generated. Keep it
+   that way: add a client only with a file the client supplied or that its
+   official site publishes.
+   Each item:
+     { name: "Company", logo: "assets/clients/….png", url: "", scale: 1 }
+   `name` is the accessible label. `url` is optional. `scale` (optional,
+   default 1) nudges one logo's height so lockups with stacked bilingual text
+   read at the same visual weight as single-line marks; it never changes a
+   logo's proportions.
+   These are CLIENTS of the firm, not partners; the band's copy must not say
+   otherwise. Confirm ICAI website guidelines permit naming clients before
+   this goes live.
    ============================================================ */
 window.clients = {
   items: [
-    { name: "Sample Client 1 (placeholder)", logo: "assets/clients/sample-client-01.svg" },
-    { name: "Sample Client 2 (placeholder)", logo: "assets/clients/sample-client-02.svg" },
-    { name: "Sample Client 3 (placeholder)", logo: "assets/clients/sample-client-03.svg" },
-    { name: "Sample Client 4 (placeholder)", logo: "assets/clients/sample-client-04.svg" },
-    { name: "Sample Client 5 (placeholder)", logo: "assets/clients/sample-client-05.svg" },
-    { name: "Sample Client 6 (placeholder)", logo: "assets/clients/sample-client-06.svg" },
-    { name: "Sample Client 7 (placeholder)", logo: "assets/clients/sample-client-07.svg" },
-    { name: "Sample Client 8 (placeholder)", logo: "assets/clients/sample-client-08.svg" }
+    { name: "Way2Wealth",            logo: "assets/clients/way2wealth.png" },
+    { name: "ABB",                   logo: "assets/clients/abb.svg", scale: 0.8 },
+    { name: "Brilyant",              logo: "assets/clients/brilyant.png" },
+    { name: "Indian Bank",           logo: "assets/clients/indian-bank.jpg" },
+    { name: "Union Bank of India",   logo: "assets/clients/union-bank-of-india.png" },
+    { name: "Indian Overseas Bank",  logo: "assets/clients/indian-overseas-bank.png", scale: 1.15 }
+    /* PENDING — add only when the client supplies an official file:
+       { name: "Ezon Electricals Pvt. Ltd.", logo: "assets/clients/ezon-electricals.svg" },
+         Exact Ezon Electricals Pvt. Ltd. logo could not be verified; client asset required.
+       { name: "Ryder Mobility Pvt. Ltd.",   logo: "assets/clients/ryder-mobility.svg" },
+         Ryder Mobility Pvt. Ltd. logo could not be verified from an official public source; client asset required.
+       { name: "Canara Bank",              logo: "assets/clients/canara-bank.svg" },
+         Only a white-on-transparent header logo is published; a colour-on-light
+         file is needed from the bank. Not confirmed yet, do not add: Weathox, Mediaberry. */
   ]
 };
 

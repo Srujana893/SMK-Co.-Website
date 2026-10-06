@@ -23,7 +23,11 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-sec{max-width:none;margin:0 0 clamp(34px,4vw,60px)}
 .hx-sec-label{display:flex;align-items:center;gap:14px;margin:0}
 .hx-sec-label::after{content:"";flex:0 0 44px;height:1px;background:var(--line)}
-.hx .hx-sec-title{font-weight:600;font-size:clamp(2.7rem,6vw,5rem);line-height:1.02;letter-spacing:-.032em;margin:0;max-width:20ch;text-wrap:pretty}
+.hx .hx-sec-title{font-weight:600;margin:0;max-width:20ch;text-wrap:pretty}   /* size comes from the shared scale in system.css */
+/* Homepage section headings: a step above the shared Heading 1 (24 -> 32),
+   sitting under the Display 2 statements (28 -> 44). Home only; the ledger
+   pages keep the shared size. */
+.hx main.hx-home h2.hx-sec-title{font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.1;letter-spacing:-.02em}
 .hx-sec-sub{margin:clamp(16px,1.8vw,24px) 0 0;font-size:1.04rem;line-height:1.7;color:var(--text);max-width:52ch}
 .hx-sec--row{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap}
 .hx-label{font-family:var(--font);font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin:0 0 18px}
@@ -201,12 +205,17 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-quote__role{font-size:var(--text-label);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-muted)}
 @media (max-width:680px){.hx-quotes__row:not(.is-many) .hx-quote+.hx-quote{border-top:1px solid var(--line)}}
 
-/* ============ CLIENT LOGOS — rendered by js/home.js inside the reviews band, only when window.clients.items has entries ============
-   A slow strip moving left to right, greyscale at a uniform height, colour
-   back on hover. Pauses on hover and keyboard focus. The second track is the
+/* ============ CLIENT LOGOS — rendered by js/home.js as its own band, only when window.clients.items has entries ============
+   Sits between Industries and the reviews band: hairline above, generous
+   padding, one small "Our clients" label, then a slow strip moving left to
+   right. Logos keep their official colours, normalised to one visual height
+   (--logo-h, times an optional per-logo --s from config). No cards, borders
+   or effects. Pauses on hover and keyboard focus. The second track is the
    loop's duplicate and is aria-hidden. With reduced motion the belt is a
    static wrapped row. */
-.hx-quotes .hx-net__rail{overflow:hidden;margin-bottom:clamp(30px,3.6vw,52px)}
+.hx-clients{background:var(--surface);border-top:1px solid var(--line);padding-block:clamp(52px,6vw,92px)}
+.hx .hx-clients .hx-net__label{font-size:clamp(1rem,1.25vw,var(--text-lead));margin:0 0 clamp(32px,3.6vw,52px)}   /* a size up from the shared eyebrow; outranks its margin in system.css */
+.hx-clients .hx-net__rail{--logo-h:34px;overflow:hidden}
 .hx-net__belt{display:flex;width:max-content;transform:translateX(-50%);animation:netScroll var(--dur,40s) linear infinite}
 .hx-net__rail:hover .hx-net__belt,.hx-net__rail:focus-within .hx-net__belt{animation-play-state:paused}
 .hx-net__belt.is-static{animation:none;width:auto;transform:none}
@@ -214,10 +223,9 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
 .hx-net__track{display:flex;align-items:center;gap:clamp(40px,5.5vw,88px);list-style:none;margin:0;padding:0 clamp(40px,5.5vw,88px) 0 0}
 .hx-net__item{display:flex;align-items:center;white-space:nowrap}
 .hx-net__item a{display:flex;align-items:center;color:inherit}
-.hx-net__logo{height:30px;width:auto;display:block;filter:grayscale(1);opacity:.62;transition:opacity .3s var(--ease),filter .3s var(--ease)}
-.hx-net__item:hover .hx-net__logo{filter:none;opacity:1}
+.hx-net__logo{height:calc(var(--logo-h) * var(--s,1));width:auto;display:block}
 @keyframes netScroll{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-@media (max-width:680px){.hx-net__logo{height:24px}}
+@media (max-width:680px){.hx-clients .hx-net__rail{--logo-h:26px}}
 @media (prefers-reduced-motion:reduce){
   .hx-net__belt{animation:none;width:auto;transform:none;flex-wrap:wrap}
   .hx-net__track{flex-wrap:wrap;gap:18px clamp(28px,4vw,56px);padding:0}
