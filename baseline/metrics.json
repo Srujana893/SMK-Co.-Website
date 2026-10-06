@@ -3,29 +3,29 @@
     "per_file": [
       [
         "css/styles.css",
-        220,
+        229,
         81
       ],
       [
         "css/home.css",
-        97,
+        94,
         3
       ],
       [
         "css/system.css",
-        120,
-        42
+        125,
+        39
       ],
       [
         "css/careers.css",
-        36,
+        37,
         1
       ]
     ],
-    "sum_of_files": 473,
-    "dead_sum": 127,
-    "unique": 386,
-    "dead_unique": 109
+    "sum_of_files": 485,
+    "dead_sum": 124,
+    "unique": 393,
+    "dead_unique": 106
   },
   "_dead_by_file": {
     "css/styles.css": [
@@ -121,7 +121,6 @@
       "bg-deep",
       "ca-badge",
       "ca-badge--nav",
-      "cat-tag",
       "cr-dev",
       "cr-dev__body",
       "cr-dev__fig",
@@ -138,20 +137,18 @@
       "cr-work__head",
       "cr-work__list",
       "cta-olive",
-      "featured__title",
-      "filter__btn",
       "flow-step__node",
       "flow-step__t",
       "h-card",
       "hx-band-photo",
       "hx-band-photo__cap",
       "hx-h2",
+      "jr-row__t",
       "mark-panel",
       "mega__grid--ins",
       "mega__link--ins",
       "partner__memb",
       "partner__name",
-      "post__title",
       "proc-row__n",
       "proc-row__t",
       "row__bul",
@@ -170,27 +167,27 @@
       "about.html": 13,
       "team.html": 0,
       "services.html": 10,
-      "blog.html": 10,
+      "blog.html": 9,
       "contact.html": 9,
-      "careers.html": 18
+      "careers.html": 17
     },
-    "total": 80
+    "total": 78
   },
   "arrows": {
     "per_page": {
-      "index.html": 23,
-      "about.html": 11,
-      "team.html": 1,
-      "services.html": 12,
-      "blog.html": 11,
-      "contact.html": 12,
-      "careers.html": 14
+      "index.html": 24,
+      "about.html": 12,
+      "team.html": 2,
+      "services.html": 13,
+      "blog.html": 12,
+      "contact.html": 13,
+      "careers.html": 15
     },
-    "total": 84,
+    "total": 91,
     "css_pseudo_element_arrows": 2
   },
   "motion": {
-    "transition_declarations": 101,
+    "transition_declarations": 102,
     "distinct_durations": 23,
     "durations_ms": [
       0.0,
@@ -235,7 +232,7 @@
       "ease",
       "linear"
     ],
-    "data_reveal": 67,
+    "data_reveal": 68,
     "reduced_motion_guards": 10
   },
   "inline_style_attrs": {
@@ -244,12 +241,13 @@
       "about.html": 1,
       "team.html": 1,
       "services.html": 0,
-      "blog.html": 0,
+      "blog.html": 1,
       "contact.html": 0,
       "careers.html": 0
     },
-    "total": 2,
+    "total": 3,
     "values": [
+      "display:none",
       "grid-column:1/-1",
       "margin-top:1.4rem"
     ]
@@ -280,6 +278,7 @@
       "ca-india-mark.png",
       "hero-ledger-source.png",
       "smk-favicon-source.png",
+      "smk-logo-lockup.png",
       "smk-logo-source.png"
     ],
     "referenced_but_missing": [],
@@ -365,8 +364,8 @@
     }
   },
   "fingerprints": {
-    "data_screen_label": 34,
-    "border_radius_declarations": 31,
+    "data_screen_label": 33,
+    "border_radius_declarations": 35,
     "distinct_radius_values": [
       "2px",
       "3px",
@@ -378,33 +377,33 @@
       "var(--radius)",
       "var(--radius-sm)"
     ],
-    "border_declarations": 197,
-    "image_slot_elements": 7,
+    "border_declarations": 208,
+    "image_slot_elements": 8,
     "internal_links_with_dot_html": 0,
     "chrome_lines_header_footer": 614
   },
   "sizes": {
     "html_bytes": {
-      "index.html": 33744,
-      "about.html": 15557,
-      "team.html": 17199,
-      "services.html": 26016,
-      "blog.html": 13337,
-      "contact.html": 16269,
-      "careers.html": 22172
+      "index.html": 33782,
+      "about.html": 15876,
+      "team.html": 17237,
+      "services.html": 26054,
+      "blog.html": 13033,
+      "contact.html": 16307,
+      "careers.html": 21240
     },
     "css_bytes": {
-      "css/styles.css": 50252,
-      "css/home.css": 23525,
-      "css/system.css": 26290,
-      "css/careers.css": 7991
+      "css/styles.css": 51351,
+      "css/home.css": 23378,
+      "css/system.css": 27612,
+      "css/careers.css": 8710
     },
-    "css_total": 108058,
+    "css_total": 111051,
     "js_bytes": {
       "js/site.js": 13197,
       "js/config.js": 10468,
       "js/home.js": 6338,
-      "js/blog.js": 9998,
+      "js/blog.js": 10801,
       "js/team.js": 7724,
       "image-slot.js": 31363
     }

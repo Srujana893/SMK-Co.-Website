@@ -78,7 +78,25 @@ const IMAGES = `(async () => {
     await sleep(400);
   }
   return -bad().length;
-})()`;
+})().then(async (n) => {
+  /* <image-slot> photographs live in shadow DOM and arrive only after the
+     sidecar state file has been fetched: wait for that fetch, then for every
+     filled slot's image to decode, so a capture never catches an empty frame. */
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const slots = () => [...document.querySelectorAll('image-slot')];
+  if (slots().length) {
+    const fetched = () => performance.getEntriesByType('resource').some(e => /image-slots\.state\.json/.test(e.name));
+    for (let i = 0; i < 80 && !fetched(); i++) await sleep(100);
+    await sleep(200);
+    const pending = () => slots().filter(s => {
+      if (!s.hasAttribute('data-filled') || !s.shadowRoot) return false;
+      const img = s.shadowRoot.querySelector('.frame img');
+      return img && img.getAttribute('src') && !(img.complete && img.naturalWidth > 0);
+    });
+    for (let i = 0; i < 100 && pending().length; i++) await sleep(100);
+  }
+  return n;
+})`;
 
 class CDP {
   constructor(ws) {
@@ -154,7 +172,15 @@ for (const page of PAGES) {
          wait(); })` });
     const { result } = await c.send('Runtime.evaluate', { expression: SETTLE, awaitPromise: true });
     await c.send('Runtime.evaluate', { expression: 'window.scrollTo(0, 0)' });
-    await sleep(150);
+    // Every image, including the photographs inside <image-slot> shadow roots,
+    // is decoded before the shot; a capture straight after the full-height
+    // resize otherwise sometimes rasterises a slot before its photograph.
+    await c.send('Runtime.evaluate', { awaitPromise: true, expression:
+      `(async () => { const imgs = [...document.images];
+         document.querySelectorAll('image-slot').forEach(s => { const i = s.shadowRoot && s.shadowRoot.querySelector('.frame img'); if (i && i.getAttribute('src')) imgs.push(i); });
+         await Promise.all(imgs.map(i => i.decode().catch(() => {})));
+         await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => requestAnimationFrame(r)))); })()` });
+    await sleep(200);
 
     const { data } = await c.send('Page.captureScreenshot',
       { format: 'png', captureBeyondViewport: true });

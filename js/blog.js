@@ -1,82 +1,104 @@
 /* ============================================================
-   SMK & Co — Insights: lead and archive · article view
+   SMK & Co — Insights: featured note · topic chips · the grid · article view
    Posts come from window.blogPosts (see js/config.js).
-   Listing: the latest note on ink, then every other note as a dated row under
-   plain word filters. Article: a reading column with a side rail
-   that carries the note's facts and a list of its sections. #<id> in the
-   address opens that note, so a note can be linked to.
+   Listing: the note flagged featured (else the newest) as a wide card with
+   its photograph, topic chips, then every other note as a card in a grid of
+   three, six at a time. Photographs are <image-slot>s keyed img-<id> and
+   are filled from image-slots.state.json. Article: a reading column with a
+   side rail that carries the note's facts and a list of its sections, the
+   photograph above the text. #<id> in the address opens that note, so a
+   note can be linked to.
    ============================================================ */
 (function () {
   "use strict";
   var posts = (window.blogPosts || []).slice();
-  var leadWrap = document.getElementById("jrLead");
-  var listView = document.getElementById("listView");
-  var articleView = document.getElementById("articleView");
-  var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
-  function when(p) { var d = new Date(p.date); return isNaN(d) ? null : d; }
-  function pad(n) { return n < 10 ? "0" + n : String(n); }
-
-  posts.sort(function (a, b) { return (when(b) || 0) - (when(a) || 0); });
-  var lead = posts.filter(function (p) { return p.featured; })[0] || posts[0];
-
-  /* ---- the lead: the latest, or the one flagged featured; it sits on ink ---- */
-  var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  function stamp(p) { var d = when(p); return d ? MON[d.getMonth()] + " " + d.getDate() + " " + d.getFullYear() : esc(p.date); }
-  function renderLead() {
-    if (!lead || !leadWrap) return;
-    leadWrap.innerHTML =
-      '<h2 class="jr-lead__t"><a href="#' + esc(lead.id) + '" data-open="' + esc(lead.id) + '">' + esc(lead.title) + '</a></h2>' +
-      '<p class="jr-lead__x">' + esc(lead.excerpt) + '</p>' +
-      '<p class="jr-lead__m"><span>' + esc(lead.category) + '</span><span>' + esc(lead.date) + '</span><span>' + esc(lead.read) + '</span><span>' + esc(lead.author) + '</span></p>' +
-      '<a class="hx-cta" href="#' + esc(lead.id) + '" data-open="' + esc(lead.id) + '">Read the note <span class="arr">&rarr;</span></a>';
-    var meta = document.getElementById("jrLeadMeta");
-    if (meta) { var d = when(lead); meta.textContent = (d ? MONTHS[d.getMonth()] + " " + d.getFullYear() : lead.date) + " \u00b7 " + lead.category + " \u00b7 " + lead.read; }
-  }
-
-  /* ---- the index: every other note, newest first, under plain word filters ---- */
-  var filterWrap = document.getElementById("jrFilters");
-  var rowsWrap = document.getElementById("jrRows");
   var cats = (window.blogCategories || ["All"]).slice();
   if (cats[0] !== "All") cats.unshift("All");
-  var activeCat = "All";
-  function renderFilters() {
+  var PAGE = 6, shown = PAGE, activeCat = "All";
+  var featuredWrap = document.getElementById("featured");
+  var filterWrap = document.getElementById("filter");
+  var gridWrap = document.getElementById("postGrid");
+  var loadWrap = document.getElementById("loadMore");
+  var listView = document.getElementById("listView");
+  var articleView = document.getElementById("articleView");
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
+  function slug(c) { return String(c || "").toLowerCase().replace(/[^a-z]+/g, ""); }
+  function when(p) { var d = new Date(p.date); return isNaN(d) ? null : d; }
+  posts.sort(function (a, b) { return (when(b) || 0) - (when(a) || 0); });
+  var featured = posts.filter(function (p) { return p.featured; })[0] || posts[0];
+
+  /* per-topic hint shown in an empty photograph slot */
+  var HINTS = {
+    technology: "Drop a technology / IT-systems photo",
+    compliance: "Drop a compliance / regulation photo",
+    taxation: "Drop a taxation / finance photo",
+    forensic: "Drop a forensic / investigation photo",
+    audit: "Drop an audit / ledger photo"
+  };
+  function phHTML(post, extra) {
+    var hint = HINTS[slug(post.category)] || "Drop a relevant photo";
+    return '<image-slot class="ph-slot' + (extra ? " " + extra : "") + '" id="img-' + esc(post.id) +
+      '" shape="rect" fit="cover" placeholder="' + esc(hint) + '"></image-slot>';
+  }
+  function metaHTML(p) {
+    return '<div class="post-meta"><span>' + esc(p.date) + '</span><span class="dot"></span><span>' +
+      esc(p.read) + '</span><span class="dot"></span><span>' + esc(p.author) + '</span></div>';
+  }
+
+  /* ---- featured: the flagged note, or the newest ---- */
+  function renderFeatured() {
+    if (!featured || !featuredWrap) return;
+    featuredWrap.setAttribute("data-id", featured.id);
+    featuredWrap.innerHTML =
+      phHTML(featured, "ph--feat") +
+      '<div class="featured__body">' +
+        '<span class="cat-tag">' + esc(featured.category) + '</span>' +
+        '<h2 class="featured__title"><a href="#' + esc(featured.id) + '" data-open="' + esc(featured.id) + '">' + esc(featured.title) + '</a></h2>' +
+        '<p class="featured__excerpt">' + esc(featured.excerpt) + '</p>' +
+        metaHTML(featured) +
+      '</div>';
+  }
+
+  /* ---- topic chips ---- */
+  function renderFilter() {
     if (!filterWrap) return;
     filterWrap.innerHTML = cats.map(function (c) {
-      return '<button class="jr-filter" type="button" aria-pressed="' + (c === activeCat ? "true" : "false") + '" data-cat="' + esc(c) + '">' + esc(c) + '</button>';
+      return '<button class="filter__btn' + (c === activeCat ? " is-active" : "") + '" type="button" aria-pressed="' + (c === activeCat ? "true" : "false") + '" data-cat="' + esc(c) + '">' + esc(c) + '</button>';
     }).join("");
-    filterWrap.querySelectorAll(".jr-filter").forEach(function (b) {
+    filterWrap.querySelectorAll(".filter__btn").forEach(function (b) {
       b.addEventListener("click", function () {
         activeCat = b.getAttribute("data-cat");
-        filterWrap.querySelectorAll(".jr-filter").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-        applyFilter();
+        shown = PAGE;
+        renderFilter();
+        renderGrid();
       });
     });
   }
-  function renderIndex() {
-    if (!rowsWrap) return;
-    var rest = posts.filter(function (p) { return p !== lead; });
-    rowsWrap.innerHTML = rest.map(function (p, i) {
-      return '<li class="jr-row" data-cat="' + esc(p.category) + '" data-reveal data-d="' + Math.min(i + 1, 6) + '">' +
-        '<span class="jr-row__date">' + stamp(p) + '</span>' +
-        '<span class="jr-row__cat">' + esc(p.category) + '</span>' +
-        '<span class="jr-row__body"><h3 class="jr-row__t"><a href="#' + esc(p.id) + '" data-open="' + esc(p.id) + '">' + esc(p.title) + '</a></h3>' +
-        '<p class="jr-row__x">' + esc(p.excerpt) + '</p></span>' +
-      '</li>';
-    }).join("") + '<li class="jr-empty" hidden>No notes under this topic yet.</li>';
-  }
-  function applyFilter() {
-    if (!rowsWrap) return;
-    var shown = 0;
-    rowsWrap.querySelectorAll(".jr-row").forEach(function (li) {
-      var on = activeCat === "All" || li.getAttribute("data-cat") === activeCat;
-      li.hidden = !on; if (on) shown++;
-    });
-    var empty = rowsWrap.querySelector(".jr-empty"); if (empty) empty.hidden = shown > 0;
-  }
 
-  /* ---- article: reading column, side rail ---- */
+  /* ---- the grid: every other note, six at a time ---- */
+  function filtered() {
+    return posts.filter(function (p) { return p !== featured && (activeCat === "All" || p.category === activeCat); });
+  }
+  function renderGrid() {
+    if (!gridWrap) return;
+    var list = filtered();
+    gridWrap.innerHTML = list.slice(0, shown).map(function (p) {
+      return '<article class="post" data-id="' + esc(p.id) + '">' +
+        phHTML(p) +
+        '<div class="post__body">' +
+          '<span class="cat-tag">' + esc(p.category) + '</span>' +
+          '<h3 class="post__title"><a href="#' + esc(p.id) + '" data-open="' + esc(p.id) + '">' + esc(p.title) + '</a></h3>' +
+          '<p class="post__excerpt">' + esc(p.excerpt) + '</p>' +
+          '<div class="post__foot"><span class="post__date">' + esc(p.date) + '</span>' +
+            '<span class="post__more">Read more <span class="arr">&rarr;</span></span></div>' +
+        '</div></article>';
+    }).join("") + (list.length ? "" : '<p class="blog-empty">No notes under this topic yet.</p>');
+    if (loadWrap) loadWrap.style.display = list.length > shown ? "flex" : "none";
+  }
+  if (loadWrap) loadWrap.querySelector("button").addEventListener("click", function () { shown += PAGE; renderGrid(); });
+
+  /* ---- article: reading column, side rail, the photograph above the text ---- */
   function articleHTML(p) {
     var sections = [
       { id: "why", h: "Why it matters", t: "Use this section to set out the practical context for readers — what has changed, who is affected, and the obligations or opportunities involved. Keep the tone informative and educational, consistent with professional standards." },
@@ -97,6 +119,7 @@
       '</aside>' +
       '<div class="art__main">' +
         '<h1>' + esc(p.title) + '</h1>' +
+        '<div class="article__hero">' + phHTML(p, 'ph--feat') + '</div>' +
         '<div class="article__body">' +
           '<p class="art__lede">' + esc(p.excerpt) + '</p>' +
           '<p>This is a placeholder article layout, ready for your editorial team to replace with full content. It demonstrates the reading experience: a single measured column, a comfortable line length, and typography tuned for sustained reading. Add your sections, figures and references in this space.</p>' +
@@ -149,14 +172,17 @@
     setTimeout(swap, 280);
   }
 
-  renderLead();
-  renderFilters();
-  renderIndex();
+  renderFeatured();
+  renderFilter();
+  renderGrid();
   document.addEventListener("click", function (e) {
-    var a = e.target.closest && (e.target.closest("[data-open]") || (e.target.closest(".jr-row") && e.target.closest(".jr-row").querySelector("[data-open]")));
-    if (!a) return;
+    if (!e.target.closest) return;
+    var a = e.target.closest("[data-open]");
+    var card = e.target.closest(".post, .featured");
+    if (!a && !card) return;
+    if (e.target.closest(".filter, .loadmore")) return;
     e.preventDefault();
-    openArticle(byId(a.getAttribute("data-open")));
+    openArticle(byId(a ? a.getAttribute("data-open") : card.getAttribute("data-id")));
   });
   function fromHash() {
     var id = (location.hash || "").slice(1), p = id && byHash(id);

@@ -67,6 +67,7 @@
   --w-regular:400; --w-medium:500; --w-display:600;
 
   /* --- metrics ------------------------------------------------------------ */
+  --nav-h:64px;                       /* fixed bar height; every offset reads this */
   --container:1240px;
   --gutter:clamp(20px,5vw,64px);
   --radius:3px;

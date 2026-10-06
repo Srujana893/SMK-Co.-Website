@@ -9,13 +9,14 @@
 .hx .cr-hero h1{margin:0;font-weight:600;font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.05;letter-spacing:-.03em;max-width:24ch;text-wrap:pretty}
 .cr-hero__sub{margin:24px 0 0;font-size:1.06rem;line-height:1.72;color:var(--text);max-width:56ch}
 .cr-hero__act{display:flex;align-items:center;gap:clamp(20px,3vw,40px);flex-wrap:wrap;margin-top:36px}
-.cr-hero__facts{display:flex;flex-wrap:wrap;gap:22px clamp(28px,4vw,64px);margin:clamp(48px,5.6vw,80px) 0 0;border-top:1px solid var(--line);padding-top:clamp(22px,2.4vw,30px)}
+/* the facts of the job as a strip on hairlines, full width, like a notice */
+.cr-hero__facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px clamp(24px,3vw,48px);margin:clamp(48px,5.6vw,80px) 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:clamp(22px,2.4vw,30px)}
 .cr-hero__facts div{max-width:26ch}
 .cr-hero__facts dt{font-family:var(--font);font-size:.73rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin:0 0 9px}
 .cr-hero__facts dd{margin:0;font-family:var(--font);font-size:1.02rem;font-weight:600;letter-spacing:-.018em;color:var(--ink);line-height:1.35}
 
-/* ---------- why work here ---------- */
-.cr-why{background:var(--surface-tint);border-top:1px solid var(--line)}
+/* ---------- why work here: on white; the page's one ink block is the application, last ---------- */
+.cr-why{background:var(--surface);border-top:1px solid var(--line)}
 .cr-why__st{margin:0;font-family:var(--font);font-weight:600;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.14;letter-spacing:-.026em;color:var(--ink);max-width:30ch;text-wrap:pretty}
 .cr-why__cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);margin-top:clamp(30px,3.4vw,46px)}
 .cr-why__lists{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);margin-top:clamp(38px,4.4vw,62px);border-top:1px solid var(--line);padding-top:clamp(26px,3vw,38px)}
@@ -24,12 +25,6 @@
 .cr-why__lists li{font-size:.96rem;color:var(--text);padding:9px 0;border-top:1px solid var(--line)}
 .cr-why__lists li:first-child{border-top:0}
 
-/* why work here sits on ink */
-.cr-why.is-dark{background:var(--ink);border-top-color:var(--line-on-ink)}
-.cr-why.is-dark .cr-why__st{color:var(--on-ink)}
-.cr-why.is-dark .hx-body,.cr-why.is-dark .cr-why__lists li{color:var(--on-ink-muted)}
-.cr-why.is-dark .cr-why__lists h4{color:var(--on-ink-muted)}
-.cr-why.is-dark .cr-why__lists,.cr-why.is-dark .cr-why__lists li{border-color:var(--line-on-ink)}
 
 
 /* ---------- what we look for: aligned 2x2 ---------- */
@@ -76,8 +71,21 @@
 .cr-apply__act{margin-top:clamp(24px,2.8vw,34px);padding-top:clamp(22px,2.4vw,30px);border-top:1px solid var(--line)}
 .cr-apply__mail{display:block;margin-top:14px;font-size:.92rem;color:var(--text)}
 
+/* how to apply sits on ink: the page ends dark. The card loses its frame
+   there and becomes a plain column of steps on hairlines. */
+.cr-apply.is-dark{background:var(--ink);border-top-color:var(--line-on-ink)}
+.cr-apply.is-dark .hx-sec-label{color:var(--on-ink-muted)}
+.cr-apply.is-dark .hx-sec-label::after{background:var(--line-on-ink)}
+.cr-apply.is-dark .cr-apply__l p{color:var(--on-ink-muted)}
+.cr-apply.is-dark .cr-apply__card{border:0;background:none;padding:0}
+.cr-apply.is-dark .cr-apply__step,.cr-apply.is-dark .cr-apply__act{border-top-color:var(--line-on-ink)}
+.cr-apply.is-dark .cr-apply__step h4{color:var(--on-ink-muted)}
+.cr-apply.is-dark .cr-apply__step p,.cr-apply.is-dark .cr-apply__mail{color:var(--on-ink-muted)}
+.hx .cr-apply.is-dark .hx-btn{background:var(--surface);color:var(--ink);border-color:var(--surface)}
+
 @media (max-width:900px){
   .cr-why__cols,.cr-why__lists,.cr-look__grid,.cr-apply__grid{grid-template-columns:1fr;gap:clamp(24px,4vw,40px)}
+  .cr-hero__facts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cr-look__grid .cr-trait:first-child{border-top:1px solid var(--line)}
   .cr-row{grid-template-columns:clamp(40px,6vw,56px) minmax(0,1fr)}
   .cr-row__d{grid-column:2;margin-top:10px;max-width:60ch}
@@ -85,8 +93,8 @@
   .cr-role__go{justify-self:start}
 }
 @media (max-width:680px){
-  .cr-hero__facts{gap:0}
-  .cr-hero__facts div{max-width:none;flex:1 1 100%;padding:14px 0;border-top:1px solid var(--line)}
+  .cr-hero__facts{grid-template-columns:1fr;gap:0}
+  .cr-hero__facts div{max-width:none;padding:14px 0;border-top:1px solid var(--line)}
   .cr-hero__facts div:first-child{border-top:0;padding-top:0}
   .cr-row{grid-template-columns:34px minmax(0,1fr);padding-inline:0}
   .cr-row__d{grid-column:1/-1}

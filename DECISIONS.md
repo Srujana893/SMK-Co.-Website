@@ -173,6 +173,40 @@ dated row under plain word filters, no cards or thumbnails. The article is a
 reading column with a side rail of the note's facts and section links, and
 every note has a link of its own (`/blog#<id>`).
 
+## The bar — 6 Oct 2026 · owner: `smk-design-system`
+
+The header was the last piece of the original site: a 74px white bar with
+the lockup at full size, chevrons, a pill button and a drop shadow. It is now
+a 64px bar on ink on every page, with the reversed lockup at 40px, the links
+set as the site's tracked-caps eyebrow labels, a plus on the two menu
+triggers that turns to a cross while the panel is open, and Contact as an
+underlined link rather than a button. No hairline and no shadow: the edge of
+the ink is the edge. The panels open as white sheets below it. `--nav-h` in
+`css/tokens.css` is the one place the bar's height lives; every offset reads
+it, and the homepage hero now starts below the bar instead of under it. This
+is the user's mix of two directions from the Round 2 preview page (a quiet
+restyle, and an ink surface); a left-aligned "split rail" composition was
+the third and was not taken.
+
+## Four pages, four openings — 6 Oct 2026 · owner: `smk-design-system`
+
+Insights, What we do, Careers and About had grown the same shape: a margin
+column, a large headline beside it, one ink block in second position. Now
+no two share an opening. What we do keeps the ledger and is the only page
+that has it. Careers opens as a one-column letter at the display size, the
+facts of the job as a strip on hairlines, "why work here" on white, and its
+one ink block last: the application. About is the one page that opens with
+a photograph, edge to edge under the bar, with the statement, the three
+figures and vision/mission in one column below it; no ink block. Insights
+goes back to the pictured listing the user had before the journal round:
+the featured note as a wide card with its photograph, topic chips, every
+other note as a card in a grid of three, six at a time, with the real
+photographs already dropped into the slots. The article keeps the side rail
+and the `#<id>` links, and gains its photograph above the text. The capture
+harness now waits for image-slot photographs before it shoots, since they
+arrive after the sidecar state file loads. Not taken: the journal front page
+with a double rule that the Round 2 preview proposed for Insights.
+
 ## Still open
 
 1. **Photography** — not commissioned. Until it is, empty image slots are

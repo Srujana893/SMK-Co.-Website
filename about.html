@@ -24,14 +24,14 @@
 <header class="nav is-solid" id="top">
   <div class="container nav__row">
     <a href="/" class="nav__brand" aria-label="SMK &amp; Co. — home">
-      <img class="brand__logo" src="assets/smk-logo-lockup.png" alt="SMK &amp; Co. — Chartered Accountants" />
+      <img class="brand__logo" src="assets/smk-logo-lockup-reversed.png" alt="SMK &amp; Co. — Chartered Accountants" />
     </a>
     <nav class="nav__links" aria-label="Primary">
       <div class="nav__item" data-menu="services"><button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-services">What We Do <span class="nav__chev"></span></button></div>
       <a class="nav__link" href="/blog">Insights</a>
       <div class="nav__item is-active" data-menu="about"><button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-about">About <span class="nav__chev"></span></button></div>
       <a class="nav__link" href="/careers">Careers</a>
-      <a class="btn btn--outline-gold nav__cta" href="/contact">Contact us</a>
+      <a class="nav__link nav__cta" href="/contact">Contact us <span class="arr">&rarr;</span></a>
     </nav>
     <button class="nav__burger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -68,7 +68,7 @@
   <div class="mnav__scrim"></div>
   <div class="mnav__panel">
     <div class="mnav__head">
-      <img class="brand__logo brand__logo--mnav" src="assets/smk-logo-lockup.png" alt="SMK &amp; Co. — Chartered Accountants" />
+      <img class="brand__logo brand__logo--mnav" src="assets/smk-logo-lockup-reversed.png" alt="SMK &amp; Co. — Chartered Accountants" />
       <button class="mnav__close" type="button" data-close-menu aria-label="Close menu">&times;</button>
     </div>
     <a class="mnav__link" href="/services" data-close-menu>What We Do</a>
@@ -82,28 +82,28 @@
 
 <main class="blog-top">
 <!-- ============ ABOUT ============ -->
-<section class="section bg-ivory grain" id="about" data-screen-label="About">
+<section class="section section--photo bg-ivory grain" id="about" data-screen-label="About">
+  <!-- The one page that opens with a photograph: the office, or the three partners. Drop it into the slot; it persists in image-slots.state.json. -->
+  <div class="about__photo" data-reveal><image-slot id="about-office" shape="rect" fit="cover" placeholder="Drop the office or partners photograph"></image-slot></div>
   <div class="container">
-    <div class="about__grid">
-      <div>
-        <p class="eyebrow" data-reveal>The Firm</p>
-        <h1 class="h-sec" data-reveal data-d="1">Tradition, kept precise.<br/>Technology, put to work.</h1>
-        <p class="lede" data-reveal data-d="2" style="margin-top:1.4rem">Sachin Mahendra Kiran &amp; Co is a partner-led Chartered Accountancy practice serving clients across Karnataka and beyond. We pair the discipline of established audit, tax and compliance work with the tools of a modern firm — information-systems audit, intelligent automation and forensic accounting.</p>
-        <div class="about__facts" data-reveal data-d="3">
-          <div class="fact"><span class="n">7+</span><span class="l">Years Established</span></div>
-          <div class="fact"><span class="n">3</span><span class="l">Partner Leadership</span></div>
-          <div class="fact"><span class="n">Tech + CA</span><span class="l">Our Edge</span></div>
-        </div>
+    <div class="about__open">
+      <p class="eyebrow" data-reveal>The Firm</p>
+      <h1 class="h-sec" data-reveal data-d="1">Tradition, kept precise.<br/>Technology, put to work.</h1>
+      <p class="lede" data-reveal data-d="2" style="margin-top:1.4rem">Sachin Mahendra Kiran &amp; Co is a partner-led Chartered Accountancy practice serving clients across Karnataka and beyond. We pair the discipline of established audit, tax and compliance work with the tools of a modern firm — information-systems audit, intelligent automation and forensic accounting.</p>
+    </div>
+    <div class="about__facts" data-reveal data-d="3">
+      <div class="fact"><span class="n">7+</span><span class="l">Years Established</span></div>
+      <div class="fact"><span class="n">3</span><span class="l">Partner Leadership</span></div>
+      <div class="fact"><span class="n">Tech + CA</span><span class="l">Our Edge</span></div>
+    </div>
+    <div class="about__vm">
+      <div class="statement" data-reveal data-d="2">
+        <h3>Vision</h3>
+        <p>To be a trusted technology-integrated CA practice in India.</p>
       </div>
-      <div>
-        <div class="statement" data-reveal data-d="2">
-          <h3>Vision</h3>
-          <p>To be a trusted technology-integrated CA practice in India.</p>
-        </div>
-        <div class="statement" data-reveal data-d="3">
-          <h3>Mission</h3>
-          <p>To deliver precise, compliant, technology-driven financial solutions that help businesses grow confidently.</p>
-        </div>
+      <div class="statement" data-reveal data-d="3">
+        <h3>Mission</h3>
+        <p>To deliver precise, compliant, technology-driven financial solutions that help businesses grow confidently.</p>
       </div>
     </div>
   </div>

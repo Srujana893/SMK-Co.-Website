@@ -196,13 +196,35 @@ main.ledger .cr-apply__l > .hx-sec-label{display:none}
 .cta-olive{background:var(--ink);color:var(--on-ink)}
 .cta-olive p,.cta-olive address{color:var(--on-ink-muted)}
 
+/* ---------- the bar (Round 2, 6 Oct 2026): ink, 64px, tracked labels.
+   Reversed lockup at 40px; links and the two menu triggers in the eyebrow
+   style; the menus carry a plus; Contact is an underlined link, not a pill.
+   No hairline and no shadow: the edge of the ink is the edge. The panels
+   open as white sheets below. ---------- */
+.hx .nav{background:var(--ink);backdrop-filter:none;border-bottom:0}
+.hx .nav.is-solid{box-shadow:none}
+.hx .brand__logo{height:40px}
+.hx .nav__links{gap:clamp(18px,2.4vw,34px)}
+.hx .nav__link,.hx .nav__trigger{font-family:var(--font);font-size:.78rem;line-height:1;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:color-mix(in srgb,var(--on-ink) 82%,transparent);transition:color .25s var(--ease)}
+.hx .nav__link:hover,.hx .nav__link.is-active,.hx .nav__trigger:hover,.hx .nav__item.is-open .nav__trigger,.hx .nav__item.is-active .nav__trigger{color:var(--on-ink)}
+.hx .nav__link::after{background:var(--accent-on-ink)}
+.hx .nav__cta{margin-left:6px;display:inline-flex;align-items:center;gap:.55em;padding-bottom:3px;border-bottom:1px solid color-mix(in srgb,var(--on-ink) 55%,transparent);transition:color .25s var(--ease),border-color .25s var(--ease)}
+.hx .nav__cta::after{display:none}
+.hx .nav__cta:hover{border-color:var(--on-ink)}
+.hx .nav__cta .arr{transition:transform .3s var(--ease)}
+.hx .nav__cta:hover .arr{transform:translateX(3px)}
+.hx .nav.is-solid .nav__burger{border-color:var(--line-on-ink)}
+.hx .nav.is-solid .nav__burger span{color:var(--on-ink)}
+@media (max-width:720px){.hx .brand__logo{height:34px}}
+
 /* ---------- expanded navigation ---------- */
 .nav__row{position:relative}
 .nav__item{position:relative;display:flex;align-items:center;flex:none}
-.nav__trigger{display:inline-flex;align-items:center;white-space:nowrap;color:var(--ink);gap:.45em;background:none;border:0;padding:0;font-family:var(--font);font-size:.9rem;font-weight:500;cursor:pointer;transition:color .25s var(--ease)}
-.nav__trigger:hover,.nav__item.is-open .nav__trigger{color:var(--accent-ink)}
-.nav__chev{width:7px;height:7px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;transform:rotate(45deg) translateY(-1px);transition:transform .28s var(--ease);opacity:.7}
-.nav__item.is-open .nav__chev{transform:rotate(225deg) translateY(-2px)}
+.nav__trigger{display:inline-flex;align-items:center;white-space:nowrap;gap:.45em;background:none;border:0;padding:0;cursor:pointer}
+/* the menus carry a plus that turns to a cross while the panel is open */
+.nav__chev{display:inline-block;line-height:1;opacity:.7;transition:transform .3s var(--ease),opacity .25s var(--ease)}
+.nav__chev::before{content:"+"}
+.nav__item.is-open .nav__chev{transform:rotate(45deg);opacity:1}
 .mega{position:absolute;left:0;right:0;top:100%;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .22s var(--ease),transform .26s var(--ease),visibility .26s;z-index:59}
 .mega.is-open{opacity:1;visibility:visible;transform:translateY(0)}
@@ -250,15 +272,13 @@ main.ledger .cr-apply__l > .hx-sec-label{display:none}
 @media (max-width:1040px){.mega__grid--ins{grid-template-columns:1fr}}
 
 .nav__cta{white-space:nowrap}
-@media (max-width:1180px){.nav__links{gap:clamp(12px,1.6vw,22px)}.nav__trigger,.nav__link{font-size:.86rem}}
+@media (max-width:1180px){.nav__links{gap:clamp(12px,1.6vw,22px)}.hx .nav__trigger,.hx .nav__link{font-size:.72rem}}
 
-.hx .nav__item.is-active .nav__trigger{color:var(--accent-ink)}
 .hx .nav__item.is-active .nav__chev{opacity:1}
 /* open/active state: the parent item stays visible and gains a rule */
 .nav__item{padding-bottom:2px}
-.nav__item::after{content:"";position:absolute;left:0;right:14px;bottom:-6px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav__item::after{content:"";position:absolute;left:0;right:14px;bottom:-6px;height:1px;background:var(--accent-on-ink);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .nav__item.is-open::after,.nav__item.is-active::after,.nav__item:hover::after{transform:scaleX(1)}
-.nav__item.is-open .nav__trigger{color:var(--ink)}
 
 /* ============================================================================
    THE TYPE SCALE — one ladder, all seven pages. Stage 3.
