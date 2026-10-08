@@ -84,10 +84,17 @@ const IMAGES = `(async () => {
      filled slot's image to decode, so a capture never catches an empty frame. */
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   const slots = () => [...document.querySelectorAll('image-slot')];
+  let slotsOk = true;
   if (slots().length) {
-    const fetched = () => performance.getEntriesByType('resource').some(e => /image-slots\.state\.json/.test(e.name));
+    /* The element must have upgraded (its script loaded) and the sidecar must
+       have answered 200: a dropped request for either leaves every slot a bare
+       box, which is a capture fault, so the caller reloads the page instead. */
+    for (let i = 0; i < 80 && !customElements.get('image-slot'); i++) await sleep(100);
+    const fetched = () => performance.getEntriesByType('resource').some(e =>
+      /image-slots\.state\.json/.test(e.name) && (e.responseStatus === undefined || e.responseStatus === 200));
     for (let i = 0; i < 80 && !fetched(); i++) await sleep(100);
     await sleep(200);
+    slotsOk = !!customElements.get('image-slot') && fetched() && slots().every(s => s.shadowRoot);
     const pending = () => slots().filter(s => {
       if (!s.hasAttribute('data-filled') || !s.shadowRoot) return false;
       const img = s.shadowRoot.querySelector('.frame img');
@@ -95,7 +102,7 @@ const IMAGES = `(async () => {
     });
     for (let i = 0; i < 100 && pending().length; i++) await sleep(100);
   }
-  return n;
+  return { n, slotsOk };
 })`;
 
 class CDP {
@@ -138,7 +145,7 @@ fs.mkdirSync(OUT, { recursive: true });
 const manifest = [];
 
 for (const page of PAGES) {
-  for (const w of WIDTHS) {
+  for (const w of WIDTHS) for (let attempt = 0; ; attempt++) {
     const metrics = h => c.send('Emulation.setDeviceMetricsOverride',
       { width: w, height: h, deviceScaleFactor: 1, mobile: w < 700 });
 
@@ -153,7 +160,11 @@ for (const page of PAGES) {
     await c.send('Runtime.evaluate', { expression:
       `document.head.insertAdjacentHTML('beforeend', '<style data-shoot>iframe{visibility:hidden!important}</style>')` });
     await c.send('Runtime.evaluate', { expression: STABLE, awaitPromise: true });
-    const imgs = await c.send('Runtime.evaluate', { expression: IMAGES, awaitPromise: true });
+    const imgs = await c.send('Runtime.evaluate', { expression: IMAGES, awaitPromise: true, returnByValue: true });
+    if (!imgs.result.value.slotsOk && attempt < 2) {
+      console.log(`${page}-${w}.png  image slots did not hydrate; reloading (attempt ${attempt + 2})`);
+      continue;
+    }
     await c.send('Runtime.evaluate', { expression: SETTLE, awaitPromise: true });
 
     const { cssContentSize } = await c.send('Page.getLayoutMetrics');
@@ -188,10 +199,11 @@ for (const page of PAGES) {
     fs.writeFileSync(file, Buffer.from(data, 'base64'));
     const bytes = fs.statSync(file).size;
     manifest.push({ page, width: w, height: full, bytes });
-    const iv = imgs.result.value;
+    const iv = imgs.result.value.n;
     console.log(`${page}-${w}.png  ${w}x${full}  ${(bytes / 1024).toFixed(0)} KB` +
                 (result.value ? `  (${result.value} still running)` : '') +
                 (iv > 0 ? `  (images retried x${iv})` : iv < 0 ? `  (${-iv} IMAGE(S) STILL BROKEN)` : ''));
+    break;
   }
 }
 

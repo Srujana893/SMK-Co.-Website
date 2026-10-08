@@ -3,19 +3,19 @@
     "page": "index",
     "width": 390,
     "height": 8644,
-    "bytes": 630352
+    "bytes": 633164
   },
   {
     "page": "index",
     "width": 900,
     "height": 7572,
-    "bytes": 898440
+    "bytes": 898458
   },
   {
     "page": "index",
     "width": 1440,
     "height": 8252,
-    "bytes": 1091713
+    "bytes": 1091011
   },
   {
     "page": "about",
@@ -33,7 +33,7 @@
     "page": "about",
     "width": 1440,
     "height": 3585,
-    "bytes": 326545
+    "bytes": 325946
   },
   {
     "page": "team",
@@ -51,7 +51,7 @@
     "page": "team",
     "width": 1440,
     "height": 1737,
-    "bytes": 181406
+    "bytes": 181150
   },
   {
     "page": "services",
@@ -69,25 +69,25 @@
     "page": "services",
     "width": 1440,
     "height": 2679,
-    "bytes": 322973
+    "bytes": 322498
   },
   {
     "page": "blog",
     "width": 390,
-    "height": 5835,
-    "bytes": 1137887
+    "height": 5837,
+    "bytes": 1139560
   },
   {
     "page": "blog",
     "width": 900,
-    "height": 3707,
-    "bytes": 282499
+    "height": 3705,
+    "bytes": 1400711
   },
   {
     "page": "blog",
     "width": 1440,
-    "height": 2730,
-    "bytes": 1356696
+    "height": 2738,
+    "bytes": 1329813
   },
   {
     "page": "contact",
@@ -105,7 +105,7 @@
     "page": "contact",
     "width": 1440,
     "height": 2152,
-    "bytes": 192859
+    "bytes": 192335
   },
   {
     "page": "careers",
@@ -123,6 +123,6 @@
     "page": "careers",
     "width": 1440,
     "height": 5421,
-    "bytes": 610528
+    "bytes": 610333
   }
 ]

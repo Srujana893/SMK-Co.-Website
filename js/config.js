@@ -139,7 +139,6 @@ window.clients = {
 window.blogPosts = [
   {
     id: "itgc-rbi",
-    featured: true,
     category: "Technology",
     title: "Understanding ITGC reviews under RBI guidelines",
     excerpt: "General IT controls sit at the centre of every modern audit. A practical look at scoping access, change and operations controls for regulated entities.",
@@ -160,6 +159,7 @@ window.blogPosts = [
   },
   {
     id: "gst-recon",
+    featured: true,
     category: "Taxation",
     title: "GST reconciliation: common mismatches and how to resolve them",
     excerpt: "From 2A/2B gaps to credit-note timing, a field guide to the reconciliation issues that most often delay filings.",

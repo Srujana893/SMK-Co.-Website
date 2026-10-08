@@ -207,6 +207,24 @@ harness now waits for image-slot photographs before it shoots, since they
 arrive after the sidecar state file loads. Not taken: the journal front page
 with a double rule that the Round 2 preview proposed for Insights.
 
+## After the bar — 6 Oct 2026 · owner: `smk-design-system`
+
+Three things the bar still carried from the header it replaced. Past 40px of
+scroll the plain links (Insights, Careers, Contact us) took the old "solid"
+colour, ink on ink, and vanished, while the two menu triggers stayed; they
+now keep their reversed colour at every scroll position. The Contact link had
+kept the pill radius and padding of the button it used to be, so its
+underline bowed at both ends; it is a straight rule now. And the stacked
+contact page had lost the 40px between the form and the office cards when the
+About vision/mission rule was folded into the same media query; the two rules
+are separate again and the contact captures match their references. Insights
+now leads with the GST reconciliation note instead of the ITGC one: the
+featured card is the firm's first word on that page, and a tax note every
+client can use says more about a chartered accountancy practice than an
+IT-controls one does. The capture harness reloads a page whose image slots
+failed to hydrate (a dropped script or sidecar request) instead of shooting
+bare boxes; one such run had slipped into the references.
+
 ## Still open
 
 1. **Photography** — not commissioned. Until it is, empty image slots are

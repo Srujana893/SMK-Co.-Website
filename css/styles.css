@@ -418,7 +418,8 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
   .footer__brand{grid-column:1/-1}
 }
 @media (max-width:920px){
-  .about__vm,.contact__grid{grid-template-columns:1fr;gap:0}
+  .contact__grid{grid-template-columns:1fr;gap:40px}
+  .about__vm{grid-template-columns:1fr;gap:0}
   .about__vm .statement+.statement{margin-top:26px}
   .edge{grid-template-columns:1fr}
   .edge p{max-width:60ch}
