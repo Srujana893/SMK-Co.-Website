@@ -225,6 +225,63 @@ IT-controls one does. The capture harness reloads a page whose image slots
 failed to hydrate (a dropped script or sidecar request) instead of shooting
 bare boxes; one such run had slipped into the references.
 
+## The clients band, switched off — 10 Oct 2026 · owner: `smk-design-system`
+
+The "Our clients" logo band is off while the firm decides whether to name its
+clients on the site at all. `window.clients.items` in `js/config.js` is empty,
+so `js/home.js` outputs nothing — no label, no strip, no band border, no gap:
+Industries now runs straight into the reviews band. Nothing was deleted. The
+six verified logo files and their provenance stay in `assets/clients/`, and the
+entries that render them sit in a comment inside the empty array, in the order
+they were shown, ready to move back. The homepage is 192 / 205 / 292px shorter
+at 390 / 900 / 1440 and its references are re-shot; every page above the band is
+pixel-identical to before.
+
+The decision this is waiting on is not a design one. Naming clients needs each
+client's agreement and needs ICAI website guidelines to permit it; both were
+open when the band was built. Switching the band off costs nothing to reverse,
+so it waits in the off position rather than the on one.
+
+## The snake, unstuck — 10 Oct 2026 · owner: `smk-design-system`
+
+The user reported the How we work drawing getting stuck mid-way and not
+finishing until the section had almost scrolled past. Four faults, measured
+over Chrome at nine viewport sizes:
+
+The pin's scroll room was `90vh`, uncapped, so the taller the screen the more
+scrolling the same five stages demanded — 613px at a 800px viewport, 919px at
+1200px. It is `min(72vh,560px)` now: a flat 477px of drawing at every height,
+with 12% of the pin left over rather than 15%.
+
+The pin engaged at `min-height:800px` but the block needed 859px of viewport
+at 1440 wide, so between 800 and 858px the page locked with the stage's own
+text 40–60px below the fold — scrolling a pinned block, which is the "stuck"
+the user felt. The frame now tightens under 900px of viewport
+(`padding-block` to `clamp(32px,3.2vw,44px)`) so the block is 731px and fits
+with room to spare; above 900px the approved spacing is untouched.
+
+Below 800px the block never pinned *and* took the larger padding, growing to
+856px against a 760px viewport: the line only completed with the header 90px
+off the top. The same tightening applies there, and the draw now finishes
+with the whole block on screen.
+
+The stage detail is absolutely positioned over room reserved by
+`13vw`, which at 901–1023px wide was 18px short of the text's own height, so
+step 01's description ran into the Industries hairline. Reserved at 176px
+across that band.
+
+And `NAV=74` in the inline script was the old white header's height; the bar
+has been 64px since 6 Oct, so the draw started 10px before the block stuck.
+It reads `--nav-h` now, like every other offset.
+
+A side effect worth recording: `90vh` was also what made the 1440 reference
+capture 14,869px tall with 6,900px of blank in it — the harness resizes the
+viewport to the full page height, which the spacer then multiplied. Capped,
+the capture is 7,710px and the reviews band and closing CTA render in it
+instead of appearing as empty space. The 1440 reference is a faithful
+picture of the page again. 390 and 900 are unchanged: every rule here is
+`min-width:901px`.
+
 ## Still open
 
 1. **Photography** — not commissioned. Until it is, empty image slots are

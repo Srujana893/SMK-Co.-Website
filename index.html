@@ -298,10 +298,12 @@
   </div>
 </section>
 
-<!-- Two bands are rendered here by js/home.js from js/config.js: the
-     "Our clients" logo band, then the client reviews band, between Industries
-     and the closing CTA. The logos are real client assets
-     (assets/clients/README.md); the quotes are still placeholder data. -->
+<!-- js/home.js renders up to two bands here from js/config.js, between
+     Industries and the closing CTA. The "Our clients" logo band is switched
+     off (10 Oct 2026): window.clients.items is empty, so nothing of it is
+     output — the six verified logo files and the entries to restore them are
+     still in assets/clients/ and js/config.js. The client reviews band below
+     it still renders, on placeholder quotes. -->
 
 <!-- ============ 07 CONTACT ============ -->
 <section class="hx-close hx-band hx-close--pure" data-screen-label="Contact">
@@ -452,18 +454,21 @@
     var pin=sec.querySelector(".hx-proc__pin"),board=sec.querySelector(".hx-proc__board"),fill=sec.querySelector(".hx-proc__fill");
     var steps=[].slice.call(sec.querySelectorAll(".hx-proc__step"));
     var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
-    var F=[0,25,50,75,100],NAV=74,pick=null,lastOn=-1;
+    var F=[0,25,50,75,100],pick=null,lastOn=-1;
+    /* the bar's height lives in --nav-h and the pin sticks under it, so the
+       draw has to start from that same line -- a literal here drifts from it */
+    function navH(){return parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-h"))||64;}
     var clamp=function(v){return Math.max(0,Math.min(1,v))};
     function pinned(){return getComputedStyle(pin).position==="sticky"}
     function progress(){
       if(reduce)return 100;
       if(pinned()){
-        var start=sec.getBoundingClientRect().top+window.scrollY-NAV,dist=sec.offsetHeight-pin.offsetHeight;
+        var start=sec.getBoundingClientRect().top+window.scrollY-navH(),dist=sec.offsetHeight-pin.offsetHeight;
         if(dist<=0)return 100;
-        return clamp(((window.scrollY-start)/dist)/0.85)*100;   /* finished with 15% of the pin still to go */
+        return clamp(((window.scrollY-start)/dist)/0.88)*100;   /* finished with 12% of the pin still to go */
       }
       var r=board.getBoundingClientRect(),vh=window.innerHeight;
-      return clamp((vh*0.85-r.top)/(vh*0.45))*100;
+      return clamp((vh*0.85-r.top)/(vh*0.45))*100;   /* done as the stage's own text comes to rest on screen */
     }
     function setActive(li){
       steps.forEach(function(x){

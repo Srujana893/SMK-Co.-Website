@@ -114,19 +114,29 @@ window.testimonials = [
    this goes live.
    ============================================================ */
 window.clients = {
+  /* SWITCHED OFF — 10 Oct 2026. The firm has not decided whether to name its
+     clients on the site, so `items` is empty and js/home.js renders no band at
+     all: no label, no strip, no gap between Industries and what follows it.
+     Nothing was deleted. The six verified logo files and their provenance stay
+     in assets/clients/ (see the README there), and the entries below are ready
+     to move back into the array when the decision is made. Before they go
+     back: confirm each client has agreed to be named, and confirm ICAI website
+     guidelines permit listing clients. */
   items: [
-    { name: "Way2Wealth",            logo: "assets/clients/way2wealth.png" },
-    { name: "ABB",                   logo: "assets/clients/abb.svg", scale: 0.8 },
-    { name: "Brilyant",              logo: "assets/clients/brilyant.png" },
-    { name: "Indian Bank",           logo: "assets/clients/indian-bank.jpg" },
-    { name: "Union Bank of India",   logo: "assets/clients/union-bank-of-india.png" },
-    { name: "Indian Overseas Bank",  logo: "assets/clients/indian-overseas-bank.png", scale: 1.15 }
-    /* PENDING — add only when the client supplies an official file:
+    /* VERIFIED — ready to restore, in the order they were shown:
+       { name: "Way2Wealth",            logo: "assets/clients/way2wealth.png" },
+       { name: "ABB",                   logo: "assets/clients/abb.svg", scale: 0.8 },
+       { name: "Brilyant",              logo: "assets/clients/brilyant.png" },
+       { name: "Indian Bank",           logo: "assets/clients/indian-bank.jpg" },
+       { name: "Union Bank of India",   logo: "assets/clients/union-bank-of-india.png" },
+       { name: "Indian Overseas Bank",  logo: "assets/clients/indian-overseas-bank.png", scale: 1.15 }
+
+       PENDING — add only when the client supplies an official file:
        { name: "Ezon Electricals Pvt. Ltd.", logo: "assets/clients/ezon-electricals.svg" },
          Exact Ezon Electricals Pvt. Ltd. logo could not be verified; client asset required.
        { name: "Ryder Mobility Pvt. Ltd.",   logo: "assets/clients/ryder-mobility.svg" },
          Ryder Mobility Pvt. Ltd. logo could not be verified from an official public source; client asset required.
-       { name: "Canara Bank",              logo: "assets/clients/canara-bank.svg" },
+       { name: "Canara Bank",                logo: "assets/clients/canara-bank.svg" },
          Only a white-on-transparent header logo is published; a colour-on-light
          file is needed from the bank. Not confirmed yet, do not add: Weathox, Mediaberry. */
   ]

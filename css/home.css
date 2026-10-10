@@ -117,10 +117,22 @@ a{color:var(--ink)}a:hover{color:var(--accent-ink)}
    its parent's content box), and the block sticks under the fixed bar meanwhile */
 .hx-proc__space{height:0}
 @media (min-width:901px) and (min-height:800px){
-  .hx-proc__space{height:90vh}
+  /* the scroll room the draw takes, capped: tied to vh alone a tall screen
+     demanded half as much scrolling again as a short one for the same five
+     stages, which is what made the pin feel stuck */
+  .hx-proc__space{height:min(72vh,560px)}
   .hx-proc__pin{position:sticky;top:var(--nav-h);padding-block:clamp(48px,5.5vw,76px)}
 }
+/* a viewport only just tall enough to pin cannot also carry the generous
+   frame. Tighten the frame rather than hold the stage's text below the fold:
+   the block plus the bar has to fit, or the reader scrolls a pinned block. */
+@media (min-width:901px) and (max-height:899px){
+  .hx-proc__pin{padding-block:clamp(32px,3.2vw,44px)}
+}
 .hx-proc__snake{position:relative;padding-bottom:clamp(150px,13vw,172px)}
+/* the detail wraps to more lines as its column narrows; at the narrow end of
+   desktop it needs more room than 13vw reserves, or it runs into Industries */
+@media (min-width:901px) and (max-width:1023px){.hx-proc__snake{padding-bottom:176px}}
 .hx-proc__board{position:relative;aspect-ratio:1000/220}
 .hx-proc__path{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
 .hx-proc__track,.hx-proc__fill{fill:none;stroke-width:1.8;stroke-linecap:round;stroke-dasharray:100} /* no non-scaling-stroke: it makes Chrome measure dashes in screen px and breaks the pathLength scale */

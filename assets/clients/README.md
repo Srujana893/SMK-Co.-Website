@@ -1,5 +1,11 @@
 # Client logos — provenance
 
+> **The band is switched off (10 Oct 2026).** `window.clients.items` in
+> `js/config.js` is empty, so no logo band renders on the homepage. These files
+> and this provenance table stay as they are; the entries that render them are
+> kept in a comment inside that empty array, ready to move back once the firm
+> decides whether to name clients publicly.
+
 Every file here is the client's own published asset, downloaded unmodified
 (byte-for-byte, checksums below) from the company's official website on
 6 October 2026. Nothing in this folder was drawn, traced, vectorised,
