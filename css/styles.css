@@ -572,9 +572,9 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
 .wp__name{font-family:var(--font);font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);font-weight:var(--w-display);color:var(--ink)}
 .wp__note{display:grid;grid-template-columns:58px 1fr;column-gap:18px;margin:16px 0 0;transition:opacity .4s var(--ease) .4s}
 .wp__note span{grid-column:2;font-size:var(--text-sm);line-height:var(--lh-sm);color:var(--text);max-width:52ch}
-.wp__foot{display:grid;grid-template-columns:58px 1fr auto;column-gap:18px;margin-top:clamp(22px,2.6vw,32px);padding-top:12px;border-top:1px solid var(--line);
+.wp__foot{display:grid;grid-template-columns:58px 1fr;column-gap:18px;margin-top:clamp(22px,2.6vw,32px);padding-top:12px;border-top:1px solid var(--line);
   font-size:var(--text-label);line-height:var(--lh-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:var(--w-medium);color:var(--text-muted);transition:opacity .3s var(--ease) .5s}
-.wp__foot span:first-child{grid-column:2}
+.wp__foot span{grid-column:2;justify-self:end}
 .wp__sheet:not(.is-active) :is(.wp__head,.wp__note,.wp__foot){opacity:0;transition-delay:0s}
 .wp__sheet:not(.is-active) .wp__item{opacity:0;translate:0 12px;transition-delay:0s}
 /* the turn: one iteration per page; paused while the pointer rests on the file */

@@ -370,6 +370,10 @@ from the old index, so the footer's text below it rasterises one pixel lower
 in the capture, which is a sub-pixel phase, not a layout change. The
 prototype page was never in the repo and is disposable.
 
+Later the same day, after the push, the user asked for "Prepared by SMK &
+Co." to come off the sheets. The foot now carries only the count, "3 of 12
+sectors", on the right where it was. Services references re-shot again.
+
 ## Still open
 
 1. **Photography** — not commissioned. Until it is, empty image slots are
