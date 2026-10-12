@@ -247,9 +247,34 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
 @media (max-width:920px){.svc__card--wide{flex-direction:column}.svc__card--wide .svc__bul{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){.svc__card--wide .svc__bul{grid-template-columns:1fr}}
 
-/* ---------- The technology edge (dark editorial band on the services page) ---------- */
-.edge{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px)}
-.edge p{margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--on-ink-muted);max-width:38ch}
+/* ---------- The technology edge (12 Oct 2026): the one ink block on the
+   services page. A statement and a short lede on the left; three claims as
+   rows on the right, each with an ordinal that pops in just after its row.
+   Under the ink lies a grid, shown only where a soft light falls; the light
+   rests behind the statement and follows the pointer (--mx/--my, moved by
+   js/site.js; registered in tokens.css so it glides). ---------- */
+.edge-band{--mx:28%;--my:55%;isolation:isolate;transition:--mx .45s var(--ease),--my .45s var(--ease)}
+.edge-band::before,.edge-band::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none}
+.edge-band::before{
+  background-image:linear-gradient(var(--line-on-ink) 1px,transparent 1px),linear-gradient(90deg,var(--line-on-ink) 1px,transparent 1px);
+  background-size:44px 44px;background-position:center top;
+  -webkit-mask-image:radial-gradient(620px circle at var(--mx) var(--my),var(--ink) 0,transparent 72%);
+  mask-image:radial-gradient(620px circle at var(--mx) var(--my),var(--ink) 0,transparent 72%)}
+.edge-band::after{background:radial-gradient(720px circle at var(--mx) var(--my),color-mix(in srgb,var(--accent-on-ink) 22%,transparent),color-mix(in srgb,var(--accent-on-ink) 8%,transparent) 34%,transparent 66%)}
+.edge{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(28px,4vw,64px);row-gap:28px;align-items:start}
+.edge .section-head{max-width:none;margin:0}
+.hx .edge__t{margin:0;font-size:var(--text-d2);line-height:var(--lh-d2);letter-spacing:var(--ls-d2);font-weight:var(--w-display);color:var(--on-ink);max-width:13ch}
+.edge .lede{max-width:34ch;font-size:var(--text-body);line-height:var(--lh-body);margin-top:1.1rem}
+.edge__rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-on-ink)}
+.edge__row{display:grid;grid-template-columns:2.6em minmax(0,1fr);column-gap:clamp(10px,1.4vw,20px);padding:clamp(20px,2.2vw,30px) 0;border-bottom:1px solid var(--line-on-ink)}
+.edge__n{font-family:var(--font);font-size:var(--text-label);font-weight:var(--w-display);letter-spacing:var(--ls-label);line-height:1;color:var(--on-ink-muted);padding-top:.5em;transform-origin:0 50%}
+.hx .edge__h{margin:0 0 8px;color:var(--on-ink);max-width:22ch}
+.edge__row p{margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--on-ink-muted);max-width:48ch}
+/* the ordinal pops last, the way the industry rows do on the homepage */
+.hx .edge__row[data-reveal] .edge__n{transition:scale .6s var(--ease-pop) calc(var(--d,0s) + .18s),opacity .35s var(--ease) calc(var(--d,0s) + .18s)}
+.hx .edge__row[data-reveal]:not(.in) .edge__n{scale:.5;opacity:0}
+@media (max-width:900px){.edge{grid-template-columns:1fr;row-gap:clamp(28px,4vw,40px)}}
+@media (prefers-reduced-motion:reduce){.edge-band{transition:none}.hx .edge__n{scale:none!important;opacity:1!important;transition:none!important}}
 
 /* ---------- Services: practice-area rail and stage ----------
    Six names on one rail; one area on the stage at a time. The accent line
@@ -494,19 +519,78 @@ h1,h2,h3,h4{font-family:var(--font);color:var(--ink);font-weight:600;margin:0;li
 .row__bul li{position:relative;padding-left:18px;font-size:.94rem;line-height:1.5;color:var(--text);break-inside:avoid;margin-bottom:10px}
 .row__bul li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--accent)}
 
-/* sector chips (flowing rows) */
-.sector-rows{display:flex;flex-wrap:wrap;gap:12px}
-.sector-chip{display:inline-flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:50px;padding:13px 22px;font-size:.96rem;color:var(--ink);transition:border-color .3s var(--ease),background .3s var(--ease)}
-.sector-chip:hover{border-color:var(--accent);background:color-mix(in srgb,var(--ink) 4%,transparent)}
-.sector-chip svg{width:18px;height:18px;stroke:var(--text-muted);stroke-width:1.5;fill:none;flex:none}
-/* the chips arrive one after another with a small pop, and lift a touch on hover */
-.sector-rows[data-reveal] .sector-chip{transition:opacity .4s var(--ease) calc(var(--i,0) * 35ms),transform .55s var(--ease-pop) calc(var(--i,0) * 35ms),border-color .3s var(--ease),background .3s var(--ease)}
-.sector-rows[data-reveal]:not(.in) .sector-chip{opacity:0;transform:translateY(8px) scale(.92)}
-.sector-rows[data-reveal].in .sector-chip{transition-delay:0s,0s,0s,0s}
-.sector-rows .sector-chip:hover{transform:translateY(-2px)}
-.sector-chip:nth-child(2){--i:1}.sector-chip:nth-child(3){--i:2}.sector-chip:nth-child(4){--i:3}.sector-chip:nth-child(5){--i:4}.sector-chip:nth-child(6){--i:5}
-.sector-chip:nth-child(7){--i:6}.sector-chip:nth-child(8){--i:7}.sector-chip:nth-child(9){--i:8}.sector-chip:nth-child(10){--i:9}.sector-chip:nth-child(11){--i:10}.sector-chip:nth-child(12){--i:11}
-@media (prefers-reduced-motion:reduce){.sector-rows[data-reveal] .sector-chip{transition:none;opacity:1;transform:none}}
+/* ---------- Sectors (12 Oct 2026): an index, not chips. Twelve sectors in
+   four groups, each with the work that usually comes with it. A group arrives
+   on its own beat; inside it the names pop in one after another and their
+   rules draw themselves, then the note settles. Nothing here is a link, so
+   nothing here takes the accent. ---------- */
+/* ---------- Services: the sectors as a file ----------
+   Four working papers in a file, one per sector group, with index tabs along
+   the top edge. The open sheet sits on the stack; the others peek from under
+   it, each a step lower and a little narrower. A tab brings its sheet forward
+   on the pop easing and the names on it arrive one after another. Until
+   someone touches it the file turns its own pages: the turn is a CSS
+   animation whose iteration event advances the sheet (services.html), so a
+   paused or absent animation (reduced motion; the capture harness pinning
+   infinite animations) is a still file open at sheet A. */
+.wp{position:relative}
+.hx .wp[data-reveal]{opacity:1;transform:none;transition:none}
+.wp__tabs{display:flex;align-items:stretch;gap:6px;margin:0;padding:0 clamp(14px,2vw,22px);position:relative;z-index:2}
+.wp__tab{--i:0;appearance:none;position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:6px;min-width:0;margin:0 0 -1px;padding:12px clamp(14px,1.6vw,20px);
+  border:1px solid var(--line);border-bottom:0;border-radius:var(--radius) var(--radius) 0 0;background:color-mix(in srgb,var(--ink) 4%,var(--surface));
+  font:inherit;text-align:left;cursor:pointer;
+  transition:background .3s var(--ease),border-color .3s var(--ease),opacity .3s var(--ease) calc(var(--i) * 80ms),translate .6s var(--ease-pop) calc(var(--i) * 80ms)}
+.wp__tab:nth-child(2){--i:1}.wp__tab:nth-child(3){--i:2}.wp__tab:nth-child(4){--i:3}
+.wp__tab-r{font-family:var(--font);font-size:var(--text-label);line-height:1;letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:var(--w-medium);color:var(--text-muted);transition:color .3s var(--ease)}
+.wp__tab-t{font-family:var(--font);font-size:var(--text-sm);line-height:1.2;font-weight:var(--w-display);letter-spacing:var(--ls-h3);color:var(--ink)}
+.wp__tab:hover{background:var(--accent-wash);border-color:var(--accent-line)}
+.wp__tab:hover .wp__tab-r{color:var(--accent)}
+.wp__tab[aria-selected="true"]{background:var(--surface);border-color:var(--ink);margin-top:-3px;padding-bottom:14px;z-index:2}
+.wp__tab[aria-selected="true"] .wp__tab-r{color:var(--accent)}
+.wp__tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wp[data-reveal]:not(.in) .wp__tab{opacity:0;translate:0 18px}
+.wp__sheets{position:relative;z-index:1;display:grid;padding-bottom:44px}
+.wp__sheet{--k:0;grid-area:1/1;position:relative;padding:clamp(22px,3vw,36px) clamp(22px,3vw,40px) clamp(18px,2.4vw,28px);
+  background:var(--surface);border:1px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow-soft);
+  transform-origin:50% 100%;translate:0 calc(var(--k) * 14px);scale:calc(1 - var(--k) * .028);z-index:calc(10 - var(--k));
+  transition:translate .65s var(--ease-pop),scale .65s var(--ease-pop),box-shadow .45s var(--ease),opacity .4s var(--ease)}
+.wp__sheet:nth-child(2){--k:1}.wp__sheet:nth-child(3){--k:2}.wp__sheet:nth-child(4){--k:3}
+.wp__sheet.is-active{box-shadow:var(--shadow-lift)}
+.wp__sheet:not(.is-active){pointer-events:none}
+.wp[data-reveal]:not(.in) .wp__sheet{opacity:0;translate:0 calc(var(--k) * 14px + 40px)}
+/* the ledger margin, drawn down the sheet between the references and the names */
+.wp__sheet::before{content:"";position:absolute;top:0;bottom:0;left:calc(clamp(22px,3vw,40px) + 58px);width:1px;background:var(--line)}
+.wp__head{display:grid;grid-template-columns:58px 1fr auto;column-gap:18px;align-items:baseline;padding-bottom:14px;border-bottom:1px solid var(--ink);transition:opacity .3s var(--ease)}
+.wp__head-r{font-family:var(--font);font-size:var(--text-h2);line-height:1;font-weight:var(--w-display);color:var(--ink)}
+.wp__head-t{margin:0;font-size:var(--text-label);line-height:var(--lh-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:var(--w-medium);color:var(--text-muted)}
+.wp__head-of{font-size:var(--text-sm);line-height:var(--lh-sm);color:var(--text-muted);font-variant-numeric:tabular-nums}
+.wp__list{list-style:none;margin:0;padding:0}
+.wp__item{--i:0;display:grid;grid-template-columns:58px 1fr;column-gap:18px;align-items:baseline;padding:clamp(14px,1.6vw,20px) 0;border-bottom:1px solid var(--line);
+  transition:opacity .4s var(--ease) calc(.12s + var(--i) * 80ms),translate .65s var(--ease-pop) calc(.12s + var(--i) * 80ms)}
+.wp__item:nth-child(2){--i:1}.wp__item:nth-child(3){--i:2}
+.wp__n{font-family:var(--font);font-variant-numeric:tabular-nums;font-size:var(--text-sm);line-height:1;font-weight:var(--w-medium);color:var(--text-muted)}
+.wp__name{font-family:var(--font);font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1);font-weight:var(--w-display);color:var(--ink)}
+.wp__note{display:grid;grid-template-columns:58px 1fr;column-gap:18px;margin:16px 0 0;transition:opacity .4s var(--ease) .4s}
+.wp__note span{grid-column:2;font-size:var(--text-sm);line-height:var(--lh-sm);color:var(--text);max-width:52ch}
+.wp__foot{display:grid;grid-template-columns:58px 1fr auto;column-gap:18px;margin-top:clamp(22px,2.6vw,32px);padding-top:12px;border-top:1px solid var(--line);
+  font-size:var(--text-label);line-height:var(--lh-label);letter-spacing:var(--ls-label);text-transform:uppercase;font-weight:var(--w-medium);color:var(--text-muted);transition:opacity .3s var(--ease) .5s}
+.wp__foot span:first-child{grid-column:2}
+.wp__sheet:not(.is-active) :is(.wp__head,.wp__note,.wp__foot){opacity:0;transition-delay:0s}
+.wp__sheet:not(.is-active) .wp__item{opacity:0;translate:0 12px;transition-delay:0s}
+/* the turn: one iteration per page; paused while the pointer rests on the file */
+@keyframes wp-turn{from{--wp-turn:0}to{--wp-turn:1}}
+.wp.in.is-auto{animation:wp-turn 3.6s linear infinite}
+.wp.in.is-auto:hover{animation-play-state:paused}
+@media (max-width:640px){
+  .wp__tab-t{display:none}
+  .wp__tab{padding:12px 14px}
+  .wp__head,.wp__item,.wp__note,.wp__foot{grid-template-columns:44px 1fr auto}
+  .wp__sheet::before{left:calc(22px + 44px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .wp__tab,.wp__sheet,.wp__item,.wp__head,.wp__note,.wp__foot{transition:none!important}
+  .wp.in.is-auto{animation:none}
+}
 
 /* process vertical rows */
 .proc-rows{border-top:1px solid var(--line)}

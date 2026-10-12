@@ -47,8 +47,6 @@
 .hx .field input:focus,.hx .field select:focus,.hx .field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
 .hx .row__num{color:var(--text-muted)}
 .hx .svc__bul li::before,.hx .row__bul li::before{background:var(--accent);opacity:.7}
-.hx .sector-chip:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 5%,transparent)}
-.hx .sector-chip svg{stroke:var(--text-muted)}
 .hx .statement{border-top-color:var(--line)}
 .hx .statement h3{font-family:var(--font);color:var(--text-muted);font-size:.68rem}
 
@@ -282,6 +280,54 @@ main.ledger .cr-apply__l > .hx-sec-label{display:none}
 .nav__item{padding-bottom:2px}
 .nav__item::after{content:"";position:absolute;left:0;right:14px;bottom:-6px;height:1px;background:var(--accent-on-ink);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .nav__item.is-open::after,.nav__item.is-active::after,.nav__item:hover::after{transform:scaleX(1)}
+
+/* ---------- the panels as glass (12 Oct 2026). The sheet that opens under
+   the bar is frosted ink: the page shows through it, blurred, with a highlight
+   along its top edge. A soft light rests at the top centre, a halo off the
+   bar, and follows the pointer across the panel (--mx/--my, moved by
+   js/site.js). The panel pops open and its links arrive one after another;
+   a hovered area lights as a tile. Touch and reduced motion keep the resting
+   light and no stagger. ---------- */
+.hx .mega{--mx:50%;--my:0%;--glass-muted:color-mix(in srgb,var(--on-ink) 72%,transparent);
+  background:color-mix(in srgb,var(--ink) 86%,transparent);
+  -webkit-backdrop-filter:blur(40px) saturate(1.5);backdrop-filter:blur(40px) saturate(1.5);
+  border-top:1px solid color-mix(in srgb,var(--on-ink) 10%,transparent);
+  border-bottom:1px solid color-mix(in srgb,var(--on-ink) 8%,transparent);
+  box-shadow:0 44px 80px -40px color-mix(in srgb,var(--ink) 85%,transparent);
+  color:var(--on-ink);overflow:hidden;isolation:isolate;
+  transform:translateY(-10px) scale(.985);transform-origin:50% 0;
+  transition:opacity .18s var(--ease),transform .22s var(--ease),visibility .22s}
+.hx .mega.is-open{transform:none;transition:opacity .22s var(--ease),transform .55s var(--ease-pop),visibility 0s,--mx .35s var(--ease),--my .35s var(--ease)}
+@supports not (backdrop-filter:blur(1px)){.hx .mega{background:var(--ink)}}
+.hx .mega::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(600px circle at var(--mx) var(--my),color-mix(in srgb,var(--accent-on-ink) 30%,transparent),color-mix(in srgb,var(--accent-on-ink) 10%,transparent) 36%,transparent 68%);
+  opacity:0;transition:opacity .6s var(--ease) .08s}
+.hx .mega.is-open::before{opacity:1}
+/* reversed type and hairlines */
+.hx .mega__label,.hx .mega__n,.hx .mega__d,.hx .mega__grid--row .mega__d,.hx .mega__foot p{color:var(--glass-muted)}
+.hx .mega__t{color:var(--on-ink)}
+.hx .mega__arr{color:var(--accent-on-ink)}
+.hx .mega__link{border-top-color:var(--line-on-ink)}
+.hx .mega__link:hover{border-color:var(--accent-on-ink)}
+.hx .mega__link:hover .mega__t,.hx .mega__link:hover .mega__n{color:var(--accent-on-ink)}
+.hx .mega__grid--row{border-top-color:var(--line-on-ink)}
+.hx .mega__grid--row .mega__link{border-left-color:var(--line-on-ink);border-top-color:var(--line-on-ink)}
+.hx .mega__grid--row .mega__link:hover{background:color-mix(in srgb,var(--on-ink) 7%,transparent);border-left-color:var(--line-on-ink);border-top-color:var(--line-on-ink)}
+.hx .mega__grid--row .mega__link::after{background:var(--accent-on-ink)}
+.hx .mega__foot{border-top-color:var(--line-on-ink)}
+.hx .mega .hx-cta{color:var(--on-ink);border-color:color-mix(in srgb,var(--on-ink) 55%,transparent)}
+.hx .mega .hx-cta:hover{color:var(--accent-on-ink);border-color:var(--accent-on-ink)}
+/* the links arrive in order; the foot follows them */
+.hx .mega__link,.hx .mega__foot{opacity:0;translate:0 10px;transition:opacity .18s var(--ease),translate .18s var(--ease),border-color .25s var(--ease),background .28s var(--ease)}
+.hx .mega.is-open .mega__link,.hx .mega.is-open .mega__foot{opacity:1;translate:none;
+  transition:opacity .45s var(--ease) calc(var(--i,0) * 45ms + 60ms),translate .6s var(--ease-pop) calc(var(--i,0) * 45ms + 60ms),border-color .25s var(--ease),background .28s var(--ease)}
+.hx .mega__link:nth-child(2){--i:1}.hx .mega__link:nth-child(3){--i:2}.hx .mega__link:nth-child(4){--i:3}.hx .mega__link:nth-child(5){--i:4}.hx .mega__link:nth-child(6){--i:5}
+.hx .mega__foot{--i:6}
+@media (prefers-reduced-motion:reduce){
+  .hx .mega,.hx .mega.is-open{transition:none;transform:none}
+  .hx .mega::before{transition:none}
+  .hx .mega__link,.hx .mega__foot,.hx .mega.is-open .mega__link,.hx .mega.is-open .mega__foot{opacity:1;translate:none;transition:none}
+}
 
 /* ============================================================================
    THE TYPE SCALE — one ladder, all seven pages. Stage 3.

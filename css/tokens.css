@@ -82,3 +82,11 @@
   --ease:cubic-bezier(.22,.61,.36,1);
   --ease-pop:cubic-bezier(.3,1.4,.5,1);   /* ~5% overshoot: a pop, not a bounce */
 }
+
+/* --- the glass light. Where a soft light sits on a glass surface (the menu
+   panels, the technology edge); js/site.js moves it with the pointer.
+   Registered so the position can transition, which is what makes the light
+   glide rather than jump. Inherited, because the pseudo-elements that paint
+   the light read it from the surface. Each surface sets its own rest. */
+@property --mx{syntax:"<length-percentage>";inherits:true;initial-value:50%}
+@property --my{syntax:"<length-percentage>";inherits:true;initial-value:0%}

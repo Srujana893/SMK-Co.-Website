@@ -1,7 +1,7 @@
 /* ============================================================
    SMK & Co — shared site behaviours
    nav state · smooth scroll · scroll-reveal · count-up ·
-   hero parallax · mobile menu · contact form · config injection
+   hero parallax · mobile menu · glass light · contact form · config injection
    (rect-based scroll detection — resilient across environments)
    ============================================================ */
 (function () {
@@ -198,6 +198,24 @@
   });
   if (mnav) mnav.querySelector(".mnav__scrim").addEventListener("click", closeMenu);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
+
+  /* ---- the glass light. A soft light rests on each glass surface (the menu
+     panels, the technology edge) and follows the pointer across it; on leaving
+     it glides back to rest. Pointers that can hover only: touch and reduced
+     motion keep the resting light, which the stylesheet sets. ---- */
+  if (!reduce && window.matchMedia("(hover:hover)").matches) {
+    document.querySelectorAll(".mega,[data-glow]").forEach(function (el) {
+      el.addEventListener("pointermove", function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty("--mx", Math.round(e.clientX - r.left) + "px");
+        el.style.setProperty("--my", Math.round(e.clientY - r.top) + "px");
+      }, { passive: true });
+      el.addEventListener("pointerleave", function () {
+        el.style.removeProperty("--mx");
+        el.style.removeProperty("--my");
+      });
+    });
+  }
 
   /* ---- contact form (POST to backend, with graceful error state) ---- */
   var form = document.querySelector("#contactForm");

@@ -282,6 +282,94 @@ instead of appearing as empty space. The 1440 reference is a faithful
 picture of the page again. 390 and 900 are unchanged: every rule here is
 `min-width:901px`.
 
+## The panels as glass — 12 Oct 2026 · owner: `smk-design-system`
+
+The two menu panels opened as white sheets under the ink bar. They are glass
+now: frosted ink (`--ink` at 86% over a 40px backdrop blur, dense enough that
+the page behind reads as tone, not as text), a highlight along
+the top edge, and a soft light in `--accent-on-ink` that rests at the top
+centre as a halo off the bar and follows the pointer across the panel. The
+light's position is a pair of registered custom properties (`--mx`, `--my` in
+`css/tokens.css`), moved by `js/site.js` on hover-capable pointers only, and
+registered so it glides rather than jumps. The links are reversed, arrive one
+after another on the pop easing, and a hovered area lights as a tile. Touch
+and reduced motion get the resting light and no stagger; a browser without
+`backdrop-filter` gets solid ink. The user asked for "the glass glow effect"
+on clicking the header; this is one effect, applied to both panels and to the
+services page's ink block below, so the site has one light, not two.
+
+## The second half of What we do — 12 Oct 2026 · owner: `smk-design-system`
+
+The user found the technology edge and the sectors "bland" and "an old
+concept": three grey paragraphs in three columns on ink, and twelve pill
+chips with line icons. Both are replaced.
+
+The technology edge is a statement at Display 2 ("The numbers come from
+systems now.") with a short lede on the left, and three claims as rows on the
+right, each with a title, the substance of the old paragraph, and an ordinal
+that pops in just after its row, the way the homepage industry rows do. Under
+the ink lies a 44px grid in `--line-on-ink`, masked so it shows only where the
+same soft light falls; the light rests behind the statement and follows the
+pointer. It is still the one ink block on the page.
+
+The sectors are an index, not chips: twelve names in four groups (Banks &
+public sector; Owner-managed; Industry; Corporates & institutions), each group
+with a one-line note of the work that usually comes with it. Every note is
+drawn from the practice-area lists above it, so nothing is claimed that the
+page did not already say. The groups share rows (`subgrid`) so a label that
+wraps in one column does not push that column's names out of line. A group
+arrives on its own beat; inside it the names pop in one after another and
+their rules draw themselves. Nothing here is a link, so nothing here takes
+the accent. The margin figure still counts the names, now `.sx__name`.
+
+The services references are re-shot (3070 / 3521 / 5004px at 1440 / 900 /
+390). Every other capture is identical or within its floor.
+
+## The sectors as a file — 12 Oct 2026 · owner: `smk-design-system`
+
+The user saw the second half on the preview and said it looked good, but
+wanted the sectors as "some other pattern, something different, new and
+unique" that still "correlates to auditing firms", with an animation effect,
+and asked to see a prototype before anything was built. Three directions
+went up on a standalone page outside the repo, each the same twelve names,
+four groups and notes, each on the site's tokens and the pop easing: a
+**schedule** (a ruled working paper whose auditor's ticks go down the sheet
+one line after another, a double tick per group, the foot counting to
+twelve); a **tie-out** (sectors on one side, the six practice areas on the
+other, lines between them that draw themselves and come forward on hover);
+and a **file** (four working papers with index tabs along the top edge, the
+open sheet on a stack). The user chose the file.
+
+The sectors are now that file (`.wp` in styles.css; markup and script in
+services.html). Four index tabs, one per group, lettered A to D, share one
+top edge with their labels at the foot; the open tab stands 3px proud and is
+attached to its sheet. The open sheet carries a ledger margin, the group's
+letter and label, "Sheet n of 4", the three names at H1 with references A/1
+to D/3, the group's one-line note (unchanged, still drawn only from the
+practice-area lists above), and a foot. The other three sheets stack behind
+it, each a step lower and a little narrower, peeking from under its bottom
+edge. A tab brings its sheet forward on the pop easing and the names on it
+arrive one after another; the sheet it replaces drops to the back of the
+stack. Arrow keys, Home and End move along the tabs; a closed sheet is
+`inert` and `aria-hidden`, so only the open one is read. On arrival the tabs
+pop up one after another and the stack rises behind them. The margin figure
+counts `.wp__name`.
+
+Until someone touches it the file turns its own pages every 3.6s. The turn
+is deliberately a CSS animation (`wp-turn`, a no-op keyframe) whose
+`animationiteration` event advances the sheet, rather than a timer: hovering
+the file pauses it (`animation-play-state`), a click or a key removes it for
+good, reduced motion never starts it, and the capture harness, which pins
+every infinite animation at t=0, sees a still file open at sheet A. Two
+consecutive captures of each width are byte-identical, which a timer could
+not have given.
+
+The services references are re-shot (3226 / 3406 / 4356px at 1440 / 900 /
+390). Index is identical; the new band has a different fractional height
+from the old index, so the footer's text below it rasterises one pixel lower
+in the capture, which is a sub-pixel phase, not a layout change. The
+prototype page was never in the repo and is disposable.
+
 ## Still open
 
 1. **Photography** — not commissioned. Until it is, empty image slots are
