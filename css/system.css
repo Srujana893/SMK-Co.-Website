@@ -466,7 +466,7 @@ html{font-optical-sizing:auto}
 
 /* ---------- the name in the bar (15 Oct 2026): "Sachin Mahendra & Co." set
    as text in place of the SMK lockup, which is kept in drafts/header-logo.md.
-   The footer keeps the lockup. ---------- */
+   The footer carries the same name since 16 Oct 2026. ---------- */
 .brand__name{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:1.5rem;font-weight:500;letter-spacing:.005em;line-height:1;white-space:nowrap;color:var(--on-ink)}
 .brand__amp{font-family:Georgia,'Times New Roman',serif;font-size:.9em;color:var(--accent-on-ink)}
 .brand__name--mnav{font-size:1.2rem}
